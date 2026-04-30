@@ -183,17 +183,6 @@ export function nameToPrefix(name) {
 }
 
 /**
- * Make a display name safe for use as a filesystem filename.
- */
-export function sanitizeName(name) {
-  return String(name)
-    .replace(/[<>:"/\\|?*\x00-\x1f]/g, "-")
-    .replace(/-{2,}/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .trim() || "unnamed";
-}
-
-/**
  * Derive a descriptive field-name suffix from the tail of a path.
  * When the last key is exactly "id", prepend the parent key so the result
  * is e.g. "OWNER_ID" instead of just "ID".
@@ -651,58 +640,6 @@ export function applyTokens(obj, vars) {
   }
 
   return JSON.parse(jsonStr);
-}
-
-// ---------------------------------------------------------------------------
-// Cross-tenant token extraction: template + backup → vars
-// ---------------------------------------------------------------------------
-
-/**
- * Recursively walk both a template object (with {{TOKEN}} placeholders) and a
- * matching backup object to extract { tokenName: actualValue } pairs.
- */
-export function extractTokenValues(templateObj, backupObj) {
-  const vars = {};
-
-  function walk(tmpl, backup) {
-    if (backup === undefined || backup === null) return;
-
-    // Scalar token placeholder: "{{TOKEN_NAME}}"
-    if (typeof tmpl === "string" && /^\{\{[A-Z][A-Z0-9_]*\}\}$/.test(tmpl)) {
-      const tokenName = tmpl.slice(2, -2);
-      vars[tokenName] = backup;
-      return;
-    }
-
-    // Array token placeholder: ["{{TOKEN_NAME}}"]
-    if (
-      Array.isArray(tmpl) &&
-      tmpl.length === 1 &&
-      typeof tmpl[0] === "string" &&
-      /^\{\{[A-Z][A-Z0-9_]*\}\}$/.test(tmpl[0])
-    ) {
-      const tokenName = tmpl[0].slice(2, -2);
-      if (Array.isArray(backup)) {
-        vars[tokenName] = backup;
-      }
-      return;
-    }
-
-    if (Array.isArray(tmpl) && Array.isArray(backup)) {
-      const len = Math.min(tmpl.length, backup.length);
-      for (let i = 0; i < len; i++) walk(tmpl[i], backup[i]);
-      return;
-    }
-
-    if (tmpl !== null && typeof tmpl === "object" && typeof backup === "object") {
-      for (const key of Object.keys(tmpl)) {
-        if (key in backup) walk(tmpl[key], backup[key]);
-      }
-    }
-  }
-
-  walk(templateObj, backupObj);
-  return vars;
 }
 
 // ---------------------------------------------------------------------------

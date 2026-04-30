@@ -9,7 +9,7 @@ import {
   getAccessToken,
 } from "./common.mjs";
 import { meaningfulBackupContentEqual } from "./compare-utils.mjs";
-import { applyTokens, parseVarsYaml } from "./token-utils.mjs";
+import { applyTokens, parseVarsYaml, tokenizeObject } from "./token-utils.mjs";
 
 // ---------------------------------------------------------------------------
 // Parse arguments
@@ -472,7 +472,22 @@ async function main() {
     let substituteErrors = 0;
     objects = objects.map((obj) => {
       try {
-        return { ...obj, content: applyTokens(obj.content, vars) };
+        const jsonStr = JSON.stringify(obj.content);
+        const hasPlaceholders = /"\{\{[A-Z][A-Z0-9_]*\}\}"/.test(jsonStr);
+
+        if (hasPlaceholders) {
+          // Source is already a tokenized template — apply vars directly.
+          return { ...obj, content: applyTokens(obj.content, vars) };
+        } else {
+          // Source is a raw backup (real values, no placeholders).
+          // Tokenize inline to discover the field → token mapping for this
+          // object, then merge: backup values act as defaults, vars file
+          // entries override specific tokens.  This lets the caller change
+          // owner IDs, hostnames, etc. without needing a pre-built template.
+          const { tokenized, tokenMap } = tokenizeObject(obj.content);
+          const mergedVars = { ...tokenMap, ...vars };
+          return { ...obj, content: applyTokens(tokenized, mergedVars) };
+        }
       } catch (err) {
         console.error(
           `  Error substituting tokens in ${obj.objectType}/${obj.objectId}: ${err.message}`

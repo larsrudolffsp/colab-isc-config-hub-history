@@ -2,15 +2,16 @@
 // ISC Configuration Tokenization Tool
 //
 // Subcommands:
-//   create-template <tenant> [--template <name>]
-//       Read backups/<tenant>/, replace environment-specific values with
-//       {{TOKEN}} placeholders, write templates/<name>/<TYPE>/<name>.json,
-//       and seed vars/<tenant>.vars.yaml with the actual values.
+//   seed-vars <tenant>
+//       Read backups/<tenant>/, discover all tokenizable field values, and
+//       write vars/<tenant>.vars.yaml.  No template files are created.
 //
-//   find-tokens <tenant> [--template <name>]
-//       For each file in templates/<name>/, match against backups/<tenant>/
-//       by self.name + self.type, extract the values at every {{TOKEN}}
-//       position, and write vars/<tenant>.vars.yaml.
+//   find-tokens <targetTenant> --source <sourceTenant>
+//       For each object in backups/<sourceTenant>/, find the matching object
+//       in backups/<targetTenant>/ by self.name + self.type, extract the
+//       environment-specific values at the same tokenizable paths, and write
+//       vars/<targetTenant>.vars.yaml.  Warns for any object that exists in
+//       the source but has no name-matched counterpart in the target.
 //
 //   diff-tenants <tenant-a> <tenant-b>
 //       Compare two tenants' backups by name+type and report fields that
@@ -21,47 +22,10 @@ import { writeFileSync, mkdirSync, readdirSync, readFileSync, existsSync, statSy
 import { join, basename } from "path";
 import {
   tokenizeObject,
-  extractTokenValues,
   matchBackupByName,
-  sanitizeName,
   varsToYaml,
-  parseVarsYaml,
   deepDiff,
 } from "./token-utils.mjs";
-
-// ---------------------------------------------------------------------------
-// Context-aware template filename generation
-// ---------------------------------------------------------------------------
-
-/**
- * Build a template filename for a parsed backup object that avoids collisions
- * when the same self.name appears in multiple parent contexts.
- *
- * LIFECYCLE_STATE: "HR-Active.json" (identityProfileRef.name + self.name)
- * Everything else:  "<self.name>.json"
- */
-function templateFileName(parsed) {
-  const selfName = parsed?.self?.name ?? "unnamed";
-  const type = parsed?.self?.type;
-
-  if (type === "LIFECYCLE_STATE") {
-    const profileName = parsed?.object?.identityProfileRef?.name;
-    if (profileName) {
-      return `${sanitizeName(profileName)}-${sanitizeName(selfName)}.json`;
-    }
-  }
-
-  return `${sanitizeName(selfName)}.json`;
-}
-
-/**
- * When reading a template file, return the matching key used by find-tokens.
- * For LIFECYCLE_STATE we match on both type + name; the caller must also
- * compare identityProfileRef.name if the template encodes it in the filename.
- */
-function templateMatchKey(parsed) {
-  return `${parsed?.self?.type}::${parsed?.self?.name}`;
-}
 
 // ---------------------------------------------------------------------------
 // Argument parsing
@@ -71,17 +35,17 @@ function parseArgs() {
   const args = process.argv.slice(2);
   const subcommand = args[0];
   const positional = [];
-  let templateName = "default";
+  let sourceTenant = null;
 
   for (let i = 1; i < args.length; i++) {
-    if (args[i] === "--template" && args[i + 1]) {
-      templateName = args[++i];
+    if (args[i] === "--source" && args[i + 1]) {
+      sourceTenant = args[++i];
     } else if (!args[i].startsWith("--")) {
       positional.push(args[i]);
     }
   }
 
-  return { subcommand, positional, templateName };
+  return { subcommand, positional, sourceTenant };
 }
 
 // ---------------------------------------------------------------------------
@@ -122,93 +86,77 @@ function readBackups(tenant) {
 }
 
 /**
- * Read all template JSON files from templates/<name>/ and return an array of
- * { objectType, fileName, content } objects.
+ * Tokenize all objects in the given array and merge their tokenMaps into a
+ * single vars object.  Warns on collisions where the same token name resolves
+ * to different values (keeps the first value seen).
+ *
+ * Returns { mergedVars, tokenizedCount, skippedCount }.
  */
-function readTemplates(templateName) {
-  const templateDir = join("templates", templateName);
-  if (!existsSync(templateDir)) {
-    throw new Error(`Template directory not found: ${templateDir}`);
-  }
-
-  const objects = [];
-  const typeDirs = readdirSync(templateDir).filter((d) =>
-    statSync(join(templateDir, d)).isDirectory()
-  );
-
-  for (const objectType of typeDirs) {
-    const typeDir = join(templateDir, objectType);
-    for (const file of readdirSync(typeDir).filter((f) => f.endsWith(".json"))) {
-      let parsed;
-      try {
-        parsed = JSON.parse(readFileSync(join(typeDir, file), "utf-8"));
-      } catch {
-        console.warn(`  Warning: could not parse ${objectType}/${file}, skipping`);
-        continue;
-      }
-      objects.push({ objectType, fileName: file, content: parsed });
-    }
-  }
-
-  return objects;
-}
-
-// ---------------------------------------------------------------------------
-// create-template
-// ---------------------------------------------------------------------------
-
-function cmdCreateTemplate(tenant, templateName) {
-  console.log(`=== create-template: ${tenant} → templates/${templateName} ===`);
-  console.log();
-
-  const objects = readBackups(tenant);
-  console.log(`Read ${objects.length} backup file(s) from backups/${tenant}/`);
-
+function buildVarsFromObjects(objects) {
   const mergedVars = {};
-  let templateCount = 0;
+  let tokenizedCount = 0;
   let skippedCount = 0;
 
-  for (const { objectType, content } of objects) {
-    const { tokenized, tokenMap } = tokenizeObject(content);
+  for (const { content } of objects) {
+    const { tokenMap } = tokenizeObject(content);
 
     if (Object.keys(tokenMap).length === 0) {
       skippedCount++;
       continue;
     }
 
-    // Check for token name collisions with previously collected vars
     for (const [tokenName, value] of Object.entries(tokenMap)) {
-      if (tokenName in mergedVars && mergedVars[tokenName] !== value) {
+      if (
+        tokenName in mergedVars &&
+        JSON.stringify(mergedVars[tokenName]) !== JSON.stringify(value)
+      ) {
         console.warn(
-          `  Warning: token name collision for ${tokenName} ` +
-            `(keeping first value "${mergedVars[tokenName]}", discarding "${value}")`
+          `  Warning: token collision for ${tokenName} — keeping first value`
         );
       } else {
         mergedVars[tokenName] = value;
       }
     }
-
-    const fileName = templateFileName(content);
-    const outDir = join("templates", templateName, objectType);
-    mkdirSync(outDir, { recursive: true });
-
-    const outPath = join(outDir, fileName);
-    writeFileSync(outPath, JSON.stringify(tokenized, null, 2) + "\n");
-    console.log(`  Wrote ${objectType}/${fileName}  (${Object.keys(tokenMap).length} token(s))`);
-    templateCount++;
+    tokenizedCount++;
   }
 
-  if (Object.keys(mergedVars).length > 0) {
-    mkdirSync("vars", { recursive: true });
-    const varsPath = join("vars", `${tenant}.vars.yaml`);
-    writeFileSync(varsPath, varsToYaml(mergedVars, tenant));
-    console.log();
-    console.log(`Wrote vars/${tenant}.vars.yaml  (${Object.keys(mergedVars).length} token(s))`);
+  return { mergedVars, tokenizedCount, skippedCount };
+}
+
+/**
+ * Write vars to disk and print a summary line.
+ */
+function writeVars(tenant, mergedVars) {
+  mkdirSync("vars", { recursive: true });
+  const varsPath = join("vars", `${tenant}.vars.yaml`);
+  writeFileSync(varsPath, varsToYaml(mergedVars, tenant));
+  console.log(`Wrote vars/${tenant}.vars.yaml  (${Object.keys(mergedVars).length} token(s))`);
+}
+
+// ---------------------------------------------------------------------------
+// seed-vars
+// ---------------------------------------------------------------------------
+
+function cmdSeedVars(tenant) {
+  console.log(`=== seed-vars: backups/${tenant}/ → vars/${tenant}.vars.yaml ===`);
+  console.log();
+
+  const objects = readBackups(tenant);
+  console.log(`Read ${objects.length} backup file(s) from backups/${tenant}/`);
+  console.log();
+
+  const { mergedVars, tokenizedCount, skippedCount } = buildVarsFromObjects(objects);
+
+  if (Object.keys(mergedVars).length === 0) {
+    console.log("No tokenizable fields found — vars file not written.");
+    return;
   }
 
+  writeVars(tenant, mergedVars);
   console.log();
   console.log(
-    `Done: ${templateCount} template file(s) written, ${skippedCount} object(s) had no tokenizable fields`
+    `Done: ${tokenizedCount} object(s) contributed tokens, ` +
+      `${skippedCount} had no tokenizable fields`
   );
 }
 
@@ -216,61 +164,62 @@ function cmdCreateTemplate(tenant, templateName) {
 // find-tokens
 // ---------------------------------------------------------------------------
 
-function cmdFindTokens(tenant, templateName) {
-  console.log(`=== find-tokens: templates/${templateName} × backups/${tenant} ===`);
+function cmdFindTokens(targetTenant, sourceTenant) {
+  console.log(
+    `=== find-tokens: backups/${sourceTenant}/ → backups/${targetTenant}/ ===`
+  );
   console.log();
 
-  const templates = readTemplates(templateName);
-  console.log(`Loaded ${templates.length} template file(s) from templates/${templateName}/`);
+  const sourceObjects = readBackups(sourceTenant);
+  console.log(`Source: ${sourceObjects.length} object(s) in backups/${sourceTenant}/`);
 
-  const backupDir = join("backups", tenant);
-  if (!existsSync(backupDir)) {
-    throw new Error(`Backup directory not found: ${backupDir}`);
+  const targetBackupDir = join("backups", targetTenant);
+  if (!existsSync(targetBackupDir)) {
+    throw new Error(`Target backup directory not found: ${targetBackupDir}`);
   }
 
   const mergedVars = {};
   let matchedCount = 0;
   let unmatchedCount = 0;
 
-  for (const { objectType, fileName, content: templateContent } of templates) {
-    const selfName = templateContent?.self?.name;
-    const selfType = templateContent?.self?.type ?? objectType;
+  for (const { content: sourceContent } of sourceObjects) {
+    const name = sourceContent?.self?.name;
+    const type = sourceContent?.self?.type;
 
-    if (!selfName) {
-      console.warn(`  Warning: template ${objectType}/${fileName} has no self.name, skipping`);
-      unmatchedCount++;
-      continue;
-    }
+    if (!name || !type) continue;
 
-    // For LIFECYCLE_STATE, also match on the parent identity profile name
-    // (encoded in the composite filename as "<profileName>-<stateName>.json")
+    // For LIFECYCLE_STATE, disambiguate same-named states in different profiles
     const profileHint =
-      selfType === "LIFECYCLE_STATE"
-        ? templateContent?.object?.identityProfileRef?.name
+      type === "LIFECYCLE_STATE"
+        ? sourceContent?.object?.identityProfileRef?.name
         : undefined;
 
-    const match = matchBackupByName(backupDir, selfType, selfName, profileHint);
+    const match = matchBackupByName(targetBackupDir, type, name, profileHint);
     if (!match) {
       console.warn(
-        `  No match in backups/${tenant}/ for ${selfType} "${selfName}" (from ${objectType}/${fileName})`
+        `  No match in backups/${targetTenant}/ for ${type} "${name}"`
       );
       unmatchedCount++;
       continue;
     }
 
-    const extracted = extractTokenValues(templateContent, match.parsed);
-    const tokenCount = Object.keys(extracted).length;
+    // Tokenize the matched target object — since self.name and self.type are
+    // the same, the derived token names will be identical to those that would
+    // be generated from the source object.
+    const { tokenMap } = tokenizeObject(match.parsed);
+    const tokenCount = Object.keys(tokenMap).length;
 
-    if (tokenCount === 0) {
-      console.log(`  ${selfType}/${fileName}  → matched "${selfName}" but extracted 0 tokens`);
-    } else {
-      console.log(`  ${selfType}/${fileName}  → matched "${selfName}"  (${tokenCount} token(s))`);
+    if (tokenCount > 0) {
+      console.log(`  ${type} "${name}"  →  matched  (${tokenCount} token(s))`);
     }
 
-    for (const [tokenName, value] of Object.entries(extracted)) {
-      if (tokenName in mergedVars && JSON.stringify(mergedVars[tokenName]) !== JSON.stringify(value)) {
+    for (const [tokenName, value] of Object.entries(tokenMap)) {
+      if (
+        tokenName in mergedVars &&
+        JSON.stringify(mergedVars[tokenName]) !== JSON.stringify(value)
+      ) {
         console.warn(
-          `  Warning: token collision for ${tokenName} — keeping previous value`
+          `  Warning: token collision for ${tokenName} — keeping first value`
         );
       } else {
         mergedVars[tokenName] = value;
@@ -279,22 +228,20 @@ function cmdFindTokens(tenant, templateName) {
     matchedCount++;
   }
 
-  if (Object.keys(mergedVars).length > 0) {
-    mkdirSync("vars", { recursive: true });
-    const varsPath = join("vars", `${tenant}.vars.yaml`);
-    writeFileSync(varsPath, varsToYaml(mergedVars, tenant));
-    console.log();
-    console.log(`Wrote vars/${tenant}.vars.yaml  (${Object.keys(mergedVars).length} token(s))`);
-  } else {
-    console.log();
+  console.log();
+
+  if (Object.keys(mergedVars).length === 0) {
     console.log("No tokens were extracted — vars file not written.");
+  } else {
+    writeVars(targetTenant, mergedVars);
   }
 
   if (unmatchedCount > 0) {
     console.log();
     console.log(
-      `${unmatchedCount} template(s) had no matching object in backups/${tenant}/. ` +
-        `Manually fill in their token values in vars/${tenant}.vars.yaml.`
+      `${unmatchedCount} object(s) from backups/${sourceTenant}/ had no name-matched ` +
+        `counterpart in backups/${targetTenant}/. ` +
+        `Manually add their token values to vars/${targetTenant}.vars.yaml.`
     );
   }
 
@@ -364,15 +311,14 @@ function cmdDiffTenants(tenantA, tenantB) {
     const nameB = objB.content?.self?.name;
     const typeB = objB.content?.self?.type ?? objB.objectType;
     const key = `${typeB}::${nameB}`;
-    const matchA = objectsA.find(
-      (a) => (a.content?.self?.type ?? a.objectType) + "::" + a.content?.self?.name === key
-    );
-    if (!matchA) onlyInB++;
+    if (!objectsA.some((a) => (a.content?.self?.type ?? a.objectType) + "::" + a.content?.self?.name === key)) {
+      onlyInB++;
+    }
   }
 
   console.log("--- Summary ---");
-  console.log(`  Identical (by name+type):     ${matchedCount}`);
-  console.log(`  Different (by name+type):     ${differentCount}`);
+  console.log(`  Identical (by name+type):  ${matchedCount}`);
+  console.log(`  Different (by name+type):  ${differentCount}`);
   console.log(`  Only in ${tenantA}:  ${onlyInA}`);
   console.log(`  Only in ${tenantB}:  ${onlyInB}`);
 }
@@ -386,57 +332,72 @@ function printUsage() {
   console.error("");
   console.error("Subcommands:");
   console.error("");
-  console.error("  create-template <tenant> [--template <name>]");
-  console.error("      Extract environment-specific values from backups/<tenant>/,");
-  console.error("      write tokenized templates to templates/<name>/ (default: 'default'),");
-  console.error("      and seed vars/<tenant>.vars.yaml with the actual values.");
+  console.error("  seed-vars <tenant>");
+  console.error("      Scan backups/<tenant>/, extract all environment-specific");
+  console.error("      field values, and write vars/<tenant>.vars.yaml.");
   console.error("");
-  console.error("  find-tokens <tenant> [--template <name>]");
-  console.error("      Match templates/<name>/ files to backups/<tenant>/ by self.name,");
-  console.error("      extract values at every {{TOKEN}} position, and write");
-  console.error("      vars/<tenant>.vars.yaml.");
+  console.error("  find-tokens <targetTenant> --source <sourceTenant>");
+  console.error("      Match each object in backups/<sourceTenant>/ to its");
+  console.error("      counterpart in backups/<targetTenant>/ by self.name +");
+  console.error("      self.type, extract the target values at every tokenizable");
+  console.error("      field, and write vars/<targetTenant>.vars.yaml.");
+  console.error("      Warns for objects present in source but absent in target.");
   console.error("");
   console.error("  diff-tenants <tenant-a> <tenant-b>");
-  console.error("      Compare two tenants' backups by name+type and print every field");
-  console.error("      that differs — useful for identifying token candidates.");
+  console.error("      Compare two tenants' backups by name+type and print every");
+  console.error("      field that differs — useful for discovering token candidates.");
   console.error("");
   console.error("Examples:");
-  console.error("  # Step 1: create a template set from an existing backup");
-  console.error("  node scripts/tokenize.mjs create-template beta-15156 --template default");
+  console.error("  # Seed a vars file from your own backup");
+  console.error("  node scripts/tokenize.mjs seed-vars beta-15156");
   console.error("");
-  console.error("  # Step 2: extract token values for a second tenant");
-  console.error("  node scripts/tokenize.mjs find-tokens production --template default");
+  console.error("  # Extract token values for a second tenant using your tenant as the reference");
+  console.error("  node scripts/tokenize.mjs find-tokens production --source beta-15156");
   console.error("");
   console.error("  # Discover token candidates between two tenants");
   console.error("  node scripts/tokenize.mjs diff-tenants beta-15156 production");
   console.error("");
-  console.error("  # Restore a template to the current tenant with its vars");
-  console.error("  node scripts/restore.mjs local --tenant default --vars production");
+  console.error("  # Restore a backup with vars substituted");
+  console.error("  node --env-file=.env scripts/restore.mjs local --vars production");
 }
 
-const { subcommand, positional, templateName } = parseArgs();
+const { subcommand, positional, sourceTenant } = parseArgs();
 
 try {
   switch (subcommand) {
+    case "seed-vars":
     case "create-template": {
+      // create-template kept as an alias for backwards compatibility
+      if (subcommand === "create-template") {
+        console.warn(
+          "Note: 'create-template' is deprecated — use 'seed-vars' instead. " +
+            "Template files are no longer written; only the vars file is generated."
+        );
+        console.warn("");
+      }
       const tenant = positional[0];
       if (!tenant) {
-        console.error("Error: create-template requires a <tenant> argument");
+        console.error(`Error: ${subcommand} requires a <tenant> argument`);
         printUsage();
         process.exit(1);
       }
-      cmdCreateTemplate(tenant, templateName);
+      cmdSeedVars(tenant);
       break;
     }
 
     case "find-tokens": {
-      const tenant = positional[0];
-      if (!tenant) {
-        console.error("Error: find-tokens requires a <tenant> argument");
+      const targetTenant = positional[0];
+      if (!targetTenant) {
+        console.error("Error: find-tokens requires a <targetTenant> argument");
         printUsage();
         process.exit(1);
       }
-      cmdFindTokens(tenant, templateName);
+      if (!sourceTenant) {
+        console.error("Error: find-tokens requires --source <sourceTenant>");
+        printUsage();
+        process.exit(1);
+      }
+      cmdFindTokens(targetTenant, sourceTenant);
       break;
     }
 

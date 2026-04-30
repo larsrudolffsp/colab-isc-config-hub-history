@@ -108,62 +108,50 @@ Settings are saved to browser localStorage for future sessions.
 
 ## Tokenization — Environment-Specific Values
 
-Tokenization lets you store environment-specific values (hostnames, URLs,
-credentials, SAML endpoints, email addresses, etc.) as `{{TOKEN}}` placeholders
-in reusable template files, then resolve them against a per-tenant variable file
-at restore time.
+Tokenization lets you override environment-specific values (hostnames, URLs,
+credentials, SAML endpoints, owner IDs, etc.) at restore time using a simple
+YAML vars file. No separate template files are needed — the scripts work
+directly against your backup files.
 
 ### How It Works
 
-1. **Template files** mirror the backup JSON envelope but with tokenized fields:
-   ```json
-   { "object": { "attributes": { "url": "{{SERVICENOW_TICKET_VEN03769_URL}}" } }, ... }
-   ```
-2. **Vars files** (`vars/<tenant>.vars.yaml`) hold the resolved values for each tenant:
+1. **Vars files** (`vars/<tenant>.vars.yaml`) hold environment-specific values keyed
+   by auto-generated token names derived from the object's `self.name` and field path:
    ```yaml
-   SERVICENOW_TICKET_VEN03769_URL: "https://ven03769.service-now.com/"
+   SRC_MY_SOURCE_HOST: "prod-host.example.com"
+   ROLE_MY_ROLE_OWNER_ID: "abc123-..."
    ```
-3. At restore time, `restore.mjs --vars <tenant>` substitutes every placeholder
-   before uploading to the SailPoint API.
+2. At restore time, `restore.mjs --vars <tenant>` tokenizes each backup object
+   inline, applies your overrides, and uploads only the resolved values.
+   Fields not listed in the vars file keep the values from the backup.
 
-The token format `{{UPPER_SNAKE_CASE}}` is deliberately distinct from ISC's own
-`{{$.path}}` workflow interpolation syntax, so there is no collision.
+Token names follow `TYPEABBR_OBJECTNAME_FIELDNAME` in `UPPER_SNAKE_CASE`, which
+is deliberately distinct from ISC's own `{{$.path}}` workflow interpolation syntax.
 
 ### Directory Layout
 
 ```
-templates/
-  default/
-    SOURCE/
-      new-features.json        ← tokenized, named by self.name
-    SERVICE_DESK_INTEGRATION/
-      ServiceNow-Ticket-ven03769.json
-    AUTH_ORG/
-      beta-15156.json
-    ...
+backups/
+  beta-15156/           ← raw backup files (source of truth)
 vars/
-  beta-15156.vars.yaml         ← resolved values for beta-15156
-  production.vars.yaml         ← resolved values for production
+  beta-15156.vars.yaml  ← resolved values for beta-15156
+  production.vars.yaml  ← resolved values for production
 ```
 
 ### Tokenization Script
 
 ```bash
-npm run tokenize -- <subcommand> [args]
-# or directly:
 node scripts/tokenize.mjs <subcommand> [args]
 ```
 
-#### `create-template <tenant> [--template <name>]`
+#### `seed-vars <tenant>`
 
-Read `backups/<tenant>/`, replace known environment-specific fields with
-`{{TOKEN}}` placeholders, write tokenized files to `templates/<name>/`
-(default template name: `default`), and seed `vars/<tenant>.vars.yaml`
-with the actual values from the source tenant.
+Scan `backups/<tenant>/`, discover all tokenizable field values, and write
+`vars/<tenant>.vars.yaml`. Run this once per tenant to create the vars file
+you'll edit and commit.
 
 ```bash
-node scripts/tokenize.mjs create-template beta-15156 --template default
-# → templates/default/SERVICE_DESK_INTEGRATION/ServiceNow-Ticket-ven03769.json
+node scripts/tokenize.mjs seed-vars beta-15156
 # → vars/beta-15156.vars.yaml
 ```
 
@@ -187,21 +175,22 @@ without touching source code (see [Customising Tokenizable Paths](#customising-t
 
 ¹ Handled by a compiled custom scanner, not configurable via `token-paths.json`.
 
-#### `find-tokens <tenant> [--template <name>]`
+#### `find-tokens <targetTenant> --source <sourceTenant>`
 
-Match each template file against `backups/<tenant>/` by `self.name` and
-`self.type`, extract the value at every `{{TOKEN}}` position, and write
-`vars/<tenant>.vars.yaml`. Use this to populate vars for a second tenant
-without manually editing the file.
+Match each object in `backups/<sourceTenant>/` to its counterpart in
+`backups/<targetTenant>/` by `self.name` + `self.type`, extract the
+environment-specific values at every tokenizable field, and write
+`vars/<targetTenant>.vars.yaml`. Use this to populate vars for a second
+tenant without manually editing the file.
 
 ```bash
-node scripts/tokenize.mjs find-tokens production --template default
+node scripts/tokenize.mjs find-tokens production --source beta-15156
 # → vars/production.vars.yaml
 ```
 
-Objects are matched by display name (`self.name`). If a template has no matching
-object in the target tenant's backup, a warning is printed and those tokens are
-left for manual entry.
+Objects are matched by display name (`self.name`). If an object in the source
+has no name-matched counterpart in the target, a warning is printed and those
+tokens are left for manual entry.
 
 #### `diff-tenants <tenant-a> <tenant-b>`
 
@@ -215,14 +204,15 @@ node scripts/tokenize.mjs diff-tenants beta-15156 production
 
 ### Restoring with Token Substitution
 
-Pass `--vars <tenant>` to `restore.mjs` to apply a vars file before uploading:
+Pass `--vars <tenant>` to `restore.mjs` to apply a vars file before uploading.
+Works with any backup source — raw backups are tokenized inline automatically:
 
 ```bash
-# Restore the default template set to the current tenant using production vars
-node --env-file=.env scripts/restore.mjs local --tenant default --vars production --full
+# Restore the current backup with vars substituted (only changed objects uploaded)
+node --env-file=.env scripts/restore.mjs local --vars production
 
-# Restore a standard backup with vars substituted (e.g. cross-env promotion)
-node --env-file=.env scripts/restore.mjs local --tenant beta-15156 --vars production
+# Restore a specific git ref with vars applied
+node --env-file=.env scripts/restore.mjs abc1234 --vars production
 ```
 
 > **Windows / PowerShell note:** Use `node --env-file=.env scripts/restore.mjs` directly
@@ -230,25 +220,19 @@ node --env-file=.env scripts/restore.mjs local --tenant beta-15156 --vars produc
 > flags. npm on Windows silently strips unknown `--flag` arguments even after the `--`
 > separator, so the flags never reach the script.
 
-When `--tenant` names a directory that does not exist under `backups/`, restore
-automatically looks in `templates/<name>/` instead.
-
 ### End-to-End Example
 
 ```bash
-# 1. Generate template + seed vars from an existing backup
-node scripts/tokenize.mjs create-template beta-15156 --template default
+# 1. Seed a vars file from your existing backup
+node scripts/tokenize.mjs seed-vars beta-15156
+# → vars/beta-15156.vars.yaml  (edit to fill any gaps, then commit)
 
-# 2. Edit vars/beta-15156.vars.yaml to fill in any gaps, then commit templates/
+# 2. For a second tenant, extract its values automatically
+node scripts/tokenize.mjs find-tokens production --source beta-15156
+# → vars/production.vars.yaml  (manually fill any unmatched tokens, then commit)
 
-# 3. For a new tenant, extract its values by matching against the template
-node scripts/tokenize.mjs find-tokens production --template default
-
-# 4. Manually fill any unmatched tokens in vars/production.vars.yaml
-
-# 5. Restore the template to production with its vars
-#    (use node directly on Windows — npm strips --flag args on PowerShell)
-node --env-file=.env scripts/restore.mjs local --tenant default --vars production --full
+# 3. Restore to production with its vars — only changed objects are uploaded
+node --env-file=.env scripts/restore.mjs local --tenant beta-15156 --vars production
 ```
 
 ### Customising Tokenizable Paths
