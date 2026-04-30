@@ -253,6 +253,22 @@ function cmdFindTokens(targetTenant, sourceTenant) {
 // diff-tenants
 // ---------------------------------------------------------------------------
 
+/**
+ * Build a lookup key for a backup object record.
+ * For LIFECYCLE_STATE, the self.name is not unique across identity profiles
+ * (e.g. every profile typically has "Active" and "Inactive" states), so we
+ * include identityProfileRef.name to make the key unambiguous.
+ */
+function objectKey(obj) {
+  const type = obj.content?.self?.type ?? obj.objectType;
+  const name = obj.content?.self?.name;
+  if (type === "LIFECYCLE_STATE") {
+    const profile = obj.content?.object?.identityProfileRef?.name;
+    if (profile) return `${type}::${profile}::${name}`;
+  }
+  return `${type}::${name}`;
+}
+
 function cmdDiffTenants(tenantA, tenantB) {
   console.log(`=== diff-tenants: ${tenantA}  vs  ${tenantB} ===`);
   console.log();
@@ -264,21 +280,20 @@ function cmdDiffTenants(tenantA, tenantB) {
   console.log(`${tenantB}: ${objectsB.length} object(s)`);
   console.log();
 
-  // Index tenant B by "type::name" for fast lookup
+  // Index tenant B by a unique key (includes profile name for LIFECYCLE_STATE)
   const indexB = new Map();
   for (const obj of objectsB) {
-    const key = `${obj.content?.self?.type}::${obj.content?.self?.name}`;
-    indexB.set(key, obj);
+    indexB.set(objectKey(obj), obj);
   }
 
+  const keysA = new Set();
   let matchedCount = 0;
   let differentCount = 0;
   let onlyInA = 0;
 
   for (const objA of objectsA) {
-    const nameA = objA.content?.self?.name;
-    const typeA = objA.content?.self?.type ?? objA.objectType;
-    const key = `${typeA}::${nameA}`;
+    const key = objectKey(objA);
+    keysA.add(key);
 
     const objB = indexB.get(key);
     if (!objB) {
@@ -286,6 +301,8 @@ function cmdDiffTenants(tenantA, tenantB) {
       continue;
     }
 
+    const typeA = objA.content?.self?.type ?? objA.objectType;
+    const nameA = objA.content?.self?.name;
     const diffs = deepDiff(objA.content, objB.content);
     if (diffs.length === 0) {
       matchedCount++;
@@ -308,12 +325,7 @@ function cmdDiffTenants(tenantA, tenantB) {
   // Objects only in tenant B
   let onlyInB = 0;
   for (const objB of objectsB) {
-    const nameB = objB.content?.self?.name;
-    const typeB = objB.content?.self?.type ?? objB.objectType;
-    const key = `${typeB}::${nameB}`;
-    if (!objectsA.some((a) => (a.content?.self?.type ?? a.objectType) + "::" + a.content?.self?.name === key)) {
-      onlyInB++;
-    }
+    if (!keysA.has(objectKey(objB))) onlyInB++;
   }
 
   console.log("--- Summary ---");
