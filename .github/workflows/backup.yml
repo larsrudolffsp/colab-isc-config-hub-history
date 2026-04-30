@@ -1,5 +1,5 @@
-# After this runs, use the "Generate / Refresh Templates and Vars" workflow
-# (tokenize.yml) to deliberately regenerate templates or refresh vars files.
+# Daily backup of ISC configuration, followed by an automatic refresh of
+# vars/<tenant>.vars.yaml so token values stay in sync with the latest backup.
 name: Daily ISC Backup
 
 on:
@@ -32,11 +32,19 @@ jobs:
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: node scripts/backup.mjs
 
+      - name: Refresh vars for backup tenant
+        env:
+          TENANT_URL: ${{ secrets.TENANT_URL }}
+        run: |
+          TENANT_NAME=$(node -e "console.log(new URL(process.env.TENANT_URL).hostname.split('.')[0])")
+          echo "Refreshing vars for tenant: $TENANT_NAME"
+          node scripts/tokenize.mjs seed-vars "$TENANT_NAME"
+
       - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add backups/
+          git add backups/ vars/
           if git diff --cached --quiet; then
             echo "No changes detected — skipping commit"
           else

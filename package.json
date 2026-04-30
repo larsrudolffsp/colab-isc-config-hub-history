@@ -5,6 +5,7 @@
   "scripts": {
     "backup": "node --env-file=.env scripts/backup.mjs",
     "restore": "node --env-file=.env scripts/restore.mjs",
-    "tokenize": "node scripts/tokenize.mjs"
+    "tokenize": "node scripts/tokenize.mjs",
+    "push-mappings": "node --env-file=.env scripts/push-mappings.mjs"
   }
 }

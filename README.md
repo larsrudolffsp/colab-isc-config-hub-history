@@ -220,6 +220,38 @@ node --env-file=.env scripts/restore.mjs abc1234 --vars production
 > flags. npm on Windows silently strips unknown `--flag` arguments even after the `--`
 > separator, so the flags never reach the script.
 
+### Pushing Mappings to Config Hub
+
+Instead of (or in addition to) substituting values client-side with `--vars`,
+you can register the substitutions directly in Config Hub as
+[Object Mappings](https://documentation.sailpoint.com/saas/help/confighub/config_hub_mapping.html).
+Config Hub then applies them automatically whenever a draft is created from an
+uploaded backup — no pre-processing of the JSON required.
+
+```bash
+# Register all source→target value differences as Config Hub Object Mappings
+node --env-file=.env scripts/push-mappings.mjs \
+  --source beta-15156 \
+  --target production
+```
+
+Options:
+
+| Flag | Description |
+|---|---|
+| `--source <tenant>` | Tenant whose backup values are mapped **from** (required) |
+| `--target <tenant>` | Tenant whose vars provide the **to** values (default: TENANT_URL tenant) |
+| `--source-org <org>` | `:sourceOrg` path in the Config Hub API (default: `--source` value). Use `"default"` for mappings not tied to a specific source backup |
+
+The script reads `backups/<sourceTenant>/` to discover the full set of
+tokenizable JSON paths, then compares `vars/<sourceTenant>.vars.yaml` against
+`vars/<targetTenant>.vars.yaml`. Any token whose value differs between the two
+files is registered as a mapping entry. Tokens with identical values and
+array-valued tokens (which need `--vars` at restore time) are skipped.
+Existing mappings are fetched first to avoid duplicates.
+
+> **API scope required:** The API client must have `sp:config-object-mapping:manage`.
+
 ### End-to-End Example
 
 ```bash
@@ -231,8 +263,14 @@ node scripts/tokenize.mjs seed-vars beta-15156
 node scripts/tokenize.mjs find-tokens production --source beta-15156
 # → vars/production.vars.yaml  (manually fill any unmatched tokens, then commit)
 
-# 3. Restore to production with its vars — only changed objects are uploaded
+# 3a. Restore with inline substitution (credentials + object refs both handled client-side)
 node --env-file=.env scripts/restore.mjs local --tenant beta-15156 --vars production
+
+# 3b. OR: push mappings to Config Hub, then upload the raw backup and let
+#     Config Hub handle all substitutions during draft creation
+node --env-file=.env scripts/push-mappings.mjs --source beta-15156 --target production
+node --env-file=.env scripts/restore.mjs local --tenant beta-15156
+#     → then create a draft from the uploaded backup in the Config Hub UI
 ```
 
 ### Customising Tokenizable Paths
