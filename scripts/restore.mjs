@@ -52,8 +52,7 @@ if (!source) {
   console.error("  <source>   A git ref (commit, tag, branch) or 'local' to read from disk");
   console.error("");
   console.error("Options:");
-  console.error("  --tenant <name>   Read backups from a different tenant folder (or a template");
-  console.error("                    set under templates/ if backups/<name> does not exist)");
+  console.error("  --tenant <name>   Read backups from a different tenant folder");
   console.error("                    (default: tenant from TENANT_URL in .env)");
   console.error("  --name <name>     Custom name for the backup in SailPoint");
   console.error("  --full            Upload the entire snapshot (skip semantic diff vs main)");
@@ -84,26 +83,16 @@ if (!source) {
   console.error("  # Full snapshot (no diff vs main)");
   console.error("  npm run restore -- abc1234 --full");
   console.error("");
-  console.error("  # Restore a tokenized template set with production vars");
-  console.error("  npm run restore -- local --tenant default --vars production --full");
+  console.error("  # Restore with vars substitution (cross-tenant values)");
+  console.error("  npm run restore -- local --tenant beta-15156 --vars production");
   process.exit(1);
 }
 
 const isLocal = source === "local";
 const resolvedTenant = sourceTenant || TENANT_NAME;
 
-/**
- * Resolve the local source directory for a tenant name.
- * Prefers backups/<tenant>; falls back to templates/<tenant> when the backup
- * folder does not exist on disk (only relevant for the 'local' source).
- */
 function resolveBackupDir(tenant) {
-  const backupsPath = join("backups", tenant);
-  if (existsSync(backupsPath)) return backupsPath;
-  const templatesPath = join("templates", tenant);
-  if (existsSync(templatesPath)) return templatesPath;
-  // Return the canonical backups path; errors surface in readBackupFromDisk
-  return backupsPath;
+  return join("backups", tenant);
 }
 
 const backupDir = resolveBackupDir(resolvedTenant);

@@ -365,16 +365,7 @@ const { subcommand, positional, sourceTenant } = parseArgs();
 
 try {
   switch (subcommand) {
-    case "seed-vars":
-    case "create-template": {
-      // create-template kept as an alias for backwards compatibility
-      if (subcommand === "create-template") {
-        console.warn(
-          "Note: 'create-template' is deprecated — use 'seed-vars' instead. " +
-            "Template files are no longer written; only the vars file is generated."
-        );
-        console.warn("");
-      }
+    case "seed-vars": {
       const tenant = positional[0];
       if (!tenant) {
         console.error(`Error: ${subcommand} requires a <tenant> argument`);
