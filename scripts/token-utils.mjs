@@ -183,27 +183,16 @@ export function nameToPrefix(name) {
 }
 
 /**
- * Make a display name safe for use as a filesystem filename.
- */
-export function sanitizeName(name) {
-  return String(name)
-    .replace(/[<>:"/\\|?*\x00-\x1f]/g, "-")
-    .replace(/-{2,}/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .trim() || "unnamed";
-}
-
-/**
  * Derive a descriptive field-name suffix from the tail of a path.
- * When the last key is exactly "id", prepend the parent key so the result
- * is e.g. "OWNER_ID" instead of just "ID".
+ * When the last key is "id" or "name", prepend the parent key so the result
+ * is e.g. "OWNER_ID" / "OWNER_NAME" instead of the ambiguous "ID" / "NAME".
  */
 function fieldSuffix(path) {
   const lastSeg = path[path.length - 1];
   const lastKey = String(lastSeg).toUpperCase().replace(/[^A-Z0-9]+/g, "_");
-  if (lastKey === "ID" && path.length >= 2) {
+  if ((lastKey === "ID" || lastKey === "NAME") && path.length >= 2) {
     const parentKey = String(path[path.length - 2]).toUpperCase().replace(/[^A-Z0-9]+/g, "_");
-    return `${parentKey}_ID`;
+    return `${parentKey}_${lastKey}`;
   }
   return lastKey;
 }
@@ -365,20 +354,27 @@ function getLifecycleStateTokenPaths(obj, prefix) {
     for (let j = 0; j < maxSources; j++) {
       const ref = sourceRefs[j];
       const sourceName = ref?.name ? nameToPrefix(ref.name) : `SOURCE_${j}`;
-      const tokenName = `${prefix}_${actionName}_${sourceName}_ID`;
+      const idTokenName = `${prefix}_${actionName}_${sourceName}_ID`;
+      const nameTokenName = `${prefix}_${actionName}_${sourceName}_NAME`;
 
       // accountActionRefs entry (has id + name)
       if (ref?.id) {
         results.push({
           path: ["object", "accountActionRefs", i, "sourceIdsRefs", j, "id"],
-          tokenName,
+          tokenName: idTokenName,
         });
       }
-      // accountActions entry (bare ID string — shares the same token)
+      if (ref?.name) {
+        results.push({
+          path: ["object", "accountActionRefs", i, "sourceIdsRefs", j, "name"],
+          tokenName: nameTokenName,
+        });
+      }
+      // accountActions entry (bare ID string — shares the same id token)
       if (sourceIds[j]) {
         results.push({
           path: ["object", "accountActions", i, "sourceIds", j],
-          tokenName,
+          tokenName: idTokenName,
         });
       }
     }
@@ -414,12 +410,20 @@ function getSdimTokenPaths(obj, prefix) {
 
   for (let i = 0; i < refs.length; i++) {
     const ref = refs[i];
-    if (!ref?.id) continue;
+    if (!ref?.id && !ref?.name) continue;
     const resourceName = ref.name ? nameToPrefix(ref.name) : `RESOURCE_${i}`;
-    results.push({
-      path: ["object", "provisioningConfig", "managedResourceRefs", i, "id"],
-      tokenName: `${prefix}_MANAGED_${resourceName}_ID`,
-    });
+    if (ref?.id) {
+      results.push({
+        path: ["object", "provisioningConfig", "managedResourceRefs", i, "id"],
+        tokenName: `${prefix}_MANAGED_${resourceName}_ID`,
+      });
+    }
+    if (ref?.name) {
+      results.push({
+        path: ["object", "provisioningConfig", "managedResourceRefs", i, "name"],
+        tokenName: `${prefix}_MANAGED_${resourceName}_NAME`,
+      });
+    }
   }
 
   return results;
@@ -447,13 +451,20 @@ function getIdentityProfileTokenPaths(obj, prefix) {
     if (!node || typeof node !== "object" || Array.isArray(node)) return;
 
     if (typeof node.sourceId === "string" && node.sourceId) {
-      let tokenName = sourceTokenMap.get(node.sourceId);
-      if (!tokenName) {
-        const srcLabel = node.sourceName ? nameToPrefix(node.sourceName) : "SOURCE";
-        tokenName = `${prefix}_${srcLabel}_SOURCE_ID`;
-        sourceTokenMap.set(node.sourceId, tokenName);
+      const srcLabel = node.sourceName ? nameToPrefix(node.sourceName) : "SOURCE";
+      let idTokenName = sourceTokenMap.get(node.sourceId);
+      if (!idTokenName) {
+        idTokenName = `${prefix}_${srcLabel}_SOURCE_ID`;
+        sourceTokenMap.set(node.sourceId, idTokenName);
       }
-      results.push({ path: [...pathSoFar, "sourceId"], tokenName });
+      results.push({ path: [...pathSoFar, "sourceId"], tokenName: idTokenName });
+      // Also tokenize the sibling sourceName so both are kept in sync
+      if (typeof node.sourceName === "string" && node.sourceName) {
+        results.push({
+          path: [...pathSoFar, "sourceName"],
+          tokenName: `${prefix}_${srcLabel}_SOURCE_NAME`,
+        });
+      }
       return;
     }
 
@@ -493,12 +504,157 @@ function getSodPolicyTokenPaths(obj, prefix) {
   const creatorRefId = obj?.object?.creatorRef?.id;
 
   if (creatorId || creatorRefId) {
-    const tokenName = `${prefix}_CREATOR_ID`;
+    const idTokenName = `${prefix}_CREATOR_ID`;
     if (creatorId) {
-      results.push({ path: ["object", "creatorId"], tokenName });
+      results.push({ path: ["object", "creatorId"], tokenName: idTokenName });
     }
     if (creatorRefId) {
-      results.push({ path: ["object", "creatorRef", "id"], tokenName });
+      results.push({ path: ["object", "creatorRef", "id"], tokenName: idTokenName });
+    }
+  }
+
+  const creatorRefName = obj?.object?.creatorRef?.name;
+  if (creatorRefName) {
+    results.push({
+      path: ["object", "creatorRef", "name"],
+      tokenName: `${prefix}_CREATOR_NAME`,
+    });
+  }
+
+  return results;
+}
+
+// ---------------------------------------------------------------------------
+// ROLE custom scanner
+// ---------------------------------------------------------------------------
+
+/**
+ * Scan a ROLE object's accessProfiles array and emit id+name tokens for each
+ * entry, keyed by the access profile's own name to survive array reordering.
+ */
+function getRoleTokenPaths(obj, prefix) {
+  const results = [];
+  const aps = obj?.object?.accessProfiles;
+  if (!Array.isArray(aps)) return results;
+
+  for (let i = 0; i < aps.length; i++) {
+    const ap = aps[i];
+    if (!ap?.id && !ap?.name) continue;
+    const apLabel = ap.name ? nameToPrefix(ap.name) : `AP_${i}`;
+    if (ap.id) {
+      results.push({
+        path: ["object", "accessProfiles", i, "id"],
+        tokenName: `${prefix}_AP_${apLabel}_ID`,
+      });
+    }
+    if (ap.name) {
+      results.push({
+        path: ["object", "accessProfiles", i, "name"],
+        tokenName: `${prefix}_AP_${apLabel}_NAME`,
+      });
+    }
+  }
+
+  return results;
+}
+
+// ---------------------------------------------------------------------------
+// GOVERNANCE_GROUP custom scanner
+// ---------------------------------------------------------------------------
+
+/**
+ * Scan a GOVERNANCE_GROUP object's members array and emit id+name tokens for
+ * each member identity, keyed by the member's username/name.
+ */
+function getGovernanceGroupTokenPaths(obj, prefix) {
+  const results = [];
+  const members = obj?.object?.members;
+  if (!Array.isArray(members)) return results;
+
+  for (let i = 0; i < members.length; i++) {
+    const member = members[i];
+    if (!member?.id && !member?.name) continue;
+    const memberLabel = member.name ? nameToPrefix(member.name) : `MEMBER_${i}`;
+    if (member.id) {
+      results.push({
+        path: ["object", "members", i, "id"],
+        tokenName: `${prefix}_MEMBER_${memberLabel}_ID`,
+      });
+    }
+    if (member.name) {
+      results.push({
+        path: ["object", "members", i, "name"],
+        tokenName: `${prefix}_MEMBER_${memberLabel}_NAME`,
+      });
+    }
+  }
+
+  return results;
+}
+
+// ---------------------------------------------------------------------------
+// ACCESS_PROFILE custom scanner
+// ---------------------------------------------------------------------------
+
+/**
+ * Scan an ACCESS_PROFILE object's entitlements array and emit id+name tokens
+ * for each entitlement ref, keyed by the entitlement name.
+ */
+function getAccessProfileEntitlementTokenPaths(obj, prefix) {
+  const results = [];
+  const entitlements = obj?.object?.entitlements;
+  if (!Array.isArray(entitlements)) return results;
+
+  for (let i = 0; i < entitlements.length; i++) {
+    const ent = entitlements[i];
+    if (!ent?.id && !ent?.name) continue;
+    const entLabel = ent.name ? nameToPrefix(ent.name) : `ENT_${i}`;
+    if (ent.id) {
+      results.push({
+        path: ["object", "entitlements", i, "id"],
+        tokenName: `${prefix}_ENT_${entLabel}_ID`,
+      });
+    }
+    if (ent.name) {
+      results.push({
+        path: ["object", "entitlements", i, "name"],
+        tokenName: `${prefix}_ENT_${entLabel}_NAME`,
+      });
+    }
+  }
+
+  return results;
+}
+
+// ---------------------------------------------------------------------------
+// TAG custom scanner
+// ---------------------------------------------------------------------------
+
+/**
+ * Scan a TAG object's taggedObjects array and emit id+name tokens for each
+ * tagged object ref, keyed by type+name to avoid collisions across types.
+ */
+function getTagTokenPaths(obj, prefix) {
+  const results = [];
+  const tagged = obj?.object?.taggedObjects;
+  if (!Array.isArray(tagged)) return results;
+
+  for (let i = 0; i < tagged.length; i++) {
+    const ref = tagged[i];
+    if (!ref?.id && !ref?.name) continue;
+    const typeLabel = ref.type ? nameToPrefix(ref.type) : `OBJ`;
+    const objLabel = ref.name ? nameToPrefix(ref.name) : `OBJECT_${i}`;
+    if (ref.id) {
+      results.push({
+        path: ["object", "taggedObjects", i, "id"],
+        tokenName: `${prefix}_${typeLabel}_${objLabel}_ID`,
+      });
+    }
+    if (ref.name) {
+      results.push({
+        path: ["object", "taggedObjects", i, "name"],
+        tokenName: `${prefix}_${typeLabel}_${objLabel}_NAME`,
+      });
     }
   }
 
@@ -559,6 +715,18 @@ export function getTokenPaths(obj) {
   }
   if (type === "SOD_POLICY") {
     results.push(...getSodPolicyTokenPaths(obj, prefix));
+  }
+  if (type === "ROLE") {
+    results.push(...getRoleTokenPaths(obj, prefix));
+  }
+  if (type === "GOVERNANCE_GROUP") {
+    results.push(...getGovernanceGroupTokenPaths(obj, prefix));
+  }
+  if (type === "ACCESS_PROFILE") {
+    results.push(...getAccessProfileEntitlementTokenPaths(obj, prefix));
+  }
+  if (type === "TAG") {
+    results.push(...getTagTokenPaths(obj, prefix));
   }
 
   return results;
@@ -651,58 +819,6 @@ export function applyTokens(obj, vars) {
   }
 
   return JSON.parse(jsonStr);
-}
-
-// ---------------------------------------------------------------------------
-// Cross-tenant token extraction: template + backup → vars
-// ---------------------------------------------------------------------------
-
-/**
- * Recursively walk both a template object (with {{TOKEN}} placeholders) and a
- * matching backup object to extract { tokenName: actualValue } pairs.
- */
-export function extractTokenValues(templateObj, backupObj) {
-  const vars = {};
-
-  function walk(tmpl, backup) {
-    if (backup === undefined || backup === null) return;
-
-    // Scalar token placeholder: "{{TOKEN_NAME}}"
-    if (typeof tmpl === "string" && /^\{\{[A-Z][A-Z0-9_]*\}\}$/.test(tmpl)) {
-      const tokenName = tmpl.slice(2, -2);
-      vars[tokenName] = backup;
-      return;
-    }
-
-    // Array token placeholder: ["{{TOKEN_NAME}}"]
-    if (
-      Array.isArray(tmpl) &&
-      tmpl.length === 1 &&
-      typeof tmpl[0] === "string" &&
-      /^\{\{[A-Z][A-Z0-9_]*\}\}$/.test(tmpl[0])
-    ) {
-      const tokenName = tmpl[0].slice(2, -2);
-      if (Array.isArray(backup)) {
-        vars[tokenName] = backup;
-      }
-      return;
-    }
-
-    if (Array.isArray(tmpl) && Array.isArray(backup)) {
-      const len = Math.min(tmpl.length, backup.length);
-      for (let i = 0; i < len; i++) walk(tmpl[i], backup[i]);
-      return;
-    }
-
-    if (tmpl !== null && typeof tmpl === "object" && typeof backup === "object") {
-      for (const key of Object.keys(tmpl)) {
-        if (key in backup) walk(tmpl[key], backup[key]);
-      }
-    }
-  }
-
-  walk(templateObj, backupObj);
-  return vars;
 }
 
 // ---------------------------------------------------------------------------

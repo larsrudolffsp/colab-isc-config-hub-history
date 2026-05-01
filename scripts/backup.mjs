@@ -83,6 +83,12 @@ async function pollExport(jobId) {
     if (status === "FAILED") {
       throw new Error(`Export failed:\n${JSON.stringify(data, null, 2)}`);
     }
+    if (status === "FAILED_EXTERNAL_COMMUNICATION") {
+      throw new Error(
+        `Export failed due to an external communication error (tenant may be unreachable):\n` +
+          JSON.stringify(data, null, 2)
+      );
+    }
     if (status === "CANCELLED") {
       throw new Error("Export was cancelled");
     }
@@ -98,6 +104,17 @@ async function pollExport(jobId) {
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
+
+/**
+ * Sanitize an object ID so it is safe to use as a filename on all platforms.
+ * The colon character is valid on POSIX but reserved on Windows (NTFS
+ * alternate data streams), so composite IDs like "<uuid>:<uuid>" must be
+ * encoded.  We replace ':' with '+', which is safe on Windows, macOS, and
+ * Linux and will not appear in standard ISC UUIDs.
+ */
+function safeFilename(id) {
+  return String(id).replace(/:/g, "+");
+}
 
 /**
  * Build a set of all existing backup file paths (relative to BACKUP_DIR)
@@ -176,7 +193,7 @@ async function downloadObjects(jobId) {
     const itemWithJws = normalizeExportItem(item);
     const newContent = JSON.stringify(canonicalize(itemWithJws), null, 2) + "\n";
 
-    const relPath = join(objectType, `${objectId}.json`);
+    const relPath = join(objectType, `${safeFilename(objectId)}.json`);
     const filePath = join(BACKUP_DIR, relPath);
     seenFiles.add(relPath);
 

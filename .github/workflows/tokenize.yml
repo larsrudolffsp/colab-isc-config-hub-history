@@ -1,21 +1,29 @@
-name: Generate / Refresh Templates and Vars
+name: Refresh Vars / Push Mappings
 
 on:
   workflow_dispatch:
     inputs:
       command:
-        description: 'Tokenization command to run'
+        description: 'Command to run'
         required: true
-        default: 'find-tokens'
+        default: 'seed-vars'
         type: choice
         options:
-          - find-tokens       # Refresh vars for the backup tenant (safe to re-run)
-          - create-template   # (Re-)generate tokenized templates from latest backup
-          - both              # Run create-template then find-tokens
-      template_set:
-        description: 'Template set name (used by create-template)'
+          - seed-vars      # Reseed vars/<tenant>.vars.yaml from the current backup
+          - find-tokens    # Extract vars for a target tenant by matching a source tenant's backup
+          - push-mappings  # Push source→target value substitutions to Config Hub Object Mappings API
+      source_tenant:
+        description: 'Source tenant — required for find-tokens and push-mappings'
         required: false
-        default: 'default'
+        default: ''
+      target_tenant:
+        description: 'Target tenant — leave blank to use the TENANT_URL tenant (find-tokens / push-mappings)'
+        required: false
+        default: ''
+      source_org:
+        description: 'Config Hub sourceOrg for push-mappings (default: source_tenant value; use "default" for org-independent mappings)'
+        required: false
+        default: ''
 
 permissions:
   contents: write
@@ -35,39 +43,65 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Run create-template
-        if: ${{ inputs.command == 'create-template' || inputs.command == 'both' }}
+      - name: Resolve current tenant name from TENANT_URL
+        id: tenant
         env:
           TENANT_URL: ${{ secrets.TENANT_URL }}
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
-          echo "Generating tokenized templates into templates/${{ inputs.template_set }}/ ..."
-          node scripts/tokenize.mjs create-template \
-            --template-set "${{ inputs.template_set }}"
+          NAME=$(node -e "console.log(new URL(process.env.TENANT_URL).hostname.split('.')[0])")
+          echo "name=$NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Run seed-vars
+        if: ${{ inputs.command == 'seed-vars' }}
+        run: |
+          echo "Seeding vars for tenant: ${{ steps.tenant.outputs.name }}"
+          node scripts/tokenize.mjs seed-vars "${{ steps.tenant.outputs.name }}"
 
       - name: Run find-tokens
-        if: ${{ inputs.command == 'find-tokens' || inputs.command == 'both' }}
+        if: ${{ inputs.command == 'find-tokens' }}
+        run: |
+          SOURCE="${{ inputs.source_tenant }}"
+          if [ -z "$SOURCE" ]; then
+            echo "Error: 'source_tenant' is required when running find-tokens"
+            exit 1
+          fi
+          TARGET="${{ inputs.target_tenant }}"
+          if [ -z "$TARGET" ]; then
+            TARGET="${{ steps.tenant.outputs.name }}"
+          fi
+          echo "Running find-tokens: backups/$SOURCE/ → vars/$TARGET.vars.yaml"
+          node scripts/tokenize.mjs find-tokens "$TARGET" --source "$SOURCE"
+
+      - name: Run push-mappings
+        if: ${{ inputs.command == 'push-mappings' }}
         env:
           TENANT_URL: ${{ secrets.TENANT_URL }}
           CLIENT_ID: ${{ secrets.CLIENT_ID }}
           CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
-          echo "Refreshing vars for backup tenant ..."
-          node scripts/tokenize.mjs find-tokens \
-            --template-set "${{ inputs.template_set }}"
+          SOURCE="${{ inputs.source_tenant }}"
+          if [ -z "$SOURCE" ]; then
+            echo "Error: 'source_tenant' is required when running push-mappings"
+            exit 1
+          fi
+          TARGET="${{ inputs.target_tenant }}"
+          SOURCE_ORG="${{ inputs.source_org }}"
+          echo "Running push-mappings: source=$SOURCE target=${TARGET:-<from TENANT_URL>} source-org=${SOURCE_ORG:-$SOURCE}"
+          node scripts/push-mappings.mjs \
+            --source "$SOURCE" \
+            ${TARGET:+--target "$TARGET"} \
+            ${SOURCE_ORG:+--source-org "$SOURCE_ORG"}
 
       - name: Commit and push changes
+        # push-mappings writes nothing to disk — only seed-vars and find-tokens produce file changes
+        if: ${{ inputs.command != 'push-mappings' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add templates/ vars/
+          git add vars/
           if git diff --cached --quiet; then
             echo "No changes detected — skipping commit"
           else
-            git commit -m "tokenize: refresh templates/vars (${{ inputs.command }}, set=${{ inputs.template_set }})"
+            git commit -m "tokenize: refresh vars (${{ inputs.command }})"
             git push
           fi
