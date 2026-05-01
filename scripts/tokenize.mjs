@@ -22,6 +22,7 @@ import { writeFileSync, mkdirSync, readdirSync, readFileSync, existsSync, statSy
 import { join, basename } from "path";
 import {
   tokenizeObject,
+  getTokenPaths,
   matchBackupByName,
   varsToYaml,
   deepDiff,
@@ -287,8 +288,9 @@ function cmdDiffTenants(tenantA, tenantB) {
   }
 
   const keysA = new Set();
-  let matchedCount = 0;
-  let differentCount = 0;
+  let identicalCount = 0;
+  let tokenizedOnlyCount = 0;
+  let hasUntokenizedCount = 0;
   let onlyInA = 0;
 
   for (const objA of objectsA) {
@@ -303,22 +305,55 @@ function cmdDiffTenants(tenantA, tenantB) {
 
     const typeA = objA.content?.self?.type ?? objA.objectType;
     const nameA = objA.content?.self?.name;
-    const diffs = deepDiff(objA.content, objB.content);
-    if (diffs.length === 0) {
-      matchedCount++;
+    const allDiffs = deepDiff(objA.content, objB.content);
+
+    if (allDiffs.length === 0) {
+      identicalCount++;
       continue;
     }
 
-    differentCount++;
-    console.log(`${typeA}  "${nameA}":`);
-    for (const { path, valueA, valueB } of diffs) {
-      const pathStr = path.join(".");
-      const vA = valueA === undefined ? "(missing)" : JSON.stringify(valueA);
-      const vB = valueB === undefined ? "(missing)" : JSON.stringify(valueB);
-      console.log(`  ${pathStr}`);
-      console.log(`    ${tenantA}: ${vA}`);
-      console.log(`    ${tenantB}: ${vB}`);
+    // Build a set of paths that are already covered by token-paths.json /
+    // custom scanners so we can split the diffs into two buckets.
+    const coveredPaths = new Set(
+      getTokenPaths(objA.content).map(({ path }) => JSON.stringify(path))
+    );
+
+    const tokenizedDiffs = allDiffs.filter(({ path }) => coveredPaths.has(JSON.stringify(path)));
+    const untokenizedDiffs = allDiffs.filter(({ path }) => !coveredPaths.has(JSON.stringify(path)));
+
+    if (untokenizedDiffs.length === 0) {
+      // All differences are already handled by the tokenization config.
+      tokenizedOnlyCount++;
+      console.log(
+        `[tokenized] ${typeA}  "${nameA}":  ` +
+          `${tokenizedDiffs.length} difference(s) — all covered by token paths`
+      );
+      continue;
     }
+
+    // At least one diff is NOT yet covered — highlight it.
+    hasUntokenizedCount++;
+    console.log(`[NEEDS TOKENS] ${typeA}  "${nameA}":`);
+
+    if (untokenizedDiffs.length > 0) {
+      console.log(`  !! Not yet tokenized (${untokenizedDiffs.length}):`);
+      for (const { path, valueA, valueB } of untokenizedDiffs) {
+        const pathStr = path.join(".");
+        const vA = valueA === undefined ? "(missing)" : JSON.stringify(valueA);
+        const vB = valueB === undefined ? "(missing)" : JSON.stringify(valueB);
+        console.log(`    ${pathStr}`);
+        console.log(`      ${tenantA}: ${vA}`);
+        console.log(`      ${tenantB}: ${vB}`);
+      }
+    }
+
+    if (tokenizedDiffs.length > 0) {
+      console.log(`  -- Already tokenized (${tokenizedDiffs.length}):`);
+      for (const { path } of tokenizedDiffs) {
+        console.log(`    ${path.join(".")}`);
+      }
+    }
+
     console.log();
   }
 
@@ -329,10 +364,18 @@ function cmdDiffTenants(tenantA, tenantB) {
   }
 
   console.log("--- Summary ---");
-  console.log(`  Identical (by name+type):  ${matchedCount}`);
-  console.log(`  Different (by name+type):  ${differentCount}`);
+  console.log(`  Identical:                 ${identicalCount}`);
+  console.log(`  Diffs — all tokenized:     ${tokenizedOnlyCount}`);
+  console.log(`  Diffs — needs token paths: ${hasUntokenizedCount}`);
   console.log(`  Only in ${tenantA}:  ${onlyInA}`);
   console.log(`  Only in ${tenantB}:  ${onlyInB}`);
+  if (hasUntokenizedCount > 0) {
+    console.log();
+    console.log(
+      `Tip: add the "!! Not yet tokenized" paths above to token-paths.json ` +
+        `(or as custom scanners in token-utils.mjs for dynamic/array paths).`
+    );
+  }
 }
 
 // ---------------------------------------------------------------------------

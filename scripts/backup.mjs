@@ -83,6 +83,12 @@ async function pollExport(jobId) {
     if (status === "FAILED") {
       throw new Error(`Export failed:\n${JSON.stringify(data, null, 2)}`);
     }
+    if (status === "FAILED_EXTERNAL_COMMUNICATION") {
+      throw new Error(
+        `Export failed due to an external communication error (tenant may be unreachable):\n` +
+          JSON.stringify(data, null, 2)
+      );
+    }
     if (status === "CANCELLED") {
       throw new Error("Export was cancelled");
     }
