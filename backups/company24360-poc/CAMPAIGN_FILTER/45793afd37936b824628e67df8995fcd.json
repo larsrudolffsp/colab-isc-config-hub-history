@@ -1,0 +1,169 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "criteriaList": [
+      {
+        "children": [
+          {
+            "children": null,
+            "id": null,
+            "negateResult": false,
+            "operation": "EQUALS",
+            "property": "application",
+            "recordChildMatches": false,
+            "shortCircuit": false,
+            "suppressMatchedItems": false,
+            "type": "SOURCE",
+            "value": "Active Directory"
+          },
+          {
+            "children": null,
+            "id": null,
+            "negateResult": false,
+            "operation": "EQUALS",
+            "property": "attribute.objectguid",
+            "recordChildMatches": false,
+            "shortCircuit": false,
+            "suppressMatchedItems": false,
+            "type": "ACCOUNT",
+            "value": "{09db3abc-4ec9-454f-a53c-bc59bbeef282}"
+          }
+        ],
+        "id": "",
+        "negateResult": false,
+        "operation": "AND",
+        "property": "objectguid",
+        "recordChildMatches": false,
+        "shortCircuit": false,
+        "suppressMatchedItems": false,
+        "type": "COMPOSITE",
+        "value": "{09db3abc-4ec9-454f-a53c-bc59bbeef282}"
+      },
+      {
+        "children": [
+          {
+            "children": null,
+            "id": null,
+            "negateResult": false,
+            "operation": "EQUALS",
+            "property": "application",
+            "recordChildMatches": false,
+            "shortCircuit": false,
+            "suppressMatchedItems": false,
+            "type": "SOURCE",
+            "value": "Entra ID - tessailpoint"
+          },
+          {
+            "children": null,
+            "id": null,
+            "negateResult": false,
+            "operation": "EQUALS",
+            "property": "attribute.objectId",
+            "recordChildMatches": false,
+            "shortCircuit": false,
+            "suppressMatchedItems": false,
+            "type": "ACCOUNT",
+            "value": "162b091e-b70e-46f8-ad43-50241fc2892c:08d6b12b-3b99-4980-a8a7-d70b5d5ca85e"
+          }
+        ],
+        "id": "",
+        "negateResult": false,
+        "operation": "AND",
+        "property": "objectId",
+        "recordChildMatches": false,
+        "shortCircuit": false,
+        "suppressMatchedItems": false,
+        "type": "COMPOSITE",
+        "value": "162b091e-b70e-46f8-ad43-50241fc2892c:08d6b12b-3b99-4980-a8a7-d70b5d5ca85e"
+      },
+      {
+        "children": [
+          {
+            "children": null,
+            "id": null,
+            "negateResult": false,
+            "operation": "EQUALS",
+            "property": "application",
+            "recordChildMatches": false,
+            "shortCircuit": false,
+            "suppressMatchedItems": false,
+            "type": "SOURCE",
+            "value": "Entra ID - tessailpoint"
+          },
+          {
+            "children": null,
+            "id": null,
+            "negateResult": false,
+            "operation": "EQUALS",
+            "property": "attribute.objectId",
+            "recordChildMatches": false,
+            "shortCircuit": false,
+            "suppressMatchedItems": false,
+            "type": "ACCOUNT",
+            "value": "f8dff17f-bc80-4698-864a-a428da627dd7:EXT"
+          }
+        ],
+        "id": "",
+        "negateResult": false,
+        "operation": "AND",
+        "property": "objectId",
+        "recordChildMatches": false,
+        "shortCircuit": false,
+        "suppressMatchedItems": false,
+        "type": "COMPOSITE",
+        "value": "f8dff17f-bc80-4698-864a-a428da627dd7:EXT"
+      },
+      {
+        "children": [
+          {
+            "children": null,
+            "id": null,
+            "negateResult": false,
+            "operation": "EQUALS",
+            "property": "application",
+            "recordChildMatches": false,
+            "shortCircuit": false,
+            "suppressMatchedItems": false,
+            "type": "SOURCE",
+            "value": "Google Workspace - sailpointtechnologies"
+          },
+          {
+            "children": null,
+            "id": null,
+            "negateResult": false,
+            "operation": "EQUALS",
+            "property": "attribute.objectID",
+            "recordChildMatches": false,
+            "shortCircuit": false,
+            "suppressMatchedItems": false,
+            "type": "ACCOUNT",
+            "value": "serviceAccount:101579506529979508601"
+          }
+        ],
+        "id": "",
+        "negateResult": false,
+        "operation": "AND",
+        "property": "objectID",
+        "recordChildMatches": false,
+        "shortCircuit": false,
+        "suppressMatchedItems": false,
+        "type": "COMPOSITE",
+        "value": "serviceAccount:101579506529979508601"
+      }
+    ],
+    "description": "Infra Health Monitor Agent - Outbound",
+    "id": "45793afd37936b824628e67df8995fcd",
+    "isSystemFilter": false,
+    "migrationStatus": "TO_BE_MIGRATED",
+    "mode": "INCLUSION",
+    "name": "Infra Health Monitor Agent - Outbound",
+    "owner": "lars.rudolff"
+  },
+  "self": {
+    "id": "45793afd37936b824628e67df8995fcd",
+    "name": "Infra Health Monitor Agent - Outbound",
+    "type": "CAMPAIGN_FILTER"
+  },
+  "version": 1
+}

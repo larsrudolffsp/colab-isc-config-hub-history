@@ -1,0 +1,61 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:16:25.755861Z",
+    "description": "Grants basic access for everyone in the sale department",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "240259b5d9063325801aff3df4cf8cca",
+        "name": "Salesforce opportunity management",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "7382a45a25ac3b829d571b908726a66a",
+        "name": "Sales-Folder",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "df1a0e393358307f9d736dcb3129aa0c",
+        "name": "Salesforce Access",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "5572c89a1c954275bbe9732224691203",
+    "modified": "2026-08-15T14:16:25.755861Z",
+    "name": "SalesCommonAccess",
+    "owner": {
+      "id": "a401559ae4df445990c1de37ef846ed6",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": true,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "86b2cca134d8401097e09dca3b38e91a",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "5572c89a1c954275bbe9732224691203",
+    "name": "SalesCommonAccess",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

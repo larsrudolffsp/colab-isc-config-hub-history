@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "active": false,
+    "created": "2026-08-15T14:27:25.496689Z",
+    "description": "Employees based in Austin",
+    "id": "ab74b004-5f46-400d-9dce-cff4b417ee3f",
+    "modified": "2026-08-19T06:40:54.411073Z",
+    "name": "Austin Employees",
+    "owner": null,
+    "visibilityCriteria": {
+      "expression": {
+        "attribute": "city",
+        "children": null,
+        "operator": "EQUALS",
+        "value": {
+          "type": "STRING",
+          "value": "Austin"
+        }
+      }
+    }
+  },
+  "self": {
+    "id": "ab74b004-5f46-400d-9dce-cff4b417ee3f",
+    "name": "Austin Employees",
+    "type": "SEGMENT"
+  },
+  "version": 1
+}

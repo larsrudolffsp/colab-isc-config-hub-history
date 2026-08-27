@@ -1,0 +1,44 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "connectionCount": 0,
+    "connections": null,
+    "created": null,
+    "description": "Group for reviewing policy violations and exceptions",
+    "id": "ed9ed5ea-f5ce-44f8-8fb1-fe46b6cd5495",
+    "memberCount": 0,
+    "members": [
+      {
+        "id": "4da356e1553f468b88918b84c98f48d6",
+        "name": "Thomas.Martinez",
+        "type": "IDENTITY"
+      },
+      {
+        "id": "599e84248c5b4363b2bdbdd09416c6bd",
+        "name": "Diane.Hayes",
+        "type": "IDENTITY"
+      },
+      {
+        "id": "a401559ae4df445990c1de37ef846ed6",
+        "name": "Jerry.Bennett",
+        "type": "IDENTITY"
+      }
+    ],
+    "modified": null,
+    "name": "IT Security",
+    "owner": {
+      "displayName": null,
+      "emailAddress": null,
+      "id": "a401559ae4df445990c1de37ef846ed6",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    }
+  },
+  "self": {
+    "id": "ed9ed5ea-f5ce-44f8-8fb1-fe46b6cd5495",
+    "name": "IT Security",
+    "type": "GOVERNANCE_GROUP"
+  },
+  "version": 1
+}

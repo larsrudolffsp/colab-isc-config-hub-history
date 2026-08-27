@@ -1,0 +1,629 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "authenticationMethod": "No Auth",
+      "cloudCacheUpdate": 1787310373223,
+      "cloudDisplayName": "TRAKK-WS",
+      "connectionParameters": [
+        {
+          "body": {
+            "bodyFormat": "formData"
+          },
+          "contextUrl": "/trakkws/rest/aggregate",
+          "curlEnabled": false,
+          "header": {
+            "Content-Type": "application/json"
+          },
+          "httpMethodType": "GET",
+          "operationType": "Account Aggregation",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "resMappingObj": {
+            "capabilities": "capabilities",
+            "email": "email",
+            "firstname": "firstname",
+            "lastname": "lastname",
+            "userId": "userId",
+            "username": "username"
+          },
+          "responseCode": [
+            "200"
+          ],
+          "rootPath": "$.trakkwsAccounts",
+          "sequenceNumberForEndpoint": "2",
+          "uniqueNameForEndPoint": "aggregate"
+        },
+        {
+          "body": {
+            "bodyFormat": "formData"
+          },
+          "contextUrl": "/trakkws/rest/aggregate/$getObject.nativeIdentity$",
+          "curlEnabled": false,
+          "header": {
+            "Content-Type": "application/json"
+          },
+          "httpMethodType": "GET",
+          "operationType": "Get Object",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "resMappingObj": {
+            "capabilities": "capabilities",
+            "email": "email",
+            "firstname": "firstname",
+            "lastname": "lastname",
+            "userId": "userId",
+            "username": "username"
+          },
+          "responseCode": [
+            "2**"
+          ],
+          "sequenceNumberForEndpoint": "3",
+          "uniqueNameForEndPoint": "getAccount"
+        },
+        {
+          "body": {
+            "bodyFormat": "formData"
+          },
+          "contextUrl": "/trakkws/rest/remove/$getObject.nativeIdentity$",
+          "curlEnabled": false,
+          "httpMethodType": "DELETE",
+          "operationType": "Disable Account",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "responseCode": [
+            "2**"
+          ],
+          "sequenceNumberForEndpoint": "8",
+          "uniqueNameForEndPoint": "remove"
+        },
+        {
+          "body": {
+            "bodyFormat": "raw",
+            "jsonBody": "{\n\"userId\":\"$plan.nativeIdentity$\",\n\"capabilities\":\"$plan.capabilities$\"\n}"
+          },
+          "contextUrl": "/trakkws/rest/addEntitlementService",
+          "curlEnabled": false,
+          "header": {
+            "Content-Type": "application/json"
+          },
+          "httpMethodType": "POST",
+          "operationType": "Add Entitlement",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "responseCode": [
+            "2**"
+          ],
+          "sequenceNumberForEndpoint": "6",
+          "uniqueNameForEndPoint": "addEntitlements"
+        },
+        {
+          "body": {
+            "bodyFormat": "raw",
+            "jsonBody": "{\n\"userId\":\"$plan.nativeIdentity$\",\n\"capabilities\":\"$plan.capabilities$\"\n}"
+          },
+          "contextUrl": "/trakkws/rest/removeEntitlementService",
+          "curlEnabled": false,
+          "header": {
+            "Content-Type": "application/json"
+          },
+          "httpMethodType": "POST",
+          "operationType": "Remove Entitlement",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "responseCode": [
+            "2**"
+          ],
+          "sequenceNumberForEndpoint": "7",
+          "uniqueNameForEndPoint": "removeEntitlements"
+        },
+        {
+          "body": {
+            "bodyFormat": "raw",
+            "jsonBody": "{\n\"userId\":\"$plan.nativeIdentity$\",\n\"username\":\"$plan.username$\",\n\"firstname\":\"$plan.firstname$\",\n\"lastname\":\"$plan.lastname$\",\n\"email\":\"$plan.email$\",\n\"capabilities\":\"$plan.capabilities$\"\n}"
+          },
+          "contextUrl": "/trakkws/rest/createService",
+          "curlEnabled": false,
+          "header": {
+            "Content-Type": "application/json"
+          },
+          "httpMethodType": "POST",
+          "operationType": "Create Account",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "resMappingObj": {
+            "capabilities": "capabilities",
+            "email": "email",
+            "firstname": "firstname",
+            "lastname": "lastname",
+            "userId": "userId",
+            "username": "username"
+          },
+          "responseCode": [
+            "2**"
+          ],
+          "sequenceNumberForEndpoint": "5",
+          "uniqueNameForEndPoint": "create"
+        },
+        {
+          "body": {
+            "bodyFormat": "raw"
+          },
+          "contextUrl": "/trakkws/rest/aggregateGroups",
+          "curlEnabled": false,
+          "httpMethodType": "GET",
+          "operationType": "Group Aggregation",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "resMappingObj": {
+            "capability": "capability",
+            "description": "description"
+          },
+          "responseCode": [
+            "2**"
+          ],
+          "rootPath": "$.trakkwsGroups",
+          "sequenceNumberForEndpoint": "4",
+          "uniqueNameForEndPoint": "aggregateGroups"
+        },
+        {
+          "body": {
+            "bodyFormat": "raw"
+          },
+          "contextUrl": "/trakkws/rest/test",
+          "curlEnabled": false,
+          "header": {
+            "Content-Type": "test/html"
+          },
+          "httpMethodType": "GET",
+          "operationType": "Test Connection",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "responseCode": [
+            "2**"
+          ],
+          "sequenceNumberForEndpoint": "1",
+          "uniqueNameForEndPoint": "TEST"
+        }
+      ],
+      "connectionType": "direct",
+      "connectorName": "Web Services",
+      "deleteThresholdPercentage": 10,
+      "deltaAggregationEnabled": false,
+      "enableHasMore": false,
+      "enableProvisioningFeature": true,
+      "enableStatus": "status",
+      "encrypted": "accesstoken,refresh_token,oauth_token_info,client_secret,private_key,private_key_password,clientCertificate,clientKeySpec,resourceOwnerPassword,custom_auth_token_info",
+      "fixedPlanMultivaluedAttribute": "true",
+      "genericWebServiceBaseUrl": "http://10.0.0.245:8080",
+      "hasFullAggregationCompleted": true,
+      "healthCheckTimeout": 30,
+      "healthy": false,
+      "httpCookieSpecsStandard": "true",
+      "isGetObjectRequiredForPTA": true,
+      "lastAggregationDate_account": "2026-08-15T14:02:12Z",
+      "lastAggregationDate_group": "2026-08-15T14:02:20Z",
+      "partitionAggregationEnabled": false,
+      "possibleHttpErrors": {},
+      "since": "2026-08-21T11:06:13.201Z",
+      "sourceConnected": true,
+      "status": "SOURCE_STATE_FAILURE_CLUSTER",
+      "supportsDeltaAgg": "true",
+      "templateApplication": "Web Services Template",
+      "throwProvAfterRuleException": true,
+      "throwProvBeforeRuleException": true,
+      "timeoutInSeconds": "13",
+      "version": "v2"
+    },
+    "connectorClass": "sailpoint.connector.webservices.WebServicesConnector",
+    "connectorScriptName": "web-services-angularsc",
+    "correlationConfigDetails": {
+      "attributeAssignments": null,
+      "id": null,
+      "name": null
+    },
+    "crossTenantConnectorAttributes": {
+      "connectionParameters": [
+        {
+          "body": {
+            "bodyFormat": "formData"
+          },
+          "contextUrl": "/trakkws/rest/aggregate",
+          "curlEnabled": false,
+          "header": {
+            "Content-Type": "application/json"
+          },
+          "httpMethodType": "GET",
+          "operationType": "Account Aggregation",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "resMappingObj": {
+            "capabilities": "capabilities",
+            "email": "email",
+            "firstname": "firstname",
+            "lastname": "lastname",
+            "userId": "userId",
+            "username": "username"
+          },
+          "responseCode": [
+            "200"
+          ],
+          "rootPath": "$.trakkwsAccounts",
+          "sequenceNumberForEndpoint": "2",
+          "uniqueNameForEndPoint": "aggregate"
+        },
+        {
+          "body": {
+            "bodyFormat": "formData"
+          },
+          "contextUrl": "/trakkws/rest/aggregate/$getObject.nativeIdentity$",
+          "curlEnabled": false,
+          "header": {
+            "Content-Type": "application/json"
+          },
+          "httpMethodType": "GET",
+          "operationType": "Get Object",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "resMappingObj": {
+            "capabilities": "capabilities",
+            "email": "email",
+            "firstname": "firstname",
+            "lastname": "lastname",
+            "userId": "userId",
+            "username": "username"
+          },
+          "responseCode": [
+            "2**"
+          ],
+          "sequenceNumberForEndpoint": "3",
+          "uniqueNameForEndPoint": "getAccount"
+        },
+        {
+          "body": {
+            "bodyFormat": "formData"
+          },
+          "contextUrl": "/trakkws/rest/remove/$getObject.nativeIdentity$",
+          "curlEnabled": false,
+          "httpMethodType": "DELETE",
+          "operationType": "Disable Account",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "responseCode": [
+            "2**"
+          ],
+          "sequenceNumberForEndpoint": "8",
+          "uniqueNameForEndPoint": "remove"
+        },
+        {
+          "body": {
+            "bodyFormat": "raw",
+            "jsonBody": "{\n\"userId\":\"$plan.nativeIdentity$\",\n\"capabilities\":\"$plan.capabilities$\"\n}"
+          },
+          "contextUrl": "/trakkws/rest/addEntitlementService",
+          "curlEnabled": false,
+          "header": {
+            "Content-Type": "application/json"
+          },
+          "httpMethodType": "POST",
+          "operationType": "Add Entitlement",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "responseCode": [
+            "2**"
+          ],
+          "sequenceNumberForEndpoint": "6",
+          "uniqueNameForEndPoint": "addEntitlements"
+        },
+        {
+          "body": {
+            "bodyFormat": "raw",
+            "jsonBody": "{\n\"userId\":\"$plan.nativeIdentity$\",\n\"capabilities\":\"$plan.capabilities$\"\n}"
+          },
+          "contextUrl": "/trakkws/rest/removeEntitlementService",
+          "curlEnabled": false,
+          "header": {
+            "Content-Type": "application/json"
+          },
+          "httpMethodType": "POST",
+          "operationType": "Remove Entitlement",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "responseCode": [
+            "2**"
+          ],
+          "sequenceNumberForEndpoint": "7",
+          "uniqueNameForEndPoint": "removeEntitlements"
+        },
+        {
+          "body": {
+            "bodyFormat": "raw",
+            "jsonBody": "{\n\"userId\":\"$plan.nativeIdentity$\",\n\"username\":\"$plan.username$\",\n\"firstname\":\"$plan.firstname$\",\n\"lastname\":\"$plan.lastname$\",\n\"email\":\"$plan.email$\",\n\"capabilities\":\"$plan.capabilities$\"\n}"
+          },
+          "contextUrl": "/trakkws/rest/createService",
+          "curlEnabled": false,
+          "header": {
+            "Content-Type": "application/json"
+          },
+          "httpMethodType": "POST",
+          "operationType": "Create Account",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "resMappingObj": {
+            "capabilities": "capabilities",
+            "email": "email",
+            "firstname": "firstname",
+            "lastname": "lastname",
+            "userId": "userId",
+            "username": "username"
+          },
+          "responseCode": [
+            "2**"
+          ],
+          "sequenceNumberForEndpoint": "5",
+          "uniqueNameForEndPoint": "create"
+        },
+        {
+          "body": {
+            "bodyFormat": "raw"
+          },
+          "contextUrl": "/trakkws/rest/aggregateGroups",
+          "curlEnabled": false,
+          "httpMethodType": "GET",
+          "operationType": "Group Aggregation",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "resMappingObj": {
+            "capability": "capability",
+            "description": "description"
+          },
+          "responseCode": [
+            "2**"
+          ],
+          "rootPath": "$.trakkwsGroups",
+          "sequenceNumberForEndpoint": "4",
+          "uniqueNameForEndPoint": "aggregateGroups"
+        },
+        {
+          "body": {
+            "bodyFormat": "raw"
+          },
+          "contextUrl": "/trakkws/rest/test",
+          "curlEnabled": false,
+          "header": {
+            "Content-Type": "test/html"
+          },
+          "httpMethodType": "GET",
+          "operationType": "Test Connection",
+          "pagingInitialOffset": 0,
+          "pagingSize": 50,
+          "responseCode": [
+            "2**"
+          ],
+          "sequenceNumberForEndpoint": "1",
+          "uniqueNameForEndPoint": "TEST"
+        }
+      ]
+    },
+    "deleteThreshold": 10,
+    "description": "Timecard System via REST API",
+    "features": [
+      "AUTHENTICATE",
+      "ENABLE",
+      "PASSWORD",
+      "PROVISIONING",
+      "UNLOCK"
+    ],
+    "id": "611f2ff9f00a45f3a218abd7a0ab5b77",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "TRAKK-WS",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": [
+      {
+        "id": "266e55560d934fa58b97c1b285782c04",
+        "name": "Default Policy",
+        "type": "PASSWORD_POLICY"
+      }
+    ],
+    "provisionAsCsv": false,
+    "provisioningPolicies": [
+      {
+        "description": null,
+        "fields": [
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "capabilities",
+            "transform": null,
+            "type": ""
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "email",
+            "transform": {
+              "attributes": {
+                "name": "email"
+              },
+              "type": "identityAttribute"
+            },
+            "type": ""
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "firstname",
+            "transform": {
+              "attributes": {
+                "name": "firstname"
+              },
+              "type": "identityAttribute"
+            },
+            "type": ""
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "lastname",
+            "transform": {
+              "attributes": {
+                "name": "lastname"
+              },
+              "type": "identityAttribute"
+            },
+            "type": ""
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "userId",
+            "transform": {
+              "attributes": {
+                "name": "identificationNumber"
+              },
+              "type": "identityAttribute"
+            },
+            "type": ""
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "username",
+            "transform": {
+              "attributes": {
+                "name": "uid"
+              },
+              "type": "identityAttribute"
+            },
+            "type": ""
+          }
+        ],
+        "name": "Account",
+        "usageType": "CREATE"
+      }
+    ],
+    "schemas": [
+      {
+        "attributes": [],
+        "configuration": {},
+        "created": "2026-08-15T13:34:19.655Z",
+        "displayAttribute": "",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "dd907a26f8ac4dfc9c6e1df1565112fd",
+        "identityAttribute": "",
+        "includePermissions": false,
+        "modified": "2026-08-15T13:34:21.101Z",
+        "name": "group",
+        "nativeObjectType": "group"
+      },
+      {
+        "attributes": [
+          {
+            "description": "capabilities",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "capabilities",
+            "nativeName": null,
+            "schema": {
+              "id": "dd907a26f8ac4dfc9c6e1df1565112fd",
+              "name": "group",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "email",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "email",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "firstname",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "firstname",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "lastname",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastname",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "userId",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "userId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "username",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "username",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-08-15T13:34:19.655Z",
+        "displayAttribute": "username",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "d802f4bcb5f642eda2785c5eb43e300e",
+        "identityAttribute": "userId",
+        "includePermissions": false,
+        "modified": "2026-08-15T13:34:19.908Z",
+        "name": "account",
+        "nativeObjectType": "user"
+      }
+    ],
+    "type": "Web Services"
+  },
+  "self": {
+    "id": "611f2ff9f00a45f3a218abd7a0ab5b77",
+    "name": "TRAKK-WS",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

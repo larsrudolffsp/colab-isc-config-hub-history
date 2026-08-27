@@ -1,0 +1,3971 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "EnableAccessKeys": true,
+      "EnableHTTPSCredentials": true,
+      "EnableSSHKeys": true,
+      "appTemplateData": "{\"whiteListedAttributes\":[\"enableProvisioningFeature\"]}",
+      "assumeRoleDurationInSeconds": "3600",
+      "assumeRoleSessionName": "SPServiceUserAccountAccess",
+      "changePasswordPolicyARN": "arn:aws:iam::aws:policy/IAMUserChangePassword",
+      "cloudCacheUpdate": 1786854224590,
+      "cloudDisplayName": "AWS IAM - CAM SE",
+      "cloudScope": [
+        "699264236613"
+      ],
+      "connectionType": "direct",
+      "connectorName": "AWS SaaS",
+      "deleteThresholdPercentage": 10,
+      "enableADI": false,
+      "enableCIEM": false,
+      "enableDiscoverBedrockAgent": false,
+      "enableDiscoverBedrockAgentCore": false,
+      "enableProvisioningFeature": true,
+      "externalId": "enterprise194-cam",
+      "healthCheckTimeout": 60,
+      "healthy": true,
+      "idnProxyType": "sp-connect",
+      "managementAccountId": "699264236613",
+      "pageSize": "10",
+      "region": "us-east-1",
+      "roleName": "SailPointCAMAuditRole",
+      "since": "2026-08-16T04:23:44.567Z",
+      "sourceConnected": true,
+      "spConnectorSpecId": "6e47875b-73f1-481d-a613-59d4deca0c6a",
+      "spConnectorSupportsCustomSchemas": true,
+      "status": "SOURCE_STATE_HEALTHY",
+      "templateApplication": "AWS SaaS"
+    },
+    "connectorClass": "",
+    "connectorScriptName": "awssaas",
+    "correlationConfigDetails": {
+      "attributeAssignments": [
+        {
+          "complex": false,
+          "filterString": null,
+          "ignoreCase": true,
+          "matchMode": null,
+          "operation": "EQ",
+          "property": "uid",
+          "sequence": 1,
+          "value": "UserName"
+        },
+        {
+          "complex": false,
+          "filterString": null,
+          "ignoreCase": true,
+          "matchMode": null,
+          "operation": "EQ",
+          "property": "uid",
+          "sequence": 2,
+          "value": "UserId"
+        }
+      ],
+      "id": "1472b58c390d48f28aa28a83076ec1e1",
+      "name": "68747e349bd44170bbda52fc8fa68d81 Account Correlation Config"
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": 10,
+    "description": "AWS IAM - CAM SE",
+    "features": [
+      "AI_AGENT_AGGREGATION",
+      "AUTHENTICATE",
+      "ENABLE",
+      "GROUP_PROVISIONING",
+      "PASSWORD",
+      "PROVISIONING",
+      "UNLOCK"
+    ],
+    "id": "68747e349bd44170bbda52fc8fa68d81",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "AWS IAM - CAM SE",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": [
+      {
+        "id": "920c9df971cb4e01b76a0451860ac34d",
+        "name": "Default",
+        "type": "PASSWORD_POLICY"
+      }
+    ],
+    "provisionAsCsv": false,
+    "provisioningPolicies": [
+      {
+        "description": null,
+        "fields": [
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "AccessKey",
+            "transform": null,
+            "type": "boolean"
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "PasswordResetRequired",
+            "transform": null,
+            "type": "boolean"
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": true,
+            "name": "AccountId",
+            "transform": null,
+            "type": "string"
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": true,
+            "name": "UserName",
+            "transform": {
+              "attributes": {
+                "name": "uid"
+              },
+              "type": "identityAttribute"
+            },
+            "type": "string"
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": true,
+            "name": "password",
+            "transform": {
+              "attributes": {
+                "name": "Create Password"
+              },
+              "type": "rule"
+            },
+            "type": "secret"
+          }
+        ],
+        "name": "Account",
+        "usageType": "CREATE"
+      }
+    ],
+    "schemas": [
+      {
+        "attributes": [
+          {
+            "description": "A boolean value that indicates whether the Service Control Policy is an AWS managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "AWSManaged",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "A friendly description of the Service Control Policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Resource Name of the Service Control Policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ARN",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Tag list in the format TagKey~TagValue pair",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "Tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The JSON document for the Service Control Policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "PolicyJSON",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The friendly name of the Service Control Policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "SCPName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique ID of the Service Control Policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "SCPId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-08-16T03:57:34.892Z",
+        "displayAttribute": "SCPName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "aa1a2715180e4c7b81620a9afa0f03d3",
+        "identityAttribute": "ARN",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:37.519Z",
+        "name": "SCP",
+        "nativeObjectType": "SCP"
+      },
+      {
+        "attributes": [
+          {
+            "description": "A friendly description of the AWS managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Resource Name of the AWS managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ARN",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The JSON document for the AWS managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "PolicyJSON",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The creation date of the AWS managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "CreateDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The currently enabled version ID of the AWS managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "DefaultVersionId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The friendly name of the AWS managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "PolicyName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The last update date of the AWS managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "UpdateDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The path to the AWS managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Path",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique ID of the AWS managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "PolicyId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "cloudGoverned": true
+        },
+        "created": "2026-08-16T03:57:34.891Z",
+        "displayAttribute": "PolicyName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "767b256775f24969913d05e3255f6a7f",
+        "identityAttribute": "ARN",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:36.708Z",
+        "name": "AWSManagedPolicy",
+        "nativeObjectType": "AWSManagedPolicy"
+      },
+      {
+        "attributes": [
+          {
+            "description": "A friendly description of the customer managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Resource Name of the customer managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ARN",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Groups attached to the customer managed policy",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "PolicyGroups",
+            "nativeName": null,
+            "schema": {
+              "id": "dcd86c312c744579b023608736e49366",
+              "name": "group",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Roles attached to the customer managed policy",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "PolicyRoles",
+            "nativeName": null,
+            "schema": {
+              "id": "07255ff5eea1462e8450814c35fd1514",
+              "name": "Role",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Tag list in the format TagKey~TagValue pair",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "Tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The JSON document for the customer managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "PolicyJSON",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The creation date of the customer managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "CreateDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The currently enabled version ID of the customer managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "DefaultVersionId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The friendly name of the customer managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "PolicyId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The friendly name of the customer managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "PolicyName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The last update date of the customer managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "UpdateDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The path to the customer managed policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Path",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "cloudGoverned": true
+        },
+        "created": "2026-08-16T03:57:34.891Z",
+        "displayAttribute": "PolicyName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "ee69c57222744d2eba5f2356436f6f0e",
+        "identityAttribute": "ARN",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:36.912Z",
+        "name": "CustomerManagedPolicy",
+        "nativeObjectType": "CustomerManagedPolicy"
+      },
+      {
+        "attributes": [
+          {
+            "description": "ARN of the S3 Vectors index (when storage type is S3_VECTORS).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "s3VectorsIndexArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "ARN of the S3 vector bucket.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "s3VectorsVectorBucketArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "ARN of the embedding model used.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "embeddingModelArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS account ID where the knowledge base resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the knowledge base resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Capability type (always MCP for knowledge bases).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "type",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation time.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createdAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Knowledge base description (mirrors description field).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Knowledge base description.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last update time.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "updatedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Name of the S3 Vectors index.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "s3VectorsIndexName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the knowledge base. Always AWS Bedrock.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint-normalized knowledge base status.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Status of the knowledge base.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "knowledgeBaseStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Storage backend type for the knowledge base.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "storageConfigurationType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The IAM role ARN associated with the knowledge base.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "roleArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The ID of the knowledge base.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "knowledgeBaseId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The knowledge base ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The knowledge base ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "knowledgeBaseArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The knowledge base name.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The tags applied to the knowledge base.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The type of knowledge base configuration.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "knowledgeBaseConfigurationType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrock",
+          "resourceId": "aws:bedrock-knowledge-base",
+          "resourceType": "std:capability"
+        },
+        "created": "2026-08-16T03:57:34.894Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "ed987eb4ded24b9ebfc244a3bb46748e",
+        "identityAttribute": "knowledgeBaseArn",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:40.783Z",
+        "name": "AWS Bedrock Knowledge Base",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "ARN of the agent runtime.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentRuntimeArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS account ID where the inbound access config resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the inbound access config resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Allowed audience.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "allowedAudience",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Allowed clients.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "allowedClients",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Allowed scopes.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "allowedScopes",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Name of the agent runtime.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentRuntimeName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the inbound access config. Always AWS Bedrock AgentCore.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The extracted discovery URL for the authorizer.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "authorizerDiscoveryUrl",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The inbound access config identity.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The tags applied to the inbound access config.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrockagentcore",
+          "resourceId": "aws:agentcore-inbound-access-config",
+          "resourceType": "std:credential"
+        },
+        "created": "2026-08-16T03:57:34.894Z",
+        "displayAttribute": "agentRuntimeName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "06ff7fff79414fc49827312ca0091e0c",
+        "identityAttribute": "agentRuntimeArn",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:41.498Z",
+        "name": "AWS Bedrock AgentCore Inbound Access Config",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "ARN of the underlying base agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS account ID where the alias version resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the alias version resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Agent collaboration configuration status.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentCollaboration",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Client token for the alias.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "aliasClientToken",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Client token of the underlying agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentClientToken",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation time of the agent/version.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentCreatedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation time of the alias.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "aliasCreatedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Description of the underlying agent/version.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Description sourced from the alias, version, or agent (first non-null).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "ID of the underlying agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "KMS key used by the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "customerEncryptionKeyArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last update time of the agent/version.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentUpdatedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last update time of the alias.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "aliasUpdatedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Name of the underlying agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Provisioned throughput allocated to this alias configuration.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "provisionedThroughput",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the agent. Always AWS Bedrock.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint-normalized agent status.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Status of the agent version (set when a pinned version is resolved).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "versionStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Status of the underlying agent (set when falling back to DRAFT agent).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The ARN of the agent alias.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentAliasArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The IAM role ARN assumed by the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentResourceRoleArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The ID of the agent alias.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentAliasId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The agent alias ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The current invocation state of the agent alias.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "aliasInvocationState",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The current status of the agent alias.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentAliasStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The foundation model utilized by the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "foundationModel",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The name of the agent alias.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentAliasName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The routed agent version (or DRAFT for draft aliases).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentVersion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The tags applied to the agent alias version.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The type of orchestration the agent uses.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "orchestrationType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Time the agent version was prepared.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "preparedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Whether the agent alias is disabled.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "disabled",
+            "nativeName": null,
+            "schema": null,
+            "type": "BOOLEAN"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrock",
+          "resourceFeatures": [
+            "ACTIVATE",
+            "DEACTIVATE"
+          ],
+          "resourceId": "aws:bedrock-agent-alias-version",
+          "resourceType": "std:agent"
+        },
+        "created": "2026-08-16T03:57:34.893Z",
+        "displayAttribute": "agentAliasName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "c022d1a4860c4056a019182bfc0c43fc",
+        "identityAttribute": "agentAliasArn",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:40.321Z",
+        "name": "AWS Bedrock Agent Alias Version",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS Accounts attached to the Organization Unit",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "AWSAccounts",
+            "nativeName": null,
+            "schema": {
+              "id": "56a7e382aed2485491f7e0031cea1bb7",
+              "name": "AWSAccount",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Resource Name of the Organization Unit",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ARN",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Parent Organization Unit",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Parent",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Service Control Policies attached to the Organization Unit",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "ServiceControlPolicies",
+            "nativeName": null,
+            "schema": {
+              "id": "aa1a2715180e4c7b81620a9afa0f03d3",
+              "name": "SCP",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Tag list in the format TagKey~TagValue pair",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "Tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The friendly name of the Organization Unit",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "OUName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique ID of the Organization Unit",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "OUId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-08-16T03:57:34.892Z",
+        "displayAttribute": "OUName",
+        "features": [],
+        "hierarchyAttribute": "Parent",
+        "id": "4619fceea91d4ecea08da68244b32067",
+        "identityAttribute": "ARN",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:37.932Z",
+        "name": "OrganizationUnit",
+        "nativeObjectType": "OrganizationUnit"
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS CodeCommit HTTPS Git credentials associated with the user",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "AWS CodeCommit HTTPS Credentials",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS CodeCommit SSH public keys associated with the user",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "AWS CodeCommit SSH Keys",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS Managed Policies directly assigned to this user",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "AWSManagedPolicies",
+            "nativeName": null,
+            "schema": {
+              "id": "767b256775f24969913d05e3255f6a7f",
+              "name": "AWSManagedPolicy",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Access key last used details of the user",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "AccessKeyLastUsed",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Access keys associated with the user",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "Access Keys",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Resource Name of the user",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ARN",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Customer Managed Policies directly assigned to this user",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "CustomerManagedPolicies",
+            "nativeName": null,
+            "schema": {
+              "id": "ee69c57222744d2eba5f2356436f6f0e",
+              "name": "CustomerManagedPolicy",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Groups the user is a part of",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "Groups",
+            "nativeName": null,
+            "schema": {
+              "id": "dcd86c312c744579b023608736e49366",
+              "name": "group",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Inline Policies directly assigned to this user",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "InlinePolicies",
+            "nativeName": null,
+            "schema": {
+              "id": "50dd5a5a37a3456fa214a5370b84ad74",
+              "name": "InlinePolicy",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Password Status",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ConsoleAccess",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Password last used date of the user",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "PasswordLastUsed",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Path to the user",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Path",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Signing Certificates associated with the user",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "Signing Certificates",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Tag list in the format TagKey~TagValue pair",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "Tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The friendly name of the user",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "UserName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique ID of the user",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "UserId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "User Creation date",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "CreateDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-08-16T03:57:34.891Z",
+        "displayAttribute": "UserName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "76e08dca5a554688a220b9949df4237b",
+        "identityAttribute": "ARN",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:36.103Z",
+        "name": "account",
+        "nativeObjectType": "account"
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS Managed Policies directly assigned to the group",
+            "isEntitlement": true,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "AWSManagedPolicies",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Resource Name of the group",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ARN",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation date of the group",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "CreateDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Customer Managed Policies directly assigned to the group",
+            "isEntitlement": true,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "CustomerManagedPolicies",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Inline Policies directly assigned to the group",
+            "isEntitlement": true,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "InlinePolicies",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Path to the group",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Path",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The friendly name of the group",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "GroupName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique ID of the group",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "GroupId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "cloudGoverned": true
+        },
+        "created": "2026-08-16T03:57:34.891Z",
+        "displayAttribute": "GroupName",
+        "features": [
+          "PROVISIONING"
+        ],
+        "hierarchyAttribute": null,
+        "id": "dcd86c312c744579b023608736e49366",
+        "identityAttribute": "ARN",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:36.383Z",
+        "name": "group",
+        "nativeObjectType": "group"
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS Managed Policies directly assigned to the role",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "AWSManagedPolicies",
+            "nativeName": null,
+            "schema": {
+              "id": "767b256775f24969913d05e3255f6a7f",
+              "name": "AWSManagedPolicy",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Resource Name of the role",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ARN",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation date of the role",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "CreateDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Customer Managed Policies directly assigned to the role",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "CustomerManagedPolicies",
+            "nativeName": null,
+            "schema": {
+              "id": "ee69c57222744d2eba5f2356436f6f0e",
+              "name": "CustomerManagedPolicy",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Customer Managed Policies directly assigned to the role",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "InlinePolicies",
+            "nativeName": null,
+            "schema": {
+              "id": "50dd5a5a37a3456fa214a5370b84ad74",
+              "name": "InlinePolicy",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Maximum CLI/API session duration",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "MaxSessionDuration",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Path to the Role",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Path",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Role Description",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Tag list in the format TagKey~TagValue pair",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "Tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The friendly name of the role",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "RoleName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique ID of the role",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "RoleId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Trust Relationship Policy JSON",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "TrustPolicyJSON",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-08-16T03:57:34.891Z",
+        "displayAttribute": "RoleName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "07255ff5eea1462e8450814c35fd1514",
+        "identityAttribute": "ARN",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:37.317Z",
+        "name": "Role",
+        "nativeObjectType": "Role"
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID where the action group resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the action group resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Action group description (mirrors description field).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Capability type (always TOOL for action groups).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "type",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation time of the action group.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createdAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Current state of the action group.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "actionGroupState",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Description of the action group.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Execution destination value (for example, Lambda ARN).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "actionGroupExecutor",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "ID of the agent this group belongs to.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last update time of the action group.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "updatedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Name of the action group.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "actionGroupName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Parent action signature configuration.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "parentActionSignature",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the action group. Always AWS Bedrock.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint-normalized agent status.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The ARN of the action group.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "actionGroupArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The action group ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The client token used to create the group.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "clientToken",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The tags applied to the action group.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique ID of the action group.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "actionGroupId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Version of the agent this group belongs to.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentVersion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrock",
+          "resourceId": "aws:bedrock-action-group",
+          "resourceType": "std:capability"
+        },
+        "created": "2026-08-16T03:57:34.893Z",
+        "displayAttribute": "actionGroupName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "4313eca52cef468eae7060447884190b",
+        "identityAttribute": "actionGroupArn",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:40.556Z",
+        "name": "AWS Bedrock Action Group",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID where the credential provider resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the credential provider resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation time.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createdTime",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Credential provider ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "credentialProviderArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last update time.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastUpdatedTime",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Name of the provider.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "OAuth callback URL.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "callbackUrl",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Provider vendor identity.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "credentialProviderVendor",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the credential provider. Always AWS Bedrock AgentCore.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Secret ARN containing the OAuth client secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "clientSecretArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The ARN to the API key Secrets Manager secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "apiKeySecretArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The credential provider ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The tags applied to the credential provider.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrockagentcore",
+          "resourceId": "aws:agentcore-credential-provider",
+          "resourceType": "std:credential"
+        },
+        "created": "2026-08-16T03:57:34.894Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "c1c8a4410dc6441c87a698a0e099d86e",
+        "identityAttribute": "credentialProviderArn",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:42.157Z",
+        "name": "AWS Bedrock AgentCore Credential Provider",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID where the gateway resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the gateway resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation time.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createdAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Gateway description (mirrors description field).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Gateway status.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "gatewayStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last update time.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "updatedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the gateway. Always AWS Bedrock AgentCore.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint-normalized gateway status.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The API protocol type.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "protocolType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The IAM role ARN used by the gateway.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "roleArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The KMS key ARN used for encryption.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "kmsKeyArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The associated workload identity ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "workloadIdentityArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The authorizer configuration type.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "authorizerType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The exception tracking/error level.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "exceptionLevel",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The extracted discovery URL for the authorizer.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "authorizerDiscoveryUrl",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The gateway ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "gatewayArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The gateway ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The gateway ID.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "gatewayId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The gateway description.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The gateway name.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The policy engine ARN applied to the gateway.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "policyEngineArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The resolvable URL for the gateway.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "gatewayUrl",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The tags applied to the gateway.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrockagentcore",
+          "resourceId": "aws:agentcore-gateway",
+          "resourceType": "std:application"
+        },
+        "created": "2026-08-16T03:57:34.894Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "82480a407ee5492596a8d7f7d5a60026",
+        "identityAttribute": "gatewayArn",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:41.017Z",
+        "name": "AWS Bedrock AgentCore Gateway",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID where the gateway target resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the gateway target resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation time.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createdAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Derived MCP target type.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "mcpTargetType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last update time.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "updatedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the target. Always AWS Bedrock AgentCore.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint-normalized target status.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Target ID.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "targetId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Target description (mirrors description field).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Target description.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Target name.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Target status.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "targetStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The ARN of the gateway this target belongs to.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "gatewayArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The gateway target ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The target ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "targetArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Time the target was last synchronized.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastSynchronizedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Type.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "type",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrockagentcore",
+          "resourceId": "aws:agentcore-target",
+          "resourceType": "std:capability"
+        },
+        "created": "2026-08-16T03:57:34.894Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "8b29520d4a7942ca8d326d7270934e5a",
+        "identityAttribute": "targetArn",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:41.257Z",
+        "name": "AWS Bedrock AgentCore Gateway Target",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID where the role resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the role resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The ARN of the role.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "arn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The ID of the role.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "roleId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The classification of the account (e.g. machine).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "classification",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The creation date of the role.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The last used date of the role.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "roleLastUsedDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The name of the role.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "roleName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The path of the role.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "path",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The region the role was last used in.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "roleLastUsedRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The role ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The tags applied to the role.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "URL-decoded policy document.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "assumeRolePolicyDocument",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:iam",
+          "resourceId": "aws:iam-role",
+          "resourceType": "std:account"
+        },
+        "created": "2026-08-16T03:57:34.892Z",
+        "displayAttribute": "roleName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "8c3d8787a0c8466abfb4f9240c931301",
+        "identityAttribute": "arn",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:38.119Z",
+        "name": "AWS IAM Role",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID where the runtime endpoint resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the runtime endpoint resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Agent runtime ID.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentRuntimeId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Agent runtime name.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentRuntimeName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Agent runtime version.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentRuntimeVersion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Base agent runtime ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentRuntimeArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation time.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "endpointCreatedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Description sourced from the endpoint or runtime version (first non-null).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Description.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "endpointDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Endpoint ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentRuntimeEndpointArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Endpoint ID.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "endpointId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Endpoint name.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "endpointName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Endpoint status.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "endpointStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last update time.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "endpointLastUpdatedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Runtime agent status.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "runtimeStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Runtime description.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "runtimeDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Runtime last update time.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "runtimeLastUpdatedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the runtime endpoint. Always AWS Bedrock AgentCore.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint-normalized runtime endpoint status.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The agent runtime endpoint ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The tags applied to the AWS Bedrock AgentCore Runtime Endpoint.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The version of the runtime currently live.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "liveVersion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The version targeted for deployment.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "targetVersion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Whether the agent runtime endpoint is disabled.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "disabled",
+            "nativeName": null,
+            "schema": null,
+            "type": "BOOLEAN"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrockagentcore",
+          "resourceFeatures": [
+            "ACTIVATE",
+            "DEACTIVATE"
+          ],
+          "resourceId": "aws:agentcore-runtime-endpoint",
+          "resourceType": "std:agent"
+        },
+        "created": "2026-08-16T03:57:34.894Z",
+        "displayAttribute": "endpointName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "ecf52d8777d447b898e3cfaf9ac287c6",
+        "identityAttribute": "agentRuntimeEndpointArn",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:41.712Z",
+        "name": "AWS Bedrock AgentCore Runtime Endpoint",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID where the workload identity resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the workload identity resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation time.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createdTime",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last update time.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastUpdatedTime",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Name of the workload identity.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the workload identity. Always AWS Bedrock AgentCore.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The classification of the account (e.g. machine).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "classification",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The tags applied to the workload identity.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The workload identity ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The workload identity ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "workloadIdentityArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrockagentcore",
+          "resourceId": "aws:agentcore-workload-identity",
+          "resourceType": "std:account"
+        },
+        "created": "2026-08-16T03:57:34.894Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "73d8b356cf9349faaf36cce951d736c9",
+        "identityAttribute": "workloadIdentityArn",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:41.938Z",
+        "name": "AWS Bedrock AgentCore Workload Identity",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS region associated with the link.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Unique identifier of the form aws:agentcore-agent-has-inbound-access#{Agent Runtime Endpoint ARN}#{Agent Runtime ARN}/InboundAccess.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrockagentcore",
+          "resourceId": "aws:agentcore-agent-has-inbound-access",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-16T03:57:34.893Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "d08b98fafb91447bb552952e287a6733",
+        "identityAttribute": "identity",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:39.755Z",
+        "name": "AWS AgentCore Agent Has Inbound Access",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS region associated with the link.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Unique identifier of the form aws:agentcore-application-has-workload-identity#{Gateway ARN}#{Workload Identity ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrockagentcore",
+          "resourceId": "aws:agentcore-application-has-workload-identity",
+          "resourceType": "std:extends"
+        },
+        "created": "2026-08-16T03:57:34.893Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "e0ac1c5e74914a758c02fc85efe7244a",
+        "identityAttribute": "identity",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:39.555Z",
+        "name": "AWS AgentCore Application Has Workload Identity",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Amazon Resource Name of the AWS account.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ARN",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Organization unit holding the AWS Account",
+            "isEntitlement": false,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "OrganizationUnit",
+            "nativeName": null,
+            "schema": {
+              "id": "4619fceea91d4ecea08da68244b32067",
+              "name": "OrganizationUnit",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Tag list in the format TagKey~TagValue pair",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "Tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The date the AWS account became a part of the organization.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "JoinedTimestamp",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The email address associated with the AWS account.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Email",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The friendly name of the AWS account.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "AWSAccountName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The method by which the AWS account joined the organization.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "JoinedMethod",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The status of the AWS account in the organization.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Status",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique ID of the AWS account.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "AWSAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-08-16T03:57:34.892Z",
+        "displayAttribute": "AWSAccountName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "56a7e382aed2485491f7e0031cea1bb7",
+        "identityAttribute": "ARN",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:37.738Z",
+        "name": "AWSAccount",
+        "nativeObjectType": "AWSAccount"
+      },
+      {
+        "attributes": [
+          {
+            "description": "Compliance control IDs the access key is flagged against; may be null when Entro has no findings.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "complianceBreach",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Downstream service most recently touched by this access key; null when Entro has no usage record.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastUsedService",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Flattened owners[0].email used for correlation. Mirrors the primary owner email from the nested owners array.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerEmail",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Severity band from Entro (LOW, MEDIUM, HIGH, CRITICAL, UNKNOWN).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "riskSeverity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Stable token identifier from SailPoint NHI Discovery.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Tags carried through from the source account.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Whether Entro has flagged suspicious activity for the access key.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "suspiciousActivity",
+            "nativeName": null,
+            "schema": null,
+            "type": "BOOLEAN"
+          },
+          {
+            "description": "Whether the access key is externally exposed.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "exposed",
+            "nativeName": null,
+            "schema": null,
+            "type": "BOOLEAN"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:iam-access-key",
+          "resourceId": "aws:iam-access-key",
+          "resourceType": "std:credential"
+        },
+        "created": "2026-08-16T03:57:34.894Z",
+        "displayAttribute": "id",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "5eafd647b55f46b3ac0c81ec3342b68a",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:42.360Z",
+        "name": "AWS IAM Access Key",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Relay conversation history setting.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "relayConversationHistory",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Unique identifier of the form aws:bedrock-agent-uses-agent#{Supervisor Agent Alias ARN}#{Collaborator Agent Alias ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrock",
+          "resourceId": "aws:bedrock-agent-uses-agent",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-16T03:57:34.893Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "2c2f698d15b0401ba3e0f8d1702528d4",
+        "identityAttribute": "identity",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:38.691Z",
+        "name": "AWS Agent Uses Agent",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "The JSON document for the policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "PolicyJSON",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The friendly name of the policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique ID of the policy",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "cloudGoverned": true
+        },
+        "created": "2026-08-16T03:57:34.891Z",
+        "displayAttribute": "Name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "50dd5a5a37a3456fa214a5370b84ad74",
+        "identityAttribute": "Id",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:37.120Z",
+        "name": "InlinePolicy",
+        "nativeObjectType": "InlinePolicy"
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:agentcore-agent-has-workload-identity#{Agent Runtime Endpoint ARN}#{Workload Identity ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrockagentcore",
+          "resourceId": "aws:agentcore-agent-has-workload-identity",
+          "resourceType": "std:extends"
+        },
+        "created": "2026-08-16T03:57:34.893Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "4f24414390f24adf99b989bd1b2a81c1",
+        "identityAttribute": "identity",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:39.348Z",
+        "name": "AWS AgentCore Agent Has Workload Identity",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:agentcore-agent-uses-role#{Agent Alias ARN}#{Role ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrockagentcore",
+          "resourceId": "aws:agentcore-agent-uses-role",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-16T03:57:34.893Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "6c62dce1dd584703a6619872bb73a21b",
+        "identityAttribute": "identity",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:39.144Z",
+        "name": "AWS AgentCore Agent Uses Role",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:agentcore-application-has-capability#{Gateway ARN}#{Gateway Target ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrockagentcore",
+          "resourceId": "aws:agentcore-application-has-capability",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-16T03:57:34.893Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "c9268453a08348d3a34a2ace0c991747",
+        "identityAttribute": "identity",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:40.138Z",
+        "name": "AWS AgentCore Application Has Capability",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:agentcore-capability-uses-credential#{Gateway Target ARN}#{Credential Provider ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrockagentcore",
+          "resourceId": "aws:agentcore-capability-uses-credential",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-16T03:57:34.893Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "9355fe9e0e56428689bcd1109ce27ec5",
+        "identityAttribute": "identity",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:39.944Z",
+        "name": "AWS AgentCore Capability Uses Credential",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:bedrock-agent-uses-capability#{Agent Alias ARN}#{Capability ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrock",
+          "resourceId": "aws:bedrock-agent-uses-capability",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-16T03:57:34.892Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "9ed1e2fa56494296b7eeb5635bb5cb8f",
+        "identityAttribute": "identity",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:38.507Z",
+        "name": "AWS Agent Uses Capability",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:bedrock-agent-uses-role#{Agent Alias ARN}#{Role ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:bedrock",
+          "resourceId": "aws:bedrock-agent-uses-role",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-16T03:57:34.893Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "376529845b274382a73be3e0439a4cc7",
+        "identityAttribute": "identity",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:38.949Z",
+        "name": "AWS Bedrock Agent Uses Role",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:role-has-policy#{Role ARN}#{Policy ARN or Inline ID}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:iam",
+          "resourceId": "aws:role-has-policy",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-16T03:57:34.892Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "6da9d82936e8422b9928b80b3c529c63",
+        "identityAttribute": "identity",
+        "includePermissions": false,
+        "modified": "2026-08-16T03:57:38.315Z",
+        "name": "AWS Role Has Policy",
+        "nativeObjectType": null
+      }
+    ],
+    "type": "6e47875b-73f1-481d-a613-59d4deca0c6a"
+  },
+  "self": {
+    "id": "68747e349bd44170bbda52fc8fa68d81",
+    "name": "AWS IAM - CAM SE",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

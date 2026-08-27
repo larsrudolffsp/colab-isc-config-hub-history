@@ -1,0 +1,165 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-08-15T14:21:54.928700524Z",
+    "creator": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Wait",
+      "steps": {
+        "Activate Certification Campaign": {
+          "actionId": "sp:activate-campaign",
+          "attributes": {
+            "id.$": "$.createCertificationCampaign.id"
+          },
+          "description": "Activates the certification campaign created in the previous step.",
+          "nextStep": "success",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Compare Strings": {
+          "choiceList": [
+            {
+              "comparator": "StringEquals",
+              "nextStep": "Get Identity",
+              "variableA.$": "$.trigger.changes[?(@.attribute=='department')].newValue",
+              "variableB": "Sales"
+            }
+          ],
+          "defaultStep": "success",
+          "description": "Determines whether the identity's department attribute was updated to Sales. If so, the workflow proceeds. Otherwise, the workflow ends.\n\nNOTE: This template makes an assumption in later actions/nodes about the identity's former department. You could use an additional operator with branching steps for different departments for more flexibility.",
+          "type": "choice"
+        },
+        "Create Certification Campaign": {
+          "actionId": "sp:create-campaign",
+          "attributes": {
+            "description": "Department Change",
+            "duration": "1w",
+            "emailNotificationEnabled": true,
+            "identityId.$": "$.trigger.identity.id",
+            "name.$": "$.trigger.identity.name",
+            "reviewerId.$": "$.getIdentity.manager.id"
+          },
+          "description": "Creates a certification campaign so that the identity's new manager can review their access, to ensure they have the access they need and don't have access they don't need.",
+          "nextStep": "Activate Certification Campaign",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Get Access": {
+          "actionId": "sp:access:get",
+          "attributes": {
+            "accessprofiles": false,
+            "entitlements": false,
+            "getAccessBy": "searchQuery",
+            "query": "name: \"Product Role\"",
+            "roles": true
+          },
+          "description": "Gets all roles with \"Product Role\" in their name.\n\nIn this example, the identity needs to retain this access despite their department move. If the access gets removed because they no longer meet the role criteria, it must be put back by this workflow. This step retrieves the access for the Manage Access step to add.",
+          "nextStep": "Manage Access",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.identity.id"
+          },
+          "description": "Retrieves available details about the identity.",
+          "nextStep": "Get Access",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Get Identity 1": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.getIdentity.manager.id"
+          },
+          "description": "This node is used to gather information about the user's manager to populate their email.",
+          "nextStep": "Send Email",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Manage Access": {
+          "actionId": "sp:access:manage",
+          "attributes": {
+            "addIdentities.$": "$.trigger.identity.id",
+            "comments": "Automatically requested as transitory access by workflows",
+            "removeDuration": "2w",
+            "requestType": "GRANT_ACCESS",
+            "requestedItems.$": "$.getAccess.accessItems"
+          },
+          "description": "Adds the access from the Get Access step to the identity.",
+          "nextStep": "Get Identity 1",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Send Email": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body": "Attention, \n\nUser ${name} has recently changed departments and is now a member of the ${newDepartment}.",
+            "context": {
+              "name.$": "$.trigger.identityId",
+              "newDepartment.$": "$.trigger.changes[?(@.attribute=='department')].newValue"
+            },
+            "recipientEmailList.$": "$.getIdentity1.attributes.email",
+            "recipientId.$": "$.getIdentity.manager.id",
+            "subject": "Department Change"
+          },
+          "description": "Sends an email to the identity's manager. Configure details about this email below.",
+          "nextStep": "Create Certification Campaign",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Wait": {
+          "actionId": "sp:sleep",
+          "attributes": {
+            "duration": "1h",
+            "type": "waitFor"
+          },
+          "description": "Pauses to wait for all other provisioning activities to complete, such as automated role or access profile removals.",
+          "nextStep": "Compare Strings",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "success": {
+          "description": "Ends the workflow and marks it as a success.",
+          "type": "success"
+        }
+      }
+    },
+    "description": "Workflow to update a user's access during a mover scenario, such as when a user changes departments or teams.",
+    "enabled": false,
+    "id": "5a89148a-2787-40bb-8841-8b592a5ee68d",
+    "modified": "2026-08-15T14:21:54.928700524Z",
+    "modifiedBy": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "name": "Update and Certify Access When an Identity Changes Departments",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "filter.$": "$.changes[?(@.attribute == \"department\")]",
+        "id": "idn:identity-attributes-changed",
+        "integrationId": null
+      },
+      "mode": "advanced",
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "5a89148a-2787-40bb-8841-8b592a5ee68d",
+    "name": "Update and Certify Access When an Identity Changes Departments",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

@@ -1,0 +1,80 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": false
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "ENABLE",
+        "allSources": false,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": [
+          {
+            "id": "5b831e3a228f4bf39d72cd95c9f9a5f9",
+            "name": "Airgap",
+            "type": "SOURCE"
+          },
+          {
+            "id": "86b2cca134d8401097e09dca3b38e91a",
+            "name": "Active Directory",
+            "type": "SOURCE"
+          },
+          {
+            "id": "86d2c630306a44609898608a6486d6f1",
+            "name": "PRISM",
+            "type": "SOURCE"
+          },
+          {
+            "id": "96221791f9b04ef9bda99979afa55394",
+            "name": "Badging",
+            "type": "SOURCE"
+          }
+        ]
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "ENABLE",
+        "allSources": false,
+        "excludeSourceIds": null,
+        "sourceIds": [
+          "5b831e3a228f4bf39d72cd95c9f9a5f9",
+          "86b2cca134d8401097e09dca3b38e91a",
+          "86d2c630306a44609898608a6486d6f1",
+          "96221791f9b04ef9bda99979afa55394"
+        ]
+      }
+    ],
+    "created": "2026-08-15T13:34:10.470Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": true,
+      "notifySpecificUsers": false
+    },
+    "enabled": true,
+    "id": "4b15608814fd4ab4a34eb3516ee234f0",
+    "identityCount": 292,
+    "identityProfileRef": {
+      "id": "0cc2b18da987450b96392fe443a52b81",
+      "name": "HR",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "ACTIVE",
+    "modified": "2026-08-15T14:27:28.028Z",
+    "name": "Active",
+    "priority": 20,
+    "technicalName": "active"
+  },
+  "self": {
+    "id": "4b15608814fd4ab4a34eb3516ee234f0",
+    "name": "Active",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

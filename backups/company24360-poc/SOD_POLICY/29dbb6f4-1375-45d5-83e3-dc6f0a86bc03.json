@@ -1,0 +1,47 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "allowedControls": [],
+    "approvalGuidance": null,
+    "compensatingControls": "Review conversion date, determine whether Contractor access is still required",
+    "conflictingAccessCriteria": null,
+    "correctionAdvice": "Revoke contractor access as soon as no longer required",
+    "created": "2026-08-15T14:22:21Z",
+    "creatorId": "03d16262e1234807956c1e431478f6ba",
+    "creatorRef": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "SailPoint Support",
+      "type": "IDENTITY"
+    },
+    "description": "Former contractors who have converted to regular employees should not retain contractor access.",
+    "externalPolicyReference": null,
+    "id": "29dbb6f4-1375-45d5-83e3-dc6f0a86bc03",
+    "level": null,
+    "modified": "2026-08-15T14:22:21Z",
+    "modifierId": null,
+    "name": "Regular Employees with Contractor Access",
+    "ownerRef": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "policyQuery": "@access(name:\"Contractor Base Access\") AND NOT identityProfile.name:Contractors",
+    "preventSetting": null,
+    "scheduled": false,
+    "secondaryOwnerRefs": [],
+    "state": "ENFORCED",
+    "tags": [],
+    "type": "GENERAL",
+    "violationOwnerAssignmentConfig": {
+      "assignmentRule": "MANAGER",
+      "ownerRef": null
+    }
+  },
+  "self": {
+    "id": "29dbb6f4-1375-45d5-83e3-dc6f0a86bc03",
+    "name": "Regular Employees with Contractor Access",
+    "type": "SOD_POLICY"
+  },
+  "version": 1
+}

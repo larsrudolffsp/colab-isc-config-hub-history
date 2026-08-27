@@ -1,0 +1,97 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [
+      {
+        "id": "5572c89a1c954275bbe9732224691203",
+        "name": "SalesCommonAccess",
+        "type": "ACCESS_PROFILE"
+      }
+    ],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:22:31.054513Z",
+    "description": "All Sales people in the company",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [],
+    "id": "fcc61331e0a640df8b839acac887d6a9",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "key": {
+                  "property": "attribute.department",
+                  "sourceId": "",
+                  "type": "IDENTITY"
+                },
+                "operation": "CONTAINS",
+                "stringValue": "Sales",
+                "values": null
+              },
+              {
+                "children": [],
+                "key": {
+                  "property": "attribute.jobTitle",
+                  "sourceId": "",
+                  "type": "IDENTITY"
+                },
+                "operation": "CONTAINS",
+                "stringValue": "Sales",
+                "values": null
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": "",
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2026-08-15T14:22:31.054513Z",
+    "name": "SalesGlobal",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "fcc61331e0a640df8b839acac887d6a9",
+    "name": "SalesGlobal",
+    "type": "ROLE"
+  },
+  "version": 1
+}

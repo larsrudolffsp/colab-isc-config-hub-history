@@ -1,0 +1,348 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "cloudDisplayName": "Airgap",
+      "cloudOriginalApplicationType": "Delimited File",
+      "commentCharacter": "#",
+      "connectionType": "file",
+      "connectorName": "Delimited File",
+      "deleteThresholdPercentage": 10,
+      "delimiter": ",",
+      "encrypted": "transportUserPassword,pgpPrivateKey,pgpPrivateKeyPassword,s3SecretKey,scpPrivateKey,PassphraseForPrivateKey,ftpsClientCertificatePassphrase",
+      "filetransport": "local",
+      "filterEmptyRecords": true,
+      "group.columnNames": [
+        "description",
+        "displayName",
+        "id",
+        "name",
+        "privileged",
+        "schema"
+      ],
+      "group.delimiter": ",",
+      "group.filetransport": "local",
+      "group.filterEmptyRecords": true,
+      "group.hasHeader": true,
+      "group.host": "local",
+      "group.mergeRows": false,
+      "group.partitionMode": "disabled",
+      "hasHeader": true,
+      "healthy": true,
+      "host": "local",
+      "indexColumn": "id",
+      "labels": [
+        "standard"
+      ],
+      "mergeColumns": [
+        "groups"
+      ],
+      "mergeRows": true,
+      "parseType": "delimited",
+      "partitionMode": "disabled",
+      "since": "2026-08-15T14:02:11.076Z",
+      "status": "SOURCE_STATE_HEALTHY",
+      "templateApplication": "DelimitedFile Template"
+    },
+    "connectorClass": "sailpoint.connector.delimitedfile.DelimitedFileConnector",
+    "connectorScriptName": "delimited-file-angularsc",
+    "correlationConfigDetails": {
+      "attributeAssignments": null,
+      "id": null,
+      "name": null
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": 10,
+    "description": "Requires manual provisioning via ServiceNow ticketing.",
+    "features": [
+      "DIRECT_PERMISSIONS",
+      "DISCOVER_SCHEMA",
+      "NO_RANDOM_ACCESS"
+    ],
+    "id": "5b831e3a228f4bf39d72cd95c9f9a5f9",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "Airgap",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": null,
+    "provisionAsCsv": true,
+    "provisioningPolicies": [
+      {
+        "description": "Create Policy",
+        "fields": [
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "e-mail",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "familyName",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "givenName",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "groups",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "id",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "location",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "manager",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "name",
+            "transform": null,
+            "type": null
+          }
+        ],
+        "name": "Create Policy",
+        "usageType": "CREATE"
+      }
+    ],
+    "schemas": [
+      {
+        "attributes": [
+          {
+            "description": "Reference to the manager of this particular account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "manager",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The first or given name of the user associated with the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "givenName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The groups, roles etc. that reference account group objects",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "groups",
+            "nativeName": null,
+            "schema": {
+              "id": "e8f6c7591d0b4bd1a93d6f4004acbab2",
+              "name": "group",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "The last, family name, or surname of the user associated with the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "familyName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The location associated with this account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "location",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The name of the account - typical username etc",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The primary e-mail address of the user associated with the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "e-mail",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique ID for the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-08-15T13:33:35.733Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "5da2182ce4df4712b20c5ccab0b89cf0",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2026-08-15T13:33:35.733Z",
+        "name": "account",
+        "nativeObjectType": "User"
+      },
+      {
+        "attributes": [
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "displayName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "privileged",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "schema",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-08-15T13:33:35.733Z",
+        "displayAttribute": "displayName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "e8f6c7591d0b4bd1a93d6f4004acbab2",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2026-08-15T13:33:36.001Z",
+        "name": "group",
+        "nativeObjectType": "Group"
+      }
+    ],
+    "type": "DelimitedFile"
+  },
+  "self": {
+    "id": "5b831e3a228f4bf39d72cd95c9f9a5f9",
+    "name": "Airgap",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

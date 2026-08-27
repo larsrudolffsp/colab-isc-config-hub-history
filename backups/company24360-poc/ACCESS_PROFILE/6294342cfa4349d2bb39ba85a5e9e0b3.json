@@ -1,0 +1,51 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:21:41.917821Z",
+    "description": "Reject timecards",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "d9fce37f48d130fda24fba60758735fd",
+        "name": "reject",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "6294342cfa4349d2bb39ba85a5e9e0b3",
+    "modified": "2026-08-15T14:21:41.917821Z",
+    "name": "TRAKK Reject",
+    "owner": {
+      "id": "a401559ae4df445990c1de37ef846ed6",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": true,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "611f2ff9f00a45f3a218abd7a0ab5b77",
+      "name": "TRAKK-WS",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "6294342cfa4349d2bb39ba85a5e9e0b3",
+    "name": "TRAKK Reject",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

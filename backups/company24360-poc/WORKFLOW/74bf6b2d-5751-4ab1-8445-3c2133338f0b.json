@@ -1,0 +1,77 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-08-15T14:21:54.520863897Z",
+    "creator": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Manage ServiceNow Ticket",
+      "steps": {
+        "Manage ServiceNow Ticket": {
+          "actionId": "sp:snow",
+          "attributes": {
+            "action": "create"
+          },
+          "nextStep": "Wait",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Manage ServiceNow Ticket 1": {
+          "actionId": "sp:snow",
+          "attributes": {
+            "action": "update",
+            "stateUpdate": "6"
+          },
+          "nextStep": "failure",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Wait": {
+          "actionId": "sp:sleep",
+          "attributes": {
+            "duration": "20m",
+            "type": "waitFor"
+          },
+          "nextStep": "Manage ServiceNow Ticket 1",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "failure": {
+          "type": "failure"
+        }
+      }
+    },
+    "description": "Creates a ticket on every access request",
+    "enabled": false,
+    "id": "74bf6b2d-5751-4ab1-8445-3c2133338f0b",
+    "modified": "2026-08-15T14:21:54.520863897Z",
+    "modifiedBy": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "name": "Service Now- ticket generation Example",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "id": "idn:access-request-post-approval",
+        "integrationId": null
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "74bf6b2d-5751-4ab1-8445-3c2133338f0b",
+    "name": "Service Now- ticket generation Example",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

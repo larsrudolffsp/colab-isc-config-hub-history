@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "active": false,
+    "created": "2026-08-15T14:27:25.502074Z",
+    "description": "Sales Segment",
+    "id": "e0b55927-825c-4a54-a46c-f73f4276d6d2",
+    "modified": "2026-08-15T14:27:25.502089Z",
+    "name": "Sales",
+    "owner": null,
+    "visibilityCriteria": {
+      "expression": {
+        "attribute": "department",
+        "children": null,
+        "operator": "EQUALS",
+        "value": {
+          "type": "STRING",
+          "value": "Sales"
+        }
+      }
+    }
+  },
+  "self": {
+    "id": "e0b55927-825c-4a54-a46c-f73f4276d6d2",
+    "name": "Sales",
+    "type": "SEGMENT"
+  },
+  "version": 1
+}

@@ -1,0 +1,151 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-08-16T03:57:00.168023188Z",
+    "description": "This form is to pull the required attributes for creating AD service accounts",
+    "formConditions": [],
+    "formElements": [
+      {
+        "config": {
+          "alignment": "LEFT",
+          "description": "",
+          "formElements": [
+            {
+              "config": {
+                "dataSource": {
+                  "config": {
+                    "options": [
+                      {
+                        "label": "Tier 1",
+                        "sublabel": "",
+                        "value": "Tier 1"
+                      },
+                      {
+                        "label": "Tier 2",
+                        "sublabel": "",
+                        "value": "Tier 2"
+                      },
+                      {
+                        "label": "Tier 3",
+                        "sublabel": "",
+                        "value": "Tier 3"
+                      }
+                    ]
+                  },
+                  "dataSourceType": "STATIC"
+                },
+                "forceSelect": true,
+                "helpText": "Select the tier of your account",
+                "label": "Account Tier",
+                "maximum": 1,
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "SELECT",
+              "id": "1059431669921",
+              "key": "accountTier",
+              "validations": [
+                {
+                  "validationType": "DATA_SOURCE"
+                },
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "config": {
+                "default": "",
+                "description": "",
+                "helpText": "Please describe what this service account will be used for",
+                "label": "Business Use",
+                "placeholder": "",
+                "required": true,
+                "resize": true,
+                "rows": 2
+              },
+              "elementType": "TEXTAREA",
+              "id": "1568498941856",
+              "key": "businessUse",
+              "validations": [
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "config": {
+                "default": "",
+                "description": "",
+                "helpText": "Provide the account name format required",
+                "label": "Account Name",
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "TEXT",
+              "id": "1450070749070",
+              "key": "accountName",
+              "validations": [
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "config": {
+                "default": false,
+                "falseLabel": "No",
+                "helpText": "Confirm whether the account should be disabled initially",
+                "label": "Provision as Disabled?",
+                "trueLabel": "Yes"
+              },
+              "elementType": "TOGGLE",
+              "id": "29867130073",
+              "key": "disableAccount",
+              "validations": []
+            }
+          ],
+          "label": "Account Information",
+          "labelStyle": "h2",
+          "showLabel": true
+        },
+        "elementType": "SECTION",
+        "id": "1494959940746",
+        "validations": []
+      }
+    ],
+    "formInput": [],
+    "id": "9abf2155-5eb7-4677-99b9-678034eba909",
+    "modified": "2026-08-16T03:57:00.168023188Z",
+    "name": "AD Service Account Creation Form",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "usedBy": [
+      {
+        "id": "199353d1-37ec-4400-92dd-32347d3fd437",
+        "name": "",
+        "type": "SOURCE_SUBTYPE"
+      },
+      {
+        "id": "47bb5649-4f35-45e2-a6d2-c69c05c99488",
+        "name": "",
+        "type": "SOURCE_SUBTYPE"
+      },
+      {
+        "id": "c614888c-7b7d-487a-9ca5-b0ddae0dcfb4",
+        "name": "",
+        "type": "SOURCE_SUBTYPE"
+      }
+    ]
+  },
+  "self": {
+    "id": "9abf2155-5eb7-4677-99b9-678034eba909",
+    "name": "AD Service Account Creation Form",
+    "type": "FORM_DEFINITION"
+  },
+  "version": 1
+}

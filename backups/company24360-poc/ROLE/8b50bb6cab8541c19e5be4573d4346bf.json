@@ -1,0 +1,94 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [
+      {
+        "id": "150d06a2ee844634a809e4619a596ab8",
+        "name": "SalesRegional",
+        "type": "ACCESS_PROFILE"
+      },
+      {
+        "id": "5572c89a1c954275bbe9732224691203",
+        "name": "SalesCommonAccess",
+        "type": "ACCESS_PROFILE"
+      }
+    ],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:22:31.47887Z",
+    "description": "The Regional Sales Team",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [],
+    "id": "8b50bb6cab8541c19e5be4573d4346bf",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": [],
+            "key": {
+              "property": "attribute.cloudLifecycleState",
+              "sourceId": "",
+              "type": "IDENTITY"
+            },
+            "operation": "EQUALS",
+            "stringValue": "active",
+            "values": null
+          },
+          {
+            "children": [],
+            "key": {
+              "property": "attribute.jobTitle",
+              "sourceId": "",
+              "type": "IDENTITY"
+            },
+            "operation": "EQUALS",
+            "stringValue": "Regional Sales Executive",
+            "values": null
+          }
+        ],
+        "key": null,
+        "operation": "AND",
+        "stringValue": "",
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2026-08-15T14:22:31.47887Z",
+    "name": "SalesRegional",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "8b50bb6cab8541c19e5be4573d4346bf",
+    "name": "SalesRegional",
+    "type": "ROLE"
+  },
+  "version": 1
+}

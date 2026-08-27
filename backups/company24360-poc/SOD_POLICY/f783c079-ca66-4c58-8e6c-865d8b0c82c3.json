@@ -1,0 +1,72 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "allowedControls": [],
+    "approvalGuidance": null,
+    "compensatingControls": "No employee will have sole authority of or responsibility for control to create and approve invoices.\n\n An employee cannot serve as both the creator and approver for the same invoice review under a contract or order.",
+    "conflictingAccessCriteria": {
+      "leftCriteria": {
+        "criteriaList": [
+          {
+            "id": "ac23de61e4fe3e00862396089f9e405d",
+            "name": "CreateInvoices",
+            "type": "ENTITLEMENT"
+          }
+        ],
+        "name": "Invoice Create"
+      },
+      "rightCriteria": {
+        "criteriaList": [
+          {
+            "id": "93b58d09dc263c15b6a4f1ed41849538",
+            "name": "ProcessInvoices",
+            "type": "ENTITLEMENT"
+          }
+        ],
+        "name": "Invoice Approve"
+      }
+    },
+    "correctionAdvice": "Deny or remove access upon discovery of conflicting access unless VP approved or time limited access not to exceed 24 hours",
+    "created": "2026-08-15T14:22:23Z",
+    "creatorId": "03d16262e1234807956c1e431478f6ba",
+    "creatorRef": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "SailPoint Support",
+      "type": "IDENTITY"
+    },
+    "description": "Policy to enforce that an Invoice Creator does not also have the ability to pay invoices",
+    "externalPolicyReference": " http://acme.policies/sod",
+    "id": "f783c079-ca66-4c58-8e6c-865d8b0c82c3",
+    "level": "HIGH",
+    "modified": "2026-08-15T14:22:23Z",
+    "modifierId": null,
+    "name": "Invoice Creation and Approval Control",
+    "ownerRef": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "policyQuery": "@access(id:ac23de61e4fe3e00862396089f9e405d) AND @access(id:93b58d09dc263c15b6a4f1ed41849538)",
+    "preventSetting": null,
+    "scheduled": false,
+    "secondaryOwnerRefs": [],
+    "state": "ENFORCED",
+    "tags": [
+      "SOD",
+      "SOX",
+      "VIOLATION_SOD"
+    ],
+    "type": "CONFLICTING_ACCESS_BASED",
+    "violationOwnerAssignmentConfig": {
+      "assignmentRule": null,
+      "ownerRef": null
+    }
+  },
+  "self": {
+    "id": "f783c079-ca66-4c58-8e6c-865d8b0c82c3",
+    "name": "Invoice Creation and Approval Control",
+    "type": "SOD_POLICY"
+  },
+  "version": 1
+}

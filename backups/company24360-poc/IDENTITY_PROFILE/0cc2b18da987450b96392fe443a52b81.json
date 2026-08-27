@@ -1,0 +1,303 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "authoritativeSource": {
+      "id": "930be50fd03e4e6094eb650b8d18d068",
+      "name": "HR",
+      "type": "SOURCE"
+    },
+    "created": "2026-08-15T13:34:09.948Z",
+    "description": null,
+    "hasTimeBasedAttr": false,
+    "id": "0cc2b18da987450b96392fe443a52b81",
+    "identityAttributeConfig": {
+      "attributeTransforms": [
+        {
+          "identityAttributeName": "city",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "city",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "cloudLifecycleState",
+          "transformDefinition": {
+            "attributes": {
+              "id": "ToLower",
+              "input": {
+                "attributes": {
+                  "attributeName": "lc_state",
+                  "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+                  "sourceName": "HR"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
+          "identityAttributeName": "country",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "country",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "department",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "department",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "displayName",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "userid",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "displayName",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "userid",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "email",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "email",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "endDate",
+          "transformDefinition": {
+            "attributes": {
+              "id": "ISO8601EndDateFormat",
+              "input": {
+                "attributes": {
+                  "attributeName": "contractEndDate",
+                  "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+                  "sourceName": "HR"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
+          "identityAttributeName": "firstname",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "firstname",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "googleemail",
+          "transformDefinition": {
+            "attributes": {
+              "id": "Format GCP Email",
+              "input": {
+                "attributes": {
+                  "attributeName": "empid",
+                  "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+                  "sourceName": "HR"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
+          "identityAttributeName": "identificationNumber",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "empid",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "jobTitle",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "title",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "lastname",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "lastname",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "location",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "city",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "manager",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "manager",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "personalEmail",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "alternate_email",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "phone",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "mobile",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "startDate",
+          "transformDefinition": {
+            "attributes": {
+              "id": "ISO8601EndDateFormat",
+              "input": {
+                "attributes": {
+                  "attributeName": "contractStartDate",
+                  "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+                  "sourceName": "HR"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
+          "identityAttributeName": "types",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "emp_type",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "uid",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "userid",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "uid",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "userid",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "workPhone",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "telephone",
+              "sourceId": "930be50fd03e4e6094eb650b8d18d068",
+              "sourceName": "HR"
+            },
+            "type": "accountAttribute"
+          }
+        }
+      ],
+      "enabled": true
+    },
+    "identityCount": 302,
+    "identityExceptionReportReference": null,
+    "identityRefreshRequired": false,
+    "modified": "2026-08-16T04:39:23.304Z",
+    "name": "HR",
+    "owner": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "SailPoint Support",
+      "type": "IDENTITY"
+    },
+    "priority": 20
+  },
+  "self": {
+    "id": "0cc2b18da987450b96392fe443a52b81",
+    "name": "HR",
+    "type": "IDENTITY_PROFILE"
+  },
+  "version": 1
+}

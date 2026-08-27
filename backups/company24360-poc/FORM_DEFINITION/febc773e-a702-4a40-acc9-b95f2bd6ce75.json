@@ -1,0 +1,96 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-08-16T03:56:59.904372904Z",
+    "description": "Form to request a new Entra ID Service Principal",
+    "formConditions": [],
+    "formElements": [
+      {
+        "config": {
+          "alignment": "LEFT",
+          "description": "",
+          "formElements": [
+            {
+              "config": {
+                "default": "",
+                "description": "",
+                "helpText": "Please provide the display name of your application",
+                "label": "Display Name",
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "TEXT",
+              "id": "1592516669338",
+              "key": "displayName",
+              "validations": [
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "config": {
+                "default": "",
+                "description": "",
+                "helpText": "The description of the application",
+                "label": "Description",
+                "placeholder": "",
+                "required": false,
+                "resize": true,
+                "rows": 2
+              },
+              "elementType": "TEXTAREA",
+              "id": "1079175539627",
+              "key": "description",
+              "validations": []
+            }
+          ],
+          "label": "Service Principal Information",
+          "labelStyle": "h2",
+          "showLabel": true
+        },
+        "elementType": "SECTION",
+        "id": "1320579512092",
+        "validations": []
+      }
+    ],
+    "formInput": [],
+    "id": "febc773e-a702-4a40-acc9-b95f2bd6ce75",
+    "modified": "2026-08-16T03:56:59.904372904Z",
+    "name": "Entra ID - New Service Principal",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "usedBy": [
+      {
+        "id": "1bf994d4-3f79-4747-a88e-d8de9ceba906",
+        "name": "",
+        "type": "SOURCE_SUBTYPE"
+      },
+      {
+        "id": "93f682b2-bde4-460f-92b5-577c726f8d42",
+        "name": "",
+        "type": "SOURCE_SUBTYPE"
+      },
+      {
+        "id": "d6a82640-a440-47c6-afa1-9feb4c324999",
+        "name": "",
+        "type": "SOURCE_SUBTYPE"
+      },
+      {
+        "id": "f611874e-f18c-4ec1-af58-13e82a56d849",
+        "name": "",
+        "type": "SOURCE_SUBTYPE"
+      }
+    ]
+  },
+  "self": {
+    "id": "febc773e-a702-4a40-acc9-b95f2bd6ce75",
+    "name": "Entra ID - New Service Principal",
+    "type": "FORM_DEFINITION"
+  },
+  "version": 1
+}

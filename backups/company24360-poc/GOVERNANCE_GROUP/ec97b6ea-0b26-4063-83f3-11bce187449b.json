@@ -1,0 +1,34 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "connectionCount": 0,
+    "connections": null,
+    "created": null,
+    "description": "HR Approvers",
+    "id": "ec97b6ea-0b26-4063-83f3-11bce187449b",
+    "memberCount": 0,
+    "members": [
+      {
+        "id": "9e69fc9782034130904fd6174a275642",
+        "name": "Patricia.Jones",
+        "type": "IDENTITY"
+      }
+    ],
+    "modified": null,
+    "name": "HR Approvers",
+    "owner": {
+      "displayName": null,
+      "emailAddress": null,
+      "id": "a160956dc01343af81be813a5335f761",
+      "name": "Amanda.Ross",
+      "type": "IDENTITY"
+    }
+  },
+  "self": {
+    "id": "ec97b6ea-0b26-4063-83f3-11bce187449b",
+    "name": "HR Approvers",
+    "type": "GOVERNANCE_GROUP"
+  },
+  "version": 1
+}

@@ -1,0 +1,39 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "connectionCount": 0,
+    "connections": null,
+    "created": null,
+    "description": "Inventory Department Manager",
+    "id": "dbc9efe0-647f-4023-9384-cd2e0ecc0167",
+    "memberCount": 0,
+    "members": [
+      {
+        "id": "a160956dc01343af81be813a5335f761",
+        "name": "Amanda.Ross",
+        "type": "IDENTITY"
+      },
+      {
+        "id": "a401559ae4df445990c1de37ef846ed6",
+        "name": "Jerry.Bennett",
+        "type": "IDENTITY"
+      }
+    ],
+    "modified": null,
+    "name": "Inventory Department Manager",
+    "owner": {
+      "displayName": null,
+      "emailAddress": null,
+      "id": "a401559ae4df445990c1de37ef846ed6",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    }
+  },
+  "self": {
+    "id": "dbc9efe0-647f-4023-9384-cd2e0ecc0167",
+    "name": "Inventory Department Manager",
+    "type": "GOVERNANCE_GROUP"
+  },
+  "version": 1
+}

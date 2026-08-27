@@ -1,0 +1,43 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "firstDate": {
+        "attributes": {
+          "name": "startDate"
+        },
+        "type": "identityAttribute"
+      },
+      "negativeCondition": {
+        "attributes": {
+          "firstDate": {
+            "attributes": {
+              "name": "endDate"
+            },
+            "type": "identityAttribute"
+          },
+          "negativeCondition": "inactive",
+          "operator": "gt",
+          "positiveCondition": "active",
+          "secondDate": "now"
+        },
+        "type": "dateCompare"
+      },
+      "operator": "gt",
+      "positiveCondition": "prehire",
+      "requiresPeriodicRefresh": "true",
+      "secondDate": "now"
+    },
+    "id": "a3fae145-eb7b-44bb-97f2-ff98916d9099",
+    "internal": false,
+    "name": "Determine Lifecycle State",
+    "type": "dateCompare"
+  },
+  "self": {
+    "id": "a3fae145-eb7b-44bb-97f2-ff98916d9099",
+    "name": "Determine Lifecycle State",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

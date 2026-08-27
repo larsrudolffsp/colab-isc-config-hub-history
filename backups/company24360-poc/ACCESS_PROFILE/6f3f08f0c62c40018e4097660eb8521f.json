@@ -1,0 +1,51 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:12:57.112356Z",
+    "description": "Internal Accounts Receivable Application Access",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "52217b7224dc305abbd3c12596e05a69",
+        "name": "AccountsReceivable",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "6f3f08f0c62c40018e4097660eb8521f",
+    "modified": "2026-08-15T14:12:57.112356Z",
+    "name": "Accounts Receivable",
+    "owner": {
+      "id": "a401559ae4df445990c1de37ef846ed6",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": false,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "86b2cca134d8401097e09dca3b38e91a",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "6f3f08f0c62c40018e4097660eb8521f",
+    "name": "Accounts Receivable",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

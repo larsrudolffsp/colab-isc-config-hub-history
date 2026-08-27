@@ -1,0 +1,51 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:12:46.331729Z",
+    "description": "Internal Accounts Payable Application Access",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "438e9ed77e213067a4c70ecad35c2f77",
+        "name": "AccountsPayable",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "ba5128bac59e4ab4bdfc8f6ffb46d322",
+    "modified": "2026-08-15T14:12:46.331729Z",
+    "name": "Accounts Payable",
+    "owner": {
+      "id": "a401559ae4df445990c1de37ef846ed6",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": false,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "86b2cca134d8401097e09dca3b38e91a",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "ba5128bac59e4ab4bdfc8f6ffb46d322",
+    "name": "Accounts Payable",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

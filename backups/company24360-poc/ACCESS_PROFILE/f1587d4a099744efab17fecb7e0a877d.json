@@ -1,0 +1,51 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:13:29.652406Z",
+    "description": "Corporate VPN Access",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "ed3820fbc8ae33ce85fcf128ea62fc6c",
+        "name": "Corporate-VPN",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "f1587d4a099744efab17fecb7e0a877d",
+    "modified": "2026-08-15T14:13:29.652406Z",
+    "name": "Corporate VPN Access",
+    "owner": {
+      "id": "a401559ae4df445990c1de37ef846ed6",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": false,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "86b2cca134d8401097e09dca3b38e91a",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "f1587d4a099744efab17fecb7e0a877d",
+    "name": "Corporate VPN Access",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

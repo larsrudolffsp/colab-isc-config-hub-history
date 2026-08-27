@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "active": false,
+    "created": "2026-08-15T14:27:25.548904Z",
+    "description": "Finance Segment",
+    "id": "f9f32089-96c6-4567-90a9-eac69e9b308c",
+    "modified": "2026-08-15T14:27:25.548919Z",
+    "name": "Finance Segment",
+    "owner": null,
+    "visibilityCriteria": {
+      "expression": {
+        "attribute": "department",
+        "children": null,
+        "operator": "EQUALS",
+        "value": {
+          "type": "STRING",
+          "value": "Finance"
+        }
+      }
+    }
+  },
+  "self": {
+    "id": "f9f32089-96c6-4567-90a9-eac69e9b308c",
+    "name": "Finance Segment",
+    "type": "SEGMENT"
+  },
+  "version": 1
+}

@@ -1,0 +1,167 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-08-15T14:21:53.473209747Z",
+    "creator": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "HTTP Request",
+      "steps": {
+        "Compare Strings": {
+          "choiceList": [
+            {
+              "comparator": "StringEquals",
+              "nextStep": "Send Email",
+              "variableA.$": "$.httpRequest.statusCode",
+              "variableB": "200"
+            }
+          ],
+          "defaultStep": "Send Email 1",
+          "description": "Determines whether the HTTP Request step was successful.",
+          "type": "choice"
+        },
+        "Create Certification Campaign": {
+          "actionId": "sp:create-campaign",
+          "attributes": {
+            "description": "New Hire certification - This campaign is to verify access for new hires.",
+            "duration": "1w",
+            "emailNotificationEnabled": true,
+            "identityId.$": "$.trigger.identity.id",
+            "name.$": "$.trigger.identity.name",
+            "reviewerId.$": "$.trigger.attributes.manager.id"
+          },
+          "description": "Creates a new-hire certification campaign so that the new hire's manager can review their access.",
+          "nextStep": "success",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Get Access": {
+          "actionId": "sp:access:get",
+          "attributes": {
+            "accessprofiles": false,
+            "entitlements": true,
+            "getAccessBy": "searchQuery",
+            "query": "name: \"Travel Booking\"",
+            "roles": false
+          },
+          "description": "Finds entitlements this user needs that are not currently provisioned as part of an access profile or role.\n\nThis example finds entitlements related to \"Travel Booking\". Although these entitlements are not part of an existing role or access profile, the new sales team member will need this access, so the workflow gets those entitlements for use in the Manage Access step.",
+          "nextStep": "Manage Access",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.attributes.manager.id"
+          },
+          "description": "This node is used to gather information about the user's manager to populate their email.",
+          "nextStep": "Compare Strings",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "HTTP Request": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth"
+          },
+          "nextStep": "Get Identity",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Manage Access": {
+          "actionId": "sp:access:manage",
+          "attributes": {
+            "addIdentities.$": "$.trigger.identity.id",
+            "comments": "Automatically granted by workflows",
+            "removeDuration": "2w",
+            "requestType": "GRANT_ACCESS",
+            "requestedItems.$": "$.getAccess.accessItems"
+          },
+          "description": "Takes the results from the Get Access step for Travel Booking entitlements and submit it as an access request for the new identity.",
+          "nextStep": "Create Certification Campaign",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Send Email": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body": "Dear ${manager},<br><p>An ITSM request has been submitted for a new employee named <b style=\"\">${employee}</b> Here are the details of the request:<br>${body}</p><br><p>Thank you,<br> Your Access Team</p>",
+            "context": {
+              "body.$": "$.httpRequest",
+              "employee.$": "$.trigger.identity.name",
+              "manager.$": "$.getIdentity.attributes.firstname"
+            },
+            "recipientEmailList.$": "$.getIdentity.attributes.email",
+            "replyTo": null,
+            "subject": "New Employee"
+          },
+          "description": "Sends an email to the new-hire's manager informing them of the service desk ticket creation.",
+          "nextStep": "Get Access",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Send Email 1": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body": "The creation of the service desk ticket for physical assets failed. Please create this ticket manually and verify all other onboarding tasks for the following new identity:\n\nAttributes:\n- Email: ${email}\n- Name: ${displayName}",
+            "context": {
+              "email.$": "$.trigger.attributes.email",
+              "name.$": "$.trigger.attributes.displayName"
+            },
+            "recipientEmailList.$": "$.getIdentity.attributes.email",
+            "replyTo.$": "",
+            "subject": "Service Desk Ticket Creation Failed"
+          },
+          "description": "Notifies the new identity's manager that the HTTP request failed.",
+          "nextStep": "failure 1",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "failure 1": {
+          "description": "Ends the workflow in a failure state.",
+          "failureDetails": "The automated joiner workflow failed to create a service desk ticket for physical assets.",
+          "failureName": "Failed service desk ticket",
+          "type": "failure"
+        },
+        "success": {
+          "description": "Ends the workflow after all access has been requested and the certification has been activated.",
+          "type": "success"
+        }
+      }
+    },
+    "description": "Workflow to begin the process of onboarding a new identity.",
+    "enabled": false,
+    "id": "e3079389-5058-42be-b524-0aa7cd7f0d53",
+    "modified": "2026-08-15T14:21:53.473209747Z",
+    "modifiedBy": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "name": "Initiate Onboarding Process When a New Identity is Created",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "filter.$": "$[?($.attributes.department == \"sales\")]",
+        "id": "idn:identity-created",
+        "integrationId": null
+      },
+      "mode": "advanced",
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "e3079389-5058-42be-b524-0aa7cd7f0d53",
+    "name": "Initiate Onboarding Process When a New Identity is Created",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

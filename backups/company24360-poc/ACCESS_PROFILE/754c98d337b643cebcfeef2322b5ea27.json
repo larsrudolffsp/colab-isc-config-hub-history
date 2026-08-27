@@ -1,0 +1,56 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:16:46.718615Z",
+    "description": "Base Active Directory account for all active employees",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "f2df70325b0c34458bb0f39fa365daa5",
+        "name": "campusAccess",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "f626be38797e3fba825d7ba979db2200",
+        "name": "All_Users",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "754c98d337b643cebcfeef2322b5ea27",
+    "modified": "2026-08-15T14:16:46.718615Z",
+    "name": "Employee Base Account",
+    "owner": {
+      "id": "a401559ae4df445990c1de37ef846ed6",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": false,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "86b2cca134d8401097e09dca3b38e91a",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "754c98d337b643cebcfeef2322b5ea27",
+    "name": "Employee Base Account",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

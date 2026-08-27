@@ -1,0 +1,31 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "id": "bd1ff0df-5310-41e6-8b8b-b2728d9ce2f4",
+    "name": "Default Groups",
+    "passwordPolicy": {
+      "id": "266e55560d934fa58b97c1b285782c04",
+      "name": "Default Policy",
+      "type": "PASSWORD_POLICY"
+    },
+    "sources": [
+      {
+        "id": "611f2ff9f00a45f3a218abd7a0ab5b77",
+        "name": "TRAKK-WS",
+        "type": "SOURCE"
+      },
+      {
+        "id": "86d2c630306a44609898608a6486d6f1",
+        "name": "PRISM",
+        "type": "SOURCE"
+      }
+    ]
+  },
+  "self": {
+    "id": "bd1ff0df-5310-41e6-8b8b-b2728d9ce2f4",
+    "name": "Default Groups",
+    "type": "PASSWORD_SYNC_GROUP"
+  },
+  "version": 1
+}

@@ -1,0 +1,38 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountIdMinWordLength": -1,
+    "accountNameMinWordLength": -1,
+    "defaultPolicy": false,
+    "description": null,
+    "enablePasswdExpiration": false,
+    "firstExpirationReminder": -1,
+    "id": "54d06ecc087d45ee8d34218d63ba3882",
+    "maxLength": 8,
+    "maxRepeatedChars": -1,
+    "minAlpha": 1,
+    "minCharacterTypes": -1,
+    "minLength": 7,
+    "minLower": 0,
+    "minNumeric": 1,
+    "minSpecial": 0,
+    "minUpper": 0,
+    "name": "Legacy Policy",
+    "passwordExpiration": 90,
+    "requireStrongAuthOffNetwork": false,
+    "requireStrongAuthUntrustedGeographies": false,
+    "requireStrongAuthn": false,
+    "useAccountAttributes": false,
+    "useDictionary": false,
+    "useIdentityAttributes": false,
+    "validateAgainstAccountId": false,
+    "validateAgainstAccountName": false
+  },
+  "self": {
+    "id": "54d06ecc087d45ee8d34218d63ba3882",
+    "name": "Legacy Policy",
+    "type": "PASSWORD_POLICY"
+  },
+  "version": 1
+}

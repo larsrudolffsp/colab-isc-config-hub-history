@@ -1,0 +1,51 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:13:07.928854Z",
+    "description": "Access for Benefits Employees. Distribution group and File share access.",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "7a2a846fb28a373a848b6efa30fb68a7",
+        "name": "Benefits",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "824a2ca1b8ef401fa5259666acfc9e1e",
+    "modified": "2026-08-15T14:13:07.928854Z",
+    "name": "Benefits Employees",
+    "owner": {
+      "id": "a401559ae4df445990c1de37ef846ed6",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": false,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "86b2cca134d8401097e09dca3b38e91a",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "824a2ca1b8ef401fa5259666acfc9e1e",
+    "name": "Benefits Employees",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

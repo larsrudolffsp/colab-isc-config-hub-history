@@ -1,0 +1,51 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:18:02.003743Z",
+    "description": "Access to the headquarters building - exterior doors and common areas. And everywhere else",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "7ddb1af32d4b3c9abaeff29114b95eb2",
+        "name": "HQ Access",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "0f1996ddd2cc40c6af7ff86a22ebd8ba",
+    "modified": "2026-08-15T14:18:02.003743Z",
+    "name": "Badging - HQ Access",
+    "owner": {
+      "id": "a401559ae4df445990c1de37ef846ed6",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": false,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "96221791f9b04ef9bda99979afa55394",
+      "name": "Badging",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "0f1996ddd2cc40c6af7ff86a22ebd8ba",
+    "name": "Badging - HQ Access",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

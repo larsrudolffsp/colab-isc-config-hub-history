@@ -1,0 +1,208 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2024-06-08T02:37:39.840488866Z",
+    "description": "Captured the new employee's contact info.  Includes Employee Name passed from the initiating workflow.",
+    "formConditions": [
+      {
+        "effects": [
+          {
+            "config": {
+              "element": "1639253101227"
+            },
+            "effectType": "SHOW"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "EQ",
+            "source": "toggleLifeInsurance",
+            "sourceType": "ELEMENT",
+            "value": "true",
+            "valueType": "BOOLEAN"
+          }
+        ]
+      }
+    ],
+    "formElements": [
+      {
+        "config": {
+          "alignment": "LEFT",
+          "description": "This information is really important if you happen to get hit by a \"lottery bus\".",
+          "formElements": [
+            {
+              "config": {
+                "dataSource": {
+                  "config": {
+                    "options": [
+                      {
+                        "label": "Father",
+                        "subLabel": "",
+                        "value": "Father"
+                      },
+                      {
+                        "label": "Friend",
+                        "subLabel": "",
+                        "value": "Friend"
+                      },
+                      {
+                        "label": "Husband",
+                        "subLabel": "",
+                        "value": "Husband"
+                      },
+                      {
+                        "label": "Mother",
+                        "subLabel": "",
+                        "value": "Mother"
+                      },
+                      {
+                        "label": "Spouse",
+                        "subLabel": "",
+                        "value": "Spouse"
+                      },
+                      {
+                        "label": "Wife",
+                        "subLabel": "",
+                        "value": "Wife"
+                      }
+                    ]
+                  },
+                  "dataSourceType": "STATIC"
+                },
+                "forceSelect": true,
+                "helpText": "",
+                "label": "Relationship of Named Contact to You",
+                "maximum": 1,
+                "placeholder": "Unknown",
+                "required": false
+              },
+              "elementType": "SELECT",
+              "id": "704406092717",
+              "key": "relationshipField",
+              "validations": [
+                {
+                  "validationType": "DATA_SOURCE"
+                }
+              ]
+            },
+            {
+              "config": {
+                "default": "",
+                "description": "",
+                "formatAsYouType": true,
+                "helpText": "",
+                "internationalized": true,
+                "label": "Contact Telephone Number",
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "PHONE",
+              "id": "164364586775",
+              "key": "telephoneNumber",
+              "validations": [
+                {
+                  "validationType": "PHONE"
+                },
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "config": {
+                "default": "",
+                "description": "",
+                "helpText": "",
+                "label": "Contact Name",
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "TEXT",
+              "id": "131965617468",
+              "key": "contactName",
+              "validations": [
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "config": {
+                "default": "",
+                "description": "",
+                "helpText": "",
+                "label": "Contact Notes",
+                "placeholder": "Enter any important notes here",
+                "required": false,
+                "resize": false,
+                "rows": 2
+              },
+              "elementType": "TEXTAREA",
+              "id": "274962575611",
+              "key": "InputFormEmployeeInfo",
+              "validations": []
+            },
+            {
+              "config": {
+                "default": "",
+                "description": "",
+                "helpText": "",
+                "label": "Insurance Policy Number",
+                "placeholder": "",
+                "required": false
+              },
+              "elementType": "TEXT",
+              "id": "1639253101227",
+              "key": "insurancePolicyNumber",
+              "validations": []
+            },
+            {
+              "config": {
+                "default": false,
+                "falseLabel": "No",
+                "helpText": "Please let us know so we can inform your contact in the event of an emergency.",
+                "label": "Do you have Life Insurance?",
+                "trueLabel": "Yes"
+              },
+              "elementType": "TOGGLE",
+              "id": "1329185598248",
+              "key": "toggleLifeInsurance",
+              "validations": []
+            }
+          ],
+          "label": "{{$.form.input.formEmployeeName}}, Please enter Your Emergency Contact Information Below",
+          "labelStyle": "h2",
+          "showLabel": true
+        },
+        "elementType": "SECTION",
+        "id": "1190002412679",
+        "validations": []
+      }
+    ],
+    "formInput": [
+      {
+        "description": "",
+        "id": "formEmployeeName",
+        "label": "formEmployeeName",
+        "type": "STRING"
+      }
+    ],
+    "id": "a1a929df-3336-43a2-85f5-c57a1bcf9ab1",
+    "modified": "2026-08-15T14:27:27.097562625Z",
+    "name": "Emergency Contact Info - multi-valued v3",
+    "owner": {
+      "id": "6a248567af5a4a5683666fc75b2ad8ba",
+      "name": "",
+      "type": "IDENTITY"
+    },
+    "usedBy": []
+  },
+  "self": {
+    "id": "a1a929df-3336-43a2-85f5-c57a1bcf9ab1",
+    "name": "Emergency Contact Info - multi-valued v3",
+    "type": "FORM_DEFINITION"
+  },
+  "version": 1
+}

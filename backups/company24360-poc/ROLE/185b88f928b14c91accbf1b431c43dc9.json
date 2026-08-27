@@ -1,0 +1,97 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [
+      {
+        "id": "6f3f08f0c62c40018e4097660eb8521f",
+        "name": "Accounts Receivable",
+        "type": "ACCESS_PROFILE"
+      }
+    ],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:22:31.049929Z",
+    "description": "Accounts Receivable Analyst",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [],
+    "id": "185b88f928b14c91accbf1b431c43dc9",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "key": {
+                  "property": "attribute.cloudLifecycleState",
+                  "sourceId": "",
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": "active",
+                "values": null
+              },
+              {
+                "children": [],
+                "key": {
+                  "property": "attribute.jobTitle",
+                  "sourceId": "",
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": "Accounts Receivable Analyst",
+                "values": null
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": "",
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2026-08-15T14:22:31.049929Z",
+    "name": "Accounts Receivable Analyst",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "185b88f928b14c91accbf1b431c43dc9",
+    "name": "Accounts Receivable Analyst",
+    "type": "ROLE"
+  },
+  "version": 1
+}

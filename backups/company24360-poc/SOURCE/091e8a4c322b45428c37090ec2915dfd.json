@@ -1,0 +1,58 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "assumeRoleDurationInSeconds": "900",
+      "assumeRoleSessionName": "vH1SMLyLnswQ76Df1PvIeuoFJgw8FfK9FP49orlp",
+      "authMethod": "IAM User",
+      "cloudCacheUpdate": 1786800812667,
+      "cloudDisplayName": "aws-sm-provider",
+      "connectionType": "direct",
+      "connectorName": "AWS Secrets Manager",
+      "enableProvisioningFeature": true,
+      "encrypted": "secretAccessKey",
+      "isCredentialCachingEnabled": false,
+      "keyId": "AKIA5FNO7R6SUI6FANXC",
+      "providerClass": "com.sailpoint.credential.provider.impl.AWSSecretsManagerCredentialProvider",
+      "region": "us-east-1",
+      "roleARN": "arn:aws:iam::904994459557:role/privilege-pag-qa",
+      "since": "2026-08-15T13:33:32.381Z",
+      "templateApplication": "AWS Secrets Manager"
+    },
+    "connectorClass": "sailpoint.credentials.provider.impl.AWSSecretsManagerProvider",
+    "connectorScriptName": "aws-secrets-manager",
+    "correlationConfigDetails": {
+      "attributeAssignments": null,
+      "id": null,
+      "name": null
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": null,
+    "description": "Closed preview PTA credentials provider",
+    "features": [],
+    "id": "091e8a4c322b45428c37090ec2915dfd",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "aws-sm-provider",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": null,
+    "provisionAsCsv": false,
+    "provisioningPolicies": [],
+    "schemas": [],
+    "type": "AWS Secrets Manager"
+  },
+  "self": {
+    "id": "091e8a4c322b45428c37090ec2915dfd",
+    "name": "aws-sm-provider",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

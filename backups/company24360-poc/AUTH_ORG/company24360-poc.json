@@ -1,0 +1,41 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "enabled": true,
+    "lockoutConfig": {
+      "lockoutDuration": 15,
+      "lockoutWindow": 5,
+      "maximumAttempts": 5
+    },
+    "networkConfig": {
+      "geolocation": null,
+      "range": null,
+      "whitelisted": false
+    },
+    "orgConfig": {
+      "domain": "company24360-poc.identitynow-demo.com",
+      "legacyPasswordReset": false,
+      "redirectPatterns": null
+    },
+    "patReminderConfig": null,
+    "serviceProviderConfig": {
+      "bypassIDP": false,
+      "enabled": false,
+      "federationProtocolDetails": null,
+      "samlConfigurationValid": false
+    },
+    "sessionConfig": {
+      "maxIdleTime": 720,
+      "maxSessionTime": 7200,
+      "rememberMe": true
+    },
+    "tenant": "company24360-poc"
+  },
+  "self": {
+    "id": "company24360-poc",
+    "name": "company24360-poc",
+    "type": "AUTH_ORG"
+  },
+  "version": 1
+}

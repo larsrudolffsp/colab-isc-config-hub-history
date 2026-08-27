@@ -1,0 +1,61 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:19:46.385216Z",
+    "description": "Grants report administrator access to the PRISM ERP system.",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "1c4e3416f8f43a749bcc75fe962c1ecd",
+        "name": "Create_Reports",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "d256d7e52b7631a6a30b1c0dc3ad6315",
+        "name": "View_Reports",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "da3d9f688c0b346c977e4d0abf35ac02",
+        "name": "Modify_Reports",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "2cbb532add0a4c6ba8a8177da7716b0f",
+    "modified": "2026-08-15T14:19:46.385216Z",
+    "name": "PRISM ERP - Report Admin",
+    "owner": {
+      "id": "a401559ae4df445990c1de37ef846ed6",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": true,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "86d2c630306a44609898608a6486d6f1",
+      "name": "PRISM",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "2cbb532add0a4c6ba8a8177da7716b0f",
+    "name": "PRISM ERP - Report Admin",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

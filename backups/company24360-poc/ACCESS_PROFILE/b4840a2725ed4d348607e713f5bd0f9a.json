@@ -1,0 +1,56 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:13:50.561107Z",
+    "description": "Financial Systems Analyst Access",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "1c31c392df4338df8da4e370e33c0d03",
+        "name": "Finance-Invoicing",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "e6898d5be5173a87bb78c563e19b6050",
+        "name": "FinanceUsers",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "b4840a2725ed4d348607e713f5bd0f9a",
+    "modified": "2026-08-15T14:13:50.561107Z",
+    "name": "Financial Systems Analyst Access",
+    "owner": {
+      "id": "a401559ae4df445990c1de37ef846ed6",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": false,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "86b2cca134d8401097e09dca3b38e91a",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "b4840a2725ed4d348607e713f5bd0f9a",
+    "name": "Financial Systems Analyst Access",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

@@ -1,0 +1,34 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "connectionCount": 0,
+    "connections": null,
+    "created": null,
+    "description": "Accounting",
+    "id": "7bf05e8b-dbe8-446c-a442-ac06e927705d",
+    "memberCount": 0,
+    "members": [
+      {
+        "id": "fbeab98956d84f0bac232d537e6045a1",
+        "name": "Debra.Wood",
+        "type": "IDENTITY"
+      }
+    ],
+    "modified": null,
+    "name": "Accounting",
+    "owner": {
+      "displayName": null,
+      "emailAddress": null,
+      "id": "e9142bafc1354635addded819e62d55d",
+      "name": "Aaron.Nichols",
+      "type": "IDENTITY"
+    }
+  },
+  "self": {
+    "id": "7bf05e8b-dbe8-446c-a442-ac06e927705d",
+    "name": "Accounting",
+    "type": "GOVERNANCE_GROUP"
+  },
+  "version": 1
+}

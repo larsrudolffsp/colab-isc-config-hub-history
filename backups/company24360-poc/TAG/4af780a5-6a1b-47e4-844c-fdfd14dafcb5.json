@@ -1,0 +1,28 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": null,
+    "id": "4af780a5-6a1b-47e4-844c-fdfd14dafcb5",
+    "modified": null,
+    "name": "CUSTOM123",
+    "taggedObjects": [
+      {
+        "id": "6e53c5a6-7d4c-4477-90c0-7d4acdaa63ee",
+        "name": "Developer Administrator Violation",
+        "type": "SOD_POLICY"
+      },
+      {
+        "id": "aac2b3ea-a130-463b-97dd-eb4f228681cd",
+        "name": "Admin Accountants",
+        "type": "SOD_POLICY"
+      }
+    ]
+  },
+  "self": {
+    "id": "4af780a5-6a1b-47e4-844c-fdfd14dafcb5",
+    "name": "CUSTOM123",
+    "type": "TAG"
+  },
+  "version": 1
+}

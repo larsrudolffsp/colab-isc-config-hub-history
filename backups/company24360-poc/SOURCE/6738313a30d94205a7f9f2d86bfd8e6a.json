@@ -1,0 +1,191 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "cloudCacheUpdate": 1787043953736,
+      "cloudDisplayName": "User Source",
+      "connectionType": "direct",
+      "connectorName": "SailPoint Non-Employee Risk Management Users",
+      "deleteThresholdPercentage": 10,
+      "healthCheckTimeout": 30,
+      "healthy": false,
+      "idnProxyType": "sp-connect",
+      "since": "2026-08-18T09:05:53.719Z",
+      "spConnectorSpecId": "11235c1e-d799-48ba-8dbc-018ab82a8140",
+      "status": "SOURCE_STATE_FAILURE_SOURCE",
+      "templateApplication": "SailPoint Non-Employee Risk Management Users",
+      "tenantDomain": "company24360-poc.mynonemployee.com"
+    },
+    "connectorClass": "",
+    "connectorScriptName": "11235c1e-d799-48ba-8dbc-018ab82a8140",
+    "correlationConfigDetails": {
+      "attributeAssignments": null,
+      "id": null,
+      "name": null
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": 10,
+    "description": "Non-Authoritative Source for User identity data",
+    "features": [
+      "PROVISIONING"
+    ],
+    "id": "6738313a30d94205a7f9f2d86bfd8e6a",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "User Source",
+    "owner": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": null,
+    "provisionAsCsv": false,
+    "provisioningPolicies": [],
+    "schemas": [
+      {
+        "attributes": [
+          {
+            "description": "Customized unique identifier for the entitlement",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Entitlement UID",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "ID of the entitlement",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Entitlement ID",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Name of the entitlement",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Entitlement Name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-08-17T22:27:46.824Z",
+        "displayAttribute": "Entitlement Name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "3be87cb4cf604e899f75b29ff8a3e722",
+        "identityAttribute": "Entitlement UID",
+        "includePermissions": false,
+        "modified": "2026-08-17T22:27:46.824Z",
+        "name": "group",
+        "nativeObjectType": "Group"
+      },
+      {
+        "attributes": [
+          {
+            "description": "Email of the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "email",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Entitlements assigned to the user",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "entitlements",
+            "nativeName": null,
+            "schema": {
+              "id": "3be87cb4cf604e899f75b29ff8a3e722",
+              "name": "group",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Login of the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "login",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Name of the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Status of the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "status",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "UUID of the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-08-17T22:27:46.824Z",
+        "displayAttribute": "login",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "38158ee7b9634720909a0a61cd935f04",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2026-08-17T22:27:46.824Z",
+        "name": "account",
+        "nativeObjectType": "User"
+      }
+    ],
+    "type": "11235c1e-d799-48ba-8dbc-018ab82a8140"
+  },
+  "self": {
+    "id": "6738313a30d94205a7f9f2d86bfd8e6a",
+    "name": "User Source",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

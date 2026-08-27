@@ -1,0 +1,50 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "allowedControls": [],
+    "approvalGuidance": null,
+    "compensatingControls": "Users with SOD violations are subject to ...",
+    "conflictingAccessCriteria": null,
+    "correctionAdvice": "Choose one",
+    "created": "2026-08-15T14:22:26Z",
+    "creatorId": "03d16262e1234807956c1e431478f6ba",
+    "creatorRef": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "SailPoint Support",
+      "type": "IDENTITY"
+    },
+    "description": "Non-IT Users with Privileged System Access",
+    "externalPolicyReference": "https://my.sharepointonline.com/policies/abcxyz",
+    "id": "8306043f-5d97-4007-a64e-5e4a9b9907ff",
+    "level": null,
+    "modified": "2026-08-15T14:22:26Z",
+    "modifierId": null,
+    "name": "Non-IT Users with Privileged System Access",
+    "ownerRef": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "policyQuery": "@access(name:WindowsAdministration) AND NOT attributes.Department:IT",
+    "preventSetting": null,
+    "scheduled": false,
+    "secondaryOwnerRefs": [],
+    "state": "ENFORCED",
+    "tags": [
+      "INTERNALCONTROL237",
+      "SOX"
+    ],
+    "type": "GENERAL",
+    "violationOwnerAssignmentConfig": {
+      "assignmentRule": "MANAGER",
+      "ownerRef": null
+    }
+  },
+  "self": {
+    "id": "8306043f-5d97-4007-a64e-5e4a9b9907ff",
+    "name": "Non-IT Users with Privileged System Access",
+    "type": "SOD_POLICY"
+  },
+  "version": 1
+}

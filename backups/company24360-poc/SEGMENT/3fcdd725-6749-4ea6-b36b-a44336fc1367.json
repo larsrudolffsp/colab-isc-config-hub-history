@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "active": false,
+    "created": "2026-08-15T14:27:25.478988Z",
+    "description": "Isolating DNS Administration visibility",
+    "id": "3fcdd725-6749-4ea6-b36b-a44336fc1367",
+    "modified": "2026-08-15T14:27:25.478994Z",
+    "name": "DNS Admin Isolation",
+    "owner": null,
+    "visibilityCriteria": {
+      "expression": {
+        "attribute": "firstname",
+        "children": null,
+        "operator": "EQUALS",
+        "value": {
+          "type": "STRING",
+          "value": "Jerry"
+        }
+      }
+    }
+  },
+  "self": {
+    "id": "3fcdd725-6749-4ea6-b36b-a44336fc1367",
+    "name": "DNS Admin Isolation",
+    "type": "SEGMENT"
+  },
+  "version": 1
+}

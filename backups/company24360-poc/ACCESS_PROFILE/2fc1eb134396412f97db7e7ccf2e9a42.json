@@ -1,0 +1,61 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-15T14:21:09.415026Z",
+    "description": "Grants user access to the PRISM ERP system",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "41745da9be7831cab115899ae9c53aea",
+        "name": "Internal_Employee",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "7292c62669ba3af09587b17ab3ee8901",
+        "name": "User",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "d256d7e52b7631a6a30b1c0dc3ad6315",
+        "name": "View_Reports",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "2fc1eb134396412f97db7e7ccf2e9a42",
+    "modified": "2026-08-15T14:21:09.415026Z",
+    "name": "PRISM ERP Employee Access",
+    "owner": {
+      "id": "a401559ae4df445990c1de37ef846ed6",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": true,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "86d2c630306a44609898608a6486d6f1",
+      "name": "PRISM",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "2fc1eb134396412f97db7e7ccf2e9a42",
+    "name": "PRISM ERP Employee Access",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

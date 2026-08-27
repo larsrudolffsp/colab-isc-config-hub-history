@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "active": false,
+    "created": "2026-08-15T14:27:25.470321Z",
+    "description": "Accounting Department",
+    "id": "b0e78464-1a7f-4ecb-a5ba-43e774837a90",
+    "modified": "2026-08-15T14:27:25.470338Z",
+    "name": "Accounting Department",
+    "owner": null,
+    "visibilityCriteria": {
+      "expression": {
+        "attribute": "department",
+        "children": null,
+        "operator": "EQUALS",
+        "value": {
+          "type": "STRING",
+          "value": "Accounting"
+        }
+      }
+    }
+  },
+  "self": {
+    "id": "b0e78464-1a7f-4ecb-a5ba-43e774837a90",
+    "name": "Accounting Department",
+    "type": "SEGMENT"
+  },
+  "version": 1
+}

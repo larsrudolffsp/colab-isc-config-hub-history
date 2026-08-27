@@ -1,0 +1,75 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "allowedControls": [],
+    "approvalGuidance": null,
+    "compensatingControls": "Controls go here",
+    "conflictingAccessCriteria": {
+      "leftCriteria": {
+        "criteriaList": [
+          {
+            "id": "40457536d5c2396f82bb4d8d5e02b094",
+            "name": "SysAdministration",
+            "type": "ENTITLEMENT"
+          },
+          {
+            "id": "8ac04d6922213b518adcf0ad6b0d828d",
+            "name": "Admins",
+            "type": "ENTITLEMENT"
+          }
+        ],
+        "name": "Administrator"
+      },
+      "rightCriteria": {
+        "criteriaList": [
+          {
+            "id": "6ea6f26ee36a3e7d95130dd62fe0974b",
+            "name": "Development",
+            "type": "ENTITLEMENT"
+          }
+        ],
+        "name": "Developer"
+      }
+    },
+    "correctionAdvice": "Advice goes here",
+    "created": "2026-08-15T14:22:23Z",
+    "creatorId": "03d16262e1234807956c1e431478f6ba",
+    "creatorRef": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "SailPoint Support",
+      "type": "IDENTITY"
+    },
+    "description": "Developer Administrator Violation",
+    "externalPolicyReference": "See section 23 of Employee Handbook on Data Handling",
+    "id": "6e53c5a6-7d4c-4477-90c0-7d4acdaa63ee",
+    "level": "HIGH",
+    "modified": "2026-08-15T14:22:23Z",
+    "modifierId": null,
+    "name": "Developer Administrator Violation",
+    "ownerRef": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "policyQuery": "@access(id:40457536d5c2396f82bb4d8d5e02b094 OR id:8ac04d6922213b518adcf0ad6b0d828d) AND @access(id:6ea6f26ee36a3e7d95130dd62fe0974b)",
+    "preventSetting": null,
+    "scheduled": false,
+    "secondaryOwnerRefs": [],
+    "state": "ENFORCED",
+    "tags": [
+      "CUSTOM123"
+    ],
+    "type": "CONFLICTING_ACCESS_BASED",
+    "violationOwnerAssignmentConfig": {
+      "assignmentRule": "MANAGER",
+      "ownerRef": null
+    }
+  },
+  "self": {
+    "id": "6e53c5a6-7d4c-4477-90c0-7d4acdaa63ee",
+    "name": "Developer Administrator Violation",
+    "type": "SOD_POLICY"
+  },
+  "version": 1
+}

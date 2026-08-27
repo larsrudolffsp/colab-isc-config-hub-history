@@ -1,0 +1,135 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-08-15T14:21:55.333512405Z",
+    "creator": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Form",
+      "steps": {
+        "Compare Strings": {
+          "choiceList": [
+            {
+              "comparator": "StringEquals",
+              "nextStep": "HTTP Request",
+              "variableA.$": "$.trigger.attributes.department",
+              "variableB": "Engineering"
+            }
+          ],
+          "defaultStep": "Send Email",
+          "description": "If the employee is in Engineering department, do not send a confirmation email.   This seems to annoy the engineers...",
+          "displayName": "Is Dept = Engineering?",
+          "type": "choice"
+        },
+        "End Step - Success": {
+          "displayName": "",
+          "type": "success"
+        },
+        "Form": {
+          "actionId": "sp:forms",
+          "attributes": {
+            "deadline": "1h",
+            "formDefinitionId": "a1a929df-3336-43a2-85f5-c57a1bcf9ab1",
+            "inputForForm_formEmployeeName.$": "$.trigger.attributes.displayName",
+            "notificationBody": "Hello {{$.trigger.attributes.displayName}},\n<br><br>\nPlease add your emergency contact information ASAP. Select the link below to enter your information. \n<br><br>\nThank you.\n<br>",
+            "notificationSubject": "Please Update Your Emergency Contact Info",
+            "recipient.$": "$.trigger.identity.id",
+            "reminder": "1h",
+            "reminderBody": "This is a reminder - Please add your emergency contact information ASAP."
+          },
+          "description": "Request that the new employee add his/her  emergency contact information.",
+          "displayName": "Form - Requests Emergency Info from new employee",
+          "nextStep": "Compare Strings",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "HTTP Request": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": null,
+            "jsonRequestBody": {
+              "Contact Name.$": "$.form.formData.contactName",
+              "Contact Relationship.$": "$.form.formData.relationshipField",
+              "Contact Telephone Number.$": "$.form.formData.telephoneNumber",
+              "Employee Info.$": "$.form.formData.InputFormEmployeeInfo",
+              "Full Info Dump.$": "$.trigger",
+              "Insurance Policy Number.$": "$.form.formData.insurancePolicyNumber",
+              "LifeInsuranc (yes/no).$": "$.form.formData.toggleLifeInsurance",
+              "New Employee Email.$": "$.trigger.attributes.email",
+              "New Employee Name.$": "$.trigger.attributes.displayName"
+            },
+            "method": "get",
+            "requestContentType": "json",
+            "url": "<<PUT YOUR WebHook.site URL HERE>>",
+            "urlParams": null
+          },
+          "description": "Call an API and send the info to a system.",
+          "displayName": "Update the System using HTTP Request",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Send Email": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body": "This is a confirmation email with your updated contact information:\n<br><br>\nEmployee = ${newemployee}<br>\nEmail = ${email}<br><br>\n\n\nContact Name = ${contactName}<br>\nRelationship = ${contactRelationship}<br>\nContact Phone Number = ${contactTelephoneNumber}<br><br>\n\nContact Info = ${contactInfo}<br><br>\n\nThank you for providing this important information.",
+            "context": {
+              "contactInfo.$": "$.form.formData.InputFormEmployeeInfo",
+              "contactName.$": "$.form.formData.contactName",
+              "contactRelationship.$": "$.form.formData.relationshipField",
+              "contactTelephoneNumber.$": "$.form.formData.telephoneNumber",
+              "email.$": "$.trigger.attributes.email",
+              "newemployee.$": "$.trigger.attributes.displayName"
+            },
+            "from": "noreply@sailpoint.com",
+            "recipientEmailList.$": "$.trigger.attributes.email",
+            "replyTo": "noreply@sailpoint.com",
+            "subject": "${newemployee}, Thank you for Updating your Emergency Contact Information "
+          },
+          "description": "Confirmation Message",
+          "displayName": "Send Email Confirmation to Recipient ",
+          "nextStep": "HTTP Request",
+          "type": "action",
+          "versionNumber": 2
+        }
+      }
+    },
+    "description": "This fires for each new employee and requests (using a form) emergency contact information.  This information is saved into the Identity Profile using an API call.   Note that this info could be saved into a database or some other system.  Also, if the person is in the Engineering Dept, then a confirmation email will not be sent.",
+    "enabled": false,
+    "id": "e87dc2c8-66d1-4263-9499-1c8ace0bbf53",
+    "modified": "2026-08-15T14:21:55.333512405Z",
+    "modifiedBy": {
+      "id": "03d16262e1234807956c1e431478f6ba",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "name": "New Employee Update Emergency Contact info v5 multi-value form",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "attributeToFilter": "uid",
+        "description": "A new employee was just added to the system.",
+        "id": "idn:identity-created",
+        "integrationId": null,
+        "operatorToFilter": "operatorUid",
+        "operatorUid": "StringContains",
+        "operatorValue": "StringContains"
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "e87dc2c8-66d1-4263-9499-1c8ace0bbf53",
+    "name": "New Employee Update Emergency Contact info v5 multi-value form",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}
