@@ -526,6 +526,256 @@
       {
         "attributes": [
           {
+            "description": "AI agent ARN (aggregation identity). Version-qualified for published versions; unqualified for SYSTEM agents that AWS does not expose as numbered versions.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AI agent ARN. Version-qualified for published versions; unqualified (no :$LATEST suffix) for SYSTEM agents with no numbered versions.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "aiAgentArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AI agent kind (ORCHESTRATION, ANSWER_RECOMMENDATION, MANUAL_SEARCH, etc.).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "category",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS account ID where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Agent locale.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "locale",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Agent origin: SYSTEM or CUSTOMER.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "origin",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Agent tags, comma-separated (for example env:prod,team:support).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Connect Customer AI Agent of type AGENT.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "type",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Base AI agent id.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "aiAgentId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Connect instance service role ARN (DescribeInstance.ServiceRole); optional cross-source link to aws:iam-role.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "roleArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Description of the AI agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Display name of the AI agent with a version suffix: {name}:{version} for CUSTOMER published versions (for example SupportOrchestrator:2), {name}:LATEST for SYSTEM agents.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Inbound credential metadata (non-secret).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "inboundCredentials",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last modification time (ISO-8601).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastModified",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Lifecycle status (for example ACTIVE). Not a soft-disable switch.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "status",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Published version number. Empty for SYSTEM agents that AWS does not expose as numbered versions.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "versionNumber",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application. Always Amazon Connect Customer.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint description (mirrors agentDescription).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint-normalized agent status.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Suggested messages string.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "suggestedMessages",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-ai-agent",
+          "resourceType": "std:agent"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": "agentName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "bebe81cd6c1646dca9bca92b34adcc73",
+        "identityAttribute": "aiAgentArn",
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer AI Agent",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
             "description": "ARN of the S3 Vectors index (when storage type is S3_VECTORS).",
             "isEntitlement": false,
             "isGroup": false,
@@ -2776,6 +3026,766 @@
       {
         "attributes": [
           {
+            "description": "AWS account ID where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Connect Customer Guardrail of type MCP.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "type",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Display name of the Amazon Connect Customer Guardrail.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Identity of the Amazon Connect Customer Guardrail.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "guardrailArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application. Always Amazon Connect Customer.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Short id of the Amazon Connect Customer Guardrail.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "guardrailId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Amazon Connect Customer Guardrail identity (guardrailArn).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-guardrail",
+          "resourceType": "std:capability"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "42dea60fc77e4eaa9e196fa9ea938c5a",
+        "identityAttribute": "guardrailArn",
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer Guardrail",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Connect Customer Knowledge Base of type MCP.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "type",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Display name of the Amazon Connect Customer Knowledge Base.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Identity of the Amazon Connect Customer Knowledge Base.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "knowledgeBaseArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application. Always Amazon Connect Customer.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Short id of the Amazon Connect Customer Knowledge Base.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "knowledgeBaseId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Amazon Connect Customer Knowledge Base identity (knowledgeBaseArn).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-knowledge-base",
+          "resourceType": "std:capability"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "f3cd200037b5481a97d3ba51035a8aee",
+        "identityAttribute": "knowledgeBaseArn",
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer Knowledge Base",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Connect Customer Prompt of type MCP.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "type",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Display name of the Amazon Connect Customer Prompt.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Identity of the Amazon Connect Customer Prompt.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "promptArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application. Always Amazon Connect Customer.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Short id of the Amazon Connect Customer Prompt.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "promptId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Amazon Connect Customer Prompt identity (promptArn).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-prompt",
+          "resourceType": "std:capability"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "8590e0c026464481b2b11a242df601ba",
+        "identityAttribute": "promptArn",
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer Prompt",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Connect Customer Security Profile of type TOOL.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "type",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Display name of the Amazon Connect Customer Security Profile.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Identity of the Amazon Connect Customer Security Profile.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "securityProfileArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application. Always Amazon Connect Customer.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Short id of the Amazon Connect Customer Security Profile.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "securityProfileId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Amazon Connect Customer Security Profile identity (securityProfileArn).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-security-profile",
+          "resourceType": "std:capability"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "8f0303cac4e34668951c8bd6d27c3ea4",
+        "identityAttribute": "securityProfileArn",
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer Security Profile",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Connect Customer Tool of type TOOL.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "type",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Display name of the Amazon Connect Customer Tool.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "toolName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application. Always Amazon Connect Customer.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Amazon Connect Customer Tool identity (toolId).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Unique identifier of the Amazon Connect Customer Tool (AWS toolId).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "toolId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-tool",
+          "resourceType": "std:capability"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": "toolName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "b8a9adbe77ef4de49b5c24dd7de5e439",
+        "identityAttribute": "toolId",
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer Tool",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Connect identity management / IdP type.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identityManagementType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Friendly alias of the Connect instance.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "instanceAlias",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application. Always Amazon Connect Customer.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Status of the Connect instance.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "instanceStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Amazon Connect instance ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "instanceArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Connect instance ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Connect instance id.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "instanceId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-instance",
+          "resourceType": "std:application"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": "instanceAlias",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "b43374a4bf254de6a125e0e3429dd9a5",
+        "identityAttribute": "instanceArn",
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer Instance",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Domain / assistant ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "assistantArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Domain / assistant display name.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Domain / assistant id.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "assistantId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Domain capability type (for example V2).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "capabilityType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Domain status.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "status",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application. Always Amazon Connect Customer.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Amazon Connect Customer domain (assistant) ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-assistant",
+          "resourceType": "std:application"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "3668569d93ae43ba833311964c37bad0",
+        "identityAttribute": "assistantArn",
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer Domain",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
             "description": "AWS account ID where the role resides.",
             "isEntitlement": false,
             "isGroup": false,
@@ -3927,6 +4937,246 @@
         "includePermissions": false,
         "modified": "2026-08-16T03:57:38.949Z",
         "name": "AWS Bedrock Agent Uses Role",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:connectcustomer-agent-belongs-to-assistant#{AI Agent ARN}#{Assistant ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-agent-belongs-to-assistant",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "a30204b9b80647c0897670b2e0748bad",
+        "identityAttribute": null,
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer AI Agent Belongs To Domain",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:connectcustomer-agent-has-security-profile#{AI Agent ARN}#{Security Profile ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-agent-has-security-profile",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "f2c273901b72462d8269010994b08f62",
+        "identityAttribute": null,
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer AI Agent Has Security Profile",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:connectcustomer-agent-uses-guardrail#{AI Agent ARN}#{Guardrail ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-agent-uses-guardrail",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "ae8aaf39a030469d923d4946c589169b",
+        "identityAttribute": null,
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer AI Agent Uses Guardrail",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:connectcustomer-agent-uses-knowledge-base#{AI Agent ARN}#{Knowledge Base ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-agent-uses-knowledge-base",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "ab60c7116e634bdc90b8d055b0e9e69d",
+        "identityAttribute": null,
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer AI Agent Uses Knowledge Base",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:connectcustomer-agent-uses-prompt#{AI Agent ARN}#{Prompt ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-agent-uses-prompt",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "d5ac1dad0716482d9c567ea925c0ff9e",
+        "identityAttribute": null,
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer AI Agent Uses Prompt",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:connectcustomer-agent-uses-role#{AI Agent ARN}#{Role ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-agent-uses-role",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "033b05e5777b4cbeb4061911493f440f",
+        "identityAttribute": null,
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer AI Agent Uses Role",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:connectcustomer-agent-uses-tool#{AI Agent ARN}#{toolId}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-agent-uses-tool",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "bc1620fab92a4b02805b6747ce71ad0d",
+        "identityAttribute": null,
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer AI Agent Uses Tool",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:connectcustomer-assistant-belongs-to-instance#{Assistant ARN}#{Instance ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:connectcustomer",
+          "resourceId": "aws:connectcustomer-assistant-belongs-to-instance",
+          "resourceType": "std:access"
+        },
+        "created": "2026-08-28T01:20:27.622Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "8e4cd68f3695425fb5e8fa7904d6dba4",
+        "identityAttribute": null,
+        "includePermissions": false,
+        "modified": "2026-08-28T01:20:27.622Z",
+        "name": "Amazon Connect Customer Domain Belongs To Instance",
         "nativeObjectType": null
       },
       {
