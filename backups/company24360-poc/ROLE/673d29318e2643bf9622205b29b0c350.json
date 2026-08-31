@@ -1,0 +1,102 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "dimensionSchema": {
+        "dimensionAttributes": [
+          {
+            "derived": true,
+            "displayName": "Location",
+            "name": "location"
+          }
+        ]
+      },
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-31T07:53:46.908975Z",
+    "description": null,
+    "dimensionRefs": null,
+    "dimensional": true,
+    "dimensions": [
+      {
+        "accessProfiles": [],
+        "created": "2026-08-31T07:54:00.43382Z",
+        "description": null,
+        "entitlements": [],
+        "id": "9b189c8093f3497ba589d1856198b1e4",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": null,
+                    "key": {
+                      "property": "attribute.location",
+                      "sourceId": null,
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "München",
+                    "values": null
+                  }
+                ],
+                "key": null,
+                "operation": "AND",
+                "stringValue": "",
+                "values": null
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          },
+          "identities": null,
+          "type": "STANDARD"
+        },
+        "modified": "2026-08-31T07:55:12.001321Z",
+        "name": "München",
+        "owner": null,
+        "parentId": "673d29318e2643bf9622205b29b0c350"
+      }
+    ],
+    "enabled": false,
+    "entitlements": [],
+    "id": "673d29318e2643bf9622205b29b0c350",
+    "legacyMembershipInfo": null,
+    "membership": null,
+    "modified": "2026-08-31T07:54:19.629182Z",
+    "name": "wed2q",
+    "owner": {
+      "id": "e9142bafc1354635addded819e62d55d",
+      "name": "Aaron.Nichols",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "673d29318e2643bf9622205b29b0c350",
+    "name": "wed2q",
+    "type": "ROLE"
+  },
+  "version": 1
+}
