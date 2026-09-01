@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "body": "<font face=\"Calibri\" size=\"2\">Hi $__recipient.name,<BR><BR>As part of an election campaign to identify data owners to oversee sensitive data assets, you’ve been elected by your peers as the data owner for the following resource under the $assignment.appName application: $assignment.resourcePath<BR><BR>As a data owner you will be assuming a more active role in protecting the sensitive information and ensuring the continued governance of data assets you own. You may be asked to initiate or participate in governance related processes such as reviewing inappropriate access and suspicious activity, and reviewing and certifying currently assigned access, or approving new access requests.<BR><BR>Thank you in advance for your help in ensuring secure access to critical information.<BR><BR><BR></font><font face=\"Calibri\" size=\"1\" color=\"gray\">This is an automatic message sent to you by <B>Data Access Security</B> - Please do not reply.</font>",
+    "created": null,
+    "description": "Sent to each user chosen as an owner when a data owner election finishes for a resource, for elections configured to assign owners automatically and to send invitations.",
+    "details": null,
+    "footer": null,
+    "from": "$__global.emailFromAddress",
+    "header": null,
+    "id": "[Default] Data Access Security Data Owner Identified",
+    "inboxTemplate": null,
+    "key": "das_owner_election_assignment",
+    "locale": "en",
+    "medium": "EMAIL",
+    "modified": null,
+    "name": "Data Access Security Data Owner Identified",
+    "replyTo": "$__global.emailFromAddress",
+    "slackTemplate": null,
+    "subject": "You have been identified as a Data Owner",
+    "teamsTemplate": null
+  },
+  "self": {
+    "id": "[Default] Data Access Security Data Owner Identified",
+    "name": "Data Access Security Data Owner Identified",
+    "type": "NOTIFICATION_TEMPLATE"
+  },
+  "version": 1
+}

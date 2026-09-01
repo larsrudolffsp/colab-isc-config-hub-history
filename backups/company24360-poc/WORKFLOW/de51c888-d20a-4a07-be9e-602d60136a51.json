@@ -572,7 +572,6 @@
         "id": "idn:interactive-process-launched",
         "integrationId": null
       },
-      "mode": "advanced",
       "type": "EVENT"
     }
   },
