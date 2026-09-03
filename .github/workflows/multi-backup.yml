@@ -1,4 +1,4 @@
-name: Daily ISC Backup
+name: Daily ISC Backup (multiple tenants)
 
 on:
   schedule:
@@ -12,14 +12,14 @@ jobs:
       fail-fast: false
       matrix:
         tenant:
-          - name: dev
-            url_secret: DEV_TENANT_URL
-            client_id_secret: DEV_CLIENT_ID
-            client_secret_secret: DEV_CLIENT_SECRET
-          - name: prod
-            url_secret: PROD_TENANT_URL
-            client_id_secret: PROD_CLIENT_ID
-            client_secret_secret: PROD_CLIENT_SECRET
+          - name: lars_demo
+            url_secret: TENANT_URL
+            client_id_secret: CLIENT_ID
+            client_secret_secret: CLIENT_SECRET
+          - name: POC_19968
+            url_secret: POC_19968_TENANT_URL
+            client_id_secret: POC_19968_CLIENT_ID
+            client_secret_secret: POC_19968_CLIENT_ID
 
     steps:
       - uses: actions/checkout@v4
