@@ -8,37 +8,30 @@ on:
 jobs:
   backup:
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        tenant:
-          - name: lars_demo
-            url_secret: TENANT_URL
-            client_id_secret: CLIENT_ID
-            client_secret_secret: CLIENT_SECRET
-          - name: POC_19968
-            url_secret: POC_19968_TENANT_URL
-            client_id_secret: POC_19968_CLIENT_ID
-            client_secret_secret: POC_19968_CLIENT_ID
-
     steps:
       - uses: actions/checkout@v4
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-
-      - name: Run Backup for ${{ matrix.tenant.name }}
+      - name: Install Dependencies
+        run: npm ci
+      # --- Tenant 1: Lars Demo ---
+      - name: Backup Lars Demo
         env:
-          TENANT_URL: ${{ secrets[matrix.tenant.url_secret] }}
-          CLIENT_ID: ${{ secrets[matrix.tenant.client_id_secret] }}
-          CLIENT_SECRET: ${{ secrets[matrix.tenant.client_secret_secret] }}
-        run: |
-          npm ci
-          node scripts/backup.mjs
-
-      - name: Commit and Push Changes
+          TENANT_URL: ${{ secrets.TENANT_URL }}
+          CLIENT_ID: ${{ secrets.CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
+        run: node scripts/backup.mjs
+      # --- Tenant 2: POC_19968 ---
+      - name: Backup POC_19968
+        env:
+          TENANT_URL: ${{ secrets.POC_19968_TENANT_URL }}
+          CLIENT_ID: ${{ secrets.POC_19968_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.POC_19968_CLIENT_ID }}
+        run: node scripts/backup.mjs
+      # --- Gemeinsamer Commit & Push ---
+      - name: Commit and Push All Backups
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Automated backup: ${{ matrix.tenant.name }}"
+          commit_message: "Automated backup: all tenants"
