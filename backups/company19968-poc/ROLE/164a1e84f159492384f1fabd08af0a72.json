@@ -1,0 +1,104 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "dimensionSchema": {
+        "dimensionAttributes": [
+          {
+            "derived": true,
+            "displayName": "Location",
+            "name": "location"
+          }
+        ]
+      },
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-28T05:59:15.724955Z",
+    "description": "Dynamische Rolle: Stamm-Filiale für Mitarbeitende",
+    "dimensionRefs": null,
+    "dimensional": true,
+    "dimensions": [],
+    "enabled": false,
+    "entitlements": [],
+    "id": "164a1e84f159492384f1fabd08af0a72",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": [
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.EmployeeClass",
+                  "sourceId": "a768e9d725434f668174b1205088259b",
+                  "type": "ACCOUNT"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "active"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.cloudLifecycleState",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "active"
+                ]
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": null,
+            "values": null
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": null,
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2026-09-03T15:22:19.507221Z",
+    "name": "Stamm-Filiale",
+    "owner": {
+      "id": "4e66ef089395450e9ba7599d47619d3e",
+      "name": "galaad.tassel",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "164a1e84f159492384f1fabd08af0a72",
+    "name": "Stamm-Filiale",
+    "type": "ROLE"
+  },
+  "version": 1
+}

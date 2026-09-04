@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "body": "<font face=\"Calibri\" size=\"2\">Hi $__recipient.name,<BR><BR>You currently have $election.taskCount Data Owner Election tasks  awaiting your input.<BR><BR>Please use the following link to view your data ownership election tasks in Data Access Security: <a href=\"$election.taskUrl\">View Pending Data Ownership Election Tasks</a><BR><BR>Thank you!<BR><BR><BR></font><font face=\"Calibri\" size=\"1\" color=\"gray\">This is an automatic message sent to you by <B>Data Access Security</B> - Please do not reply.</font>",
+    "created": null,
+    "description": "Sent to voters and reviewers who still have outstanding work in a running data owner election, on the election's configured reminder schedule or on demand by an administrator.",
+    "details": null,
+    "footer": null,
+    "from": "$__global.emailFromAddress",
+    "header": null,
+    "id": "[Default] Data Access Security Data Owner Election New Task",
+    "inboxTemplate": null,
+    "key": "das_owner_election_reminder",
+    "locale": "en",
+    "medium": "EMAIL",
+    "modified": null,
+    "name": "Data Access Security Data Owner Election New Task",
+    "replyTo": "$__global.emailFromAddress",
+    "slackTemplate": null,
+    "subject": "A Data Owner Election task is awaiting your input",
+    "teamsTemplate": null
+  },
+  "self": {
+    "id": "[Default] Data Access Security Data Owner Election New Task",
+    "name": "Data Access Security Data Owner Election New Task",
+    "type": "NOTIFICATION_TEMPLATE"
+  },
+  "version": 1
+}

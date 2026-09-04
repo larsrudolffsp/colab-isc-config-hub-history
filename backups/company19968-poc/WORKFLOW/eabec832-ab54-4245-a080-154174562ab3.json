@@ -1,0 +1,367 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-08T15:09:04.2922314Z",
+    "creator": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Get Access Request Item Id",
+      "steps": {
+        "Add Additional Approver": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "jsonRequestBody": "{\"output\":{{$.hTTPRequest2.body.ownerRef.JSON()}},\"secret\":\"{{$.trigger._metadata.secret}}\"}",
+            "method": "post",
+            "oAuthClientId": "59b45aa69d3e466ab645a9f6f48c696d",
+            "oAuthClientSecret": "$.secrets.305902db-d48f-420a-9c40-6380f17a8b36",
+            "oAuthCredentialLocation": "oAuthInHeader",
+            "oAuthTokenUrl": "https://company19968-poc.api.identitynow-demo.com/oauth/token",
+            "requestContentType": "json",
+            "url.$": "$.trigger._metadata.callbackURL",
+            "urlParams": null
+          },
+          "description": "Callback with additional approver.\n{\"output\":{\"id\":\"{{$.hTTPRequest2.body.ownerRef.id}}\",\"name\":\"{{$.hTTPRequest2.body.ownerRef.name}}\",\"type\":\"{{$.hTTPRequest2.body.ownerRef.type}}\"},\"secret\":\"{{$.trigger._metadata.secret}}\"}",
+          "displayName": "",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Add Additional Approver 1": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "jsonRequestBody": {
+              "output": {
+                "id": "{{$.defineVariable1.govGroupID}}",
+                "name": "{{$.defineVariable1.govGroupName}}",
+                "type": "GOVERNANCE_GROUP"
+              },
+              "secret": "{{$.trigger._metadata.secret}}"
+            },
+            "method": "post",
+            "oAuthClientId": "59b45aa69d3e466ab645a9f6f48c696d",
+            "oAuthClientSecret": "$.secrets.9fc9d14b-0650-4bbe-8d23-bdf49538c90a",
+            "oAuthCredentialLocation": "oAuthInHeader",
+            "oAuthTokenUrl": "https://company19968-poc.api.identitynow-demo.com/oauth/token",
+            "requestContentType": "json",
+            "url.$": "$.trigger._metadata.callbackURL",
+            "urlParams": null
+          },
+          "description": "Callback with additional approver.\n{\"output\":{\"id\":\"{{$.hTTPRequest2.body.ownerRef.id}}\",\"name\":\"{{$.hTTPRequest2.body.ownerRef.name}}\",\"type\":\"{{$.hTTPRequest2.body.ownerRef.type}}\"},\"secret\":\"{{$.trigger._metadata.secret}}\"}",
+          "displayName": "Add Department Approver",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Define Variable": {
+          "actionId": "sp:define-variable",
+          "attributes": {
+            "id": "sp:define-variable",
+            "variables": [
+              {
+                "description": "",
+                "name": "ActivityItemId",
+                "transforms": [],
+                "variableA.$": "$.getAccessRequestItemId.body.items[0].id"
+              }
+            ]
+          },
+          "displayName": "",
+          "nextStep": "Get Access Request Details",
+          "type": "Mutation"
+        },
+        "Define Variable 1": {
+          "actionId": "sp:define-variable",
+          "attributes": {
+            "id": "sp:define-variable",
+            "variables": [
+              {
+                "description": "",
+                "name": "GovGroupID",
+                "transforms": [],
+                "variableA.$": "$.getAccessRequestDetails3.body[?(@.name == '{{$.getAccessRequestDetails2.body.previewAttributes[?(@.name == 'department')].value}}')].id"
+              },
+              {
+                "description": "",
+                "name": "GovGroupName",
+                "transforms": [],
+                "variableA.$": "$.getAccessRequestDetails2.body.previewAttributes[?(@.name == 'department')].value"
+              }
+            ]
+          },
+          "displayName": "",
+          "nextStep": "Add Additional Approver 1",
+          "type": "Mutation"
+        },
+        "End Step - Success": {
+          "actionId": "sp:operator-success",
+          "displayName": "",
+          "type": "success"
+        },
+        "End Step - Success 1": {
+          "actionId": "sp:operator-success",
+          "displayName": "",
+          "type": "success"
+        },
+        "Get Access Request Details": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "method": "get",
+            "oAuthClientId": "59b45aa69d3e466ab645a9f6f48c696d",
+            "oAuthClientSecret": "$.secrets.9b9bf59a-a51f-4666-842d-5cb0a3e27dd4",
+            "oAuthCredentialLocation": "oAuthInHeader",
+            "oAuthTokenUrl": "https://company19968-poc.api.identitynow-demo.com/oauth/token",
+            "requestContentType": "json",
+            "url": "https://company19968-poc.api.identitynow-demo.com/beta/access-request-status?filters=accountActivityItemId%20eq%20\"{{$.defineVariable.activityItemId}}\"",
+            "urlParams": {
+              "filters": "accountActivityItemId%20eq%20\"{{$.defineVariable.activityItemId}}\""
+            }
+          },
+          "displayName": "",
+          "nextStep": "SoD Risk Detected",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Get Access Request Details 1": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "jsonRequestBody": {
+              "indices": [
+                "accessprofiles",
+                "entitlements",
+                "roles"
+              ],
+              "query": {
+                "query": "privileged:true AND id:{{$.trigger.requestedItems[0].id}}"
+              }
+            },
+            "method": "post",
+            "oAuthClientId": "59b45aa69d3e466ab645a9f6f48c696d",
+            "oAuthClientSecret": "$.secrets.175b4dcb-a427-4e9a-954d-7adbe2fd336f",
+            "oAuthCredentialLocation": "oAuthInHeader",
+            "oAuthTokenUrl": "https://company19968-poc.api.identitynow-demo.com/oauth/token",
+            "requestContentType": "json",
+            "url": "https://company19968-poc.api.identitynow-demo.com/v2024/search",
+            "urlParams": null
+          },
+          "displayName": "Get Item Id",
+          "nextStep": "Verify Data Type 1",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Get Access Request Details 2": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "jsonRequestBody": {
+              "identityAttributeConfig": {
+                "attributeTransforms": [
+                  {
+                    "identityAttributeName": "department",
+                    "transformDefinition": {
+                      "attributes": {
+                        "id": "DepartmentApprovers",
+                        "input": "{{$.getIdentity.attributes.department}}"
+                      },
+                      "type": "reference"
+                    }
+                  }
+                ],
+                "enabled": true
+              },
+              "identityId": "{{$.trigger.requestedFor.id}}"
+            },
+            "method": "post",
+            "oAuthClientId": "59b45aa69d3e466ab645a9f6f48c696d",
+            "oAuthClientSecret": "$.secrets.dbf71624-180e-4f2c-868d-c922b8559ea2",
+            "oAuthCredentialLocation": "oAuthInHeader",
+            "oAuthTokenUrl": "https://company19968-poc.api.identitynow-demo.com/oauth/token",
+            "requestContentType": "json",
+            "url": "https://company19968-poc.api.identitynow-demo.com/beta/identity-profiles/identity-preview",
+            "urlParams": null
+          },
+          "displayName": "Retrieve Department Approver",
+          "nextStep": "Verify Data Type 2",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Get Access Request Details 3": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "jsonRequestBody": null,
+            "method": "get",
+            "oAuthClientId": "59b45aa69d3e466ab645a9f6f48c696d",
+            "oAuthClientSecret": "$.secrets.a3660158-86e7-4e04-adfb-889346a3c8f1",
+            "oAuthCredentialLocation": "oAuthInHeader",
+            "oAuthTokenUrl": "https://company19968-poc.api.identitynow-demo.com/oauth/token",
+            "requestContentType": "json",
+            "requestHeaders": {
+              "X-SailPoint-Experimental": "true"
+            },
+            "url": "https://company19968-poc.api.identitynow-demo.com/v2024/workgroups",
+            "urlParams": null
+          },
+          "displayName": "Get Gov Groups",
+          "nextStep": "Define Variable 1",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Get Access Request Item Id": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "method": "get",
+            "oAuthClientId": "59b45aa69d3e466ab645a9f6f48c696d",
+            "oAuthClientSecret": "$.secrets.4e343476-4538-45ea-9e08-555ae1d258a9",
+            "oAuthCredentialLocation": "oAuthInHeader",
+            "oAuthTokenUrl": "https://company19968-poc.api.identitynow-demo.com/oauth/token",
+            "requestContentType": "json",
+            "url": "https://company19968-poc.api.identitynow-demo.com/v3/account-activities/{{$.trigger.accessRequestId}}"
+          },
+          "description": "Retrieves the item id\n5b6ec868c80d68a4ccc4e993485db851f7397952b6727b85dd72033b280aa42a",
+          "displayName": "",
+          "nextStep": "Verify Data Type",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.requestedFor.id"
+          },
+          "displayName": "",
+          "nextStep": "Get Access Request Details 2",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "HTTP Request 2": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "method": "get",
+            "oAuthClientId": "59b45aa69d3e466ab645a9f6f48c696d",
+            "oAuthClientSecret": "$.secrets.caf4fe7d-5f13-490f-9ff8-9331f65f89cd",
+            "oAuthCredentialLocation": "oAuthInHeader",
+            "oAuthTokenUrl": "https://company19968-poc.api.identitynow-demo.com/oauth/token",
+            "url": "https://company19968-poc.api.identitynow-demo.com/v3/sod-policies/{{$.getAccessRequestDetails.body[0].sodViolationContext.violationCheckResult.violatedPolicies[0].id}}"
+          },
+          "description": "",
+          "displayName": "Policy Owner",
+          "nextStep": "Add Additional Approver",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "No Further Action 1": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": null,
+            "jsonRequestBody": {
+              "output": {
+                "id": "",
+                "name": "",
+                "type": ""
+              },
+              "secret": "{{$.trigger._metadata.secret}}"
+            },
+            "method": "post",
+            "requestContentType": "json",
+            "url.$": "$.trigger._metadata.callbackURL"
+          },
+          "displayName": "No Further Action",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "SoD Risk Detected": {
+          "actionId": "sp:compare-unary",
+          "choiceList": [
+            {
+              "comparator": "IsPresent",
+              "nextStep": "HTTP Request 2",
+              "variableA.$": "$.getAccessRequestDetails.body[0].sodViolationContext.violationCheckResult.violatedPolicies[0].id"
+            }
+          ],
+          "defaultStep": "Get Access Request Details 1",
+          "displayName": "",
+          "type": "choice"
+        },
+        "Verify Data Type": {
+          "actionId": "sp:compare-unary",
+          "choiceList": [
+            {
+              "comparator": "IsPresent",
+              "nextStep": "Define Variable",
+              "variableA.$": "$.getAccessRequestItemId.body.id"
+            }
+          ],
+          "defaultStep": "End Step - Success 1",
+          "displayName": "",
+          "type": "choice"
+        },
+        "Verify Data Type 1": {
+          "actionId": "sp:compare-unary",
+          "choiceList": [
+            {
+              "comparator": "IsPresent",
+              "nextStep": "Get Identity",
+              "variableA.$": "$.getAccessRequestDetails1.body[0].id"
+            }
+          ],
+          "defaultStep": "No Further Action 1",
+          "displayName": "Is Access Privileged",
+          "type": "choice"
+        },
+        "Verify Data Type 2": {
+          "actionId": "sp:compare-unary",
+          "choiceList": [
+            {
+              "comparator": "IsPresent",
+              "nextStep": "Get Access Request Details 3",
+              "variableA.$": "$.getAccessRequestDetails2.body.previewAttributes[?(@.name == 'department')].value"
+            }
+          ],
+          "defaultStep": "No Further Action 1",
+          "description": null,
+          "displayName": "Approver Group Found?",
+          "type": "choice"
+        }
+      }
+    },
+    "description": "Parses the request for SoD or privileged access",
+    "enabled": true,
+    "id": "eabec832-ab54-4245-a080-154174562ab3",
+    "modified": "2026-01-29T09:27:24.829275436Z",
+    "modifiedBy": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "name": "Dynamic Approver",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "id": "idn:external-http",
+        "integrationId": null
+      },
+      "type": "EXTERNAL"
+    }
+  },
+  "self": {
+    "id": "eabec832-ab54-4245-a080-154174562ab3",
+    "name": "Dynamic Approver",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

@@ -1,0 +1,76 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-10T08:27:29.631008Z",
+    "description": null,
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [],
+    "id": "7efb4531355d4bfebe816605d29ceb5d",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": null,
+            "key": {
+              "property": "attribute.groups",
+              "sourceId": "6b7a030e11774ab4a88c84bb3a088081",
+              "type": "ENTITLEMENT"
+            },
+            "operation": "EQUALS",
+            "stringValue": null,
+            "values": [
+              "Create_Reports",
+              "Modify_Reports",
+              "Super"
+            ]
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": null,
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2025-12-10T08:28:48.982144Z",
+    "name": "PRISM Power Users App",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "7efb4531355d4bfebe816605d29ceb5d",
+    "name": "PRISM Power Users App",
+    "type": "ROLE"
+  },
+  "version": 1
+}

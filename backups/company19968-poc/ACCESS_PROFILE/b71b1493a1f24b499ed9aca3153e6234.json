@@ -1,0 +1,53 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-09-03T15:20:45.760959Z",
+    "description": "Filiale Berlin AP",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "0fd7ce340489374da488d59f443588be",
+        "name": "Employees",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "b71b1493a1f24b499ed9aca3153e6234",
+    "modified": "2026-09-03T15:20:55.820129Z",
+    "name": "Filiale Berlin AP",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": null
+    },
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "a13cb4f153aa4021be5eb967ebf6bef5",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "b71b1493a1f24b499ed9aca3153e6234",
+    "name": "Filiale Berlin AP",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

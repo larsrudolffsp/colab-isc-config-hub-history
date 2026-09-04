@@ -1,0 +1,102 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [
+      {
+        "id": "a9e8b14493f74a6d97113091beb39a01",
+        "name": "Financial Systems Analyst Access",
+        "type": "ACCESS_PROFILE"
+      },
+      {
+        "id": "ba08bf967a644ccd8c0a2d338720ec4c",
+        "name": "Accounts Payable",
+        "type": "ACCESS_PROFILE"
+      }
+    ],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-04T08:22:01.846419Z",
+    "description": "Accounts Payable Analyst",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [],
+    "id": "e5ceee8f939e4aba9e70f9c16e7cf400",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "key": {
+                  "property": "attribute.cloudLifecycleState",
+                  "sourceId": "",
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": "active",
+                "values": null
+              },
+              {
+                "children": [],
+                "key": {
+                  "property": "attribute.jobTitle",
+                  "sourceId": "",
+                  "type": "IDENTITY"
+                },
+                "operation": "CONTAINS",
+                "stringValue": "Accounts Payable Analyst",
+                "values": null
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": "",
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2025-12-04T08:22:01.846419Z",
+    "name": "Accounts Payable Analyst",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "e5ceee8f939e4aba9e70f9c16e7cf400",
+    "name": "Accounts Payable Analyst",
+    "type": "ROLE"
+  },
+  "version": 1
+}

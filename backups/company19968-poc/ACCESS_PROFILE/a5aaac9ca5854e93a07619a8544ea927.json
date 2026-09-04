@@ -1,0 +1,58 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-01-13T17:18:29.646078Z",
+    "description": null,
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "3a7de63b30b73134951861e644b42c3e",
+        "name": "External Users reviewer",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "dd24b8f00ed93be184bfd536df8664c8",
+        "name": "HR reviewer",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "a5aaac9ca5854e93a07619a8544ea927",
+    "modified": "2026-01-13T17:18:49.990739Z",
+    "name": "Identity Fusion Reviewer",
+    "owner": {
+      "id": "ae26cda44f4d4fd487e812edf7449515",
+      "name": "SailPoint Services",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "a011bc28390d47b6b78bf2c583304c28",
+      "name": "Identity Fusion",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "a5aaac9ca5854e93a07619a8544ea927",
+    "name": "Identity Fusion Reviewer",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

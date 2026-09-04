@@ -1,0 +1,95 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-04T08:27:11.076868Z",
+    "description": "All Non-Employees",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [],
+    "id": "a3ff47b3b84c499ebc0c2bf0bce145c6",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": [
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.cloudLifecycleState",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "active"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.neOrganizations",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "CONTAINS",
+                "stringValue": null,
+                "values": [
+                  "Active"
+                ]
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": null,
+            "values": null
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": null,
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2026-04-28T14:50:02.850317Z",
+    "name": "NE - All Non-Employees",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "a3ff47b3b84c499ebc0c2bf0bce145c6",
+    "name": "NE - All Non-Employees",
+    "type": "ROLE"
+  },
+  "version": 1
+}

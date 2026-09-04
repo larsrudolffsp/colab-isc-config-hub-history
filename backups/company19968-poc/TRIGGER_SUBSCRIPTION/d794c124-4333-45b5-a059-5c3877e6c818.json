@@ -1,0 +1,24 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "description": "Managed by Workflows",
+    "enabled": true,
+    "filter": "$[?(@.workflowId == 'd794c124-4333-45b5-a059-5c3877e6c818')]",
+    "id": "d794c124-4333-45b5-a059-5c3877e6c818",
+    "name": "Role Promotion",
+    "responseDeadline": "PT1H",
+    "triggerId": "idn:interactive-process-launched",
+    "triggerName": "Interactive Trigger",
+    "type": "WORKFLOW",
+    "workflowConfig": {
+      "workflowId": "d794c124-4333-45b5-a059-5c3877e6c818"
+    }
+  },
+  "self": {
+    "id": "d794c124-4333-45b5-a059-5c3877e6c818",
+    "name": "Role Promotion",
+    "type": "TRIGGER_SUBSCRIPTION"
+  },
+  "version": 1
+}

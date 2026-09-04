@@ -1,0 +1,23 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": null,
+    "id": "073a1e23-3fdf-4b8b-9a47-24ac1ff68620",
+    "modified": null,
+    "name": "CONTROLX",
+    "taggedObjects": [
+      {
+        "id": "2b6b38c9-e3ee-4433-99f5-88df428cfd67",
+        "name": "Contractors with a CyberArk Account",
+        "type": "SOD_POLICY"
+      }
+    ]
+  },
+  "self": {
+    "id": "073a1e23-3fdf-4b8b-9a47-24ac1ff68620",
+    "name": "CONTROLX",
+    "type": "TAG"
+  },
+  "version": 1
+}

@@ -1,0 +1,289 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [
+      {
+        "id": "866c6c7e55b948e58619d3c19441cb62",
+        "name": "SalesCommonAccess",
+        "type": "ACCESS_PROFILE"
+      }
+    ],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "dimensionSchema": {
+        "dimensionAttributes": [
+          {
+            "derived": true,
+            "displayName": "Job Title",
+            "name": "jobTitle"
+          }
+        ]
+      },
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-04T08:22:01.349786Z",
+    "description": "All Sales people in the company",
+    "dimensionRefs": null,
+    "dimensional": true,
+    "dimensions": [
+      {
+        "accessProfiles": [],
+        "created": "2025-12-10T09:30:26.478069Z",
+        "description": "Regional Sales Executive",
+        "entitlements": [],
+        "id": "ac4902eb1b004ccbb7fc49a199225f10",
+        "membership": null,
+        "modified": "2025-12-10T09:30:26.478069Z",
+        "name": "Regional Sales Executive",
+        "owner": null,
+        "parentId": "2e67d76cc89247cebe45c7459ab6587f"
+      },
+      {
+        "accessProfiles": [
+          {
+            "id": "4347517a0eae4667a7d08a3540738ed2",
+            "name": "SalesEnterprise",
+            "type": "ACCESS_PROFILE"
+          }
+        ],
+        "created": "2025-12-10T09:30:04.305314Z",
+        "description": "Enterprise Sales Executive",
+        "entitlements": [],
+        "id": "4029b09337c14dbe8bd1b8ed0b206a01",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": null,
+                    "key": {
+                      "property": "attribute.jobTitle",
+                      "sourceId": null,
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "Enterprise Sales Executive",
+                    "values": null
+                  }
+                ],
+                "key": null,
+                "operation": "AND",
+                "stringValue": "",
+                "values": null
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          },
+          "identities": null,
+          "type": "STANDARD"
+        },
+        "modified": "2025-12-10T09:34:28.616754Z",
+        "name": "Enterprise Sales Executive",
+        "owner": null,
+        "parentId": "2e67d76cc89247cebe45c7459ab6587f"
+      },
+      {
+        "accessProfiles": [
+          {
+            "id": "d6836c5b55ae4b09be1cbcb8244e870d",
+            "name": "SalesEngineering",
+            "type": "ACCESS_PROFILE"
+          }
+        ],
+        "created": "2025-12-10T09:30:17.306168Z",
+        "description": "Sales Engineer",
+        "entitlements": [],
+        "id": "c06684cb75aa44f08bcdfa3c94a96e74",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": null,
+                    "key": {
+                      "property": "attribute.jobTitle",
+                      "sourceId": null,
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "Sales Engineer",
+                    "values": null
+                  }
+                ],
+                "key": null,
+                "operation": "AND",
+                "stringValue": "",
+                "values": null
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          },
+          "identities": null,
+          "type": "STANDARD"
+        },
+        "modified": "2025-12-10T09:32:12.203828Z",
+        "name": "Sales Engineer",
+        "owner": null,
+        "parentId": "2e67d76cc89247cebe45c7459ab6587f"
+      }
+    ],
+    "enabled": true,
+    "entitlements": [],
+    "id": "2e67d76cc89247cebe45c7459ab6587f",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": [
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.cloudLifecycleState",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "active",
+                  "prehire"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.department",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "CONTAINS",
+                "stringValue": null,
+                "values": [
+                  "Sales"
+                ]
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          },
+          {
+            "children": [
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.cloudLifecycleState",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "active",
+                  "prehire"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.departmentHistory",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "CONTAINS",
+                "stringValue": null,
+                "values": [
+                  "Sales"
+                ]
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": null,
+            "values": null
+          },
+          {
+            "children": [
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.cloudLifecycleState",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "active"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.nePopulationsJobtitles",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "CONTAINS",
+                "stringValue": null,
+                "values": [
+                  "Sales"
+                ]
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": null,
+            "values": null
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": "",
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2026-09-02T12:49:58.817934Z",
+    "name": "SalesGlobal",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "2e67d76cc89247cebe45c7459ab6587f",
+    "name": "SalesGlobal",
+    "type": "ROLE"
+  },
+  "version": 1
+}

@@ -1,0 +1,131 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-08T15:08:37.982413876Z",
+    "creator": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Compare Numbers",
+      "steps": {
+        "Compare Numbers": {
+          "actionId": "sp:compare-numbers",
+          "choiceList": [
+            {
+              "comparator": "NumericLessThan",
+              "nextStep": "Get Identity",
+              "variableA.$": "$.trigger.score",
+              "variableB": 0.9
+            }
+          ],
+          "defaultStep": "success",
+          "description": "This operator compares the value provided by the trigger to ensure that the outlier score is at or above 0.7 and less than 0.9.",
+          "type": "choice"
+        },
+        "Create Certification Campaign": {
+          "actionId": "sp:create-campaign",
+          "attributes": {
+            "activateUponCreation": true,
+            "description": "This action creates a certification campaign assigned to the outlier identity's manager to verify all of the identity's access. The name of the campaign will be the display name of the outlier identity.",
+            "duration": "30d",
+            "emailNotificationEnabled": true,
+            "name.$": "$.trigger.identity.displayName",
+            "recommendationsEnabled": true,
+            "reviewerAccessItemType": "ENTITLEMENT",
+            "reviewerAccessOperator": "ALL",
+            "reviewerCertificationType": "IDENTITY",
+            "reviewerId": "fce067af441b4ed199b39c6ada2e8ae8",
+            "reviewerIdentitiesToCertify.$": "$.trigger.identity.id",
+            "type": "REVIEWER_IDENTITY",
+            "undecidedAccess": false
+          },
+          "description": "A certification campaign for an outlier identity with a score of at or above 0.7 but less than 0.9.",
+          "nextStep": "Send Email",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.identity.id"
+          },
+          "description": "This action returns attributes associated with the detected outlier identity.",
+          "nextStep": "Get Identity 1",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Get Identity 1": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.getIdentity.managerRef.id"
+          },
+          "description": "This action returns the name and other attributes about the outlier identity's manager.",
+          "nextStep": "Create Certification Campaign",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Send Email": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body": "Hello ${var1},<br> <p>This email is to inform that your direct report <b style=\"\"> <i style-\"\"><u style=\"\"><font face=\"verdana\">${var2} </font></u></i></b>has been identified as having excess access with an outlier score of <b style=\"\">${var3}</b>. A certification campaign has been created with the name of <b style=\"\"><i style=\"\">${var4} </b></i> Please ensure you complete the campaign in <b style=\"\">30 days</b></p> <p> Thank you, <br> <b style=\"\"><i style=\"\"> Corporate Compliance Officer </b></o></p>",
+            "context": {
+              "var1.$": "$.getIdentity1.attributes.firstname",
+              "var2.$": "$.getIdentity.attributes.displayName",
+              "var3.$": "$.trigger.score",
+              "var4.$": "$.createCertificationCampaign.name"
+            },
+            "recipientEmailList.$": "$.getIdentity1.attributes.email",
+            "subject": "Outlier Detected with score between 70 and 90 "
+          },
+          "description": "This action sends an email notification to the outlier identity's manager alerting them that a certification campaign has been assigned to them for a detected outlier. The email includes the detected outlier identity's score and the campaign name.",
+          "nextStep": "success 1",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "success": {
+          "actionId": "sp:operator-success",
+          "description": "The outlier score was not within the range of 0.7 to less than 0.9. No further action is needed.",
+          "type": "success"
+        },
+        "success 1": {
+          "actionId": "sp:operator-success",
+          "description": "The workflow has completed successfully.",
+          "type": "success"
+        }
+      }
+    },
+    "description": "OUTLIERS - A seven-step workflow triggers when an outlier score is at or above 0.7 but less than 0.9. An email notification is sent to the outlier identity's manager and a certification campaign is assigned to the manager to review the outlier identity's access.",
+    "enabled": false,
+    "id": "efb44740-fb6a-4cb6-9def-b898c7e18e23",
+    "modified": "2025-12-08T15:08:37.982413876Z",
+    "modifiedBy": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "name": "Outlier detection - Create a Certification Campaign for Outliers (0.7-0.9)",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "filter.$": "$[?(@.score >= 0.7)]",
+        "id": "iai:outlier-detected",
+        "integrationId": null
+      },
+      "mode": "advanced",
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "efb44740-fb6a-4cb6-9def-b898c7e18e23",
+    "name": "Outlier detection - Create a Certification Campaign for Outliers (0.7-0.9)",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

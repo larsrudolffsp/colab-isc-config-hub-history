@@ -1,0 +1,54 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": false
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "ENABLE",
+        "allSources": true,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": []
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "ENABLE",
+        "allSources": true,
+        "excludeSourceIds": null,
+        "sourceIds": null
+      }
+    ],
+    "created": "2026-08-18T09:51:50.773Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": true,
+    "id": "f0aa1610648b4fd2a530becd4aa81ae5",
+    "identityCount": 93,
+    "identityProfileRef": {
+      "id": "0dea179fe2e14f7398516f515227e2f4",
+      "name": "SuccessFactors",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "ACTIVE",
+    "modified": "2026-08-26T08:19:54.127Z",
+    "name": "Active",
+    "priority": 20,
+    "technicalName": "active"
+  },
+  "self": {
+    "id": "f0aa1610648b4fd2a530becd4aa81ae5",
+    "name": "Active",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

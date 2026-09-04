@@ -1,0 +1,51 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-04T08:21:06.353161Z",
+    "description": "Input timecards",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "38f4d1a3f8d73ea0910217d04e8d0b32",
+        "name": "input",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "ec7a1f0f8b8c4e21a7658bf9668d907f",
+    "modified": "2025-12-04T08:21:06.353161Z",
+    "name": "TRAKK Input",
+    "owner": {
+      "id": "5928c04c91f048b4846aa1b3336fb45b",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": true,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "b04b88b0f1664893ad5b4b9d3a34a63c",
+      "name": "TRAKK-WS",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "ec7a1f0f8b8c4e21a7658bf9668d907f",
+    "name": "TRAKK Input",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

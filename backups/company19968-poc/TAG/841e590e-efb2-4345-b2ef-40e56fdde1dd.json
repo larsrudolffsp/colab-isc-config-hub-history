@@ -1,0 +1,23 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": null,
+    "id": "841e590e-efb2-4345-b2ef-40e56fdde1dd",
+    "modified": null,
+    "name": "AWS",
+    "taggedObjects": [
+      {
+        "id": "9351262e-d216-4a05-841c-2270c7de3b6f",
+        "name": "AWS QA & Production SOD",
+        "type": "SOD_POLICY"
+      }
+    ]
+  },
+  "self": {
+    "id": "841e590e-efb2-4345-b2ef-40e56fdde1dd",
+    "name": "AWS",
+    "type": "TAG"
+  },
+  "version": 1
+}

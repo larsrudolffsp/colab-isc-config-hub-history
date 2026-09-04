@@ -1,0 +1,38 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "description": "",
+    "id": "4f8d9e47-3722-41e9-b032-542913fdad5b",
+    "lastModifiedAt": "2026-08-31T17:08:34.789962Z",
+    "lastModifiedBy": {
+      "id": "a2746edf69334e2ca9b0cf0381048d06",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "name": "Loopback Lars",
+    "owner": {
+      "id": "a2746edf69334e2ca9b0cf0381048d06",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "privateFieldsLastModifiedAt": "2026-08-31T17:08:34.789963Z",
+    "privateFieldsLastModifiedBy": {
+      "id": "a2746edf69334e2ca9b0cf0381048d06",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "publicFields": {
+      "clientId": "d2b502539ddd43dc95e98d60c6a000db",
+      "credentialLocation": "HEADER",
+      "tokenURL": "https://company19968-poc.api.identitynow-demo.com/oauth/token"
+    },
+    "type": "1.4"
+  },
+  "self": {
+    "id": "4f8d9e47-3722-41e9-b032-542913fdad5b",
+    "name": "Loopback Lars",
+    "type": "SPS_PARAMETER"
+  },
+  "version": 1
+}

@@ -1,0 +1,346 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "cloudDisplayName": "Badging",
+      "cloudOriginalApplicationType": "Delimited File",
+      "commentCharacter": "#",
+      "connectionType": "file",
+      "connectorName": "Delimited File",
+      "deleteThresholdPercentage": 10,
+      "delimiter": ",",
+      "filetransport": "local",
+      "filterEmptyRecords": true,
+      "group.columnNames": [
+        "description",
+        "displayName",
+        "id",
+        "name",
+        "privileged",
+        "schema"
+      ],
+      "group.delimiter": ",",
+      "group.filetransport": "local",
+      "group.filterEmptyRecords": true,
+      "group.hasHeader": true,
+      "group.host": "local",
+      "group.mergeRows": false,
+      "group.partitionMode": "disabled",
+      "hasHeader": true,
+      "healthy": true,
+      "host": "local",
+      "indexColumn": "id",
+      "labels": [
+        "standard"
+      ],
+      "mergeColumns": [
+        "groups"
+      ],
+      "mergeRows": true,
+      "partitionMode": "disabled",
+      "since": "2025-12-04T08:01:27.686Z",
+      "status": "SOURCE_STATE_HEALTHY",
+      "templateApplication": "DelimitedFile Template"
+    },
+    "connectorClass": "sailpoint.connector.delimitedfile.DelimitedFileConnector",
+    "connectorScriptName": "delimited-file-angularsc",
+    "correlationConfigDetails": {
+      "attributeAssignments": null,
+      "id": null,
+      "name": null
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": 10,
+    "description": "This is a disconnected system for badging",
+    "features": [
+      "DIRECT_PERMISSIONS",
+      "DISCOVER_SCHEMA",
+      "NO_RANDOM_ACCESS"
+    ],
+    "id": "e09ed9f1b4444e7b9e27b1baa01f0148",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "Badging",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": null,
+    "provisionAsCsv": true,
+    "provisioningPolicies": [
+      {
+        "description": "Create Policy",
+        "fields": [
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "e-mail",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "familyName",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "givenName",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "groups",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "id",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "location",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "manager",
+            "transform": null,
+            "type": null
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "name",
+            "transform": null,
+            "type": null
+          }
+        ],
+        "name": "Create Policy",
+        "usageType": "CREATE"
+      }
+    ],
+    "schemas": [
+      {
+        "attributes": [
+          {
+            "description": "Reference to the manager of this particular account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "manager",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The first or given name of the user associated with the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "givenName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The groups, roles etc. that reference account group objects",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "groups",
+            "nativeName": null,
+            "schema": {
+              "id": "caba769eb7354ee19f04cbf26fec8e1e",
+              "name": "group",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "The last, family name, or surname of the user associated with the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "familyName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The location associated with this account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "location",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The name of the account - typical username etc",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The primary e-mail address of the user associated with the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "e-mail",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique ID for the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2025-12-04T08:00:28.247Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "7d871e5a6db44a2bb78825674663a5e7",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2025-12-04T08:00:28.247Z",
+        "name": "account",
+        "nativeObjectType": "User"
+      },
+      {
+        "attributes": [
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "displayName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "privileged",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "schema",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2025-12-04T08:00:28.247Z",
+        "displayAttribute": "displayName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "caba769eb7354ee19f04cbf26fec8e1e",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2025-12-04T08:00:28.590Z",
+        "name": "group",
+        "nativeObjectType": "Group"
+      }
+    ],
+    "type": "DelimitedFile"
+  },
+  "self": {
+    "id": "e09ed9f1b4444e7b9e27b1baa01f0148",
+    "name": "Badging",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

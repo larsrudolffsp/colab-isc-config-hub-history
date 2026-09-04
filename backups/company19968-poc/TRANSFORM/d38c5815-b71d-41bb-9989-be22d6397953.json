@@ -1,0 +1,36 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "values": [
+        {
+          "attributes": {
+            "input": {
+              "type": "lower"
+            },
+            "table": {
+              "active": "active",
+              "default": "inactive",
+              "emergencytermination": "emergencyTermination",
+              "inactive": "inactive",
+              "onleave": "inactive",
+              "terminated": "inactive"
+            }
+          },
+          "type": "lookup"
+        }
+      ]
+    },
+    "id": "d38c5815-b71d-41bb-9989-be22d6397953",
+    "internal": false,
+    "name": "NE - Status to Lifecycle State",
+    "type": "firstValid"
+  },
+  "self": {
+    "id": "d38c5815-b71d-41bb-9989-be22d6397953",
+    "name": "NE - Status to Lifecycle State",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

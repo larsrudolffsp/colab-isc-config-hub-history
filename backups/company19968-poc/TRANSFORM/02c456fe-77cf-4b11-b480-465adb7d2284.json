@@ -1,0 +1,35 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "values": [
+        ".",
+        {
+          "attributes": {
+            "attributeName": "first_name",
+            "sourceName": "Non-Employee"
+          },
+          "type": "accountAttribute"
+        },
+        {
+          "attributes": {
+            "attributeName": "last_name",
+            "sourceName": "Non-Employee"
+          },
+          "type": "accountAttribute"
+        }
+      ]
+    },
+    "id": "02c456fe-77cf-4b11-b480-465adb7d2284",
+    "internal": false,
+    "name": "NE - UID Generator",
+    "type": "concat"
+  },
+  "self": {
+    "id": "02c456fe-77cf-4b11-b480-465adb7d2284",
+    "name": "NE - UID Generator",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

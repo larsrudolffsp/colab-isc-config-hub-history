@@ -1,0 +1,56 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-04T08:13:39.980348Z",
+    "description": "Internal Payroll Admin Application Access",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "3dd2e85d6916398fb9568409934c4021",
+        "name": "PayrollControls",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "6c9ec2b25b7b32a79fb5e494414ff6d1",
+        "name": "PayrollProjects",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "1d4f1c31e4d342c3ae1b4db9a04f10b8",
+    "modified": "2025-12-04T08:13:39.980348Z",
+    "name": "Payroll Admin Access",
+    "owner": {
+      "id": "5928c04c91f048b4846aa1b3336fb45b",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": false,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "a13cb4f153aa4021be5eb967ebf6bef5",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "1d4f1c31e4d342c3ae1b4db9a04f10b8",
+    "name": "Payroll Admin Access",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

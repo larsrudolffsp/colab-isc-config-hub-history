@@ -1,0 +1,106 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-08-31T04:05:00.390868903Z",
+    "creator": {
+      "id": "4e66ef089395450e9ba7599d47619d3e",
+      "name": "galaad.tassel",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Get Identity 1",
+      "steps": {
+        "Compare Strings": {
+          "actionId": "sp:compare-strings",
+          "choiceList": [
+            {
+              "comparator": "StringEquals",
+              "variableA.$": "$.getIdentity1.attributes.manager",
+              "variableB.$": "$.getIdentity.attributes.manager"
+            }
+          ],
+          "displayName": "",
+          "type": "choice"
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.interactiveForm.mitarbeiter"
+          },
+          "displayName": "Get Identity Mitarbeiter",
+          "nextStep": "Compare Strings",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Get Identity 1": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.launchedBy.id"
+          },
+          "displayName": "Get Identity Assistenz",
+          "nextStep": "Interactive Message",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Interactive Form": {
+          "actionId": "sp:interactive-form",
+          "attributes": {
+            "formDefinitionId": "e1d160f5-1273-40dd-83f9-f6f76542013b",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "message": "<p>Bitte f&uuml;llen Sie das Formular aus.</p>",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "Formular ausfüllen"
+          },
+          "displayName": "",
+          "nextStep": "Get Identity",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Interactive Message": {
+          "actionId": "sp:interactive-message",
+          "attributes": {
+            "category": "INFO",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "message": "<p>Bitte w&auml;hlen Sie den Mitarbeiter/in aus.</p>",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "Mitarbeiter wählen"
+          },
+          "displayName": "",
+          "nextStep": "Interactive Form",
+          "type": "action",
+          "versionNumber": 1
+        }
+      }
+    },
+    "description": "Workflow for users to request access via launcher with manager approval",
+    "enabled": false,
+    "id": "5b2ce837-f5d4-4362-abb3-44b199e886f7",
+    "modified": "2026-08-31T07:28:21.90481224Z",
+    "modifiedBy": {
+      "id": "4e66ef089395450e9ba7599d47619d3e",
+      "name": "galaad.tassel",
+      "type": "IDENTITY"
+    },
+    "name": "Launcher Access Request Workflow",
+    "owner": {
+      "id": "4e66ef089395450e9ba7599d47619d3e",
+      "name": "galaad.tassel",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "filter.$": "$[?(@.workflowId == '5b2ce837-f5d4-4362-abb3-44b199e886f7')]",
+        "id": "idn:interactive-process-launched",
+        "integrationId": null
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "5b2ce837-f5d4-4362-abb3-44b199e886f7",
+    "name": "Launcher Access Request Workflow",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

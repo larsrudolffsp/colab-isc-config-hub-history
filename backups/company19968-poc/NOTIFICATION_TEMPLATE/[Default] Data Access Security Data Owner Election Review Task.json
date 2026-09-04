@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "body": "<font face=\"Calibri\" size=\"2\">Hi $__recipient.name,<BR><BR>As a part of our efforts for improving our organizations data security posture and governance of sensitive data access, we have initiated a campaign to identify owners for sensitive data assets.<BR><BR>The data owner election process has been completed and requires your approval to finalize the process.<BR><BR>Please use the following link to view your data ownership election review tasks in Data Access Security: <a href=\"$election.taskUrl\">View Data Ownership Election Tasks</a><BR><BR>Thank you!<BR><BR><BR></font><font face=\"Calibri\" size=\"1\" color=\"gray\">This is an automatic message sent to you by <B>Data Access Security</B> - Please do not reply.</font>",
+    "created": null,
+    "description": "Sent to a resource's reviewers when voting on it closes, for data owner elections configured to require manual review and to send invitations.",
+    "details": null,
+    "footer": null,
+    "from": "$__global.emailFromAddress",
+    "header": null,
+    "id": "[Default] Data Access Security Data Owner Election Review Task",
+    "inboxTemplate": null,
+    "key": "das_owner_election_reviewer_invite",
+    "locale": "en",
+    "medium": "EMAIL",
+    "modified": null,
+    "name": "Data Access Security Data Owner Election Review Task",
+    "replyTo": "$__global.emailFromAddress",
+    "slackTemplate": null,
+    "subject": "You have a new data owner election review task",
+    "teamsTemplate": null
+  },
+  "self": {
+    "id": "[Default] Data Access Security Data Owner Election Review Task",
+    "name": "Data Access Security Data Owner Election Review Task",
+    "type": "NOTIFICATION_TEMPLATE"
+  },
+  "version": 1
+}

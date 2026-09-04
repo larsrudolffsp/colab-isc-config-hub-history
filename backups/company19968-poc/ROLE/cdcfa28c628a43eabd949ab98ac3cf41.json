@@ -1,0 +1,114 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [
+      {
+        "id": "d7a7a397873f4aea860de28dbfd04a19",
+        "name": "PRISM ERP Employee Access",
+        "type": "ACCESS_PROFILE"
+      }
+    ],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-28T10:52:19.445751Z",
+    "description": "Rolle für den Zugriff auf das Lieferkettensystem",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [],
+    "id": "cdcfa28c628a43eabd949ab98ac3cf41",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": [
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.Company",
+                  "sourceId": "a768e9d725434f668174b1205088259b",
+                  "type": "ACCOUNT"
+                },
+                "operation": "CONTAINS",
+                "stringValue": null,
+                "values": [
+                  "Bestrun"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.Location",
+                  "sourceId": "a768e9d725434f668174b1205088259b",
+                  "type": "ACCOUNT"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "München"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.cloudLifecycleState",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "active"
+                ]
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": null,
+            "values": null
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": null,
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2026-08-28T10:54:17.642065Z",
+    "name": "Lieferkettensystem",
+    "owner": {
+      "id": "4e66ef089395450e9ba7599d47619d3e",
+      "name": "galaad.tassel",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "cdcfa28c628a43eabd949ab98ac3cf41",
+    "name": "Lieferkettensystem",
+    "type": "ROLE"
+  },
+  "version": 1
+}

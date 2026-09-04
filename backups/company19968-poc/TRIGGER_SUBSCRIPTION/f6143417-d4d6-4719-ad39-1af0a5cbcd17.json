@@ -1,0 +1,24 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "description": "Managed by Workflows",
+    "enabled": true,
+    "filter": "$[?(@.workflowId == 'f6143417-d4d6-4719-ad39-1af0a5cbcd17')]",
+    "id": "f6143417-d4d6-4719-ad39-1af0a5cbcd17",
+    "name": "Add External User",
+    "responseDeadline": "PT1H",
+    "triggerId": "idn:interactive-process-launched",
+    "triggerName": "Interactive Trigger",
+    "type": "WORKFLOW",
+    "workflowConfig": {
+      "workflowId": "f6143417-d4d6-4719-ad39-1af0a5cbcd17"
+    }
+  },
+  "self": {
+    "id": "f6143417-d4d6-4719-ad39-1af0a5cbcd17",
+    "name": "Add External User",
+    "type": "TRIGGER_SUBSCRIPTION"
+  },
+  "version": 1
+}

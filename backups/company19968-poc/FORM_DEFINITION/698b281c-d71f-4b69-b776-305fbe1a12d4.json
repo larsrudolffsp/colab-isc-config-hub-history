@@ -1,0 +1,705 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-01-13T17:30:49.560486867Z",
+    "description": "",
+    "formConditions": [
+      {
+        "effects": [
+          {
+            "config": {
+              "defaultValueLabel": "b2b982f217a04d6fb18d3ae9a37c3d2a.department",
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.department"
+            },
+            "effectType": "SET_DEFAULT_VALUE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "b2b982f217a04d6fb18d3ae9a37c3d2a.department",
+            "sourceType": "INPUT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "defaultValueLabel": "b2b982f217a04d6fb18d3ae9a37c3d2a.email",
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.email"
+            },
+            "effectType": "SET_DEFAULT_VALUE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "b2b982f217a04d6fb18d3ae9a37c3d2a.email",
+            "sourceType": "INPUT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "defaultValueLabel": "b2b982f217a04d6fb18d3ae9a37c3d2a.firstname",
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.firstname"
+            },
+            "effectType": "SET_DEFAULT_VALUE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "b2b982f217a04d6fb18d3ae9a37c3d2a.firstname",
+            "sourceType": "INPUT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "defaultValueLabel": "b2b982f217a04d6fb18d3ae9a37c3d2a.jobtitle",
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.jobtitle"
+            },
+            "effectType": "SET_DEFAULT_VALUE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "b2b982f217a04d6fb18d3ae9a37c3d2a.jobtitle",
+            "sourceType": "INPUT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "defaultValueLabel": "b2b982f217a04d6fb18d3ae9a37c3d2a.lastname",
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.lastname"
+            },
+            "effectType": "SET_DEFAULT_VALUE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "b2b982f217a04d6fb18d3ae9a37c3d2a.lastname",
+            "sourceType": "INPUT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "defaultValueLabel": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.score",
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.score"
+            },
+            "effectType": "SET_DEFAULT_VALUE"
+          },
+          {
+            "config": {
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.score"
+            },
+            "effectType": "DISABLE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.score",
+            "sourceType": "INPUT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "defaultValueLabel": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.threshold",
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.threshold"
+            },
+            "effectType": "SET_DEFAULT_VALUE"
+          },
+          {
+            "config": {
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.threshold"
+            },
+            "effectType": "DISABLE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.threshold",
+            "sourceType": "INPUT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "defaultValueLabel": "newidentity.department",
+              "element": "department"
+            },
+            "effectType": "SET_DEFAULT_VALUE"
+          },
+          {
+            "config": {
+              "element": "department"
+            },
+            "effectType": "ENABLE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "newidentity.department",
+            "sourceType": "INPUT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "defaultValueLabel": "newidentity.email",
+              "element": "email"
+            },
+            "effectType": "SET_DEFAULT_VALUE"
+          },
+          {
+            "config": {
+              "element": "email"
+            },
+            "effectType": "ENABLE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "newidentity.email",
+            "sourceType": "INPUT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "defaultValueLabel": "newidentity.firstname",
+              "element": "firstname"
+            },
+            "effectType": "SET_DEFAULT_VALUE"
+          },
+          {
+            "config": {
+              "element": "firstname"
+            },
+            "effectType": "ENABLE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "newidentity.firstname",
+            "sourceType": "INPUT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "defaultValueLabel": "newidentity.jobtitle",
+              "element": "jobTitle"
+            },
+            "effectType": "SET_DEFAULT_VALUE"
+          },
+          {
+            "config": {
+              "element": "jobTitle"
+            },
+            "effectType": "ENABLE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "newidentity.jobtitle",
+            "sourceType": "INPUT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "defaultValueLabel": "newidentity.lastname",
+              "element": "lastname"
+            },
+            "effectType": "SET_DEFAULT_VALUE"
+          },
+          {
+            "config": {
+              "element": "lastname"
+            },
+            "effectType": "ENABLE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "newidentity.lastname",
+            "sourceType": "INPUT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.department"
+            },
+            "effectType": "DISABLE"
+          },
+          {
+            "config": {
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.email"
+            },
+            "effectType": "DISABLE"
+          },
+          {
+            "config": {
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.firstname"
+            },
+            "effectType": "DISABLE"
+          },
+          {
+            "config": {
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.jobtitle"
+            },
+            "effectType": "DISABLE"
+          },
+          {
+            "config": {
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.lastname"
+            },
+            "effectType": "DISABLE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "name",
+            "sourceType": "INPUT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.selectionsection"
+            },
+            "effectType": "HIDE"
+          }
+        ],
+        "ruleOperator": "OR",
+        "rules": [
+          {
+            "operator": "EM",
+            "source": "identities",
+            "sourceType": "ELEMENT",
+            "value": "",
+            "valueType": "STRING"
+          },
+          {
+            "operator": "EQ",
+            "source": "identities",
+            "sourceType": "ELEMENT",
+            "value": "newidentity",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "element": "b2b982f217a04d6fb18d3ae9a37c3d2a.selectionsection"
+            },
+            "effectType": "SHOW"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "EQ",
+            "source": "identities",
+            "sourceType": "ELEMENT",
+            "value": "Amanda.Ross",
+            "valueType": "STRING"
+          }
+        ]
+      }
+    ],
+    "formElements": [
+      {
+        "config": {
+          "alignment": "CENTER",
+          "description": "Potentially duplicated identity was found. Please review the list of possible matches from existing identities and select the right one.",
+          "formElements": [
+            {
+              "config": {
+                "label": "Department"
+              },
+              "elementType": "TEXT",
+              "id": "department",
+              "key": "department",
+              "validations": []
+            },
+            {
+              "config": {
+                "label": "Email"
+              },
+              "elementType": "TEXT",
+              "id": "email",
+              "key": "email",
+              "validations": []
+            },
+            {
+              "config": {
+                "label": "Firstname"
+              },
+              "elementType": "TEXT",
+              "id": "firstname",
+              "key": "firstname",
+              "validations": []
+            },
+            {
+              "config": {
+                "label": "JobTitle"
+              },
+              "elementType": "TEXT",
+              "id": "jobTitle",
+              "key": "jobTitle",
+              "validations": []
+            },
+            {
+              "config": {
+                "label": "Lastname"
+              },
+              "elementType": "TEXT",
+              "id": "lastname",
+              "key": "lastname",
+              "validations": []
+            }
+          ],
+          "label": "Potential Identity Merge from External Users",
+          "labelStyle": "h2",
+          "showLabel": true
+        },
+        "elementType": "SECTION",
+        "id": "topSection",
+        "key": "topSection",
+        "validations": []
+      },
+      {
+        "config": {
+          "alignment": "CENTER",
+          "formElements": [
+            {
+              "config": {
+                "alignment": "CENTER",
+                "columnCount": 2,
+                "columns": [
+                  [
+                    {
+                      "config": {
+                        "label": "Overall score"
+                      },
+                      "elementType": "TEXT",
+                      "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.score",
+                      "key": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.score",
+                      "validations": []
+                    }
+                  ],
+                  [
+                    {
+                      "config": {
+                        "label": "Overall threshold"
+                      },
+                      "elementType": "TEXT",
+                      "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.threshold",
+                      "key": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.threshold",
+                      "validations": []
+                    }
+                  ]
+                ],
+                "label": "Score",
+                "labelStyle": "h5",
+                "showLabel": true
+              },
+              "elementType": "COLUMN_SET",
+              "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.scoreSection",
+              "key": "b2b982f217a04d6fb18d3ae9a37c3d2a.scoreSection",
+              "validations": []
+            },
+            {
+              "config": {
+                "label": "Department"
+              },
+              "elementType": "TEXT",
+              "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.department",
+              "key": "b2b982f217a04d6fb18d3ae9a37c3d2a.department",
+              "validations": []
+            },
+            {
+              "config": {
+                "label": "Email"
+              },
+              "elementType": "TEXT",
+              "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.email",
+              "key": "b2b982f217a04d6fb18d3ae9a37c3d2a.email",
+              "validations": []
+            },
+            {
+              "config": {
+                "label": "Firstname"
+              },
+              "elementType": "TEXT",
+              "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.firstname",
+              "key": "b2b982f217a04d6fb18d3ae9a37c3d2a.firstname",
+              "validations": []
+            },
+            {
+              "config": {
+                "label": "JobTitle"
+              },
+              "elementType": "TEXT",
+              "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.jobtitle",
+              "key": "b2b982f217a04d6fb18d3ae9a37c3d2a.jobtitle",
+              "validations": []
+            },
+            {
+              "config": {
+                "label": "Lastname"
+              },
+              "elementType": "TEXT",
+              "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.lastname",
+              "key": "b2b982f217a04d6fb18d3ae9a37c3d2a.lastname",
+              "validations": []
+            }
+          ],
+          "label": "Amanda.Ross details",
+          "labelStyle": "h4",
+          "showLabel": true
+        },
+        "elementType": "SECTION",
+        "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.selectionsection",
+        "key": "b2b982f217a04d6fb18d3ae9a37c3d2a.selectionsection",
+        "validations": []
+      },
+      {
+        "config": {
+          "alignment": "CENTER",
+          "formElements": [
+            {
+              "config": {
+                "dataSource": {
+                  "config": {
+                    "options": [
+                      {
+                        "label": "Amanda.Ross",
+                        "value": "Amanda.Ross"
+                      },
+                      {
+                        "label": "This is a new identity",
+                        "value": "This is a new identity"
+                      }
+                    ]
+                  },
+                  "dataSourceType": "STATIC"
+                },
+                "forceSelect": true,
+                "label": "Identities",
+                "maximum": 1,
+                "required": true
+              },
+              "elementType": "SELECT",
+              "id": "identities",
+              "key": "identities",
+              "validations": [
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            }
+          ],
+          "label": "Existing identities",
+          "labelStyle": "h3",
+          "showLabel": true
+        },
+        "elementType": "SECTION",
+        "id": "identitiesSection",
+        "key": "identitiesSection",
+        "validations": []
+      }
+    ],
+    "formInput": [
+      {
+        "description": "",
+        "id": "newidentity.department",
+        "label": "newidentity.department",
+        "type": "STRING"
+      },
+      {
+        "description": "",
+        "id": "newidentity.jobtitle",
+        "label": "newidentity.jobtitle",
+        "type": "STRING"
+      },
+      {
+        "description": "65",
+        "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.threshold",
+        "label": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.threshold",
+        "type": "STRING"
+      },
+      {
+        "description": "88",
+        "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.score",
+        "label": "b2b982f217a04d6fb18d3ae9a37c3d2a.overall.score",
+        "type": "STRING"
+      },
+      {
+        "description": "Amanda",
+        "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.firstname",
+        "label": "b2b982f217a04d6fb18d3ae9a37c3d2a.firstname",
+        "type": "STRING"
+      },
+      {
+        "description": "Amanda",
+        "id": "newidentity.firstname",
+        "label": "newidentity.firstname",
+        "type": "STRING"
+      },
+      {
+        "description": "Amanda.Ross@sailpointdemo.com",
+        "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.email",
+        "label": "b2b982f217a04d6fb18d3ae9a37c3d2a.email",
+        "type": "STRING"
+      },
+      {
+        "description": "External Users",
+        "id": "source",
+        "label": "source",
+        "type": "STRING"
+      },
+      {
+        "description": "Gross",
+        "id": "newidentity.lastname",
+        "label": "newidentity.lastname",
+        "type": "STRING"
+      },
+      {
+        "description": "Regional Operations",
+        "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.department",
+        "label": "b2b982f217a04d6fb18d3ae9a37c3d2a.department",
+        "type": "STRING"
+      },
+      {
+        "description": "Ross",
+        "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.lastname",
+        "label": "b2b982f217a04d6fb18d3ae9a37c3d2a.lastname",
+        "type": "STRING"
+      },
+      {
+        "description": "Senior Finance Manager",
+        "id": "b2b982f217a04d6fb18d3ae9a37c3d2a.jobtitle",
+        "label": "b2b982f217a04d6fb18d3ae9a37c3d2a.jobtitle",
+        "type": "STRING"
+      },
+      {
+        "description": "amanda.gross@sailpointdemo.com",
+        "id": "name",
+        "label": "name",
+        "type": "STRING"
+      },
+      {
+        "description": "amanda.gross@sailpointdemo.com",
+        "id": "newidentity.email",
+        "label": "newidentity.email",
+        "type": "STRING"
+      },
+      {
+        "description": "de8a0ad1d9ac4750a153b2a91688107b",
+        "id": "account",
+        "label": "account",
+        "type": "STRING"
+      }
+    ],
+    "id": "698b281c-d71f-4b69-b776-305fbe1a12d4",
+    "modified": "2026-01-13T17:30:49.560486867Z",
+    "name": "Identity Merging (Identity Fusion) - amanda.gross@sailpointdemo.com (amanda.gross@sailpointdemo.com)",
+    "owner": {
+      "id": "ae26cda44f4d4fd487e812edf7449515",
+      "name": "SailPoint Services",
+      "type": "IDENTITY"
+    },
+    "usedBy": []
+  },
+  "self": {
+    "id": "698b281c-d71f-4b69-b776-305fbe1a12d4",
+    "name": "Identity Merging (Identity Fusion) - amanda.gross@sailpointdemo.com (amanda.gross@sailpointdemo.com)",
+    "type": "FORM_DEFINITION"
+  },
+  "version": 1
+}

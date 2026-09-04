@@ -1,0 +1,58 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-09T12:55:16.886879Z",
+    "description": "NE Sponsor",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "08ecd4c6-7d4c-32bd-a066-ef5a85f7ae86",
+        "name": "Sponsors",
+        "sourceId": "1129c94c-33af-474e-96be-45477f00a696",
+        "sourceName": "NE - Users",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "4fa72b2a64b04a40956359472d6222bd",
+    "legacyMembershipInfo": null,
+    "membership": null,
+    "modified": "2025-12-10T08:13:57.990454Z",
+    "name": "NE Sponsor",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "4fa72b2a64b04a40956359472d6222bd",
+    "name": "NE Sponsor",
+    "type": "ROLE"
+  },
+  "version": 1
+}

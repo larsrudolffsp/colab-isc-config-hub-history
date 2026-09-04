@@ -1,0 +1,26 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "values": [
+        {
+          "attributes": {
+            "value": "Non-Employee"
+          },
+          "type": "static"
+        }
+      ]
+    },
+    "id": "a0887ee2-d895-4167-98dd-d5bddd551a5e",
+    "internal": false,
+    "name": "NE - People Type",
+    "type": "firstValid"
+  },
+  "self": {
+    "id": "a0887ee2-d895-4167-98dd-d5bddd551a5e",
+    "name": "NE - People Type",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

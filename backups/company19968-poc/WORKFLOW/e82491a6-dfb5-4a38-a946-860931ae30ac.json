@@ -1,0 +1,120 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-04T08:21:21.159706823Z",
+    "creator": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Compare Strings",
+      "steps": {
+        "Activate Certification Campaign": {
+          "actionId": "sp:activate-campaign",
+          "attributes": {
+            "id.$": "$.createCertificationCampaign.id"
+          },
+          "description": "Activate the campaign we created.",
+          "nextStep": "Get Identity",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Compare Strings": {
+          "choiceList": [
+            {
+              "comparator": "StringMatches",
+              "nextStep": "Create Certification Campaign",
+              "variableA.$": "$.trigger.changes[?(@.attribute == \"department\")].attribute",
+              "variableB": "department"
+            }
+          ],
+          "defaultStep": "success",
+          "description": "Only create the campaign for identities who change departments.  This doesn't look for a specific department.",
+          "type": "choice"
+        },
+        "Create Certification Campaign": {
+          "actionId": "sp:create-campaign",
+          "attributes": {
+            "duration": "2w",
+            "identityId.$": "$.trigger.identity.id",
+            "name.$": "$.trigger.identity.name"
+          },
+          "description": "Create an identity certification campaign any identity that changed departments.  Name it after the identity so we know who is being certified.",
+          "nextStep": "Activate Certification Campaign",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.identity.id"
+          },
+          "description": "Get the identity's attributes so we can look up their manager.",
+          "nextStep": "Get Identity 1",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Get Identity 1": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.getIdentity.manager.id"
+          },
+          "description": "This node is used to gather information about the user's manager to populate their email.",
+          "nextStep": "Send Email 1",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Send Email 1": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body.$": "$.trigger.identity.name",
+            "context": {},
+            "recipientEmailList.$": "$.getIdentity1.attributes.email",
+            "subject": "New certification campaign generated for your employee"
+          },
+          "description": "Send an email to the identity's manager so they know there is a certification campaign pending for their employee that they need to complete.",
+          "nextStep": "success 1",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "success": {
+          "description": "Don't do anything else, since the identity didn't change departments.",
+          "type": "success"
+        },
+        "success 1": {
+          "type": "success"
+        }
+      }
+    },
+    "description": "Create and activate a certification campaign for every identity that has changed departments.",
+    "enabled": false,
+    "id": "e82491a6-dfb5-4a38-a946-860931ae30ac",
+    "modified": "2025-12-04T08:21:21.159706823Z",
+    "modifiedBy": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "name": "Template: Create and Activate a Certification Campaign time bound",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "id": "idn:identity-attributes-changed",
+        "integrationId": null
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "e82491a6-dfb5-4a38-a946-860931ae30ac",
+    "name": "Template: Create and Activate a Certification Campaign time bound",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

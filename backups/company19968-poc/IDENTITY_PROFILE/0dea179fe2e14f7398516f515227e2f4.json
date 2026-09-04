@@ -1,0 +1,293 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "authoritativeSource": {
+      "id": "a768e9d725434f668174b1205088259b",
+      "name": "SuccessFactors",
+      "type": "SOURCE"
+    },
+    "created": "2026-08-18T09:51:50.472Z",
+    "description": "SuccessFactors Identity Profile",
+    "hasTimeBasedAttr": true,
+    "id": "0dea179fe2e14f7398516f515227e2f4",
+    "identityAttributeConfig": {
+      "attributeTransforms": [
+        {
+          "identityAttributeName": "businessUnit",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "BusinessUnit",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "city",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Location",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "cloudLifecycleState",
+          "transformDefinition": {
+            "attributes": {
+              "id": "DetermineLCS_SF",
+              "input": {
+                "attributes": {
+                  "attributeName": "Position Entry Date",
+                  "sourceId": "a768e9d725434f668174b1205088259b",
+                  "sourceName": "SuccessFactors"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
+          "identityAttributeName": "company",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Company",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "country",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Country",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "department",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Department",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "departmentHistory",
+          "transformDefinition": {
+            "attributes": {
+              "id": "Department history",
+              "input": {
+                "attributes": {
+                  "attributeName": "Department",
+                  "sourceId": "a768e9d725434f668174b1205088259b",
+                  "sourceName": "SuccessFactors"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
+          "identityAttributeName": "displayName",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "FormalName",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "email",
+          "transformDefinition": {
+            "attributes": {
+              "id": "NoEmail_SF",
+              "input": {
+                "attributes": {
+                  "attributeName": "PrimaryEmailAddress",
+                  "sourceId": "a768e9d725434f668174b1205088259b",
+                  "sourceName": "SuccessFactors"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
+          "identityAttributeName": "endDate",
+          "transformDefinition": {
+            "attributes": {
+              "id": "ConvertEndDateISO8601_SF",
+              "input": {
+                "attributes": {
+                  "attributeName": "Termination Date",
+                  "sourceId": "a768e9d725434f668174b1205088259b",
+                  "sourceName": "SuccessFactors"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
+          "identityAttributeName": "firstname",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "FirstName",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "identificationNumber",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "PersonID",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "jobTitle",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "JobTitle",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "lastname",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "LastName",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "location",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Location",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "manager",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "ManagerID",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "mitarbeiterleiheFiliale",
+          "transformDefinition": {
+            "attributes": {
+              "id": "Custom Mitarbeiterleihe Logic",
+              "input": {
+                "attributes": {
+                  "attributeName": "location",
+                  "sourceId": "0dbbdf38bd3a48a4917dc1a11b6af89d",
+                  "sourceName": "Mitarbeiterleihe"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
+          "identityAttributeName": "startDate",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Position Entry Date",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "uid",
+          "transformDefinition": {
+            "attributes": {
+              "id": "CreateUsername_SF",
+              "input": {
+                "attributes": {
+                  "attributeName": "FormalName",
+                  "sourceId": "a768e9d725434f668174b1205088259b",
+                  "sourceName": "SuccessFactors"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
+          "identityAttributeName": "workPhone",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "BusinessPhone",
+              "sourceId": "a768e9d725434f668174b1205088259b",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          }
+        }
+      ],
+      "enabled": true
+    },
+    "identityCount": 98,
+    "identityExceptionReportReference": null,
+    "identityRefreshRequired": false,
+    "modified": "2026-09-04T06:34:34.106Z",
+    "name": "SuccessFactors",
+    "owner": {
+      "id": "4e66ef089395450e9ba7599d47619d3e",
+      "name": "galaad.tassel",
+      "type": "IDENTITY"
+    },
+    "priority": 45
+  },
+  "self": {
+    "id": "0dea179fe2e14f7398516f515227e2f4",
+    "name": "SuccessFactors",
+    "type": "IDENTITY_PROFILE"
+  },
+  "version": 1
+}

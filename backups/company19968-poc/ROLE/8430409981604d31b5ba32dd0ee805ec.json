@@ -1,0 +1,58 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-04-29T08:58:04.550264Z",
+    "description": null,
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "16c59cb3-379d-3018-ad61-e4065b024a3a",
+        "name": "Accounting",
+        "sourceId": "273a768e-120f-4f4f-81d4-db17fe7e3537",
+        "sourceName": "EntraID",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "8430409981604d31b5ba32dd0ee805ec",
+    "legacyMembershipInfo": null,
+    "membership": null,
+    "modified": "2026-04-29T09:06:50.737033Z",
+    "name": "Multipath Role 2",
+    "owner": {
+      "id": "f3d792713df84c6b9ebd097046d447e0",
+      "name": "volker.juergensen",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "8430409981604d31b5ba32dd0ee805ec",
+    "name": "Multipath Role 2",
+    "type": "ROLE"
+  },
+  "version": 1
+}

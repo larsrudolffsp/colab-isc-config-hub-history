@@ -1,0 +1,66 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-04T08:20:02.321262Z",
+    "description": "Admin access to PRISM system",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "2a4bb4b4dc443b36b61e21822bc5c6de",
+        "name": "View_Reports",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "51f7665698853e439f5bd273fdcfc63a",
+        "name": "Create_Reports",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "696ad2c7036b35faab14029c678b39f6",
+        "name": "Super",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "8d2f111be1ea3b5887fa273c114f9e14",
+        "name": "Modify_Reports",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "4cdac68cea5a4794a151e427afe32c99",
+    "modified": "2025-12-04T08:20:02.321262Z",
+    "name": "PRISM ERP - Super Admin",
+    "owner": {
+      "id": "5928c04c91f048b4846aa1b3336fb45b",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": true,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "6b7a030e11774ab4a88c84bb3a088081",
+      "name": "PRISM",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "4cdac68cea5a4794a151e427afe32c99",
+    "name": "PRISM ERP - Super Admin",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

@@ -1,0 +1,83 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-04T08:21:20.593434488Z",
+    "creator": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "HTTP Request",
+      "steps": {
+        "HTTP Request": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "method": "get",
+            "oAuthClientId": "f4a69d2d1f874bce8aabf72c84644614",
+            "oAuthClientSecret": "",
+            "oAuthTokenUrl": "https://company1072-poc.api.identitynow-demo.com/oauth/token",
+            "requestContentType": "json",
+            "url": "https://company1072-poc.api.identitynow-demo.com/v3/certifications",
+            "urlParams": "filters:phase eq \"ACTIVE\" and completed eq false"
+          },
+          "description": "Get current certification reviewers for any certifications that are still active.",
+          "nextStep": "Send Email",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Send Email": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body": "Please log into SailPoint IdentityNow and review your pending certification decisions.",
+            "context": {},
+            "from": "",
+            "recipientEmailList.$": "$.hTTPRequest.body[1,2,3,4,5,6,7,8,9].reviewer.email",
+            "replyTo": "no-reply@sailpoint.com",
+            "subject": "Campaign decision reminder"
+          },
+          "description": "Send Notification email to handle certification decisions that are outstanding.  Supports sending to 10 people.",
+          "nextStep": "success",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "success": {
+          "type": "success"
+        }
+      }
+    },
+    "description": "This campaign reminder will send a notification to outstanding reviewers every day at 6am.  This covers up to the first 10 reviewers.  This workflow can be duplicated to support as many reviewers as needed.",
+    "enabled": false,
+    "id": "00dc42c3-ab09-4b80-a6f4-6e0a3f84b0c2",
+    "modified": "2025-12-04T08:21:20.593434488Z",
+    "modifiedBy": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "name": "Campaign reminder v2",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "cronString": "0 * * * *",
+        "frequency": "cronSchedule",
+        "id": "idn:cron-schedule",
+        "integrationId": null,
+        "timeZone": "US/Eastern"
+      },
+      "type": "SCHEDULED"
+    }
+  },
+  "self": {
+    "id": "00dc42c3-ab09-4b80-a6f4-6e0a3f84b0c2",
+    "name": "Campaign reminder v2",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

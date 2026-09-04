@@ -1,0 +1,169 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-16T09:05:55.928704819Z",
+    "creator": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Get Identity",
+      "steps": {
+        "Approval Policy": {
+          "actionId": "sp:access-request-approval",
+          "attributes": {
+            "accessRequestId.$": "$.trigger.accessRequestId",
+            "accountActivityId.$": "$.trigger.accountActivityId",
+            "approvalActionAtTimeout": "EXPIRED",
+            "approvalReminder": "true",
+            "approvalTimeout": 8,
+            "approvalType": "MULTI-STEP",
+            "autoApprovalEnabled.$": "$.trigger.autoApprovalEnabled",
+            "fallbackApprover.$": "$.trigger.fallbackApprover",
+            "multiApproverReviewersConfig_approvalScheme": "SERIAL",
+            "multiApproverReviewersConfig_reviewers": [
+              {
+                "approverCategory": "GOVERNANCE_GROUP",
+                "approverNumber": 2,
+                "governanceGroupId": "1fbb3bd7-cfb1-4e99-8b92-6c21ba9123a5"
+              },
+              {
+                "approverCategory": "MANAGER_OF",
+                "approverNumber": 1
+              }
+            ],
+            "parentWorkflowExecutionId.$": "$.trigger.parentWorkflowExecutionId",
+            "priority": "MEDIUM",
+            "quorumApproverReviewersConfig_approvalScheme": "SERIAL",
+            "reminderFrequency_cronString": "0 0 * * *",
+            "reminderFrequency_dailyTimes": [
+              "1969-12-31T07:00:00.000Z"
+            ],
+            "reminderFrequency_frequency": "daily",
+            "reminderFrequency_timeZone": "America/Denver",
+            "requestId.$": "$.trigger.requestId",
+            "requestedAt.$": "$.trigger.createdAt",
+            "requestedBy.$": "$.trigger.requestedBy",
+            "requestedFor.$": "$.trigger.requestedFor",
+            "requestedItem.$": "$.trigger.requestedItem",
+            "sodViolationContext.$": "$.trigger.sodViolationContext",
+            "staticAttributes.$": "$.trigger.staticAttributes",
+            "workflowExecutionId.$": "$.trigger.workflowExecutionId"
+          },
+          "description": "This Approval Policy Action is a multi-step serial approval where the first reviewer is the recipient’s manager and the second is the manager’s manager.\n\nIf both reviewers approve, the request is successfully approved. \n\nThis step is set to Medium priority.\nReviewers are emailed daily reminders if they haven’t yet completed the request.\nIf this review is not completed within 8 days, the request expires and is rejected.",
+          "displayName": "Multi-Step Serial Approval Policy",
+          "nextStep": "Compare Strings 1",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Compare Strings": {
+          "actionId": "sp:compare-strings",
+          "choiceList": [
+            {
+              "comparator": "StringEquals",
+              "nextStep": "End Step - Success",
+              "variableA.$": "$.getIdentity.attributes.jobTitle",
+              "variableB": "Security Architect"
+            }
+          ],
+          "defaultStep": "Approval Policy",
+          "description": "The identity attributes are reviewed to determine if the recipient is in the Security department. If the recipient is in the Security department, this evaluates to True and auto-approves the request. Otherwise, it evaluates to False and proceeds to a multi-step approval process.",
+          "displayName": "Recipient in Security Department?",
+          "type": "choice"
+        },
+        "Compare Strings 1": {
+          "actionId": "sp:compare-strings",
+          "choiceList": [
+            {
+              "comparator": "StringEquals",
+              "nextStep": "Create Certification Campaign",
+              "variableA.$": "$.approvalPolicy.status",
+              "variableB": "APPROVED"
+            }
+          ],
+          "defaultStep": "End Step - Success 1",
+          "description": "The status of the Approval Policy Action is evaluated to determine if the request was approved. If the status is APPROVED, it evaluates to True. If it is any other status, it evaluates to False.",
+          "displayName": "Approval Status = APPROVED?",
+          "type": "choice"
+        },
+        "Create Certification Campaign": {
+          "actionId": "sp:create-campaign",
+          "attributes": {
+            "activateUponCreation": true,
+            "description": "A request for {{$.trigger.requestedItem.name}}, with a recipient of {{$.getIdentity.displayName}} which is outside of the Security Department. A Certification Campaign of their access has been generated.",
+            "duration": "30d",
+            "emailNotificationEnabled": true,
+            "name": "Non Security Access Granted",
+            "recommendationsEnabled": false,
+            "type": "MANAGER",
+            "undecidedAccess": true
+          },
+          "description": "The access request was approved for an identity outside the Security department. A Certification Campaign is created and assigned to the recipient’s manager to certify all access. This is an example of an event-based certification.",
+          "displayName": "Exception Access Approved – Certify Access",
+          "nextStep": "End Step - Success 2",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "End Step - Success": {
+          "actionId": "sp:operator-success",
+          "description": "The recipient is part of the Security department, therefore this access request is auto-approved. The workflow completed successfully.\n\nWhen configuring for Auto-Approval or Auto-Rejection, the End Step determines the outcome since there is no approval activity. To auto-approve, add an \"End Step - Success\" where no prior Approval Policy Action exists.",
+          "displayName": "Auto-Approve",
+          "type": "success"
+        },
+        "End Step - Success 1": {
+          "actionId": "sp:operator-success",
+          "description": "The access request was rejected, and the recipient was successfully notified. The workflow completed successfully.",
+          "displayName": "Successful Execution - Request Denied",
+          "type": "success"
+        },
+        "End Step - Success 2": {
+          "actionId": "sp:operator-success",
+          "description": "The access request was approved. A certification campaign was created, and the manager was notified. The workflow completed successfully.",
+          "displayName": "Successful Execution - Approved",
+          "type": "success"
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.requestedFor.id"
+          },
+          "description": "The full set of attributes for the identity the access is requested for are retrieved. This recipient is the identity that was provided in the Requested For field of the access request.",
+          "displayName": "Get Recipient Identity Attributes",
+          "nextStep": "Compare Strings",
+          "type": "action",
+          "versionNumber": 2
+        }
+      }
+    },
+    "description": "This workflow is triggered when an access request is submitted. Based on the recipient’s attributes, the request is either auto-approved or is considered and exception and goes through a multi-step approval process. If approved as an exception, a certification campaign is created to ensure all access for the recipient is necessary. The recipient is notified of the review results via Slack.",
+    "enabled": true,
+    "id": "f1bf89bd-a1ab-46e9-b438-f7e1906e168a",
+    "modified": "2026-04-28T15:16:26.563307706Z",
+    "modifiedBy": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "name": "Multi-Step Serial Approval of Access Request (Changed)",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "id": "idn:access-request-trigger",
+        "integrationId": null
+      },
+      "type": "AccessRequestTrigger"
+    }
+  },
+  "self": {
+    "id": "f1bf89bd-a1ab-46e9-b438-f7e1906e168a",
+    "name": "Multi-Step Serial Approval of Access Request (Changed)",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

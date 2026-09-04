@@ -1,0 +1,209 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "cloudDisplayName": "Test NELM",
+      "connectionType": "file",
+      "connectorName": "Non-Employee",
+      "deleteThresholdPercentage": 10,
+      "healthy": true,
+      "since": "2026-07-20T12:11:05.812Z",
+      "status": "SOURCE_STATE_HEALTHY",
+      "templateApplication": "Non-Employee Source Template"
+    },
+    "connectorClass": "com.sailpoint.connector.NesrConnector",
+    "connectorScriptName": "non-employee",
+    "correlationConfigDetails": {
+      "attributeAssignments": [
+        {
+          "complex": false,
+          "filterString": null,
+          "ignoreCase": false,
+          "matchMode": null,
+          "operation": "EQ",
+          "property": "email",
+          "sequence": 2,
+          "value": "email"
+        },
+        {
+          "complex": false,
+          "filterString": null,
+          "ignoreCase": false,
+          "matchMode": null,
+          "operation": "EQ",
+          "property": "name",
+          "sequence": 1,
+          "value": "accountName"
+        }
+      ],
+      "id": "3fbb2989fcfc4c2c843589ab4e1282a7",
+      "name": "bb0fecea56a04dfb81aea9559d7a970c Account Correlation Config"
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": 10,
+    "description": "test",
+    "features": [
+      "NO_RANDOM_ACCESS"
+    ],
+    "id": "bb0fecea56a04dfb81aea9559d7a970c",
+    "managementWorkgroup": {
+      "id": "1fbb3bd7-cfb1-4e99-8b92-6c21ba9123a5",
+      "name": "IT Security",
+      "type": "GOVERNANCE_GROUP"
+    },
+    "managerCorrelationMapping": {
+      "accountAttributeName": "manager",
+      "identityAttributeName": "name"
+    },
+    "managerCorrelationRule": null,
+    "name": "Test NELM",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": null,
+    "provisionAsCsv": false,
+    "provisioningPolicies": [],
+    "schemas": [
+      {
+        "attributes": [],
+        "configuration": {},
+        "created": "2026-07-20T12:07:24.543Z",
+        "displayAttribute": "",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "50353c07eea64bb480a23cc89de3bdae",
+        "identityAttribute": "",
+        "includePermissions": false,
+        "modified": "2026-07-20T12:07:24.543Z",
+        "name": "group",
+        "nativeObjectType": "group"
+      },
+      {
+        "attributes": [
+          {
+            "description": "Account Name",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "accountName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Email",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "email",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "End Date",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "endDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "First Name",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "firstName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last Name",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Manager's name",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "manager",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Phone",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "phone",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Start Date",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "startDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "id",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-07-20T12:07:24.543Z",
+        "displayAttribute": "accountName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "5f7f65e7fa0e4273abcc89e712fe4b7f",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2026-07-20T12:07:24.543Z",
+        "name": "account",
+        "nativeObjectType": "user"
+      }
+    ],
+    "type": "Non-Employee"
+  },
+  "self": {
+    "id": "bb0fecea56a04dfb81aea9559d7a970c",
+    "name": "Test NELM",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

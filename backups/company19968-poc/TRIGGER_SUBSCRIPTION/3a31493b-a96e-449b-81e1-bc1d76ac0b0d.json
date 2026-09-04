@@ -1,0 +1,24 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "description": "Managed by Workflows",
+    "enabled": true,
+    "filter": "$[?(@.workflowId == '3a31493b-a96e-449b-81e1-bc1d76ac0b0d')]",
+    "id": "3a31493b-a96e-449b-81e1-bc1d76ac0b0d",
+    "name": "Emergency Termination",
+    "responseDeadline": "PT1H",
+    "triggerId": "idn:interactive-process-launched",
+    "triggerName": "Interactive Trigger",
+    "type": "WORKFLOW",
+    "workflowConfig": {
+      "workflowId": "3a31493b-a96e-449b-81e1-bc1d76ac0b0d"
+    }
+  },
+  "self": {
+    "id": "3a31493b-a96e-449b-81e1-bc1d76ac0b0d",
+    "name": "Emergency Termination",
+    "type": "TRIGGER_SUBSCRIPTION"
+  },
+  "version": 1
+}

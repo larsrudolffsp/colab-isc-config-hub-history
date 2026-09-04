@@ -1,0 +1,374 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "authoritativeSource": {
+      "id": "5d9c87abd84a4f4096706316429a1841",
+      "name": "Non-Employee",
+      "type": "SOURCE"
+    },
+    "created": "2025-12-08T09:26:00.165Z",
+    "description": "Identity Profile for Non-Employee source",
+    "hasTimeBasedAttr": true,
+    "id": "7d0963680b844ae8bc9c16a65089c35a",
+    "identityAttributeConfig": {
+      "attributeTransforms": [
+        {
+          "identityAttributeName": "city",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Population",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "cloudLifecycleState",
+          "transformDefinition": {
+            "attributes": {
+              "id": "NE - Status to Lifecycle State",
+              "input": {
+                "attributes": {
+                  "attributeName": "status",
+                  "sourceId": "5d9c87abd84a4f4096706316429a1841",
+                  "sourceName": "Non-Employee"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
+          "identityAttributeName": "department",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Department",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "departmentHistory",
+          "transformDefinition": {
+            "attributes": {
+              "id": "Department history",
+              "input": {
+                "attributes": {
+                  "attributeName": "Department",
+                  "sourceId": "5d9c87abd84a4f4096706316429a1841",
+                  "sourceName": "Non-Employee"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
+          "identityAttributeName": "email",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Email",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "firstname",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "First Name",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "identificationNumber",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "id",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "jobTitle",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "assignments_status_population_jobtitle",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "lastname",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Last Name",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "manager",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "sponsor_login",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "middleName",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Middle Name",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "neLocations",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "assignments_status_location",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "neOrganizations",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "assignments_status_organization",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "neOrganizationsSuborganizations",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "assignments_status_organization_suborganization",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "nePersonId",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "person_id",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "nePopulations",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "assignments_status_population",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "nePopulationsDepartments",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "assignments_status_population_department",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "nePopulationsJobtitles",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "assignments_status_population_jobtitle",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "nePopulationsLocations",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "assignments_status_population_location",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "nePopulationsOrganizationsSuborganizations",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "assignments_status_population_organization_suborganization",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "nePopulationsStartEndDates",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "assignments_status_population_start_end_dates",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "nePopulationsSubpopulations",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "assignments_status_population_subpopulation",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "organization",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Company Id",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "personalEmail",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Email",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "phone",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "personal_phone_number",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "timezone",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Time Zone",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "type",
+          "transformDefinition": {
+            "attributes": {
+              "id": "setNonemployee",
+              "input": {
+                "attributes": {
+                  "attributeName": "Population",
+                  "sourceId": "5d9c87abd84a4f4096706316429a1841",
+                  "sourceName": "Non-Employee"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
+          "identityAttributeName": "uid",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "id",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "workPhone",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "Business Phone Number",
+              "sourceId": "5d9c87abd84a4f4096706316429a1841",
+              "sourceName": "Non-Employee"
+            },
+            "type": "accountAttribute"
+          }
+        }
+      ],
+      "enabled": true
+    },
+    "identityCount": 10,
+    "identityExceptionReportReference": null,
+    "identityRefreshRequired": true,
+    "modified": "2026-09-03T15:02:58.614Z",
+    "name": "Non-Employee",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "priority": 50
+  },
+  "self": {
+    "id": "7d0963680b844ae8bc9c16a65089c35a",
+    "name": "Non-Employee",
+    "type": "IDENTITY_PROFILE"
+  },
+  "version": 1
+}

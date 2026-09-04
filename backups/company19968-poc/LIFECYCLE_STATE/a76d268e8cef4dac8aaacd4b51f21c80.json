@@ -1,0 +1,40 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": false
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [],
+    "accountActions": [],
+    "created": "2026-08-26T08:21:15.754Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": true,
+    "id": "a76d268e8cef4dac8aaacd4b51f21c80",
+    "identityCount": 3,
+    "identityProfileRef": {
+      "id": "0dea179fe2e14f7398516f515227e2f4",
+      "name": "SuccessFactors",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "ACTIVE",
+    "modified": "2026-08-26T08:21:23.617Z",
+    "name": "Inactive",
+    "priority": 60,
+    "technicalName": "inactive"
+  },
+  "self": {
+    "id": "a76d268e8cef4dac8aaacd4b51f21c80",
+    "name": "Inactive",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

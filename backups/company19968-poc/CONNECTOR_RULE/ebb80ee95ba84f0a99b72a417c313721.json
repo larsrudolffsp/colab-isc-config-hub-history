@@ -1,0 +1,59 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "sourceVersion": "1.0"
+    },
+    "created": "2025-12-04T07:55:06.621Z",
+    "description": "filter out lifecycle users",
+    "id": "ebb80ee95ba84f0a99b72a417c313721",
+    "modified": "2025-12-04T07:55:06.621Z",
+    "name": "NE - PortalUsers - Account Aggregation - After Operation Rule",
+    "signature": {
+      "input": [
+        {
+          "description": "REST Client Object",
+          "name": "restClient",
+          "type": null
+        },
+        {
+          "description": "Response Object processed by the Web services connector",
+          "name": "processedResponseObject",
+          "type": null
+        },
+        {
+          "description": "Response Object returned from the end system",
+          "name": "rawResponseObject",
+          "type": null
+        },
+        {
+          "description": "The application whose data file is being processed.",
+          "name": "application",
+          "type": null
+        },
+        {
+          "description": "The current request information contain header, body ,response object",
+          "name": "requestEndPoint",
+          "type": null
+        }
+      ],
+      "output": {
+        "description": "Update information Map contains parsed list of accounts",
+        "name": "Update Account/Group List",
+        "type": null
+      }
+    },
+    "sourceCode": {
+      "script": "\nimport connector.common.JsonUtil; \nimport java.util.HashMap; \nimport java.util.Map.Entry; \nimport java.util.Map; \nimport java.util.List; \nimport java.util.ArrayList; \nimport sailpoint.tools.GeneralException; \n \nMap updatedMapInfo = new HashMap(); \nList list = new ArrayList(); \nMap response = (Map) JsonUtil.toMap(rawResponseObject); \nList Finallist2 = new ArrayList(); \nBoolean found = false; \n \nif (response.get(\"users\") != null) { \n     list = (ArrayList) response.get(\"users\"); \n     for(int d = 0; d<list.size(); d++ ){ \n         Map responseMap = (Map) list.get(d); \n       if (responseMap.get(\"type\") != null) { \n       \tString type = responseMap.get(\"type\"); \n         if (type.equals(\"NeaccessUser\")) { \n           Finallist2.add(responseMap); \n           found = true; \n         } \n       } \n    } \n \n} \nif (Finallist2.size() < 1) { \nMap newmap = new HashMap(); \nFinallist2.add(newmap); \n} \nif (true == true) { \nMap newmap = new HashMap(); \nFinallist2.add(newmap); \n} \nupdatedMapInfo.put(\"data\", Finallist2); \nreturn updatedMapInfo;",
+      "version": "1.0"
+    },
+    "type": "WebServiceAfterOperationRule"
+  },
+  "self": {
+    "id": "ebb80ee95ba84f0a99b72a417c313721",
+    "name": "NE - PortalUsers - Account Aggregation - After Operation Rule",
+    "type": "CONNECTOR_RULE"
+  },
+  "version": 1
+}

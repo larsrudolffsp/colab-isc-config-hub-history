@@ -1,0 +1,35 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "values": [
+        "+",
+        {
+          "attributes": {
+            "attributeName": "BusinessPhone",
+            "sourceName": "SuccessFactors"
+          },
+          "type": "accountAttribute"
+        },
+        {
+          "attributes": {
+            "attributeName": "BusinessPhoneCountryCode",
+            "sourceName": "SuccessFactors"
+          },
+          "type": "accountAttribute"
+        }
+      ]
+    },
+    "id": "bd9d8b49-f348-4b69-91f0-cc33d9d95933",
+    "internal": false,
+    "name": "CompletePhoneNumber_SF",
+    "type": "concat"
+  },
+  "self": {
+    "id": "bd9d8b49-f348-4b69-91f0-cc33d9d95933",
+    "name": "CompletePhoneNumber_SF",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

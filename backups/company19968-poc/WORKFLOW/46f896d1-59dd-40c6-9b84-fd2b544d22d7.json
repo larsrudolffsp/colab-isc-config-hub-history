@@ -1,0 +1,86 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-08T15:08:28.710205643Z",
+    "creator": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Get Identity",
+      "steps": {
+        "End Step - Success": {
+          "actionId": "sp:operator-success",
+          "displayName": "",
+          "type": "success"
+        },
+        "Form": {
+          "actionId": "sp:forms",
+          "attributes": {
+            "deadline": "5d",
+            "formDefinitionId": "9b9578a7-42e6-4057-a1e5-b0da9c203421",
+            "inputForForm_department.$": "$.getIdentity.attributes.department",
+            "inputForForm_firstname.$": "$.getIdentity.attributes.firstname",
+            "inputForForm_jobTitle.$": "$.getIdentity.attributes.jobTitle",
+            "inputForForm_lastname.$": "$.getIdentity.attributes.lastname",
+            "inputForForm_manager.$": "$.getIdentity.managerRef.name",
+            "inputForForm_promotionLevel.$": "$.trigger.formData.selectTheLevel",
+            "inputForForm_startDate.$": "$.getIdentity.attributes.startDate",
+            "inputForForm_submittedBy.$": "$.getIdentity.attributes.displayName",
+            "notificationBody": null,
+            "notificationSubject": "Role Promotion - Approval Required",
+            "recipient.$": "$.getIdentity.managerRef.id",
+            "reminder": "2d"
+          },
+          "displayName": "",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.submittedBy.id"
+          },
+          "displayName": "",
+          "nextStep": "Form",
+          "type": "action",
+          "versionNumber": 2
+        }
+      }
+    },
+    "description": "",
+    "enabled": false,
+    "id": "46f896d1-59dd-40c6-9b84-fd2b544d22d7",
+    "modified": "2025-12-09T09:15:18.233936171Z",
+    "modifiedBy": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "name": "Role Promotion Approval",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "filter.$": "$[?(@.formDefinitionId == '22c9fb4c-cb91-4b14-b95b-205553940259')]",
+        "formDefinitionId": "22c9fb4c-cb91-4b14-b95b-205553940259",
+        "id": "sp:form-submitted",
+        "integrationId": null
+      },
+      "mode": "advanced",
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "46f896d1-59dd-40c6-9b84-fd2b544d22d7",
+    "name": "Role Promotion Approval",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

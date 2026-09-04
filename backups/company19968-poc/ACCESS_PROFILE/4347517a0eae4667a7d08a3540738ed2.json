@@ -1,0 +1,61 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-04T08:14:52.506078Z",
+    "description": "Grants access for the Enterprise Sales team",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "00d2dd909a853300b0e488caebcfdda2",
+        "name": "Salesforce Enterprise Sales dashboard",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "27981e9791d134719fcb131c029ee100",
+        "name": "Salesforce contacts management",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "aa8d0a71e0ef3cb099fb20f192e26b08",
+        "name": "Sales-Enterprise Accounts",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "4347517a0eae4667a7d08a3540738ed2",
+    "modified": "2025-12-04T08:14:52.506078Z",
+    "name": "SalesEnterprise",
+    "owner": {
+      "id": "5928c04c91f048b4846aa1b3336fb45b",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": true,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "a13cb4f153aa4021be5eb967ebf6bef5",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "4347517a0eae4667a7d08a3540738ed2",
+    "name": "SalesEnterprise",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

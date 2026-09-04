@@ -1,0 +1,288 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "appTemplateData": "{\"whiteListedAttributes\":[\"enableProvisioningFeature\"]}",
+      "authMethod": "apiKey",
+      "cloudCacheUpdate": 1784030358731,
+      "cloudDisplayName": "NE - Users",
+      "connectionType": "direct",
+      "connectorName": "SailPoint Non-Employee Risk Management Users",
+      "deleteThresholdPercentage": 10,
+      "enableProvisioningFeature": true,
+      "healthCheckTimeout": 30,
+      "healthy": true,
+      "idnProxyType": "sp-connect",
+      "since": "2025-12-08T09:53:45.254Z",
+      "sourceConnected": true,
+      "spConnectorSpecId": "11235c1e-d799-48ba-8dbc-018ab82a8140",
+      "status": "SOURCE_STATE_HEALTHY",
+      "templateApplication": "SailPoint Non-Employee Risk Management Users",
+      "tenantDomain": "company19968-poc.mynonemployee.com",
+      "userStatus": "Active"
+    },
+    "connectorClass": "",
+    "connectorScriptName": "11235c1e-d799-48ba-8dbc-018ab82a8140",
+    "correlationConfigDetails": {
+      "attributeAssignments": [
+        {
+          "complex": false,
+          "filterString": null,
+          "ignoreCase": false,
+          "matchMode": null,
+          "operation": "EQ",
+          "property": "email",
+          "sequence": 1,
+          "value": "email"
+        },
+        {
+          "complex": false,
+          "filterString": null,
+          "ignoreCase": false,
+          "matchMode": null,
+          "operation": "EQ",
+          "property": "personalEmail",
+          "sequence": 2,
+          "value": "email"
+        },
+        {
+          "complex": false,
+          "filterString": null,
+          "ignoreCase": false,
+          "matchMode": null,
+          "operation": "EQ",
+          "property": "uid",
+          "sequence": 3,
+          "value": "name"
+        }
+      ],
+      "id": "d87f573c6c554df89ad505b44cab7225",
+      "name": "1129c94c33af474e96be45477f00a696 Account Correlation Config"
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": 10,
+    "description": "Lifecycle Users of the Non-Employee Risk Management module",
+    "features": [
+      "DELETE",
+      "PROVISIONING"
+    ],
+    "id": "1129c94c33af474e96be45477f00a696",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "NE - Users",
+    "owner": {
+      "id": "1bd4910950784a6dae24909a4a07672b",
+      "name": "se.admin",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": null,
+    "provisionAsCsv": false,
+    "provisioningPolicies": [
+      {
+        "description": null,
+        "fields": [
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "email",
+            "transform": {
+              "attributes": {
+                "name": "email"
+              },
+              "type": "identityAttribute"
+            },
+            "type": "string"
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "login",
+            "transform": {
+              "attributes": {
+                "name": "uid"
+              },
+              "type": "identityAttribute"
+            },
+            "type": "string"
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "name",
+            "transform": {
+              "attributes": {
+                "name": "uid"
+              },
+              "type": "identityAttribute"
+            },
+            "type": "string"
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "status",
+            "transform": {
+              "attributes": {
+                "value": "Active"
+              },
+              "type": "static"
+            },
+            "type": "string"
+          }
+        ],
+        "name": "",
+        "usageType": "CREATE"
+      }
+    ],
+    "schemas": [
+      {
+        "attributes": [
+          {
+            "description": "Customized unique identifier for the entitlement",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Entitlement UID",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "ID of the entitlement",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Entitlement ID",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Name of the entitlement",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "Entitlement Name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2025-12-08T09:33:40.623Z",
+        "displayAttribute": "Entitlement Name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "421250fa270a430fbd03c23eed2a32a5",
+        "identityAttribute": "Entitlement UID",
+        "includePermissions": false,
+        "modified": "2025-12-08T09:33:40.623Z",
+        "name": "group",
+        "nativeObjectType": "Group"
+      },
+      {
+        "attributes": [
+          {
+            "description": "Email of the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "email",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Entitlements assigned to the user",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "entitlements",
+            "nativeName": null,
+            "schema": {
+              "id": "421250fa270a430fbd03c23eed2a32a5",
+              "name": "group",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Login of the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "login",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Name of the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Status of the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "status",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "UUID of the account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2025-12-08T09:33:40.623Z",
+        "displayAttribute": "login",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "fc79dcdbed864a69b14776a222f482bc",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2025-12-08T09:33:40.623Z",
+        "name": "account",
+        "nativeObjectType": "User"
+      }
+    ],
+    "type": "11235c1e-d799-48ba-8dbc-018ab82a8140"
+  },
+  "self": {
+    "id": "1129c94c33af474e96be45477f00a696",
+    "name": "NE - Users",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

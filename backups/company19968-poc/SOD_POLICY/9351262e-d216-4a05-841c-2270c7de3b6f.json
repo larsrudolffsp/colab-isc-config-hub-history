@@ -1,0 +1,75 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "allowedControls": [],
+    "approvalGuidance": null,
+    "compensatingControls": "Please contact your AWS Admin.",
+    "conflictingAccessCriteria": {
+      "leftCriteria": {
+        "criteriaList": [
+          {
+            "id": "6a4575a246a1319eb9037da3e6664e98",
+            "name": "QAAccessRead",
+            "type": "ENTITLEMENT"
+          }
+        ],
+        "name": "AWS QA Access"
+      },
+      "rightCriteria": {
+        "criteriaList": [
+          {
+            "id": "8b0de0fecd7336c49c85459072271c2b",
+            "name": "StagingAccessAdmin",
+            "type": "ENTITLEMENT"
+          },
+          {
+            "id": "cc49f496a7b4377aa193a1fee6158e69",
+            "name": "ProductDevAccessRead",
+            "type": "ENTITLEMENT"
+          }
+        ],
+        "name": "AWS Production Access"
+      }
+    },
+    "correctionAdvice": "If you are in the QA team, please request access specific to the QA team.",
+    "created": "2025-12-04T08:21:52Z",
+    "creatorId": "7f72802008e24e379398675c7cb0e7d5",
+    "creatorRef": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "SailPoint Support",
+      "type": "IDENTITY"
+    },
+    "description": "This Policy is to enforce least privilege to our QA team.",
+    "externalPolicyReference": "",
+    "id": "9351262e-d216-4a05-841c-2270c7de3b6f",
+    "level": "HIGH",
+    "modified": "2025-12-04T08:21:52Z",
+    "modifierId": null,
+    "name": "AWS QA & Production SOD",
+    "ownerRef": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "policyQuery": "@access(id:6a4575a246a1319eb9037da3e6664e98) AND @access(id:8b0de0fecd7336c49c85459072271c2b OR id:cc49f496a7b4377aa193a1fee6158e69)",
+    "preventSetting": null,
+    "scheduled": false,
+    "secondaryOwnerRefs": [],
+    "state": "ENFORCED",
+    "tags": [
+      "AWS"
+    ],
+    "type": "CONFLICTING_ACCESS_BASED",
+    "violationOwnerAssignmentConfig": {
+      "assignmentRule": null,
+      "ownerRef": null
+    }
+  },
+  "self": {
+    "id": "9351262e-d216-4a05-841c-2270c7de3b6f",
+    "name": "AWS QA & Production SOD",
+    "type": "SOD_POLICY"
+  },
+  "version": 1
+}

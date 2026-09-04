@@ -1,0 +1,40 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": [
+      {
+        "key": "country",
+        "name": "Country"
+      },
+      {
+        "key": "department",
+        "name": "Department"
+      },
+      {
+        "key": "jobTitle",
+        "name": "Title"
+      },
+      {
+        "key": "location",
+        "name": "Location"
+      },
+      {
+        "key": "manager",
+        "name": "Manager"
+      }
+    ],
+    "modified": "2025-12-04T08:11:28.190Z",
+    "modifiedBy": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "SailPoint Support",
+      "type": "IDENTITY"
+    }
+  },
+  "self": {
+    "id": "7d7aa0fa7b4d4417a8f7d74bfe995cd4",
+    "name": "PublicIdentitiesConfig",
+    "type": "PUBLIC_IDENTITIES_CONFIG"
+  },
+  "version": 1
+}

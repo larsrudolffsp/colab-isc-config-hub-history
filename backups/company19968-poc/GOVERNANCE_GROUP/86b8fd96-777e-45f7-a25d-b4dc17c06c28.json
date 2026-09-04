@@ -1,0 +1,49 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "connectionCount": 0,
+    "connections": null,
+    "created": null,
+    "description": "Approvers of Sensitive Data",
+    "id": "86b8fd96-777e-45f7-a25d-b4dc17c06c28",
+    "memberCount": 0,
+    "members": [
+      {
+        "id": "5b50381da48b479f8d562418c2635b4f",
+        "name": "Aaron.Nichols",
+        "type": "IDENTITY"
+      },
+      {
+        "id": "8ee2b9080605406e99c48a363a118fb2",
+        "name": "Patricia.Jones",
+        "type": "IDENTITY"
+      },
+      {
+        "id": "b2b982f217a04d6fb18d3ae9a37c3d2a",
+        "name": "Amanda.Ross",
+        "type": "IDENTITY"
+      },
+      {
+        "id": "cbb561a212e04ff7ae3d458647b99a6a",
+        "name": "Alice.Ford",
+        "type": "IDENTITY"
+      }
+    ],
+    "modified": null,
+    "name": "Sensitive Data Approvers",
+    "owner": {
+      "displayName": null,
+      "emailAddress": null,
+      "id": "5b50381da48b479f8d562418c2635b4f",
+      "name": "Aaron.Nichols",
+      "type": "IDENTITY"
+    }
+  },
+  "self": {
+    "id": "86b8fd96-777e-45f7-a25d-b4dc17c06c28",
+    "name": "Sensitive Data Approvers",
+    "type": "GOVERNANCE_GROUP"
+  },
+  "version": 1
+}

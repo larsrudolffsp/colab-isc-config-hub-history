@@ -1,0 +1,53 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-09-03T15:18:54.337887Z",
+    "description": "Filiale Hamburg AP",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "0fd7ce340489374da488d59f443588be",
+        "name": "Employees",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "0aea033c4cd44707b43d66d4311a3a2c",
+    "modified": "2026-09-03T15:19:38.825001Z",
+    "name": "Filiale Hamburg AP",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": null
+    },
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "a13cb4f153aa4021be5eb967ebf6bef5",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "0aea033c4cd44707b43d66d4311a3a2c",
+    "name": "Filiale Hamburg AP",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

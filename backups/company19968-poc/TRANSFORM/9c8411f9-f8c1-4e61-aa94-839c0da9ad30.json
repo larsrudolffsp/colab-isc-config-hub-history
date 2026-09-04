@@ -1,0 +1,26 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "values": [
+        {
+          "attributes": {
+            "value": "Non-Human"
+          },
+          "type": "static"
+        }
+      ]
+    },
+    "id": "9c8411f9-f8c1-4e61-aa94-839c0da9ad30",
+    "internal": false,
+    "name": "NE - Non-Human Type",
+    "type": "firstValid"
+  },
+  "self": {
+    "id": "9c8411f9-f8c1-4e61-aa94-839c0da9ad30",
+    "name": "NE - Non-Human Type",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

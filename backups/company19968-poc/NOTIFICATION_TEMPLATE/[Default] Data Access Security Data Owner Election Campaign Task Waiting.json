@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "body": "<font face=\"Calibri\" size=\"2\">Hi $__recipient.name,<BR><BR>As a part of our efforts for improving our organizations data security posture and governance of sensitive data access, we have initiated a campaign to identify owners for sensitive data assets.<BR><BR>You have been identified as one of the business stakeholders that have been the most active on one or more of these data assets.<BR><BR>You currently have $election.taskCount activities awaiting your input.<BR><BR>Please use the following link to view your data ownership election tasks in Data Access Security: <a href=\"$election.taskUrl\">Pending Data Ownership Election Tasks</a><BR><BR>Thank you!<BR><BR><BR></font><font face=\"Calibri\" size=\"1\" color=\"gray\">This is an automatic message sent to you by <B>Data Access Security</B> - Please do not reply.</font>",
+    "created": null,
+    "description": "Sent to each voter when a data owner election configured to send invitations starts, telling them how many resources are waiting for their vote.",
+    "details": null,
+    "footer": null,
+    "from": "$__global.emailFromAddress",
+    "header": null,
+    "id": "[Default] Data Access Security Data Owner Election Campaign Task Waiting",
+    "inboxTemplate": null,
+    "key": "das_owner_election_invite",
+    "locale": "en",
+    "medium": "EMAIL",
+    "modified": null,
+    "name": "Data Access Security Data Owner Election Campaign Task Waiting",
+    "replyTo": "$__global.emailFromAddress",
+    "slackTemplate": null,
+    "subject": "You have a new data owner election campaign task",
+    "teamsTemplate": null
+  },
+  "self": {
+    "id": "[Default] Data Access Security Data Owner Election Campaign Task Waiting",
+    "name": "Data Access Security Data Owner Election Campaign Task Waiting",
+    "type": "NOTIFICATION_TEMPLATE"
+  },
+  "version": 1
+}

@@ -1,0 +1,121 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-10T14:08:15.153234623Z",
+    "creator": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Interactive Form",
+      "steps": {
+        "End Step - Success": {
+          "actionId": "sp:operator-success",
+          "displayName": "",
+          "type": "success"
+        },
+        "HTTP Request": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "jsonRequestBody": {
+              "attributes": {
+                "displayName": "{{$.interactiveForm.formData.firstname}} {{$.interactiveForm.formData.lastname}}",
+                "email": "{{$.interactiveForm.formData.email}}",
+                "firstname": "{{$.interactiveForm.formData.firstname}}",
+                "lastname": "{{$.interactiveForm.formData.lastname}}",
+                "sourceId": "3a91374b11ea488f9373cf80763d7d4d"
+              }
+            },
+            "method": "post",
+            "oAuthClientId": "59b45aa69d3e466ab645a9f6f48c696d",
+            "oAuthClientSecret": "$.secrets.2d7f5537-cbbc-4752-b8d0-c91fb5155d48",
+            "oAuthCredentialLocation": "oAuthInHeader",
+            "oAuthTokenUrl": "https://company19968-poc.api.identitynow-demo.com/oauth/token",
+            "requestContentType": "json",
+            "url": "https://company19968-poc.api.identitynow-demo.com/v3/accounts"
+          },
+          "description": "",
+          "displayName": "Add Account",
+          "nextStep": "Wait",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "HTTP Request 1": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "jsonRequestBody": null,
+            "method": "post",
+            "oAuthClientId": "59b45aa69d3e466ab645a9f6f48c696d",
+            "oAuthClientSecret": "$.secrets.61274b23-6918-4f75-8177-857fd30f17ca",
+            "oAuthCredentialLocation": "oAuthInHeader",
+            "oAuthTokenUrl": "https://company19968-poc.api.identitynow-demo.com/oauth/token",
+            "requestContentType": "json",
+            "url": "https://company19968-poc.api.identitynow-demo.com/beta/sources/a011bc28390d47b6b78bf2c583304c28/load-accounts"
+          },
+          "description": "",
+          "displayName": "Aggregate Identity Fusion",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Interactive Form": {
+          "actionId": "sp:interactive-form",
+          "attributes": {
+            "formDefinitionId": "69b5f0e6-7347-41b1-9aac-4e083ea7decd",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "Add External User"
+          },
+          "displayName": "",
+          "nextStep": "HTTP Request",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Wait": {
+          "actionId": "sp:sleep",
+          "attributes": {
+            "duration": "1m",
+            "type": "waitFor"
+          },
+          "displayName": "",
+          "nextStep": "HTTP Request 1",
+          "type": "action",
+          "versionNumber": 1
+        }
+      }
+    },
+    "description": "",
+    "enabled": true,
+    "id": "f6143417-d4d6-4719-ad39-1af0a5cbcd17",
+    "modified": "2026-01-13T14:57:57.066295016Z",
+    "modifiedBy": {
+      "id": "6b022753f41b405d92df9243f8ff2094",
+      "name": "fernando.delosrios",
+      "type": "IDENTITY"
+    },
+    "name": "Add External User",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "filter.$": "$[?(@.workflowId == 'f6143417-d4d6-4719-ad39-1af0a5cbcd17')]",
+        "id": "idn:interactive-process-launched",
+        "integrationId": null
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "f6143417-d4d6-4719-ad39-1af0a5cbcd17",
+    "name": "Add External User",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

@@ -1,0 +1,110 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "isAfterStart": {
+        "attributes": {
+          "firstDate": {
+            "attributes": {
+              "ignoreErrors": true,
+              "values": [
+                {
+                  "attributes": {
+                    "attributeName": "startDate",
+                    "sourceName": "Mitarbeiterleihe"
+                  },
+                  "type": "accountAttribute"
+                },
+                {
+                  "attributes": {
+                    "value": "9999-12-31T23:59:59.000Z"
+                  },
+                  "type": "static"
+                }
+              ]
+            },
+            "type": "firstValid"
+          },
+          "negativeCondition": "false",
+          "operator": "lte",
+          "positiveCondition": "true",
+          "secondDate": {
+            "attributes": {
+              "input": {
+                "attributes": {
+                  "expression": "now"
+                },
+                "type": "dateMath"
+              },
+              "inputFormat": "yyyy-MM-dd'T'HH:mm",
+              "outputFormat": "ISO8601"
+            },
+            "type": "dateFormat"
+          }
+        },
+        "type": "dateCompare"
+      },
+      "isBeforeEnd": {
+        "attributes": {
+          "firstDate": {
+            "attributes": {
+              "input": {
+                "attributes": {
+                  "expression": "now"
+                },
+                "type": "dateMath"
+              },
+              "inputFormat": "yyyy-MM-dd'T'HH:mm",
+              "outputFormat": "ISO8601"
+            },
+            "type": "dateFormat"
+          },
+          "negativeCondition": "false",
+          "operator": "lte",
+          "positiveCondition": "true",
+          "secondDate": {
+            "attributes": {
+              "ignoreErrors": true,
+              "values": [
+                {
+                  "attributes": {
+                    "attributeName": "endDate",
+                    "sourceName": "Mitarbeiterleihe"
+                  },
+                  "type": "accountAttribute"
+                },
+                {
+                  "attributes": {
+                    "value": "1900-01-01T00:00:00.000Z"
+                  },
+                  "type": "static"
+                }
+              ]
+            },
+            "type": "firstValid"
+          }
+        },
+        "type": "dateCompare"
+      },
+      "location": {
+        "attributes": {
+          "attributeName": "location",
+          "sourceName": "Mitarbeiterleihe"
+        },
+        "type": "accountAttribute"
+      },
+      "value": "#if($isAfterStart == 'true' && $isBeforeEnd == 'true')$location#{else}no assignment#end"
+    },
+    "id": "26bb471d-1167-4d76-83a5-5adc81d5321a",
+    "internal": false,
+    "name": "Custom Mitarbeiterleihe Logic",
+    "type": "static"
+  },
+  "self": {
+    "id": "26bb471d-1167-4d76-83a5-5adc81d5321a",
+    "name": "Custom Mitarbeiterleihe Logic",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

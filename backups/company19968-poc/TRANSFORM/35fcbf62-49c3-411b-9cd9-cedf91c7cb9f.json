@@ -1,0 +1,35 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "values": [
+        {
+          "attributes": {
+            "attributeName": "Termination Date",
+            "inputFormat": "yyyy-MM-dd",
+            "outputFormat": "ISO8601",
+            "sourceName": "SuccessFactors"
+          },
+          "type": "dateFormat"
+        },
+        {
+          "attributes": {
+            "value": "2199-01-01T00:00:00.000Z"
+          },
+          "type": "static"
+        }
+      ]
+    },
+    "id": "35fcbf62-49c3-411b-9cd9-cedf91c7cb9f",
+    "internal": false,
+    "name": "ConvertEndDateISO8601_SF",
+    "type": "firstValid"
+  },
+  "self": {
+    "id": "35fcbf62-49c3-411b-9cd9-cedf91c7cb9f",
+    "name": "ConvertEndDateISO8601_SF",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

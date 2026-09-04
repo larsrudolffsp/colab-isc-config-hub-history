@@ -1,0 +1,54 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": false
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "DISABLE",
+        "allSources": true,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": []
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "DISABLE",
+        "allSources": true,
+        "excludeSourceIds": null,
+        "sourceIds": null
+      }
+    ],
+    "created": "2025-12-04T07:49:46.681Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": false,
+    "id": "434f5e2ec788419f83058a0f906e4c23",
+    "identityCount": 0,
+    "identityProfileRef": {
+      "id": "9a1898d91c604be3bed042cf597bd717",
+      "name": "ISC Admins",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "INACTIVE_SHORT_TERM",
+    "modified": "2025-12-04T07:49:46.681Z",
+    "name": "Leave of Absence",
+    "priority": 30,
+    "technicalName": "leaveOfAbsence"
+  },
+  "self": {
+    "id": "434f5e2ec788419f83058a0f906e4c23",
+    "name": "Leave of Absence",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

@@ -1,0 +1,66 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-04T08:14:21.210256Z",
+    "description": "Grants access to the Sales Engineering team",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "11ea8121893d3fa5b11ae5caf54d4926",
+        "name": "SalesEngineering-TechnologyExchange",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "29b0743226dc37e281dc6600a7c9a33c",
+        "name": "SalesEngineering-RFP",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "44055ab48f0c3566a90bee3b2b79ca69",
+        "name": "SalesEngineering-Demo",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "a3f64e63515836559f25e5e65e9d9b81",
+        "name": "SalesEngineering-Training",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "d6836c5b55ae4b09be1cbcb8244e870d",
+    "modified": "2025-12-04T08:14:21.210256Z",
+    "name": "SalesEngineering",
+    "owner": {
+      "id": "5928c04c91f048b4846aa1b3336fb45b",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": true,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "a13cb4f153aa4021be5eb967ebf6bef5",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "d6836c5b55ae4b09be1cbcb8244e870d",
+    "name": "SalesEngineering",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

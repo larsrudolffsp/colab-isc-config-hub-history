@@ -1,0 +1,52 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "input": {
+        "attributes": {
+          "input": {
+            "attributes": {
+              "values": [
+                "-",
+                {
+                  "attributes": {
+                    "name": "accountType"
+                  },
+                  "type": "identityAttribute"
+                },
+                {
+                  "attributes": {
+                    "name": "cloudLifecycleState"
+                  },
+                  "type": "identityAttribute"
+                }
+              ]
+            },
+            "type": "concat"
+          }
+        },
+        "type": "lower"
+      },
+      "table": {
+        "active-": "licensed",
+        "active-bot": "light",
+        "active-serviceAccount": "light",
+        "default": "unlicensed",
+        "inactive-": "unlicensed",
+        "loa-": "licensed",
+        "prehire-": "licensed"
+      }
+    },
+    "id": "8d6c2d68-7d69-4df3-8c72-36b50fd08ae8",
+    "internal": false,
+    "name": "Determine License",
+    "type": "lookup"
+  },
+  "self": {
+    "id": "8d6c2d68-7d69-4df3-8c72-36b50fd08ae8",
+    "name": "Determine License",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

@@ -1,0 +1,340 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "SQL": "select U.login,U.description,U.first,U.last,U.password,U.status,U.locked,U.lastLogin,UG.group_name as 'groups' from prism.users as U left join prism.users_groups as UG on U.login=UG.login order by login",
+      "appTemplateData": "{\"whiteListedAttributes\":[\"enableProvisioningFeature\"]}",
+      "buildMapRule": "BuildMapPRISM",
+      "cloudCacheUpdate": 1787639927116,
+      "cloudDisplayName": "PRISM",
+      "connectionType": "direct",
+      "connectorFileUploadHistory": {
+        "PRISMProvisioning-1.0.6.jar": "2025-12-04T08:01:00.517301Z",
+        "mysql-connector-java-8.0.28.jar": "2025-12-04T08:01:00.819697Z"
+      },
+      "connectorName": "JDBC",
+      "connector_files": "PRISMProvisioning-1.0.6.jar,mysql-connector-java-8.0.28.jar",
+      "deleteThresholdPercentage": 10,
+      "deltaAggregationEnabled": "false",
+      "deltaTable": "USER_DELTA",
+      "driverClass": "com.mysql.cj.jdbc.Driver",
+      "enableProvisioningFeature": true,
+      "getObjectSQL": "select U.login,U.description,U.first,U.last,U.password,U.status,U.locked,U.lastLogin,UG.group_name as 'groups' from prism.users as U left join prism.users_groups as UG on U.login=UG.login where U.login = '$(identity)'",
+      "group": "[SQL:select * from prism.groups, getObjectSQL:select * from prism.groups where name = '$(identity)']",
+      "group.SQL": "select * from prism.groups",
+      "group.getObjectSQL": "select * from prism.groups where name = '$(identity)'",
+      "group.isPermissionEnabled": false,
+      "group.mergeRows": false,
+      "group.useStoredProcedureGetObject": false,
+      "group.useStoredProcedureSqlStmt": false,
+      "hasFullAggregationCompleted": true,
+      "healthCheckTimeout": 30,
+      "healthy": true,
+      "indexColumns": [
+        "login"
+      ],
+      "isAdvance": "false",
+      "isPermissionEnabled": false,
+      "jdbcProvisionRule": "PrismProvisioning Rule Adapter",
+      "md5": "05761cf340927f016b30408f2ce26dbe",
+      "mergeColumns": [
+        "groups"
+      ],
+      "mergeRows": true,
+      "since": "2026-08-25T06:38:47.115Z",
+      "sourceConnected": true,
+      "status": "SOURCE_STATE_HEALTHY",
+      "supportsDeltaAgg": "true",
+      "templateApplication": "JDBC Template",
+      "testConnSQL": "select * from prism.users",
+      "url": "jdbc:mysql://10.0.0.60/prism",
+      "useForAccounts": "true",
+      "usePrepareCall": false,
+      "useStoredProcedureGetObject": false,
+      "useStoredProcedureSqlStmt": false,
+      "useStoredProcedureTestConn": false,
+      "user": "root"
+    },
+    "connectorClass": "sailpoint.connector.JDBCConnector",
+    "connectorScriptName": "jdbc-angularsc",
+    "correlationConfigDetails": {
+      "attributeAssignments": null,
+      "id": null,
+      "name": null
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": 10,
+    "description": "PRISM (Purchasing, Resourcing, Information Systems Management) Application.",
+    "features": [
+      "DISCOVER_SCHEMA",
+      "ENABLE",
+      "GROUP_PROVISIONING",
+      "PROVISIONING",
+      "SYNC_PROVISIONING",
+      "UNLOCK"
+    ],
+    "id": "6b7a030e11774ab4a88c84bb3a088081",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "PRISM",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": [
+      {
+        "id": "32caf77c29bc430888a4bbccdb2ac365",
+        "name": "Default Policy",
+        "type": "PASSWORD_POLICY"
+      }
+    ],
+    "provisionAsCsv": false,
+    "provisioningPolicies": [
+      {
+        "description": null,
+        "fields": [
+          {
+            "attributes": {
+              "template": "$(firstname).$(lastname)$(uniqueCounter)"
+            },
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "login",
+            "transform": {
+              "attributes": {
+                "name": "uid"
+              },
+              "type": "identityAttribute"
+            },
+            "type": "string"
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "first",
+            "transform": {
+              "attributes": {
+                "name": "firstname"
+              },
+              "type": "identityAttribute"
+            },
+            "type": "string"
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "last",
+            "transform": {
+              "attributes": {
+                "name": "lastname"
+              },
+              "type": "identityAttribute"
+            },
+            "type": "string"
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "locked",
+            "transform": {
+              "attributes": {
+                "value": "N"
+              },
+              "type": "static"
+            },
+            "type": "string"
+          },
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": false,
+            "name": "status",
+            "transform": {
+              "attributes": {
+                "value": "A"
+              },
+              "type": "static"
+            },
+            "type": "string"
+          }
+        ],
+        "name": "Account",
+        "usageType": "CREATE"
+      }
+    ],
+    "schemas": [
+      {
+        "attributes": [
+          {
+            "description": "description",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "name",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2025-12-04T08:00:57.684Z",
+        "displayAttribute": "name",
+        "features": [
+          "PROVISIONING"
+        ],
+        "hierarchyAttribute": null,
+        "id": "1237d636bfdf47f9bbeff46d6eca62dc",
+        "identityAttribute": "name",
+        "includePermissions": false,
+        "modified": "2025-12-04T08:00:59.098Z",
+        "name": "group",
+        "nativeObjectType": "group"
+      },
+      {
+        "attributes": [
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "first",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "last",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastLogin",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "locked",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "login",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "password",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "status",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "groups",
+            "nativeName": null,
+            "schema": {
+              "id": "1237d636bfdf47f9bbeff46d6eca62dc",
+              "name": "group",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2025-12-04T08:00:57.684Z",
+        "displayAttribute": "login",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "064d88d015814db695385371e6df6483",
+        "identityAttribute": "login",
+        "includePermissions": false,
+        "modified": "2025-12-04T08:00:57.936Z",
+        "name": "account",
+        "nativeObjectType": "account"
+      }
+    ],
+    "type": "JDBC"
+  },
+  "self": {
+    "id": "6b7a030e11774ab4a88c84bb3a088081",
+    "name": "PRISM",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

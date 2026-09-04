@@ -1,0 +1,110 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "authenticationMethod": "OAuthLogin",
+      "cloudCacheUpdate": 1787758647510,
+      "cloudDisplayName": "Papercut",
+      "connectionParameters": [
+        {
+          "curlCommand": "curl --location --request POST '$application.baseUrl$/rpc/api/xmlrpc' --header 'Content-Type: text/xml' --header 'Authorization: Bearer $application.accesstoken$' --data-raw '<?xml version=\"1.0\"?><methodCall><methodName>api.listUserAccounts</methodName><params><param><value>$application.accesstoken$</value></param><param><value>{\"limit\": 1, \"offset\": 0}</value></param></params></methodCall>'",
+          "curlEnabled": true,
+          "operationType": "Test Connection",
+          "requestType": "curl",
+          "responseCode": [
+            "200"
+          ],
+          "uniqueNameForEndPoint": "Test Connection - Fetch Single User from PaperCut NG/MF"
+        }
+      ],
+      "connectionType": "direct",
+      "connectorName": "Web Services SaaS",
+      "deleteThresholdPercentage": 10,
+      "deltaAggregationEnabled": false,
+      "encrypted": "customAuthenticationValue",
+      "entitlementDeltaAggregationEnabled": false,
+      "genericWebServiceBaseUrl": "https://{server_name}:9191",
+      "healthCheckTimeout": 90,
+      "healthy": false,
+      "idnProxyType": "sp-connect",
+      "possibleHttpErrorMessages": {},
+      "since": "2026-08-26T10:38:53.719Z",
+      "source-phase": "wizard-flow:b6f2d8e0fef9bb43783b477b6a86b525",
+      "spConnectorSpecId": "7aa95c2a-6c38-4f39-9bb9-040f11641ee3",
+      "spConnectorSupportsCustomSchemas": true,
+      "status": "SOURCE_STATE_FAILURE_SOURCE",
+      "supportsDeltaAgg": true,
+      "target-system-name": "PaperCut NG/MF",
+      "templateApplication": "Web Services SaaS"
+    },
+    "connectorClass": "",
+    "connectorScriptName": "web-services-saas",
+    "correlationConfigDetails": {
+      "attributeAssignments": null,
+      "id": null,
+      "name": null
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": 10,
+    "description": "Papercut",
+    "features": [
+      "AI_AGENT_AGGREGATION",
+      "AUTHENTICATE",
+      "MACHINE_IDENTITY_AGGREGATION",
+      "UNLOCK"
+    ],
+    "id": "267b522c9ba3426a915dd96fe4301d94",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "Papercut",
+    "owner": {
+      "id": "a2746edf69334e2ca9b0cf0381048d06",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": null,
+    "provisionAsCsv": false,
+    "provisioningPolicies": [],
+    "schemas": [
+      {
+        "attributes": [],
+        "configuration": {},
+        "created": "2026-08-26T07:20:19.400Z",
+        "displayAttribute": "",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "73d37d2cb8094f15928db5579e3e4722",
+        "identityAttribute": "",
+        "includePermissions": false,
+        "modified": "2026-08-26T07:20:19.400Z",
+        "name": "group",
+        "nativeObjectType": "Group"
+      },
+      {
+        "attributes": [],
+        "configuration": {},
+        "created": "2026-08-26T07:20:19.400Z",
+        "displayAttribute": "",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "901bfcc4d937489490f6425e7bff55a4",
+        "identityAttribute": "",
+        "includePermissions": false,
+        "modified": "2026-08-26T07:20:19.400Z",
+        "name": "account",
+        "nativeObjectType": "User"
+      }
+    ],
+    "type": "7aa95c2a-6c38-4f39-9bb9-040f11641ee3"
+  },
+  "self": {
+    "id": "267b522c9ba3426a915dd96fe4301d94",
+    "name": "Papercut",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

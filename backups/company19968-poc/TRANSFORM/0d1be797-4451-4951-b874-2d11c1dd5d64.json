@@ -1,0 +1,150 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "attributeName": "lc_state",
+      "input": {
+        "attributes": {
+          "onFalse": {
+            "attributes": {
+              "ignoreErrors": true,
+              "values": [
+                "-",
+                {
+                  "attributes": {
+                    "firstDate": {
+                      "attributes": {
+                        "ignoreErrors": true,
+                        "values": [
+                          {
+                            "attributes": {
+                              "expression": "now+10d"
+                            },
+                            "type": "dateMath"
+                          },
+                          {
+                            "attributes": {
+                              "input": {
+                                "attributes": {
+                                  "name": "endDate"
+                                },
+                                "type": "identityAttribute"
+                              },
+                              "inputFormat": "yyyy-MM-dd'T'HH:mm",
+                              "outputFormat": "ISO8601"
+                            },
+                            "type": "dateFormat"
+                          }
+                        ]
+                      },
+                      "type": "firstValid"
+                    },
+                    "negativeCondition": {
+                      "attributes": {
+                        "firstDate": {
+                          "attributes": {
+                            "input": {
+                              "attributes": {
+                                "name": "endDate"
+                              },
+                              "type": "identityAttribute"
+                            },
+                            "inputFormat": "yyyy-MM-dd'T'HH:mm",
+                            "outputFormat": "ISO8601"
+                          },
+                          "type": "dateFormat"
+                        },
+                        "negativeCondition": "archived",
+                        "operator": "gt",
+                        "positiveCondition": "inactive",
+                        "secondDate": {
+                          "attributes": {
+                            "expression": "now-90d"
+                          },
+                          "type": "dateMath"
+                        }
+                      },
+                      "type": "dateCompare"
+                    },
+                    "operator": "gt",
+                    "positiveCondition": {
+                      "attributes": {
+                        "firstDate": {
+                          "attributes": {
+                            "ignoreErrors": true,
+                            "values": [
+                              {
+                                "attributes": {
+                                  "expression": "now-10d"
+                                },
+                                "type": "dateMath"
+                              },
+                              {
+                                "attributes": {
+                                  "input": {
+                                    "attributes": {
+                                      "name": "startDate"
+                                    },
+                                    "type": "identityAttribute"
+                                  },
+                                  "inputFormat": "yyyy-MM-dd'T'HH:mm",
+                                  "outputFormat": "ISO8601"
+                                },
+                                "type": "dateFormat"
+                              }
+                            ]
+                          },
+                          "type": "firstValid"
+                        },
+                        "negativeCondition": "prehire",
+                        "operator": "lt",
+                        "positiveCondition": "active",
+                        "secondDate": "now"
+                      },
+                      "type": "dateCompare"
+                    },
+                    "secondDate": "now"
+                  },
+                  "type": "dateCompare"
+                }
+              ]
+            },
+            "type": "firstValid"
+          },
+          "onTrue": {
+            "attributes": {
+              "input": {
+                "attributes": {
+                  "attributeName": "lc_state",
+                  "sourceName": "HR"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "lower"
+          },
+          "operator": "isNull",
+          "property": {
+            "attributes": {
+              "name": "endDate"
+            },
+            "type": "identityAttribute"
+          }
+        },
+        "type": "conditional"
+      },
+      "sourceName": "Source HR"
+    },
+    "id": "0d1be797-4451-4951-b874-2d11c1dd5d64",
+    "internal": false,
+    "name": "Get LC State Transform",
+    "type": "accountAttribute"
+  },
+  "self": {
+    "id": "0d1be797-4451-4951-b874-2d11c1dd5d64",
+    "name": "Get LC State Transform",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

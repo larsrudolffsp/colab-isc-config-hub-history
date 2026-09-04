@@ -1,0 +1,168 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [
+      {
+        "id": "bd5fe2d29147491282e6d56725a5abcf",
+        "name": "Airgap - Basic Access",
+        "type": "ACCESS_PROFILE"
+      }
+    ],
+    "accessRequestConfig": {
+      "approvalSchemes": [
+        {
+          "approverId": null,
+          "approverType": "MANAGER"
+        }
+      ],
+      "commentsRequired": false,
+      "denialCommentsRequired": false,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-28T10:33:16.441053Z",
+    "description": "Rolle für den Zugang zum Kassensystem.",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [],
+    "id": "6a7806f034e74f0ca985d7c1621288fd",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": [
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.Company",
+                  "sourceId": "a768e9d725434f668174b1205088259b",
+                  "type": "ACCOUNT"
+                },
+                "operation": "CONTAINS",
+                "stringValue": null,
+                "values": [
+                  "Bestrun"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.Location",
+                  "sourceId": "a768e9d725434f668174b1205088259b",
+                  "type": "ACCOUNT"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "München"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.cloudLifecycleState",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "active"
+                ]
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": null,
+            "values": null
+          },
+          {
+            "children": [
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.Company",
+                  "sourceId": "a768e9d725434f668174b1205088259b",
+                  "type": "ACCOUNT"
+                },
+                "operation": "CONTAINS",
+                "stringValue": null,
+                "values": [
+                  "Bestrun"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.cloudLifecycleState",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "active"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.mitarbeiterleiheFiliale",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "Berlin",
+                  "Hamburg",
+                  "München"
+                ]
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": null,
+            "values": null
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": null,
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2026-09-02T10:56:11.149429Z",
+    "name": "Kassensystem (nicht angebunden)",
+    "owner": {
+      "id": "4e66ef089395450e9ba7599d47619d3e",
+      "name": "galaad.tassel",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "6a7806f034e74f0ca985d7c1621288fd",
+    "name": "Kassensystem (nicht angebunden)",
+    "type": "ROLE"
+  },
+  "version": 1
+}

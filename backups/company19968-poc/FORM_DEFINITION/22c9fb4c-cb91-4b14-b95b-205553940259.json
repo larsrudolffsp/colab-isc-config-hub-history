@@ -1,0 +1,140 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-10-02T15:41:42.729000681Z",
+    "description": "",
+    "formButtons": [
+      {
+        "config": {
+          "alignment": "right",
+          "label": "Submit Promotion Request",
+          "type": "submit"
+        },
+        "id": "form-btn-submit"
+      }
+    ],
+    "formConditions": [
+      {
+        "effects": [
+          {
+            "config": {
+              "element": "319044950020"
+            },
+            "effectType": "DISABLE"
+          },
+          {
+            "config": {
+              "element": "319044950020"
+            },
+            "effectType": "SHOW"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "selectTheLevel",
+            "sourceType": "ELEMENT",
+            "value": "",
+            "valueType": "STRING"
+          }
+        ]
+      }
+    ],
+    "formElements": [
+      {
+        "config": {
+          "alignment": "LEFT",
+          "description": "",
+          "formElements": [
+            {
+              "config": {
+                "dataSource": {
+                  "config": {
+                    "options": [
+                      {
+                        "label": "Senior Solutions Engineer ",
+                        "subLabel": "",
+                        "value": "Senior Solutions Engineer "
+                      },
+                      {
+                        "label": "Solutions Engineer Manager",
+                        "subLabel": "",
+                        "value": "Solutions Engineer Manager"
+                      },
+                      {
+                        "label": "Subject Matter Expert",
+                        "subLabel": "",
+                        "value": "Subject Matter Expert"
+                      }
+                    ]
+                  },
+                  "dataSourceType": "STATIC"
+                },
+                "forceSelect": true,
+                "helpText": "",
+                "label": "Select the level you want to apply the promotion for",
+                "maximum": 1,
+                "placeholder": "",
+                "required": false
+              },
+              "elementType": "SELECT",
+              "id": "46619002984",
+              "key": "selectTheLevel",
+              "validations": [
+                {
+                  "validationType": "DATA_SOURCE"
+                }
+              ]
+            },
+            {
+              "config": {
+                "default": "Please make sure you have reviewed the promotion criteria outlined at this internal page: https://www.google.com\n\nBy submitting the promotion request, your manager will need to review and approve it.",
+                "description": "",
+                "helpText": "",
+                "label": "Instructions",
+                "placeholder": "",
+                "required": false,
+                "resize": false,
+                "rows": 4
+              },
+              "elementType": "TEXTAREA",
+              "id": "319044950020",
+              "key": "instructions",
+              "validations": []
+            }
+          ],
+          "label": "Role Promotion Process",
+          "labelStyle": "h2",
+          "showLabel": true
+        },
+        "elementType": "SECTION",
+        "id": "579815756963",
+        "validations": []
+      }
+    ],
+    "formInput": [],
+    "id": "22c9fb4c-cb91-4b14-b95b-205553940259",
+    "modified": "2025-12-08T15:04:19.905317608Z",
+    "name": "Role Promotion",
+    "owner": {
+      "id": "fce067af441b4ed199b39c6ada2e8ae8",
+      "name": "",
+      "type": "IDENTITY"
+    },
+    "usedBy": [
+      {
+        "id": "d794c124-4333-45b5-a059-5c3877e6c818",
+        "name": "Role Promotion",
+        "type": "WORKFLOW"
+      }
+    ]
+  },
+  "self": {
+    "id": "22c9fb4c-cb91-4b14-b95b-205553940259",
+    "name": "Role Promotion",
+    "type": "FORM_DEFINITION"
+  },
+  "version": 1
+}

@@ -1,0 +1,177 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-04T08:21:24.420833216Z",
+    "creator": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Manage ServiceNow Ticket",
+      "steps": {
+        "Comparar cadenas": {
+          "choiceList": [
+            {
+              "comparator": "StringEquals",
+              "nextStep": "Send Email 2"
+            }
+          ],
+          "defaultStep": "Send Email 4",
+          "type": "choice"
+        },
+        "Compare Strings": {
+          "choiceList": [
+            {
+              "comparator": "StringEquals",
+              "nextStep": "Send Email",
+              "variableA.$": "$.httpRequest.statusCode",
+              "variableB": "200"
+            }
+          ],
+          "defaultStep": "Send Email 1",
+          "description": "Determines whether the HTTP Request step was successful.",
+          "type": "choice"
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.attributes.manager.id"
+          },
+          "description": "This node is used to gather information about the user's manager to populate their email.",
+          "nextStep": "Compare Strings",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Manage ServiceNow Ticket": {
+          "actionId": "sp:snow",
+          "attributes": {
+            "action": "create"
+          },
+          "nextStep": "Get Identity",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Manage ServiceNow Ticket 1": {
+          "actionId": "sp:snow",
+          "attributes": {
+            "action": "get"
+          },
+          "nextStep": "Comparar cadenas",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Send Email": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body": "Dear ${manager},<br><p>An ITSM request has been submitted for a new employee named <b style=\"\">${employee}</b> Here are the details of the request:<br>${body}</p><br><p>Thank you,<br> Your Access Team</p>",
+            "context": {
+              "body.$": "$.httpRequest",
+              "employee.$": "$.trigger.identity.name",
+              "manager.$": "$.getIdentity.attributes.firstname"
+            },
+            "recipientEmailList.$": "$.getIdentity.attributes.email",
+            "replyTo": null,
+            "subject": "New Employee"
+          },
+          "description": "Sends an email to the new-hire's manager informing them of the service desk ticket creation.",
+          "nextStep": "Wait",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Send Email 1": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body": "The creation of the service desk ticket for physical assets failed. Please create this ticket manually and verify all other onboarding tasks for the following new identity:\n\nAttributes:\n- Email: ${email}\n- Name: ${displayName}",
+            "context": {
+              "email.$": "$.trigger.attributes.email",
+              "name.$": "$.trigger.attributes.displayName"
+            },
+            "recipientEmailList.$": "$.getIdentity.attributes.email",
+            "replyTo.$": "",
+            "subject": "Service Desk Ticket Creation Failed"
+          },
+          "description": "Notifies the new identity's manager that the HTTP request failed.",
+          "nextStep": "failure 1",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Send Email 2": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "context": {}
+          },
+          "nextStep": "success",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Send Email 4": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "context": {}
+          },
+          "nextStep": "failure 2",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Wait": {
+          "actionId": "sp:sleep",
+          "attributes": {
+            "duration": "2d",
+            "type": "waitFor"
+          },
+          "nextStep": "Manage ServiceNow Ticket 1",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "failure 1": {
+          "description": "Ends the workflow in a failure state.",
+          "failureDetails": "The automated joiner workflow failed to create a service desk ticket for physical assets.",
+          "failureName": "Failed service desk ticket",
+          "type": "failure"
+        },
+        "failure 2": {
+          "description": "Ends the workflow in a failure state.",
+          "failureDetails": "The automated joiner workflow failed to create a service desk ticket for physical assets.",
+          "failureName": "Failed service desk ticket",
+          "type": "failure"
+        },
+        "success": {
+          "description": "Ends the workflow after all access has been requested and the certification has been activated.",
+          "type": "success"
+        }
+      }
+    },
+    "description": "Workflow to begin the process of onboarding a new identity.",
+    "enabled": false,
+    "id": "66424704-9564-46ee-99db-2d1e07b065a4",
+    "modified": "2025-12-04T08:21:24.420833216Z",
+    "modifiedBy": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "name": "Service Now ticket-Initiate Onboarding Process ",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "filter.$": "$[?($.attributes.department == \"sales\")]",
+        "id": "idn:identity-created",
+        "integrationId": null
+      },
+      "mode": "advanced",
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "66424704-9564-46ee-99db-2d1e07b065a4",
+    "name": "Service Now ticket-Initiate Onboarding Process ",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

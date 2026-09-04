@@ -1,0 +1,100 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": false
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "DISABLE",
+        "allSources": false,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": [
+          {
+            "id": "6b7a030e11774ab4a88c84bb3a088081",
+            "name": "PRISM",
+            "type": "SOURCE"
+          },
+          {
+            "id": "9980a86d5b1c4c48a173047eb1985a32",
+            "name": "HR",
+            "type": "SOURCE"
+          },
+          {
+            "id": "a13cb4f153aa4021be5eb967ebf6bef5",
+            "name": "Active Directory",
+            "type": "SOURCE"
+          },
+          {
+            "id": "e09ed9f1b4444e7b9e27b1baa01f0148",
+            "name": "Badging",
+            "type": "SOURCE"
+          }
+        ]
+      },
+      {
+        "action": "ENABLE",
+        "allSources": false,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": [
+          {
+            "id": "273a768e120f4f4f81d4db17fe7e3537",
+            "name": "EntraID",
+            "type": "SOURCE"
+          }
+        ]
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "DISABLE",
+        "allSources": false,
+        "excludeSourceIds": null,
+        "sourceIds": [
+          "6b7a030e11774ab4a88c84bb3a088081",
+          "9980a86d5b1c4c48a173047eb1985a32",
+          "a13cb4f153aa4021be5eb967ebf6bef5",
+          "e09ed9f1b4444e7b9e27b1baa01f0148"
+        ]
+      },
+      {
+        "action": "ENABLE",
+        "allSources": false,
+        "excludeSourceIds": null,
+        "sourceIds": [
+          "273a768e120f4f4f81d4db17fe7e3537"
+        ]
+      }
+    ],
+    "created": "2025-12-04T07:55:33.724Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": true,
+    "id": "8cac85f7f63040f18b5ea67a4970aa6c",
+    "identityCount": 0,
+    "identityProfileRef": {
+      "id": "1817975e2d4e4ca0ad54ca622816cea4",
+      "name": "HR",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "INACTIVE_SHORT_TERM",
+    "modified": "2026-01-14T10:41:25.557Z",
+    "name": "Leave of Absence",
+    "priority": 30,
+    "technicalName": "leaveOfAbsence"
+  },
+  "self": {
+    "id": "8cac85f7f63040f18b5ea67a4970aa6c",
+    "name": "Leave of Absence",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

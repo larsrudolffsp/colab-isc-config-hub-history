@@ -1,0 +1,55 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [
+        {
+          "approverId": "f1bf89bd-a1ab-46e9-b438-f7e1906e168a",
+          "approverType": "WORKFLOW"
+        }
+      ],
+      "commentsRequired": false,
+      "denialCommentsRequired": false,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-10T08:23:59.917426Z",
+    "description": null,
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [],
+    "id": "7e4a197cd69648bf8c5f8f5ee40e6c09",
+    "legacyMembershipInfo": null,
+    "membership": null,
+    "modified": "2025-12-16T09:07:23.291519Z",
+    "name": "Security Role with dynamic Approver",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "7e4a197cd69648bf8c5f8f5ee40e6c09",
+    "name": "Security Role with dynamic Approver",
+    "type": "ROLE"
+  },
+  "version": 1
+}

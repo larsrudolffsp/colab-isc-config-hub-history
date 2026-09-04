@@ -1,0 +1,146 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-10-07T14:58:09.011476122Z",
+    "description": "",
+    "formConditions": [],
+    "formElements": [
+      {
+        "config": {
+          "alignment": "LEFT",
+          "description": "",
+          "formElements": [
+            {
+              "config": {
+                "dataSource": {
+                  "config": {
+                    "options": [
+                      {
+                        "label": "1 Month",
+                        "sublabel": "",
+                        "value": "1 Month"
+                      },
+                      {
+                        "label": "2 Months",
+                        "sublabel": "",
+                        "value": "2 Months"
+                      },
+                      {
+                        "label": "6 Months",
+                        "sublabel": "",
+                        "value": "6 Months"
+                      }
+                    ]
+                  },
+                  "dataSourceType": "STATIC"
+                },
+                "forceSelect": true,
+                "helpText": "",
+                "label": "Select the inactivity period you want to consider",
+                "maximum": 1,
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "SELECT",
+              "id": "899865254763",
+              "key": "selectPeriod",
+              "validations": [
+                {
+                  "validationType": "DATA_SOURCE"
+                },
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "config": {
+                "dataSource": {
+                  "config": {
+                    "options": [
+                      {
+                        "label": "Contractor",
+                        "sublabel": "",
+                        "value": "Contractor"
+                      },
+                      {
+                        "label": "Employee",
+                        "sublabel": "",
+                        "value": "Employee"
+                      }
+                    ]
+                  },
+                  "dataSourceType": "STATIC"
+                },
+                "forceSelect": true,
+                "helpText": "",
+                "label": "Select which population you want to consider",
+                "maximum": 1,
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "SELECT",
+              "id": "1396656036874",
+              "key": "selectPopulation",
+              "validations": [
+                {
+                  "validationType": "DATA_SOURCE"
+                },
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "config": {
+                "default": false,
+                "falseLabel": "No",
+                "helpText": "Use this field to include inactive identities in your search or focus only on active ones",
+                "label": "Include inactive identities?",
+                "trueLabel": "Yes"
+              },
+              "elementType": "TOGGLE",
+              "id": "426666742251",
+              "key": "includeInactives",
+              "validations": []
+            },
+            {
+              "config": {
+                "description": "<p>Dear {{endUser}},</p>\n<p>Welcome to the process to securely disable Active Directory accounts due to inactivity.</p>\n<p>Please follow the instructions below to proceed.</p>",
+                "label": "Description Field",
+                "showLabel": false
+              },
+              "elementType": "DESCRIPTION",
+              "id": "1645418351052",
+              "key": "",
+              "validations": []
+            }
+          ],
+          "label": "Disable Inactive Active Directory accounts",
+          "labelStyle": "h2",
+          "showLabel": true
+        },
+        "elementType": "SECTION",
+        "id": "1103073308762",
+        "validations": []
+      }
+    ],
+    "formInput": [],
+    "id": "4c6b9bea-acc9-4347-8fa6-5f34d4c9423b",
+    "modified": "2025-12-08T15:04:19.894291032Z",
+    "name": "Disable Inactives step 1",
+    "owner": {
+      "id": "fce067af441b4ed199b39c6ada2e8ae8",
+      "name": "",
+      "type": "IDENTITY"
+    },
+    "usedBy": []
+  },
+  "self": {
+    "id": "4c6b9bea-acc9-4347-8fa6-5f34d4c9423b",
+    "name": "Disable Inactives step 1",
+    "type": "FORM_DEFINITION"
+  },
+  "version": 1
+}

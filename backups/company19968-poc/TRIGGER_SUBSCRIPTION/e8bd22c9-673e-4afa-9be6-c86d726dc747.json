@@ -1,0 +1,24 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "description": "Managed by Workflows",
+    "enabled": true,
+    "filter": "$[?(@.workflowId == 'e8bd22c9-673e-4afa-9be6-c86d726dc747')]",
+    "id": "e8bd22c9-673e-4afa-9be6-c86d726dc747",
+    "name": "Mitarbeiterleihe",
+    "responseDeadline": "PT1H",
+    "triggerId": "idn:interactive-process-launched",
+    "triggerName": "Interactive Trigger",
+    "type": "WORKFLOW",
+    "workflowConfig": {
+      "workflowId": "e8bd22c9-673e-4afa-9be6-c86d726dc747"
+    }
+  },
+  "self": {
+    "id": "e8bd22c9-673e-4afa-9be6-c86d726dc747",
+    "name": "Mitarbeiterleihe",
+    "type": "TRIGGER_SUBSCRIPTION"
+  },
+  "version": 1
+}

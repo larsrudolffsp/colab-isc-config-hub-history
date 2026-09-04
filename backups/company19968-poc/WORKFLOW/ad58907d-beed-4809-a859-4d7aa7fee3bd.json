@@ -1,0 +1,191 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-08T15:07:05.809302815Z",
+    "creator": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Define Variable",
+      "steps": {
+        "Activate Certification Campaign": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "method": "post",
+            "oAuthClientId": "59b45aa69d3e466ab645a9f6f48c696d",
+            "oAuthClientSecret": "$.secrets.ce3df879-cea5-4163-8a35-a3040b043bb4",
+            "oAuthCredentialLocation": "oAuthInHeader",
+            "oAuthTokenUrl": "https://company19968-poc.api.identitynow-demo.com/oauth/token",
+            "requestContentType": "json",
+            "url": "https://company19968-poc.api.identitynow-demo.com/beta/campaigns/{{$.createCertificationCampaign.body.id}}/activate"
+          },
+          "displayName": "",
+          "nextStep": "End Step — Success",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Create Certification Campaign": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "jsonRequestBody": {
+              "autoRevokeAllowed": false,
+              "deadline": "2027-12-01T06:00:00.468Z",
+              "description": "Native Change Detection Review for {{$.getIdentity.attributes.displayName}}",
+              "emailNotificationEnabled": false,
+              "filter": null,
+              "mandatoryCommentRequirement": "NO_DECISIONS",
+              "name": "Native Change Detection Review {{$.getIdentity.attributes.displayName}}",
+              "recommendationsEnabled": true,
+              "searchCampaignInfo": {
+                "accessConstraints": [
+                  {
+                    "ids": [
+                      "{{$.trigger.entitlementChanges[0].added[0].id}}"
+                    ],
+                    "operator": "SELECTED",
+                    "type": "ENTITLEMENT"
+                  }
+                ],
+                "description": "Search Campaign description",
+                "identityIds": [
+                  "{{$.trigger.identity.id}}"
+                ],
+                "reviewer": {
+                  "id": "{{$.getIdentity.managerRef.id}}",
+                  "name": "{{$.getIdentity.managerRef.name}}",
+                  "type": "IDENTITY"
+                },
+                "type": "IDENTITY"
+              },
+              "type": "SEARCH"
+            },
+            "method": "post",
+            "oAuthClientId": "59b45aa69d3e466ab645a9f6f48c696d",
+            "oAuthClientSecret": "$.secrets.ec7bbfa8-77ad-4b8b-96f9-8fd866cc411e",
+            "oAuthCredentialLocation": "oAuthInHeader",
+            "oAuthScope": null,
+            "oAuthTokenUrl": "https://{{$.defineVariable.TENANT_NAME}}-poc.api.identitynow-demo.com/oauth/token",
+            "requestContentType": "json",
+            "url": "https://{{$.defineVariable.TENANT_NAME}}-poc.api.identitynow-demo.com/beta/campaigns"
+          },
+          "displayName": "",
+          "nextStep": "Send Email",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Define Variable": {
+          "actionId": "sp:define-variable",
+          "attributes": {
+            "id": "sp:define-variable",
+            "variables": [
+              {
+                "description": "https://company19968-poc.identitynow-demo.com/ui/wf/edit/3f01052d-ae1f-4222-9eb6-07d36f9398c4",
+                "name": "TENANT_NAME",
+                "transforms": [],
+                "variableA": "company19968"
+              }
+            ]
+          },
+          "displayName": "",
+          "nextStep": "Get Identity",
+          "type": "Mutation"
+        },
+        "End Step — Success": {
+          "actionId": "sp:operator-success",
+          "type": "success"
+        },
+        "End Step — Success 1": {
+          "actionId": "sp:operator-success",
+          "type": "success"
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.identity.id"
+          },
+          "displayName": "",
+          "nextStep": "Verify Data Type",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Send Email": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body": "<p>Attention Administrators, <br><strong>Unauthorized access change detected</strong>: <br><br></p>\n<table style=\"border: 1px solid black; border-collapse: collapse;\">\n<tbody>\n<tr>\n<td style=\"border: 1px solid black; border-collapse: collapse;\"><strong>Identity</strong></td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\"><strong>Manager</strong></td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\"><strong>Event Type</strong></td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\"><strong>Account Name</strong></td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\"><strong>Account DN</strong></td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\"><strong>Entitlement Name</strong></td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\"><strong>Entitlement Id</strong></td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\"><strong>Entitlement Value</strong></td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\"><strong>Entitlement Owner</strong></td>\n</tr>\n#foreach( $entitlement in ${entitlements} )\n<tr>\n<td style=\"border: 1px solid black; border-collapse: collapse;\">{{$.trigger.identity.name}}</td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\">{{$.trigger.identity.manager.name}}</td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\">{{$.trigger.eventType}}</td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\">{{$.trigger.account.name}}</td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\">{{$.trigger.account.nativeIdentity}}</td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\">$entitlement.name</td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\">#if( $entitlement.id ) $entitlement.id #{else}null#end</td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\">$entitlement.value</td>\n<td style=\"border: 1px solid black; border-collapse: collapse;\">#if( $entitlement.owner.name ) $entitlement.owner.name #{else}null#end</td>\n</tr>\n#end\n</tbody>\n</table>\n<p><br>A dedicated certification campaign has been created to review the access. <br>Keep your eyes opened! <br>Sincerely, The Sailpoint team</p>",
+            "context": {
+              "entitlements.$": "$.trigger.entitlementChanges[*].added[*]",
+              "nativeIdentity.$": "$.trigger.account.nativeIdentity",
+              "newAccess.$": "$.trigger.entitlementChanges[*].added[*].name",
+              "sourceName.$": "$.trigger.source.name"
+            },
+            "from.$": "",
+            "recipientEmailList": [
+              "andre.hostombe@sailpoint.com"
+            ],
+            "replyTo": null,
+            "subject": "Native Change Detected"
+          },
+          "nextStep": "Wait",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Verify Data Type": {
+          "actionId": "sp:compare-unary",
+          "choiceList": [
+            {
+              "comparator": "IsPresent",
+              "nextStep": "Create Certification Campaign",
+              "variableA.$": "$.trigger.entitlementChanges[*].added[0].id"
+            }
+          ],
+          "defaultStep": "End Step — Success 1",
+          "type": "choice"
+        },
+        "Wait": {
+          "actionId": "sp:sleep",
+          "attributes": {
+            "duration": "1m",
+            "type": "waitFor"
+          },
+          "displayName": "",
+          "nextStep": "Activate Certification Campaign",
+          "type": "action",
+          "versionNumber": 1
+        }
+      }
+    },
+    "description": "Workflow that creates an access review in case of access added in the target system",
+    "enabled": true,
+    "id": "ad58907d-beed-4809-a859-4d7aa7fee3bd",
+    "modified": "2025-12-09T10:53:48.321957636Z",
+    "modifiedBy": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "name": "Native Change Detect & Review",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "id": "idn:native-change-account-updated",
+        "integrationId": null
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "ad58907d-beed-4809-a859-4d7aa7fee3bd",
+    "name": "Native Change Detect & Review",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

@@ -1,0 +1,23 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "description": "Managed by Workflows",
+    "enabled": true,
+    "id": "ad58907d-beed-4809-a859-4d7aa7fee3bd",
+    "name": "Native Change Detect & Review",
+    "responseDeadline": "PT1H",
+    "triggerId": "idn:native-change-account-updated",
+    "triggerName": "Native Change Account Updated",
+    "type": "WORKFLOW",
+    "workflowConfig": {
+      "workflowId": "ad58907d-beed-4809-a859-4d7aa7fee3bd"
+    }
+  },
+  "self": {
+    "id": "ad58907d-beed-4809-a859-4d7aa7fee3bd",
+    "name": "Native Change Detect & Review",
+    "type": "TRIGGER_SUBSCRIPTION"
+  },
+  "version": 1
+}

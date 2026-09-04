@@ -1,0 +1,38 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountIdMinWordLength": -1,
+    "accountNameMinWordLength": -1,
+    "defaultPolicy": false,
+    "description": null,
+    "enablePasswdExpiration": false,
+    "firstExpirationReminder": -1,
+    "id": "82f74fa934c241d8b1f91e566bf4367c",
+    "maxLength": 0,
+    "maxRepeatedChars": 4,
+    "minAlpha": 1,
+    "minCharacterTypes": 2,
+    "minLength": 14,
+    "minLower": 1,
+    "minNumeric": 1,
+    "minSpecial": 1,
+    "minUpper": 1,
+    "name": "System Administrator",
+    "passwordExpiration": 90,
+    "requireStrongAuthOffNetwork": false,
+    "requireStrongAuthUntrustedGeographies": false,
+    "requireStrongAuthn": false,
+    "useAccountAttributes": true,
+    "useDictionary": true,
+    "useIdentityAttributes": true,
+    "validateAgainstAccountId": true,
+    "validateAgainstAccountName": true
+  },
+  "self": {
+    "id": "82f74fa934c241d8b1f91e566bf4367c",
+    "name": "System Administrator",
+    "type": "PASSWORD_POLICY"
+  },
+  "version": 1
+}

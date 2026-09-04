@@ -1,0 +1,54 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": true
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "ENABLE",
+        "allSources": true,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": []
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "ENABLE",
+        "allSources": true,
+        "excludeSourceIds": null,
+        "sourceIds": null
+      }
+    ],
+    "created": "2025-12-04T07:55:33.507Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": true,
+    "id": "ade8e947ef0744439908e1f414d42762",
+    "identityCount": 292,
+    "identityProfileRef": {
+      "id": "1817975e2d4e4ca0ad54ca622816cea4",
+      "name": "HR",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "ACTIVE",
+    "modified": "2026-09-01T07:53:48.285Z",
+    "name": "Active",
+    "priority": 20,
+    "technicalName": "active"
+  },
+  "self": {
+    "id": "ade8e947ef0744439908e1f414d42762",
+    "name": "Active",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

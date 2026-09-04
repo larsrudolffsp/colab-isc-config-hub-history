@@ -1,0 +1,96 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-04T08:21:23.7592504Z",
+    "creator": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Get List of Identities",
+      "steps": {
+        "Activate Certification Campaign": {
+          "actionId": "sp:activate-campaign",
+          "attributes": {
+            "id.$": "$.getListOfIdentities.identities"
+          },
+          "nextStep": "Send Slack Message",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Compare Strings": {
+          "choiceList": [
+            {
+              "comparator": "StringMatches",
+              "nextStep": "Activate Certification Campaign",
+              "variableA.$": "$.getListOfIdentities.identities",
+              "variableB.$": "$.getListOfIdentities.identities"
+            }
+          ],
+          "defaultStep": "success",
+          "type": "choice"
+        },
+        "Get List of Identities": {
+          "actionId": "sp:get-identities",
+          "attributes": {
+            "inputQuery": null,
+            "inputSavedSearch": "ade6188f-1743-4913-b43a-e5e8e82c7a04",
+            "searchBy": "savedSearch"
+          },
+          "description": null,
+          "nextStep": "Compare Strings",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Send Slack Message": {
+          "actionId": "sp:send-slack-message",
+          "attributes": {
+            "id": "2c91808978ff6f2201790b33559f1d5a"
+          },
+          "nextStep": "success",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "success": {
+          "type": "success"
+        }
+      }
+    },
+    "description": "This workflow creates a certification campaign each time identities are found in violation. This will ensure access is always reviewed and any inappropriate items are revoked.",
+    "enabled": false,
+    "id": "ba4ea9ea-c1b1-4fe1-b9f5-f9cc55a316b2",
+    "modified": "2025-12-04T08:21:23.7592504Z",
+    "modifiedBy": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "name": "Separation of Duties 2023 Workflow",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "cronString": "0 2 * * *",
+        "dailyTimes": [
+          "02:00"
+        ],
+        "frequency": "daily",
+        "id": "idn:cron-schedule",
+        "integrationId": null,
+        "timeZone": "America/New_York"
+      },
+      "type": "SCHEDULED"
+    }
+  },
+  "self": {
+    "id": "ba4ea9ea-c1b1-4fe1-b9f5-f9cc55a316b2",
+    "name": "Separation of Duties 2023 Workflow",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

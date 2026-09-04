@@ -1,0 +1,54 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": true
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "DISABLE",
+        "allSources": true,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": []
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "DISABLE",
+        "allSources": true,
+        "excludeSourceIds": null,
+        "sourceIds": null
+      }
+    ],
+    "created": "2025-12-09T13:13:07.778Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": true,
+    "id": "5a6f86d38e7740bda883af3fc83864c9",
+    "identityCount": 10,
+    "identityProfileRef": {
+      "id": "1817975e2d4e4ca0ad54ca622816cea4",
+      "name": "HR",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "INACTIVE_LONG_TERM",
+    "modified": "2025-12-09T13:13:22.293Z",
+    "name": "inactive",
+    "priority": 60,
+    "technicalName": "inactive"
+  },
+  "self": {
+    "id": "5a6f86d38e7740bda883af3fc83864c9",
+    "name": "inactive",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

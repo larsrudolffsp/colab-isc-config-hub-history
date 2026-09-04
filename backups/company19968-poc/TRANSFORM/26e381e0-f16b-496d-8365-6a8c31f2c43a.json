@@ -1,0 +1,54 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "firstDate": {
+        "attributes": {
+          "input": {
+            "attributes": {
+              "name": "startDate"
+            },
+            "type": "identityAttribute"
+          },
+          "inputFormat": "yyyy-MM-dd",
+          "outputFormat": "ISO8601"
+        },
+        "type": "dateFormat"
+      },
+      "negativeCondition": {
+        "attributes": {
+          "input": {
+            "attributes": {
+              "attributeName": "EmployeeStatus",
+              "sourceName": "SuccessFactors"
+            },
+            "type": "accountAttribute"
+          },
+          "table": {
+            "Active": "active",
+            "Paid Leave": "paidleave",
+            "Retired": "inactive",
+            "Terminated": "inactive",
+            "Unpaid Leave": "unpaidleave",
+            "default": "active"
+          }
+        },
+        "type": "lookup"
+      },
+      "operator": "gt",
+      "positiveCondition": "prehire",
+      "secondDate": "now"
+    },
+    "id": "26e381e0-f16b-496d-8365-6a8c31f2c43a",
+    "internal": false,
+    "name": "DetermineLCS_SF",
+    "type": "dateCompare"
+  },
+  "self": {
+    "id": "26e381e0-f16b-496d-8365-6a8c31f2c43a",
+    "name": "DetermineLCS_SF",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

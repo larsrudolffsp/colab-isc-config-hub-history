@@ -1,0 +1,54 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": true
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "DISABLE",
+        "allSources": true,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": []
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "DISABLE",
+        "allSources": true,
+        "excludeSourceIds": null,
+        "sourceIds": null
+      }
+    ],
+    "created": "2025-12-18T08:54:04.135Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": false,
+    "id": "834acc40dbff40d0b0b04ece75388674",
+    "identityCount": 0,
+    "identityProfileRef": {
+      "id": "008052f373724737b809f3ba9e42f4b2",
+      "name": "Identity Fusion",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "INACTIVE_SHORT_TERM",
+    "modified": "2025-12-18T08:54:04.135Z",
+    "name": "Terminated",
+    "priority": 40,
+    "technicalName": "terminated"
+  },
+  "self": {
+    "id": "834acc40dbff40d0b0b04ece75388674",
+    "name": "Terminated",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

@@ -1,0 +1,123 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-08T15:09:08.783234254Z",
+    "creator": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "HTTP Request",
+      "steps": {
+        "End Step - Success": {
+          "actionId": "sp:operator-success",
+          "displayName": "",
+          "type": "success"
+        },
+        "HTTP Request": {
+          "actionId": "sp:http",
+          "attributes": {
+            "authenticationType": "OAuth",
+            "jsonRequestBody": {
+              "indices": [
+                "identities"
+              ],
+              "query": {
+                "query": "_exists_:attributes.adLastLogonDateType AND NOT attributes.adLastLogonDateType:[now-2M TO now] AND attributes.cloudLifecycleState:inactive AND @accounts(source.name:\"Active Directory\" AND disabled:false)"
+              },
+              "queryType": "SAILPOINT"
+            },
+            "method": "post",
+            "oAuthClientId": "2457077236c348e080f74e2da69ecc64",
+            "oAuthClientSecret": "$.secrets.18e7a47a-1c06-4c1c-adf0-51ff7e49e0e6",
+            "oAuthCredentialLocation": "oAuthInHeader",
+            "oAuthTokenUrl": "https://company19968-poc.api.identitynow-demo.com/oauth/token",
+            "requestContentType": "json",
+            "url": "https://company19968-poc.api.identitynow-demo.com/v2024/search"
+          },
+          "description": "For demo purposes it looks for inactive identities with active AD account who have not logged in in the last 2 months",
+          "displayName": "Retrieve inactive AD accounts",
+          "nextStep": "Loop",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Loop": {
+          "actionId": "sp:loop:iterator",
+          "attributes": {
+            "context.$": "$",
+            "input.$": "$.hTTPRequest.body",
+            "start": "Get Accounts",
+            "steps": {
+              "End Step - Success 1": {
+                "actionId": "sp:operator-success",
+                "displayName": "",
+                "type": "success"
+              },
+              "Get Accounts": {
+                "actionId": "sp:get-accounts",
+                "attributes": {
+                  "filterCriteria": "identityId",
+                  "getAccountsBy": "specificIdentity",
+                  "identity.$": "$.loop.loopInput.id",
+                  "operator": "eq",
+                  "value": "230a605d6ad94efab7c54abb28f52f5e"
+                },
+                "displayName": "",
+                "nextStep": "Manage Accounts",
+                "type": "action",
+                "versionNumber": 1
+              },
+              "Manage Accounts": {
+                "actionId": "sp:manage-account",
+                "attributes": {
+                  "accountIds.$": "$.getAccounts.accounts[?(@.sourceName=='Active Directory')].id",
+                  "operation": "disable"
+                },
+                "description": null,
+                "displayName": "",
+                "nextStep": "End Step - Success 1",
+                "type": "action",
+                "versionNumber": 1
+              }
+            }
+          },
+          "displayName": "",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 1
+        }
+      }
+    },
+    "description": "",
+    "enabled": false,
+    "id": "10627cb8-efb2-4c20-8e0c-7dee82c3f505",
+    "modified": "2025-12-11T09:16:10.353820362Z",
+    "modifiedBy": {
+      "id": "6b022753f41b405d92df9243f8ff2094",
+      "name": "fernando.delosrios",
+      "type": "IDENTITY"
+    },
+    "name": "Disable inactive AD accounts",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "filter.$": "$[?(@.workflowId == '10627cb8-efb2-4c20-8e0c-7dee82c3f505')]",
+        "id": "idn:interactive-process-launched",
+        "integrationId": null
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "10627cb8-efb2-4c20-8e0c-7dee82c3f505",
+    "name": "Disable inactive AD accounts",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

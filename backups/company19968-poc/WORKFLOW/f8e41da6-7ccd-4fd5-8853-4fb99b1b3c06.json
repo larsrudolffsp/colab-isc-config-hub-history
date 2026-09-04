@@ -1,0 +1,75 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-04-29T07:26:46.973248813Z",
+    "creator": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Get Identity",
+      "steps": {
+        "End Step - Success": {
+          "displayName": "Workflow Complete",
+          "type": "success"
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.identity.id"
+          },
+          "displayName": "Get Identity Details",
+          "nextStep": "Send Email to Manager",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Send Email to Manager": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body": "A new employee has joined the organization.\n\nEmployee Name: ${identityName}\nEmployee Email: ${identityEmail}\n\nPlease ensure they have the necessary access and resources to begin their role.",
+            "context": {
+              "identityEmail.$": "$.getIdentity.attributes.email",
+              "identityName.$": "$.getIdentity.name"
+            },
+            "recipientEmailList.$": "$.getIdentity.attributes.manager.email",
+            "subject": "New Employee Notification - ${identityName}"
+          },
+          "displayName": "Notify Manager",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 2
+        }
+      }
+    },
+    "description": "Workflow that triggers when a new identity is created and sends a notification email to the manager",
+    "enabled": false,
+    "id": "f8e41da6-7ccd-4fd5-8853-4fb99b1b3c06",
+    "modified": "2026-04-29T07:26:46.973248813Z",
+    "modifiedBy": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "name": "Joiner Workflow with Manager Notification",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "id": "idn:identity-created",
+        "integrationId": null
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "f8e41da6-7ccd-4fd5-8853-4fb99b1b3c06",
+    "name": "Joiner Workflow with Manager Notification",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

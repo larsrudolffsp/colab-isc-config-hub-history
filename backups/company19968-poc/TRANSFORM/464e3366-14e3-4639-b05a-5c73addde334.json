@@ -1,0 +1,36 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "values": [
+        {
+          "attributes": {
+            "accountReturnFirstLink": true,
+            "attributeName": "location",
+            "sourceName": "Mitarbeiterleihe"
+          },
+          "name": "Get Location from Mitarbeiterleihe",
+          "type": "accountAttribute"
+        },
+        {
+          "attributes": {
+            "value": "no assignment"
+          },
+          "name": "Null String Fallback",
+          "type": "static"
+        }
+      ]
+    },
+    "id": "464e3366-14e3-4639-b05a-5c73addde334",
+    "internal": false,
+    "name": "Location with Null Fallback Transform",
+    "type": "firstValid"
+  },
+  "self": {
+    "id": "464e3366-14e3-4639-b05a-5c73addde334",
+    "name": "Location with Null Fallback Transform",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

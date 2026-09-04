@@ -1,0 +1,432 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "appTemplateData": "{\"whiteListedAttributes\":[\"enableProvisioningFeature\"]}",
+      "attributeMerge": "first",
+      "baseurl": "https://company19968-poc.api.identitynow-demo.com",
+      "batchProcessing": false,
+      "checkDeletedDisabled": false,
+      "clientId": "2457077236c348e080f74e2da69ecc64",
+      "cloudAuthoritativeSourcePrecedence": 30,
+      "cloudCacheUpdate": 1778105428049,
+      "cloudDisplayName": "Identity Fusion",
+      "cloudIdentityProfileName": "Identity Fusion",
+      "connectionType": "direct",
+      "connectorName": "Identity Fusion (tag: latest)",
+      "deleteEmpty": false,
+      "deleteThresholdPercentage": 100,
+      "enableProvisioningFeature": true,
+      "forceAggregation": false,
+      "global_merging_identical": false,
+      "global_merging_score": true,
+      "healthCheckTimeout": 30,
+      "healthy": true,
+      "idnProxyType": "sp-connect",
+      "merging_attributes": [
+        "department",
+        "email",
+        "firstname",
+        "jobTitle",
+        "lastname"
+      ],
+      "merging_expirationDays": "5",
+      "merging_isEnabled": true,
+      "merging_map": [
+        {
+          "account": [
+            "department"
+          ],
+          "identity": "department",
+          "uidOnly": true
+        },
+        {
+          "account": [
+            "email"
+          ],
+          "identity": "email",
+          "uidOnly": true
+        },
+        {
+          "account": [
+            "firstname"
+          ],
+          "attributeMerge": "first",
+          "identity": "firstname",
+          "uidOnly": false
+        },
+        {
+          "account": [
+            "lastname"
+          ],
+          "identity": "lastname",
+          "uidOnly": false
+        },
+        {
+          "account": [
+            "title"
+          ],
+          "identity": "jobTitle",
+          "uidOnly": true
+        }
+      ],
+      "merging_score": "65",
+      "processing": "false",
+      "recommendationStatus": "ERROR",
+      "reset": false,
+      "resetProcessingFlag": false,
+      "since": "2026-01-13T13:37:36.374Z",
+      "sourceConnected": true,
+      "sources": [
+        "External Users",
+        "HR"
+      ],
+      "spConnDebugLoggingEnabled": false,
+      "spConnectorSpecId": "5a1f2aec-a598-4d18-8103-034c9aafbe6c",
+      "spConnectorSupportsCustomSchemas": true,
+      "status": "SOURCE_STATE_HEALTHY",
+      "templateApplication": "Identity Fusion (tag: latest)",
+      "uiMarkAsAuthoritative": true,
+      "uid_case": "lower",
+      "uid_digits": "1",
+      "uid_normalize": true,
+      "uid_scope": "platform",
+      "uid_spaces": true,
+      "uid_template": "$firstname.$lastname"
+    },
+    "connectorClass": "",
+    "connectorScriptName": "5a1f2aec-a598-4d18-8103-034c9aafbe6c",
+    "correlationConfigDetails": {
+      "attributeAssignments": null,
+      "id": null,
+      "name": null
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": 100,
+    "description": "Identity Fusion",
+    "features": [
+      "DISCOVER_SCHEMA",
+      "ENABLE",
+      "PROVISIONING"
+    ],
+    "id": "a011bc28390d47b6b78bf2c583304c28",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "Identity Fusion",
+    "owner": {
+      "id": "ae26cda44f4d4fd487e812edf7449515",
+      "name": "slpt.services",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": null,
+    "provisionAsCsv": false,
+    "provisioningPolicies": [
+      {
+        "description": null,
+        "fields": [
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": true,
+            "name": "uniqueID",
+            "transform": {
+              "attributes": {
+                "name": "uid"
+              },
+              "type": "identityAttribute"
+            },
+            "type": "string"
+          }
+        ],
+        "name": "Account",
+        "usageType": "CREATE"
+      }
+    ],
+    "schemas": [
+      {
+        "attributes": [
+          {
+            "description": "Account IDs",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "accounts",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Actions",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "actions",
+            "nativeName": null,
+            "schema": {
+              "id": "b841772fe634489582aeff8e650774da",
+              "name": "action",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Disabled",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "IIQDisabled",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "History",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "history",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Reviews",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "reviews",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Statuses",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "statuses",
+            "nativeName": null,
+            "schema": {
+              "id": "c11507c265d04596bb414e902fb091dc",
+              "name": "status",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "UUID",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "uuid",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Unique ID",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "uniqueID",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "department",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "department",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "email",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "email",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "firstname",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "firstname",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "jobTitle",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "jobTitle",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "lastname",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastname",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "sources",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "sources",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2025-12-18T08:14:15.843Z",
+        "displayAttribute": "uuid",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "ef13a3bb2d9b456c84a5906f79485e52",
+        "identityAttribute": "uuid",
+        "includePermissions": false,
+        "modified": "2026-01-13T17:10:04.005Z",
+        "name": "account",
+        "nativeObjectType": "User"
+      },
+      {
+        "attributes": [
+          {
+            "description": "description",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "id",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "name",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2025-12-18T08:14:15.843Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "b841772fe634489582aeff8e650774da",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2025-12-18T08:14:15.843Z",
+        "name": "action",
+        "nativeObjectType": "Group"
+      },
+      {
+        "attributes": [
+          {
+            "description": "description",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "id",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "name",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2025-12-18T08:14:15.843Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "c11507c265d04596bb414e902fb091dc",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2025-12-18T08:14:15.843Z",
+        "name": "status",
+        "nativeObjectType": "Group"
+      }
+    ],
+    "type": "5a1f2aec-a598-4d18-8103-034c9aafbe6c"
+  },
+  "self": {
+    "id": "a011bc28390d47b6b78bf2c583304c28",
+    "name": "Identity Fusion",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

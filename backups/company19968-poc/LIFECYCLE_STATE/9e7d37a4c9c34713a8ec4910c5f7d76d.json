@@ -1,0 +1,54 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": true
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "DISABLE",
+        "allSources": true,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": []
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "DISABLE",
+        "allSources": true,
+        "excludeSourceIds": null,
+        "sourceIds": null
+      }
+    ],
+    "created": "2025-12-04T07:49:46.633Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": false,
+    "id": "9e7d37a4c9c34713a8ec4910c5f7d76d",
+    "identityCount": 0,
+    "identityProfileRef": {
+      "id": "9a1898d91c604be3bed042cf597bd717",
+      "name": "ISC Admins",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "INACTIVE_LONG_TERM",
+    "modified": "2025-12-04T07:49:46.633Z",
+    "name": "Archived",
+    "priority": 50,
+    "technicalName": "archived"
+  },
+  "self": {
+    "id": "9e7d37a4c9c34713a8ec4910c5f7d76d",
+    "name": "Archived",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

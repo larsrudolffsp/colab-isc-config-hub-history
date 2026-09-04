@@ -1,0 +1,63 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [
+        {
+          "approverId": "400dca08-549f-468e-9c90-d3dfe50fc81b",
+          "approverType": "GOVERNANCE_GROUP"
+        }
+      ],
+      "commentsRequired": false,
+      "denialCommentsRequired": false,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-01-06T02:51:38.078422Z",
+    "description": "PRISM Manager",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "4eb8c327-e303-32ac-ba01-23c091797d6a",
+        "name": "Manager",
+        "sourceId": "6b7a030e-1177-4ab4-a88c-84bb3a088081",
+        "sourceName": "PRISM",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "002486bf2e984a46839da2b439af7b09",
+    "legacyMembershipInfo": null,
+    "membership": null,
+    "modified": "2026-01-14T11:35:53.132964Z",
+    "name": "PRISM Manager",
+    "owner": {
+      "id": "4e66ef089395450e9ba7599d47619d3e",
+      "name": "galaad.tassel",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "002486bf2e984a46839da2b439af7b09",
+    "name": "PRISM Manager",
+    "type": "ROLE"
+  },
+  "version": 1
+}

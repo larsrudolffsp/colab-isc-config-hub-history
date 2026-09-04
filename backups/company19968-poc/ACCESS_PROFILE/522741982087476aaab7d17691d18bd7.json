@@ -1,0 +1,51 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-04T08:12:46.785827Z",
+    "description": "Allowed to make acquisitions",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "a593d379e5273e50b7bbbadd8c75a2fb",
+        "name": "Buyer",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "522741982087476aaab7d17691d18bd7",
+    "modified": "2025-12-04T08:12:46.785827Z",
+    "name": "Buyer",
+    "owner": {
+      "id": "5928c04c91f048b4846aa1b3336fb45b",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": false,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "a13cb4f153aa4021be5eb967ebf6bef5",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "522741982087476aaab7d17691d18bd7",
+    "name": "Buyer",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

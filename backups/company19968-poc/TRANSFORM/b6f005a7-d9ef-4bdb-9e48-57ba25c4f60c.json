@@ -1,0 +1,35 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "values": [
+        ".",
+        {
+          "attributes": {
+            "attributeName": "FirstName",
+            "sourceName": "SuccessFactors"
+          },
+          "type": "accountAttribute"
+        },
+        {
+          "attributes": {
+            "attributeName": "LastName",
+            "sourceName": "SuccessFactors"
+          },
+          "type": "accountAttribute"
+        }
+      ]
+    },
+    "id": "b6f005a7-d9ef-4bdb-9e48-57ba25c4f60c",
+    "internal": false,
+    "name": "CreateUsername_SF",
+    "type": "concat"
+  },
+  "self": {
+    "id": "b6f005a7-d9ef-4bdb-9e48-57ba25c4f60c",
+    "name": "CreateUsername_SF",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

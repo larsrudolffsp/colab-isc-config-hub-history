@@ -1,0 +1,23 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "table": {
+        "Finance": "Finance Approvers",
+        "HR": "HR Approvers",
+        "default": "IT Security"
+      }
+    },
+    "id": "62731f62-6f12-4239-b987-1d962418cf18",
+    "internal": false,
+    "name": "DepartmentApprovers",
+    "type": "lookup"
+  },
+  "self": {
+    "id": "62731f62-6f12-4239-b987-1d962418cf18",
+    "name": "DepartmentApprovers",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

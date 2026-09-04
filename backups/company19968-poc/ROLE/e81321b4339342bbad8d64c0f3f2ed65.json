@@ -1,0 +1,74 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-10T08:25:07.089929Z",
+    "description": null,
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [],
+    "id": "e81321b4339342bbad8d64c0f3f2ed65",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": null,
+            "key": {
+              "property": "attribute.email",
+              "sourceId": "b04b88b0f1664893ad5b4b9d3a34a63c",
+              "type": "ACCOUNT"
+            },
+            "operation": "CONTAINS",
+            "stringValue": null,
+            "values": [
+              "@"
+            ]
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": null,
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2025-12-10T08:26:51.160212Z",
+    "name": "TRAKK-WS Users App",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "e81321b4339342bbad8d64c0f3f2ed65",
+    "name": "TRAKK-WS Users App",
+    "type": "ROLE"
+  },
+  "version": 1
+}

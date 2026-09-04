@@ -1,0 +1,272 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-08-31T15:29:10.857919638Z",
+    "creator": {
+      "id": "a2746edf69334e2ca9b0cf0381048d06",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Interactive Form",
+      "steps": {
+        "Check Account Found": {
+          "actionId": "sp:compare-strings",
+          "choiceList": [
+            {
+              "comparator": "StringEquals",
+              "nextStep": "Update Account (bestehende Leihe)",
+              "variableA.$": "$.getAccount.body[0].sourceId",
+              "variableB": "0dbbdf38bd3a48a4917dc1a11b6af89d"
+            }
+          ],
+          "defaultStep": "End Step - Failure",
+          "displayName": "",
+          "type": "choice"
+        },
+        "Compare Strings": {
+          "actionId": "sp:compare-strings",
+          "choiceList": [
+            {
+              "comparator": "StringEquals",
+              "nextStep": "HTTP Request",
+              "variableA.$": "$.interactiveForm.formData.aktion",
+              "variableB": "Neue Leihe"
+            }
+          ],
+          "defaultStep": "Get Account",
+          "displayName": "",
+          "type": "choice"
+        },
+        "End Step - Failure": {
+          "actionId": "sp:operator-failure",
+          "displayName": "",
+          "failureName": "Account not found",
+          "type": "failure"
+        },
+        "End Step - Success": {
+          "actionId": "sp:operator-success",
+          "displayName": "",
+          "type": "success"
+        },
+        "Get Account": {
+          "actionId": "sp:http",
+          "attributes": {
+            "method": "get",
+            "param_authenticationRef": "oauth",
+            "param_oauth": {
+              "mapping": {
+                "auth_client_id": "clientId",
+                "auth_client_secret": "clientSecret",
+                "auth_credential_location": "credentialLocation",
+                "auth_token_url": "tokenURL"
+              },
+              "paramID": "4f8d9e47-3722-41e9-b032-542913fdad5b",
+              "paramType": "1.4",
+              "refID": "166cdeb5-5896-482e-8080-cd4b5cd601bc"
+            },
+            "param_oauth_scopes": {
+              "mapping": {
+                "auth_scopes": "scopes"
+              },
+              "paramID": "",
+              "paramType": "3.1"
+            },
+            "url": "https://company19968-poc.api.identitynow-demo.com/accounts/v1?filters=sourceId%20eq%20%220dbbdf38bd3a48a4917dc1a11b6af89d%22%20and%20identityId%20eq%20%22{{$.interactiveForm.formData.identitat}}%22"
+          },
+          "description": "",
+          "displayName": "Get Account",
+          "nextStep": "Check Account Found",
+          "type": "action",
+          "versionNumber": 3
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.interactiveForm.formData.identitat",
+            "resultSelector": [
+              "$.getIdentity.attributes.displayName"
+            ]
+          },
+          "displayName": "",
+          "nextStep": "Compare Strings",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "HTTP Request": {
+          "actionId": "sp:http",
+          "attributes": {
+            "jsonRequestBody": {
+              "attributes": {
+                "endDate": "{{$.interactiveForm.formData.endDatum}}",
+                "id": "{{$.getIdentity.attributes.displayName}}",
+                "identityID": "{{$.interactiveForm.formData.identitat}}",
+                "location": "{{$.interactiveForm.formData.standort}}",
+                "name": "{{$.getIdentity.attributes.displayName}}",
+                "sourceId": "0dbbdf38bd3a48a4917dc1a11b6af89d",
+                "startDate": "{{$.interactiveForm.formData.startDatum}}"
+              }
+            },
+            "method": "post",
+            "param_authenticationRef": "oauth",
+            "param_oauth": {
+              "mapping": {
+                "auth_client_id": "clientId",
+                "auth_client_secret": "clientSecret",
+                "auth_credential_location": "credentialLocation",
+                "auth_token_url": "tokenURL"
+              },
+              "paramID": "4f8d9e47-3722-41e9-b032-542913fdad5b",
+              "paramType": "1.4",
+              "refID": "166cdeb5-5896-482e-8080-cd4b5cd601bc"
+            },
+            "param_oauth_scopes": {
+              "mapping": {
+                "auth_scopes": "scopes"
+              },
+              "paramID": "",
+              "paramType": "3.1"
+            },
+            "requestContentType": "json",
+            "url": "https://company19968-poc.api.identitynow-demo.com/accounts/v1"
+          },
+          "description": "",
+          "displayName": "Add Account (neue leihe)",
+          "nextStep": "Process Identity",
+          "type": "action",
+          "versionNumber": 3
+        },
+        "Interactive Form": {
+          "actionId": "sp:interactive-form",
+          "attributes": {
+            "formDefinitionId": "d14a6659-e475-4d0a-8326-c559d1a2f677",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "Mitarbeiterleihe"
+          },
+          "description": null,
+          "displayName": "",
+          "nextStep": "Get Identity",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Process Identity": {
+          "actionId": "sp:http",
+          "attributes": {
+            "headers": {
+              "X-SailPoint-Experimental": "true"
+            },
+            "jsonRequestBody": {
+              "identityIds": [
+                "{{$.interactiveForm.formData.identitat}}"
+              ]
+            },
+            "method": "post",
+            "param_authenticationRef": "oauth",
+            "param_oauth": {
+              "mapping": {
+                "auth_client_id": "clientId",
+                "auth_client_secret": "clientSecret",
+                "auth_credential_location": "credentialLocation",
+                "auth_token_url": "tokenURL"
+              },
+              "paramID": "4f8d9e47-3722-41e9-b032-542913fdad5b",
+              "paramType": "1.4",
+              "refID": "166cdeb5-5896-482e-8080-cd4b5cd601bc"
+            },
+            "param_oauth_scopes": {
+              "mapping": {
+                "auth_scopes": "scopes"
+              },
+              "paramID": "",
+              "paramType": "3.1"
+            },
+            "requestContentType": "json",
+            "requestHeaders": {
+              "X-SailPoint-Experimental": "true"
+            },
+            "url": "https://company19968-poc.api.identitynow-demo.com/identities/v1/process"
+          },
+          "description": "",
+          "displayName": "Process Identity",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 3
+        },
+        "Update Account (bestehende Leihe)": {
+          "actionId": "sp:http",
+          "attributes": {
+            "jsonRequestBody": {
+              "attributes": {
+                "endDate": "{{$.interactiveForm.formData.neuesEndDatum}}",
+                "id": "{{$.getAccount.body[0].attributes.id}}",
+                "identityID": "{{$.getAccount.body[0].attributes.identityID}}",
+                "location": "{{$.getAccount.body[0].attributes.location}}",
+                "name": "{{$.getAccount.body[0].attributes.name}}",
+                "sourceId": "0dbbdf38bd3a48a4917dc1a11b6af89d",
+                "startDate": "{{$.getAccount.body[0].attributes.startDate}}"
+              }
+            },
+            "method": "post",
+            "param_authenticationRef": "oauth",
+            "param_oauth": {
+              "mapping": {
+                "auth_client_id": "clientId",
+                "auth_client_secret": "clientSecret",
+                "auth_credential_location": "credentialLocation",
+                "auth_token_url": "tokenURL"
+              },
+              "paramID": "4f8d9e47-3722-41e9-b032-542913fdad5b",
+              "paramType": "1.4",
+              "refID": "166cdeb5-5896-482e-8080-cd4b5cd601bc"
+            },
+            "param_oauth_scopes": {
+              "mapping": {
+                "auth_scopes": "scopes"
+              },
+              "paramID": "",
+              "paramType": "3.1"
+            },
+            "requestContentType": "json",
+            "url": "https://company19968-poc.api.identitynow-demo.com/accounts/v1"
+          },
+          "description": "",
+          "displayName": "Update Account (bestehende Leihe)",
+          "nextStep": "Process Identity",
+          "type": "action",
+          "versionNumber": 3
+        }
+      }
+    },
+    "description": "",
+    "enabled": true,
+    "id": "e8bd22c9-673e-4afa-9be6-c86d726dc747",
+    "modified": "2026-09-04T08:41:08.767863192Z",
+    "modifiedBy": {
+      "id": "a2746edf69334e2ca9b0cf0381048d06",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "name": "Mitarbeiterleihe",
+    "owner": {
+      "id": "a2746edf69334e2ca9b0cf0381048d06",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "filter.$": "$[?(@.workflowId == 'e8bd22c9-673e-4afa-9be6-c86d726dc747')]",
+        "id": "idn:interactive-process-launched",
+        "integrationId": null
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "e8bd22c9-673e-4afa-9be6-c86d726dc747",
+    "name": "Mitarbeiterleihe",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

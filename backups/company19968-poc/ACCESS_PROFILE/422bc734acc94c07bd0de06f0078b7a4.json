@@ -1,0 +1,53 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-09-03T15:20:06.190251Z",
+    "description": null,
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "0fd7ce340489374da488d59f443588be",
+        "name": "Employees",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "422bc734acc94c07bd0de06f0078b7a4",
+    "modified": "2026-09-03T15:20:15.471658Z",
+    "name": "Filiale München AP",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": null
+    },
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "a13cb4f153aa4021be5eb967ebf6bef5",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "422bc734acc94c07bd0de06f0078b7a4",
+    "name": "Filiale München AP",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

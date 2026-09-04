@@ -1,0 +1,73 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-04T08:21:23.954444385Z",
+    "creator": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Manage ServiceNow Ticket",
+      "steps": {
+        "Manage ServiceNow Ticket": {
+          "actionId": "sp:snow",
+          "attributes": {
+            "action": "create"
+          },
+          "nextStep": "Wait",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Manage ServiceNow Ticket 1": {
+          "actionId": "sp:snow",
+          "attributes": {
+            "action": "update",
+            "stateUpdate": "7"
+          },
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Wait": {
+          "actionId": "sp:sleep",
+          "attributes": {
+            "duration": "10m",
+            "type": "waitFor"
+          },
+          "nextStep": "Manage ServiceNow Ticket 1",
+          "type": "action",
+          "versionNumber": 1
+        }
+      }
+    },
+    "description": "",
+    "enabled": false,
+    "id": "56edb10e-6b6f-4b9f-b509-6e4eac638488",
+    "modified": "2025-12-04T08:21:23.954444385Z",
+    "modifiedBy": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "name": "Service Now Sign Off Ticket",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "id": "idn:certification-signed-off",
+        "integrationId": null
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "56edb10e-6b6f-4b9f-b509-6e4eac638488",
+    "name": "Service Now Sign Off Ticket",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

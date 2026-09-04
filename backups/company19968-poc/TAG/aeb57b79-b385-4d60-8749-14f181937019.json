@@ -1,0 +1,23 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": null,
+    "id": "aeb57b79-b385-4d60-8749-14f181937019",
+    "modified": null,
+    "name": "INTERNALCONTROLS",
+    "taggedObjects": [
+      {
+        "id": "5dc1c354-fcec-447e-9c0a-74845c57dad5",
+        "name": "Admin Accountants",
+        "type": "SOD_POLICY"
+      }
+    ]
+  },
+  "self": {
+    "id": "aeb57b79-b385-4d60-8749-14f181937019",
+    "name": "INTERNALCONTROLS",
+    "type": "TAG"
+  },
+  "version": 1
+}

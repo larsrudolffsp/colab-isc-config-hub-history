@@ -1,0 +1,62 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": false
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "ENABLE",
+        "allSources": false,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": [
+          {
+            "id": "a011bc28390d47b6b78bf2c583304c28",
+            "name": "Identity Fusion",
+            "type": "SOURCE"
+          }
+        ]
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "ENABLE",
+        "allSources": false,
+        "excludeSourceIds": null,
+        "sourceIds": [
+          "a011bc28390d47b6b78bf2c583304c28"
+        ]
+      }
+    ],
+    "created": "2025-12-18T09:06:19.632Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": true,
+    "id": "a550847b783a430c94ddb4f4dc3e0337",
+    "identityCount": 0,
+    "identityProfileRef": {
+      "id": "008052f373724737b809f3ba9e42f4b2",
+      "name": "Identity Fusion",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "ACTIVE",
+    "modified": "2025-12-18T09:07:38.669Z",
+    "name": "Staging",
+    "priority": 60,
+    "technicalName": "staging"
+  },
+  "self": {
+    "id": "a550847b783a430c94ddb4f4dc3e0337",
+    "name": "Staging",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

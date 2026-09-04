@@ -1,0 +1,102 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "dimensionSchema": {
+        "dimensionAttributes": [
+          {
+            "derived": true,
+            "displayName": "City",
+            "name": "city"
+          }
+        ]
+      },
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-10T08:22:25.829912Z",
+    "description": "Dynamische Rolle Bundesland",
+    "dimensionRefs": null,
+    "dimensional": true,
+    "dimensions": [
+      {
+        "accessProfiles": [],
+        "created": "2025-12-11T11:16:59.776005Z",
+        "description": null,
+        "entitlements": [],
+        "id": "c8d5185e208c4bd3a78e22f73d6c0467",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": null,
+                    "key": {
+                      "property": "attribute.city",
+                      "sourceId": null,
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "M",
+                    "values": null
+                  }
+                ],
+                "key": null,
+                "operation": "AND",
+                "stringValue": "",
+                "values": null
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          },
+          "identities": null,
+          "type": "STANDARD"
+        },
+        "modified": "2025-12-11T11:17:08.423187Z",
+        "name": "Mannheim",
+        "owner": null,
+        "parentId": "5609ecbee5624b028ca91ffaf7a26e31"
+      }
+    ],
+    "enabled": false,
+    "entitlements": [],
+    "id": "5609ecbee5624b028ca91ffaf7a26e31",
+    "legacyMembershipInfo": null,
+    "membership": null,
+    "modified": "2025-12-11T11:16:59.80458Z",
+    "name": "Rolle Bundesland",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "5609ecbee5624b028ca91ffaf7a26e31",
+    "name": "Rolle Bundesland",
+    "type": "ROLE"
+  },
+  "version": 1
+}

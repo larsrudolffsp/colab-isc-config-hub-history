@@ -1,0 +1,63 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [
+        {
+          "approverId": null,
+          "approverType": "MANAGER"
+        }
+      ],
+      "commentsRequired": false,
+      "denialCommentsRequired": false,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-10T08:14:31.769552Z",
+    "description": "Help Desk User Role",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "27d7085c-0db9-34c9-ba74-41045129270d",
+        "name": "HelpDesk",
+        "sourceId": "a13cb4f1-53aa-4021-be5e-b967ebf6bef5",
+        "sourceName": "Active Directory",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "d488882bfd5a41c1914cbb95bee8c86c",
+    "legacyMembershipInfo": null,
+    "membership": null,
+    "modified": "2026-04-29T04:58:58.022995Z",
+    "name": "Help Desk User",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "d488882bfd5a41c1914cbb95bee8c86c",
+    "name": "Help Desk User",
+    "type": "ROLE"
+  },
+  "version": 1
+}

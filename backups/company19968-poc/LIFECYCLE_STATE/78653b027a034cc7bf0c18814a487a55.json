@@ -1,0 +1,54 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": false
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "ENABLE",
+        "allSources": true,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": []
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "ENABLE",
+        "allSources": true,
+        "excludeSourceIds": null,
+        "sourceIds": null
+      }
+    ],
+    "created": "2025-12-04T07:49:46.338Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": false,
+    "id": "78653b027a034cc7bf0c18814a487a55",
+    "identityCount": 0,
+    "identityProfileRef": {
+      "id": "9a1898d91c604be3bed042cf597bd717",
+      "name": "ISC Admins",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "ACTIVE",
+    "modified": "2025-12-04T07:49:46.338Z",
+    "name": "Active",
+    "priority": 20,
+    "technicalName": "active"
+  },
+  "self": {
+    "id": "78653b027a034cc7bf0c18814a487a55",
+    "name": "Active",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

@@ -1,0 +1,74 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-11T11:28:32.64449377Z",
+    "creator": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Get Identity",
+      "steps": {
+        "End Step - Success": {
+          "displayName": "",
+          "type": "success"
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.identity.id"
+          },
+          "displayName": "",
+          "nextStep": "Send Email",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Send Email": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body": "A new identity has been created for ${name}. Please review their access and permissions.",
+            "context": {
+              "name.$": "$.getIdentity.name"
+            },
+            "recipientEmailList.$": "$.getIdentity.managerRef.email",
+            "subject": "New Identity Created - Action Required"
+          },
+          "displayName": "",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 2
+        }
+      }
+    },
+    "description": "Sends an email to the manager when a new identity is created",
+    "enabled": false,
+    "id": "20190304-5a93-4065-8464-aca885d95e29",
+    "modified": "2025-12-11T11:28:32.64449377Z",
+    "modifiedBy": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "name": "New Identity Manager Notification",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "id": "idn:identity-created",
+        "integrationId": null
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "20190304-5a93-4065-8464-aca885d95e29",
+    "name": "New Identity Manager Notification",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

@@ -1,0 +1,116 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-10-07T16:04:12.644142826Z",
+    "description": "",
+    "formConditions": [
+      {
+        "effects": [
+          {
+            "config": {
+              "element": "889847060294"
+            },
+            "effectType": "DISABLE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_EM",
+            "source": "identities",
+            "sourceType": "INPUT",
+            "value": [],
+            "valueType": "STRING_LIST"
+          }
+        ]
+      }
+    ],
+    "formElements": [
+      {
+        "config": {
+          "alignment": "LEFT",
+          "description": "",
+          "formElements": [
+            {
+              "config": {
+                "dataSource": {
+                  "config": {
+                    "formInputId": "identities",
+                    "sortBy": "ASC"
+                  },
+                  "dataSourceType": "FORM_INPUT"
+                },
+                "forceSelect": false,
+                "helpText": "",
+                "label": "Identities Found:",
+                "maximum": 30,
+                "placeholder": "",
+                "required": false
+              },
+              "elementType": "SELECT",
+              "id": "324109948417",
+              "key": "selectIdentities",
+              "validations": [
+                {
+                  "validationType": "DATA_SOURCE"
+                }
+              ]
+            },
+            {
+              "config": {
+                "description": "<p>Based on the search criteria selected in step 1, the following identities were found.</p>\n<p>Please select identity for whom to disable the Active Directory account.</p>\n<p>Please notice that the operation is <strong>immediate</strong>.</p>",
+                "label": "Intro",
+                "showLabel": false
+              },
+              "elementType": "DESCRIPTION",
+              "id": "752671150174",
+              "key": "",
+              "validations": []
+            },
+            {
+              "config": {
+                "description": "<p>Upon finalising the selection, press <span style=\"color: #236fa1;\"><strong>Submit.</strong></span></p>\n<p>Click Cancel to exit the process anytime.</p>",
+                "label": "Description Field",
+                "showLabel": true
+              },
+              "elementType": "DESCRIPTION",
+              "id": "1214280005683",
+              "key": "",
+              "validations": []
+            }
+          ],
+          "label": "Disable Inactive Active Directory Accounts - step 2",
+          "labelStyle": "h2",
+          "showLabel": true
+        },
+        "elementType": "SECTION",
+        "id": "1144691775777",
+        "validations": []
+      }
+    ],
+    "formInput": [
+      {
+        "description": "",
+        "id": "identities",
+        "label": "identities",
+        "type": "ARRAY"
+      }
+    ],
+    "id": "faadf1ad-ee8b-454c-b052-d0e285402610",
+    "modified": "2025-12-08T15:04:19.896894507Z",
+    "name": "Disable Inactives step 2",
+    "owner": {
+      "id": "fce067af441b4ed199b39c6ada2e8ae8",
+      "name": "",
+      "type": "IDENTITY"
+    },
+    "usedBy": []
+  },
+  "self": {
+    "id": "faadf1ad-ee8b-454c-b052-d0e285402610",
+    "name": "Disable Inactives step 2",
+    "type": "FORM_DEFINITION"
+  },
+  "version": 1
+}

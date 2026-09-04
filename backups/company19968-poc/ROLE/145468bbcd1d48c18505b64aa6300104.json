@@ -1,0 +1,102 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [
+      {
+        "id": "866c6c7e55b948e58619d3c19441cb62",
+        "name": "SalesCommonAccess",
+        "type": "ACCESS_PROFILE"
+      },
+      {
+        "id": "d6836c5b55ae4b09be1cbcb8244e870d",
+        "name": "SalesEngineering",
+        "type": "ACCESS_PROFILE"
+      }
+    ],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-04T08:22:01.550014Z",
+    "description": "SalesEngineering",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": false,
+    "entitlements": [],
+    "id": "145468bbcd1d48c18505b64aa6300104",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [],
+                "key": {
+                  "property": "attribute.cloudLifecycleState",
+                  "sourceId": "",
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": "active",
+                "values": null
+              },
+              {
+                "children": [],
+                "key": {
+                  "property": "attribute.jobTitle",
+                  "sourceId": "",
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": "Sales Engineer",
+                "values": null
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": "",
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2025-12-10T09:33:25.084009Z",
+    "name": "SalesEngineering",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "145468bbcd1d48c18505b64aa6300104",
+    "name": "SalesEngineering",
+    "type": "ROLE"
+  },
+  "version": 1
+}

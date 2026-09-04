@@ -1,0 +1,61 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-04T08:15:23.644949Z",
+    "description": "Grants access to the regional account managers",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "27981e9791d134719fcb131c029ee100",
+        "name": "Salesforce contacts management",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "4ac0560b8cdb39beb3ac8afd07c5002c",
+        "name": "Sales-Regional Accounts",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "8a995e95d81b375498423bc4820cd7c5",
+        "name": "Salesforce Regional Sales dashboard",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "c57bab1891d54e99894107c4f4b7cdc5",
+    "modified": "2025-12-04T08:15:23.644949Z",
+    "name": "SalesRegional",
+    "owner": {
+      "id": "5928c04c91f048b4846aa1b3336fb45b",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": true,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "a13cb4f153aa4021be5eb967ebf6bef5",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "c57bab1891d54e99894107c4f4b7cdc5",
+    "name": "SalesRegional",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

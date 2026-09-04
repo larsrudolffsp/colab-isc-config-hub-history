@@ -1,0 +1,346 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-08-28T08:16:07.138445709Z",
+    "description": "Mitarbeiterleihe Leihfiliale",
+    "formButtons": [
+      {
+        "config": {
+          "alignment": "center",
+          "label": "Submit",
+          "type": "submit"
+        },
+        "id": "form-btn-submit"
+      }
+    ],
+    "formConditions": [
+      {
+        "effects": [
+          {
+            "config": {
+              "element": "125088697226"
+            },
+            "effectType": "HIDE"
+          },
+          {
+            "config": {
+              "element": "1291665533206"
+            },
+            "effectType": "HIDE"
+          },
+          {
+            "config": {
+              "element": "1701145876907"
+            },
+            "effectType": "HIDE"
+          },
+          {
+            "config": {
+              "element": "700221454655"
+            },
+            "effectType": "HIDE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_CO",
+            "source": "aktion",
+            "sourceType": "ELEMENT",
+            "value": "Neue",
+            "valueType": "STRING"
+          }
+        ]
+      },
+      {
+        "effects": [
+          {
+            "config": {
+              "element": "1367625036349"
+            },
+            "effectType": "HIDE"
+          },
+          {
+            "config": {
+              "element": "142406021564"
+            },
+            "effectType": "HIDE"
+          }
+        ],
+        "ruleOperator": "AND",
+        "rules": [
+          {
+            "operator": "NOT_CO",
+            "source": "aktion",
+            "sourceType": "ELEMENT",
+            "value": "beenden",
+            "valueType": "STRING"
+          }
+        ]
+      }
+    ],
+    "formElements": [
+      {
+        "config": {
+          "alignment": "LEFT",
+          "description": "Mitarbeiterleihe Leihfiliale",
+          "formElements": [
+            {
+              "config": {
+                "columnCount": 2,
+                "columns": [
+                  [
+                    {
+                      "config": {
+                        "dataSource": {
+                          "config": {
+                            "options": [
+                              {
+                                "label": "Berlin",
+                                "sublabel": "",
+                                "value": "Berlin"
+                              },
+                              {
+                                "label": "Hamburg",
+                                "sublabel": "",
+                                "value": "Hamburg"
+                              },
+                              {
+                                "label": "München",
+                                "sublabel": "",
+                                "value": "München"
+                              }
+                            ]
+                          },
+                          "dataSourceType": "STATIC"
+                        },
+                        "forceSelect": false,
+                        "helpText": "",
+                        "label": "Neuer Standort",
+                        "maximum": 1,
+                        "placeholder": "",
+                        "required": true
+                      },
+                      "elementType": "SELECT",
+                      "id": "700221454655",
+                      "key": "standort",
+                      "validations": [
+                        {
+                          "validationType": "DATA_SOURCE"
+                        },
+                        {
+                          "validationType": "REQUIRED"
+                        }
+                      ]
+                    },
+                    {
+                      "config": {
+                        "default": "",
+                        "description": "",
+                        "helpText": "",
+                        "label": "End Datum",
+                        "placeholder": "",
+                        "required": true
+                      },
+                      "elementType": "DATE",
+                      "id": "1701145876907",
+                      "key": "endDatum",
+                      "validations": [
+                        {
+                          "validationType": "DATE"
+                        },
+                        {
+                          "validationType": "REQUIRED"
+                        }
+                      ]
+                    },
+                    {
+                      "config": {
+                        "default": "",
+                        "description": "",
+                        "helpText": "",
+                        "label": "Start Datum",
+                        "placeholder": "",
+                        "required": true
+                      },
+                      "elementType": "DATE",
+                      "id": "1291665533206",
+                      "key": "startDatum",
+                      "validations": [
+                        {
+                          "validationType": "DATE"
+                        },
+                        {
+                          "validationType": "REQUIRED"
+                        }
+                      ]
+                    },
+                    {
+                      "config": {
+                        "description": "<p>Die Mitarbeiterin / der Mitarbeiter soll an eine andere Filiale ausgeliehen werden. </p>",
+                        "label": "Neue Leihe",
+                        "showLabel": true
+                      },
+                      "elementType": "DESCRIPTION",
+                      "id": "125088697226",
+                      "key": "",
+                      "validations": []
+                    }
+                  ],
+                  [
+                    {
+                      "config": {
+                        "default": "",
+                        "description": "",
+                        "helpText": "",
+                        "label": "Neues End Datum",
+                        "placeholder": "",
+                        "required": true
+                      },
+                      "elementType": "DATE",
+                      "id": "142406021564",
+                      "key": "neuesEndDatum",
+                      "validations": [
+                        {
+                          "validationType": "DATE"
+                        },
+                        {
+                          "validationType": "REQUIRED"
+                        }
+                      ]
+                    },
+                    {
+                      "config": {
+                        "description": "<p>Die Leihe soll (vorzeitig) beendet werden. </p>",
+                        "label": "Leihe beenden",
+                        "showLabel": true
+                      },
+                      "elementType": "DESCRIPTION",
+                      "id": "1367625036349",
+                      "key": "",
+                      "validations": []
+                    }
+                  ]
+                ],
+                "description": "",
+                "label": "Column Set",
+                "labelStyle": "h5",
+                "showLabel": false
+              },
+              "elementType": "COLUMN_SET",
+              "id": "341612152926",
+              "key": "",
+              "validations": []
+            },
+            {
+              "config": {
+                "dataSource": {
+                  "config": {
+                    "filters": {
+                      "identityProfile.name": {
+                        "exclude": false,
+                        "value": "SuccessFactors"
+                      }
+                    },
+                    "indices": [
+                      "identities"
+                    ],
+                    "label": "attributes.displayName",
+                    "query": "*",
+                    "sublabel": "attributes.location",
+                    "value": "id"
+                  },
+                  "dataSourceType": "SEARCH_V2"
+                },
+                "forceSelect": true,
+                "helpText": "",
+                "label": "Identität",
+                "maximum": 1,
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "SELECT",
+              "id": "1227584483871",
+              "key": "identitat",
+              "validations": [
+                {
+                  "validationType": "DATA_SOURCE"
+                },
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "config": {
+                "dataSource": {
+                  "config": {
+                    "options": [
+                      {
+                        "label": "Bestehende Leihe (vorzeitig) beenden",
+                        "sublabel": "",
+                        "value": "Bestehende Leihe (vorzeitig) beenden"
+                      },
+                      {
+                        "label": "Neue Leihe",
+                        "sublabel": "",
+                        "value": "Neue Leihe"
+                      }
+                    ]
+                  },
+                  "dataSourceType": "STATIC"
+                },
+                "forceSelect": true,
+                "helpText": "",
+                "label": "Aktion",
+                "maximum": 1,
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "SELECT",
+              "id": "1031509504680",
+              "key": "aktion",
+              "validations": [
+                {
+                  "validationType": "DATA_SOURCE"
+                },
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            }
+          ],
+          "label": "Mitarbeiterleihe Leihfiliale",
+          "labelStyle": "h2",
+          "showLabel": true
+        },
+        "elementType": "SECTION",
+        "id": "330895956856",
+        "validations": []
+      }
+    ],
+    "formInput": [],
+    "id": "d14a6659-e475-4d0a-8326-c559d1a2f677",
+    "modified": "2026-09-04T07:41:32.112913845Z",
+    "name": "Mitarbeiterleihe Leihfiliale",
+    "owner": {
+      "id": "4e66ef089395450e9ba7599d47619d3e",
+      "name": "galaad.tassel",
+      "type": "IDENTITY"
+    },
+    "usedBy": [
+      {
+        "id": "e8bd22c9-673e-4afa-9be6-c86d726dc747",
+        "name": "Mitarbeiterleihe",
+        "type": "WORKFLOW"
+      }
+    ]
+  },
+  "self": {
+    "id": "d14a6659-e475-4d0a-8326-c559d1a2f677",
+    "name": "Mitarbeiterleihe Leihfiliale",
+    "type": "FORM_DEFINITION"
+  },
+  "version": 1
+}

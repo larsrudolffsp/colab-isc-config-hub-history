@@ -1,0 +1,52 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "enabled": true,
+    "lockoutConfig": {
+      "lockoutDuration": 15,
+      "lockoutWindow": 5,
+      "maximumAttempts": 5
+    },
+    "networkConfig": {
+      "geolocation": null,
+      "range": null,
+      "whitelisted": false
+    },
+    "orgConfig": {
+      "domain": "company19968-poc.identitynow-demo.com",
+      "legacyPasswordReset": false,
+      "redirectPatterns": null
+    },
+    "patReminderConfig": null,
+    "serviceProviderConfig": {
+      "bypassIDP": false,
+      "enabled": false,
+      "federationProtocolDetails": [
+        {
+          "alias": "company19968-poc-sp",
+          "callbackUrl": "https://company19968-poc.login.identitynow-demo.com/saml/SSO/alias/company19968-poc-sp",
+          "entityId": "https://company19968-poc.identitynow-demo.com/sp",
+          "legacyAcsUrl": null,
+          "role": "SAML_SP"
+        },
+        {
+          "role": "SAML_IDP"
+        }
+      ],
+      "samlConfigurationValid": false
+    },
+    "sessionConfig": {
+      "maxIdleTime": 1380,
+      "maxSessionTime": 1380,
+      "rememberMe": false
+    },
+    "tenant": "company19968-poc"
+  },
+  "self": {
+    "id": "company19968-poc",
+    "name": "company19968-poc",
+    "type": "AUTH_ORG"
+  },
+  "version": 1
+}

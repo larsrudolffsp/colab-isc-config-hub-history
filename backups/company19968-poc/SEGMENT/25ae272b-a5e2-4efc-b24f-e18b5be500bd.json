@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "active": true,
+    "created": "2025-12-04T08:27:02.163835Z",
+    "description": "Access for all Employees",
+    "id": "25ae272b-a5e2-4efc-b24f-e18b5be500bd",
+    "modified": "2025-12-04T08:27:02.163837Z",
+    "name": "All Employees",
+    "owner": null,
+    "visibilityCriteria": {
+      "expression": {
+        "attribute": "cloudLifecycleState",
+        "children": null,
+        "operator": "EQUALS",
+        "value": {
+          "type": "STRING",
+          "value": "active"
+        }
+      }
+    }
+  },
+  "self": {
+    "id": "25ae272b-a5e2-4efc-b24f-e18b5be500bd",
+    "name": "All Employees",
+    "type": "SEGMENT"
+  },
+  "version": 1
+}

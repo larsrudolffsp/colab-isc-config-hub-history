@@ -1,0 +1,98 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [
+      {
+        "id": "866c6c7e55b948e58619d3c19441cb62",
+        "name": "SalesCommonAccess",
+        "type": "ACCESS_PROFILE"
+      },
+      {
+        "id": "c57bab1891d54e99894107c4f4b7cdc5",
+        "name": "SalesRegional",
+        "type": "ACCESS_PROFILE"
+      }
+    ],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-04T08:22:01.866814Z",
+    "description": "The Regional Sales Team",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [],
+    "id": "8bbf076dddb145318d73919acb239af5",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": null,
+            "key": {
+              "property": "attribute.cloudLifecycleState",
+              "sourceId": null,
+              "type": "IDENTITY"
+            },
+            "operation": "EQUALS",
+            "stringValue": null,
+            "values": [
+              "active"
+            ]
+          },
+          {
+            "children": null,
+            "key": {
+              "property": "attribute.jobTitle",
+              "sourceId": null,
+              "type": "IDENTITY"
+            },
+            "operation": "CONTAINS",
+            "stringValue": null,
+            "values": [
+              "Sales"
+            ]
+          }
+        ],
+        "key": null,
+        "operation": "AND",
+        "stringValue": "",
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2026-04-28T14:07:15.260735Z",
+    "name": "SalesRegional",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "8bbf076dddb145318d73919acb239af5",
+    "name": "SalesRegional",
+    "type": "ROLE"
+  },
+  "version": 1
+}

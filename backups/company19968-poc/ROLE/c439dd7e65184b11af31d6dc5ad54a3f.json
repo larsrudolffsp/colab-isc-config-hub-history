@@ -1,0 +1,63 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [
+        {
+          "approverId": null,
+          "approverType": "MANAGER"
+        }
+      ],
+      "commentsRequired": false,
+      "denialCommentsRequired": false,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-30T00:06:28.86666Z",
+    "description": "Rolle für lokale Administrator-Rechte in Windows",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "fbf70de1-e5a6-325d-921e-0a415411935e",
+        "name": "WindowsAdministration",
+        "sourceId": "97d687b6-0cd7-4bda-80e6-30af46caa4e5",
+        "sourceName": "Active Directory Admins",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "c439dd7e65184b11af31d6dc5ad54a3f",
+    "legacyMembershipInfo": null,
+    "membership": null,
+    "modified": "2026-08-31T03:40:03.820432Z",
+    "name": "Windows Administrator",
+    "owner": {
+      "id": "4e66ef089395450e9ba7599d47619d3e",
+      "name": "galaad.tassel",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "c439dd7e65184b11af31d6dc5ad54a3f",
+    "name": "Windows Administrator",
+    "type": "ROLE"
+  },
+  "version": 1
+}

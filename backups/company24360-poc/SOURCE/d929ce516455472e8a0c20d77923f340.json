@@ -1,0 +1,121 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "authenticationMethod": "BasicLogin",
+      "cloudCacheUpdate": "1788525262397",
+      "cloudDisplayName": "sf",
+      "connectionType": "direct",
+      "connectorName": "Web Services",
+      "deleteThresholdPercentage": 10,
+      "deltaAggregationEnabled": "false",
+      "encrypted": "accesstoken,refresh_token,oauth_token_info,client_secret,private_key,private_key_password,clientCertificate,clientKeySpec,resourceOwnerPassword,custom_auth_token_info",
+      "fixedPlanMultivaluedAttribute": "true",
+      "healthy": false,
+      "httpCookieSpecsStandard": "true",
+      "isGetObjectRequiredForPTA": true,
+      "labels": [
+        "standard",
+        "supportDatasetCreation"
+      ],
+      "oAuthJwtHeader": {
+        "alg": "RS256"
+      },
+      "oAuthJwtPayload": {
+        "exp": "15f"
+      },
+      "possibleHttpErrors": {},
+      "since": "2026-09-04T11:10:44.392Z",
+      "status": "SOURCE_STATE_UNCHECKED_SOURCE_NO_ACCOUNTS",
+      "supportsDeltaAgg": "true",
+      "templateApplication": "Web Services Template",
+      "throwProvAfterRuleException": true,
+      "throwProvBeforeRuleException": true,
+      "timeoutInSeconds": "60",
+      "version": "v2"
+    },
+    "connectorClass": "sailpoint.connector.webservices.WebServicesConnector",
+    "connectorScriptName": "web-services-angularsc",
+    "correlationConfigDetails": {
+      "attributeAssignments": null,
+      "id": null,
+      "name": null
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": 10,
+    "description": "efe",
+    "features": [
+      "AUTHENTICATE",
+      "UNLOCK"
+    ],
+    "id": "d929ce516455472e8a0c20d77923f340",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "sf",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": null,
+    "provisionAsCsv": false,
+    "provisioningPolicies": [],
+    "schemas": [
+      {
+        "attributes": [],
+        "configuration": {
+          "cloudGoverned": false
+        },
+        "created": "2026-09-04T12:34:22.269Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "36cf075ed6ca46d9af869eaef0bfab65",
+        "identityAttribute": null,
+        "includePermissions": false,
+        "modified": "2026-09-04T12:34:22.269Z",
+        "name": "TestEntitlement",
+        "nativeObjectType": "TestEntitlement"
+      },
+      {
+        "attributes": [],
+        "configuration": {},
+        "created": "2026-09-04T11:10:44.393Z",
+        "displayAttribute": "",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "701f3ed5003046ad92357ca8659e4b50",
+        "identityAttribute": "",
+        "includePermissions": false,
+        "modified": "2026-09-04T11:10:44.393Z",
+        "name": "group",
+        "nativeObjectType": "group"
+      },
+      {
+        "attributes": [],
+        "configuration": {},
+        "created": "2026-09-04T11:10:44.393Z",
+        "displayAttribute": "",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "ee78660934bb4d36a89783aed359d400",
+        "identityAttribute": "",
+        "includePermissions": false,
+        "modified": "2026-09-04T11:10:44.393Z",
+        "name": "account",
+        "nativeObjectType": "user"
+      }
+    ],
+    "type": "Web Services"
+  },
+  "self": {
+    "id": "d929ce516455472e8a0c20d77923f340",
+    "name": "sf",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

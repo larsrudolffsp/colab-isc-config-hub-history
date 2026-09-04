@@ -1,0 +1,20 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "inputFormat": "MM/dd/yyyy",
+      "outputFormat": "ISO8601"
+    },
+    "id": "237fe6f7-5565-4a0d-a3be-c3b0863a88cb",
+    "internal": false,
+    "name": "ISO8601DateFormat",
+    "type": "dateFormat"
+  },
+  "self": {
+    "id": "237fe6f7-5565-4a0d-a3be-c3b0863a88cb",
+    "name": "ISO8601DateFormat",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

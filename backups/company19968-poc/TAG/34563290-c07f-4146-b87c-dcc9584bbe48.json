@@ -1,0 +1,23 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": null,
+    "id": "34563290-c07f-4146-b87c-dcc9584bbe48",
+    "modified": null,
+    "name": "ACCOUNTING",
+    "taggedObjects": [
+      {
+        "id": "bd4dfda3-3b00-4293-bfc6-d39aa48b2a8d",
+        "name": "Money In & Money Out",
+        "type": "SOD_POLICY"
+      }
+    ]
+  },
+  "self": {
+    "id": "34563290-c07f-4146-b87c-dcc9584bbe48",
+    "name": "ACCOUNTING",
+    "type": "TAG"
+  },
+  "version": 1
+}

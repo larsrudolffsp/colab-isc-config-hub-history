@@ -1,0 +1,32 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "values": [
+        {
+          "attributes": {
+            "input": {
+              "type": "lower"
+            },
+            "table": {
+              "default": "No",
+              "yes": "Yes"
+            }
+          },
+          "type": "lookup"
+        }
+      ]
+    },
+    "id": "1bc6bed9-b685-4343-85fb-356b9f2458fd",
+    "internal": false,
+    "name": "NE - Is Collaborator",
+    "type": "firstValid"
+  },
+  "self": {
+    "id": "1bc6bed9-b685-4343-85fb-356b9f2458fd",
+    "name": "NE - Is Collaborator",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

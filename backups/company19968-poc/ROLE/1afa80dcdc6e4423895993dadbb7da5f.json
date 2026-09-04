@@ -1,0 +1,270 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [
+      {
+        "id": "45962cde218c4f1e9c8717e72ab9042e",
+        "name": "Benefits Employees",
+        "type": "ACCESS_PROFILE"
+      }
+    ],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "dimensionSchema": {
+        "dimensionAttributes": [
+          {
+            "derived": true,
+            "displayName": "Mitarbeiterleihe Filiale",
+            "name": "mitarbeiterleiheFiliale"
+          }
+        ]
+      },
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-08-31T18:59:21.810866Z",
+    "description": "Dynamische Rolle: Mitarbeiterleihe-Filiale für Mitarbeitende",
+    "dimensionRefs": null,
+    "dimensional": true,
+    "dimensions": [
+      {
+        "accessProfiles": [
+          {
+            "id": "0aea033c4cd44707b43d66d4311a3a2c",
+            "name": "Filiale Hamburg AP",
+            "type": "ACCESS_PROFILE"
+          }
+        ],
+        "created": "2026-08-31T19:00:34.955877Z",
+        "description": null,
+        "entitlements": [],
+        "id": "0b6adc61caee42e9a19ec16b3213edf2",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": null,
+                    "key": {
+                      "property": "attribute.mitarbeiterleiheFiliale",
+                      "sourceId": null,
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "Hamburg",
+                    "values": null
+                  }
+                ],
+                "key": null,
+                "operation": "AND",
+                "stringValue": "",
+                "values": null
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          },
+          "identities": null,
+          "type": "STANDARD"
+        },
+        "modified": "2026-09-03T15:24:42.642456Z",
+        "name": "Filiale Hamburg",
+        "owner": null,
+        "parentId": "1afa80dcdc6e4423895993dadbb7da5f"
+      },
+      {
+        "accessProfiles": [
+          {
+            "id": "422bc734acc94c07bd0de06f0078b7a4",
+            "name": "Filiale München AP",
+            "type": "ACCESS_PROFILE"
+          }
+        ],
+        "created": "2026-08-31T19:02:53.500729Z",
+        "description": null,
+        "entitlements": [],
+        "id": "d496cb5fe3244de08e8ddd86f16b851f",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": null,
+                    "key": {
+                      "property": "attribute.mitarbeiterleiheFiliale",
+                      "sourceId": null,
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "München",
+                    "values": null
+                  }
+                ],
+                "key": null,
+                "operation": "AND",
+                "stringValue": "",
+                "values": null
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          },
+          "identities": null,
+          "type": "STANDARD"
+        },
+        "modified": "2026-09-03T15:25:33.92001Z",
+        "name": "Filiale München",
+        "owner": null,
+        "parentId": "1afa80dcdc6e4423895993dadbb7da5f"
+      },
+      {
+        "accessProfiles": [
+          {
+            "id": "b71b1493a1f24b499ed9aca3153e6234",
+            "name": "Filiale Berlin AP",
+            "type": "ACCESS_PROFILE"
+          }
+        ],
+        "created": "2026-08-31T19:01:50.451505Z",
+        "description": null,
+        "entitlements": [],
+        "id": "78de4dd0a4954230b9d49379b49d7f2b",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": null,
+                    "key": {
+                      "property": "attribute.mitarbeiterleiheFiliale",
+                      "sourceId": null,
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "Berlin",
+                    "values": null
+                  }
+                ],
+                "key": null,
+                "operation": "AND",
+                "stringValue": "",
+                "values": null
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          },
+          "identities": null,
+          "type": "STANDARD"
+        },
+        "modified": "2026-09-03T15:25:05.00135Z",
+        "name": "Filiale Berlin",
+        "owner": null,
+        "parentId": "1afa80dcdc6e4423895993dadbb7da5f"
+      }
+    ],
+    "enabled": true,
+    "entitlements": [],
+    "id": "1afa80dcdc6e4423895993dadbb7da5f",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": [
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.EmployeeClass",
+                  "sourceId": "a768e9d725434f668174b1205088259b",
+                  "type": "ACCOUNT"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "Active",
+                  "active"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.cloudLifecycleState",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "Active",
+                  "active"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.mitarbeiterleiheFiliale",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "NOT_EQUALS",
+                "stringValue": null,
+                "values": [
+                  "no assignment"
+                ]
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": null,
+            "values": null
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": null,
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2026-09-04T07:54:19.986412Z",
+    "name": "Mitarbeiterleihe",
+    "owner": {
+      "id": "a2746edf69334e2ca9b0cf0381048d06",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "1afa80dcdc6e4423895993dadbb7da5f",
+    "name": "Mitarbeiterleihe",
+    "type": "ROLE"
+  },
+  "version": 1
+}

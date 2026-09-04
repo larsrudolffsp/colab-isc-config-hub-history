@@ -1,0 +1,123 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-08T12:45:09.631166Z",
+    "description": "NERM Admin",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "42530785-0a91-32e6-a1d6-985e0c6f3914",
+        "name": "Population Admins",
+        "sourceId": "1129c94c-33af-474e-96be-45477f00a696",
+        "sourceName": "NE - Users",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "5cbf4a42-a200-39fd-a9bd-7e843c796d17",
+        "name": "Location Admins",
+        "sourceId": "1129c94c-33af-474e-96be-45477f00a696",
+        "sourceName": "NE - Users",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "60db844e-a1ec-3cb4-825c-fd447624fb6d",
+        "name": "NERM Administrator",
+        "sourceId": "1129c94c-33af-474e-96be-45477f00a696",
+        "sourceName": "NE - Users",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "809cc01c-a2b3-3bd2-a0df-c22254dc8346",
+        "name": "Department Admins",
+        "sourceId": "1129c94c-33af-474e-96be-45477f00a696",
+        "sourceName": "NE - Users",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "d85ab071-0e35-3222-92b7-6abd025c51ae",
+        "name": "Organization Admins",
+        "sourceId": "1129c94c-33af-474e-96be-45477f00a696",
+        "sourceName": "NE - Users",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "81ea97fdba48495a9da73c7941a7a86a",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": null,
+            "key": {
+              "property": "attribute.uid",
+              "sourceId": null,
+              "type": "IDENTITY"
+            },
+            "operation": "CONTAINS",
+            "stringValue": null,
+            "values": [
+              "Erdem"
+            ]
+          },
+          {
+            "children": null,
+            "key": {
+              "property": "attribute.uid",
+              "sourceId": null,
+              "type": "IDENTITY"
+            },
+            "operation": "CONTAINS",
+            "stringValue": null,
+            "values": [
+              "Fernando"
+            ]
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": null,
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2025-12-08T12:53:32.864168Z",
+    "name": "NERM Admin",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": true,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "81ea97fdba48495a9da73c7941a7a86a",
+    "name": "NERM Admin",
+    "type": "ROLE"
+  },
+  "version": 1
+}

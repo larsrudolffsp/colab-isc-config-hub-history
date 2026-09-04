@@ -1,0 +1,51 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "allowedControls": [],
+    "approvalGuidance": null,
+    "compensatingControls": "Accountants with Administrative rights must have MFA and be a part of a regular review of access (certification). Additionally, privileged credentials must be accessed through our PAM provider.",
+    "conflictingAccessCriteria": null,
+    "correctionAdvice": "When no longer appropriate, please revoke the administrative credentials from the individual.",
+    "created": "2025-12-04T08:21:57Z",
+    "creatorId": "7f72802008e24e379398675c7cb0e7d5",
+    "creatorRef": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "SailPoint Support",
+      "type": "IDENTITY"
+    },
+    "description": "Admin Accountants",
+    "externalPolicyReference": "https://my.sharepointonline.com/references/myurl",
+    "id": "5dc1c354-fcec-447e-9c0a-74845c57dad5",
+    "level": null,
+    "modified": "2025-12-04T08:21:57Z",
+    "modifierId": null,
+    "name": "Admin Accountants",
+    "ownerRef": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "policyQuery": "attributes.department:\"Accounting\" AND @access(\"WindowsAdministration\")",
+    "preventSetting": null,
+    "scheduled": false,
+    "secondaryOwnerRefs": [],
+    "state": "ENFORCED",
+    "tags": [
+      "CUSTOM123",
+      "INTERNALCONTROLS",
+      "SOX"
+    ],
+    "type": "GENERAL",
+    "violationOwnerAssignmentConfig": {
+      "assignmentRule": "MANAGER",
+      "ownerRef": null
+    }
+  },
+  "self": {
+    "id": "5dc1c354-fcec-447e-9c0a-74845c57dad5",
+    "name": "Admin Accountants",
+    "type": "SOD_POLICY"
+  },
+  "version": 1
+}

@@ -1,0 +1,119 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "ignoreErrors": true,
+      "values": [
+        {
+          "attributes": {
+            "firstDate": {
+              "attributes": {
+                "ignoreErrors": true,
+                "values": [
+                  {
+                    "attributes": {
+                      "expression": "now+10d"
+                    },
+                    "type": "dateMath"
+                  },
+                  {
+                    "attributes": {
+                      "input": {
+                        "attributes": {
+                          "attributeName": "contractEndDate",
+                          "sourceName": "HR"
+                        },
+                        "type": "accountAttribute"
+                      },
+                      "inputFormat": "yyyy-MM-dd'T'HH:mm",
+                      "outputFormat": "ISO8601"
+                    },
+                    "type": "dateFormat"
+                  }
+                ]
+              },
+              "type": "firstValid"
+            },
+            "negativeCondition": {
+              "attributes": {
+                "firstDate": {
+                  "attributes": {
+                    "input": {
+                      "attributes": {
+                        "attributeName": "contractEndDate",
+                        "sourceName": "HR"
+                      },
+                      "type": "accountAttribute"
+                    },
+                    "inputFormat": "yyyy-MM-dd'T'HH:mm",
+                    "outputFormat": "ISO8601"
+                  },
+                  "type": "dateFormat"
+                },
+                "negativeCondition": "archived",
+                "operator": "gt",
+                "positiveCondition": "inactive",
+                "secondDate": {
+                  "attributes": {
+                    "expression": "now-90d"
+                  },
+                  "type": "dateMath"
+                }
+              },
+              "type": "dateCompare"
+            },
+            "operator": "gt",
+            "positiveCondition": {
+              "attributes": {
+                "firstDate": {
+                  "attributes": {
+                    "input": {
+                      "attributes": {
+                        "attributeName": "contractStartDate",
+                        "sourceName": "HR"
+                      },
+                      "type": "accountAttribute"
+                    },
+                    "inputFormat": "yyyy-MM-dd'T'HH:mm",
+                    "outputFormat": "ISO8601"
+                  },
+                  "type": "dateFormat"
+                },
+                "negativeCondition": "prehire",
+                "operator": "lt",
+                "positiveCondition": "active",
+                "secondDate": "now"
+              },
+              "type": "dateCompare"
+            },
+            "secondDate": "now"
+          },
+          "type": "dateCompare"
+        },
+        {
+          "attributes": {
+            "input": {
+              "attributes": {
+                "attributeName": "lc_state",
+                "sourceName": "HR"
+              },
+              "type": "accountAttribute"
+            }
+          },
+          "type": "lower"
+        }
+      ]
+    },
+    "id": "8d35f64e-5fae-466e-8ced-64200af399aa",
+    "internal": false,
+    "name": "LCS Calculate",
+    "type": "firstValid"
+  },
+  "self": {
+    "id": "8d35f64e-5fae-466e-8ced-64200af399aa",
+    "name": "LCS Calculate",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

@@ -1,0 +1,47 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "values": [
+        {
+          "attributes": {
+            "attributeName": "PrimaryEmailAddress",
+            "sourceName": "SAP SuccessFactors"
+          },
+          "type": "accountAttribute"
+        },
+        {
+          "attributes": {
+            "attributeName": "email",
+            "sourceName": "HR"
+          },
+          "type": "accountAttribute"
+        },
+        {
+          "attributes": {
+            "attributeName": "mail",
+            "sourceName": "Active Directory"
+          },
+          "type": "accountAttribute"
+        },
+        {
+          "attributes": {
+            "value": "(none)"
+          },
+          "type": "static"
+        }
+      ]
+    },
+    "id": "9034ab77-1080-4476-9df6-0535676952ba",
+    "internal": false,
+    "name": "NoEmail",
+    "type": "firstValid"
+  },
+  "self": {
+    "id": "9034ab77-1080-4476-9df6-0535676952ba",
+    "name": "NoEmail",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

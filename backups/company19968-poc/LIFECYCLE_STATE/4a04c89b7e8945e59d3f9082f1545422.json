@@ -1,0 +1,54 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": true
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "DISABLE",
+        "allSources": true,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": []
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "DISABLE",
+        "allSources": true,
+        "excludeSourceIds": null,
+        "sourceIds": null
+      }
+    ],
+    "created": "2026-08-28T10:02:41.152Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": true,
+    "id": "4a04c89b7e8945e59d3f9082f1545422",
+    "identityCount": 1,
+    "identityProfileRef": {
+      "id": "0dea179fe2e14f7398516f515227e2f4",
+      "name": "SuccessFactors",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "INACTIVE_LONG_TERM",
+    "modified": "2026-08-31T15:38:54.128Z",
+    "name": "Emergency Termination",
+    "priority": 70,
+    "technicalName": "emergencyTermination"
+  },
+  "self": {
+    "id": "4a04c89b7e8945e59d3f9082f1545422",
+    "name": "Emergency Termination",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

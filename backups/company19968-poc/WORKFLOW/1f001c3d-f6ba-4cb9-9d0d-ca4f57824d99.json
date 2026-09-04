@@ -1,0 +1,134 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-04T08:21:22.268479141Z",
+    "creator": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Compare Strings",
+      "steps": {
+        "Compare Strings": {
+          "choiceList": [
+            {
+              "comparator": "StringEquals",
+              "nextStep": "Get Identity",
+              "variableA.$": "$.trigger.changes[?(@.attribute == \"cloudLifecycleState\")].newValue",
+              "variableB": "Inactive"
+            }
+          ],
+          "defaultStep": "success",
+          "description": "Verifies that the change in cloudLifecycleState is to \"Inactive\".",
+          "type": "choice"
+        },
+        "Get Accounts": {
+          "actionId": "sp:get-accounts",
+          "attributes": {
+            "getAccountsBy": "specificIdentity",
+            "identity.$": "$.trigger.identity.id"
+          },
+          "description": "Retrieves the identity's current list of accounts.",
+          "nextStep": "Manage Accounts",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.identity.id"
+          },
+          "description": "Retrieves available details about the identity.",
+          "nextStep": "Get Identity 1",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Get Identity 1": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.getIdentity.managerRef.id"
+          },
+          "description": "This node is used to gather information about the user's manager to populate their email in the recipient field.",
+          "nextStep": "Send Email 1",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "HTTP Request": {
+          "actionId": "sp:http",
+          "attributes": {},
+          "description": "Initiates a service desk ticket to ensure that physical assets are returned to the organization. This step submits the ticket to your service desk tool and returns the status of that request.\n\nEdit the details of this step to match your ITSM tool and environment.",
+          "nextStep": "Get Accounts",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Manage Accounts": {
+          "actionId": "sp:manage-account",
+          "attributes": {
+            "accountIds.$": "$.getAccounts.accounts",
+            "operation": "disable"
+          },
+          "description": "Disables all accounts returned by the Get Accounts step.",
+          "nextStep": "success 1",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Send Email 1": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body": "Dear ${manager}<br><p>This email is to notify you that employee <b style=\"\">${displayName}</b> is no longer active.</p><br>Thank you,<br>Your Access Team",
+            "context": {
+              "displayName.$": "$.getIdentity.attributes.displayName",
+              "manager.$": "$.getIdentity1.attributes.firstname"
+            },
+            "recipientEmailList.$": "$.getIdentity1.attributes.email",
+            "subject": "Employee Leaving"
+          },
+          "description": "Notifies the users manager that the user is now inactive. This step can also be configured to notify security admins using a distribution list.",
+          "nextStep": "HTTP Request",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "success": {
+          "description": "Terminates the workflow when the comparison operator indicates the user was changed to any lifecycle state other than \"Inactive.\"",
+          "type": "success"
+        },
+        "success 1": {
+          "description": "Finishes the workflow in a Success state. Some organizations may want to add a step to create a certification campaign prior to ending the workflow.",
+          "type": "success"
+        }
+      }
+    },
+    "description": "Workflow to disable the accounts of identities that move into an \"inactive\" lifecycle state.",
+    "enabled": false,
+    "id": "1f001c3d-f6ba-4cb9-9d0d-ca4f57824d99",
+    "modified": "2025-12-04T08:21:22.268479141Z",
+    "modifiedBy": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "name": "Leaver Workflow",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "filter.$": "$.changes[?(@.attribute == \"cloudLifecycleState\")]",
+        "id": "idn:identity-attributes-changed",
+        "integrationId": null
+      },
+      "mode": "advanced",
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "1f001c3d-f6ba-4cb9-9d0d-ca4f57824d99",
+    "name": "Leaver Workflow",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

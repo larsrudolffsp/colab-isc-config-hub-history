@@ -1,0 +1,62 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": true
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "ENABLE",
+        "allSources": false,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": [
+          {
+            "id": "a13cb4f153aa4021be5eb967ebf6bef5",
+            "name": "Active Directory",
+            "type": "SOURCE"
+          }
+        ]
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "ENABLE",
+        "allSources": false,
+        "excludeSourceIds": null,
+        "sourceIds": [
+          "a13cb4f153aa4021be5eb967ebf6bef5"
+        ]
+      }
+    ],
+    "created": "2026-09-02T11:32:08.030Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": true,
+    "id": "bfa57881bb134a35805c29b8aa74b1bb",
+    "identityCount": 1,
+    "identityProfileRef": {
+      "id": "0dea179fe2e14f7398516f515227e2f4",
+      "name": "SuccessFactors",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "ACTIVE",
+    "modified": "2026-09-02T11:32:46.399Z",
+    "name": "prehire",
+    "priority": 80,
+    "technicalName": "prehire"
+  },
+  "self": {
+    "id": "bfa57881bb134a35805c29b8aa74b1bb",
+    "name": "prehire",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

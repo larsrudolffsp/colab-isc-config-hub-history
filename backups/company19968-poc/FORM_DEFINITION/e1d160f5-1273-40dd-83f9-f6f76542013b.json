@@ -1,0 +1,128 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-08-31T04:18:29.266656092Z",
+    "description": "Formular für Access Requests durch die Assistenz einer Führungskraft",
+    "formConditions": [],
+    "formElements": [
+      {
+        "config": {
+          "alignment": "LEFT",
+          "description": "Assistenz: Access Requests",
+          "formElements": [
+            {
+              "config": {
+                "dataSource": {
+                  "config": {
+                    "aggregationBucketField": "attributes.displayName",
+                    "filters": {},
+                    "indices": [
+                      "identities"
+                    ],
+                    "query": "attributes.cloudLifecycleState:\"active\""
+                  },
+                  "dataSourceType": "SEARCH"
+                },
+                "forceSelect": true,
+                "helpText": "Für wen ist der Antrag?",
+                "label": "Mitarbeiter",
+                "maximum": 1,
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "SELECT",
+              "id": "1667460129383",
+              "key": "mitarbeiter",
+              "validations": [
+                {
+                  "validationType": "DATA_SOURCE"
+                },
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "config": {
+                "dataSource": {
+                  "config": {
+                    "aggregationBucketField": "name",
+                    "indices": [
+                      "roles"
+                    ],
+                    "query": "enabled:true AND requestable:true"
+                  },
+                  "dataSourceType": "SEARCH"
+                },
+                "forceSelect": true,
+                "helpText": "Welche Berechtigung wollen Sie bestellen?",
+                "label": "Berechtigung",
+                "maximum": 1,
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "SELECT",
+              "id": "671391408794",
+              "key": "berechtigung",
+              "validations": [
+                {
+                  "validationType": "DATA_SOURCE"
+                },
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "config": {
+                "default": "",
+                "description": "",
+                "helpText": "Geben Sie eine Begründung für diesen Antrag an.",
+                "label": "Begründung",
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "TEXT",
+              "id": "1745121630865",
+              "key": "begruendung",
+              "validations": [
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            }
+          ],
+          "label": "Assistenz: Access Requests",
+          "labelStyle": "h2",
+          "showLabel": true
+        },
+        "elementType": "SECTION",
+        "id": "1160295283153",
+        "validations": []
+      }
+    ],
+    "formInput": [],
+    "id": "e1d160f5-1273-40dd-83f9-f6f76542013b",
+    "modified": "2026-08-31T04:38:19.173060353Z",
+    "name": "Assistenz: Access Request",
+    "owner": {
+      "id": "4e66ef089395450e9ba7599d47619d3e",
+      "name": "galaad.tassel",
+      "type": "IDENTITY"
+    },
+    "usedBy": [
+      {
+        "id": "5b2ce837-f5d4-4362-abb3-44b199e886f7",
+        "name": "Launcher Access Request Workflow",
+        "type": "WORKFLOW"
+      }
+    ]
+  },
+  "self": {
+    "id": "e1d160f5-1273-40dd-83f9-f6f76542013b",
+    "name": "Assistenz: Access Request",
+    "type": "FORM_DEFINITION"
+  },
+  "version": 1
+}

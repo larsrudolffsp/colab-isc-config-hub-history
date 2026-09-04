@@ -1,0 +1,272 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-04T08:00:24.975970003Z",
+    "creator": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Interactive Form 1",
+      "steps": {
+        "Compare Strings": {
+          "choiceList": [
+            {
+              "comparator": "StringMatches",
+              "nextStep": "Interactive Message 2",
+              "variableA.$": "$.windowsServer1.result.data",
+              "variableB": "already"
+            }
+          ],
+          "defaultStep": "Interactive Message 5",
+          "description": "The service update was successful. The service state is now evaluated to determine if it was already in the desired state.",
+          "displayName": "Service Already in Desired State?",
+          "type": "choice"
+        },
+        "End Step - Failure": {
+          "description": "The workflow cannot continue as the service update failed. The workflow ends in a failed state.",
+          "displayName": "Failure: Service Update Error",
+          "failureName": "Service Update Error",
+          "type": "failure"
+        },
+        "End Step - Failure 1": {
+          "description": "The workflow cannot continue as the retrieval of services failed. The workflow ends in a failed state.",
+          "displayName": "Failure: Get Services Error",
+          "failureName": "Get Services Error",
+          "type": "failure"
+        },
+        "End Step - Success": {
+          "description": "The service has been updated. The workflow completed successfully.",
+          "displayName": "",
+          "type": "success"
+        },
+        "End Step - Success 1": {
+          "description": "The workflow has completed successfully. The service was already in the desired state.",
+          "displayName": "Success: Service Already in Desired State",
+          "type": "success"
+        },
+        "Interactive Form": {
+          "actionId": "sp:interactive-form",
+          "attributes": {
+            "formDefinitionId": "b6fe3dcb-a7fa-4cf4-bd73-4bc3c3661d9b",
+            "inputForForm_array_services.$": "$.windowsServer.result.data",
+            "inputForForm_array_services_label": "$.DisplayName",
+            "inputForForm_array_services_subLabel": "$.State",
+            "inputForForm_array_services_value": "$.Name",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "Select Service & Operation"
+          },
+          "description": "Interactive form allowing the user to select a service & choose whether to stop, start, or restart that service.",
+          "displayName": "Form: Select Service and Operation",
+          "nextStep": "Interactive Message 1",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Interactive Form 1": {
+          "actionId": "sp:interactive-form",
+          "attributes": {
+            "formDefinitionId": "fb8d4c8f-cf50-4d1e-a841-dd2491d06168",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "Introduction"
+          },
+          "description": "This interactive form explains the purpose of the workflow and what the user will need to do to complete it.",
+          "displayName": "Form: Introduction",
+          "nextStep": "Interactive Message",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Interactive Message": {
+          "actionId": "sp:interactive-message",
+          "attributes": {
+            "category": "INFO",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "message": "<p>Getting all services from the server...</p>",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "🔎  Getting Services"
+          },
+          "description": "This interactive message notifies the user that the workflow is currently retrieving all services from the target server.",
+          "displayName": "Message: Getting Services",
+          "nextStep": "Windows Server",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Interactive Message 1": {
+          "actionId": "sp:interactive-message",
+          "attributes": {
+            "category": "INFO",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "message": "<p>Updating service '{{ $.interactiveForm.formData.service }}'...</p>",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "🔧  Updating Service State"
+          },
+          "description": "This interactive message notifies the user that the workflow is currently updating the state of the selected service.",
+          "displayName": "Message: Updating Service State",
+          "nextStep": "Windows Server 1",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Interactive Message 2": {
+          "actionId": "sp:interactive-message",
+          "attributes": {
+            "category": "INFO",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "message": "<p>Service '{{ $.interactiveForm.formData.service }}' was already in the selected state.</p>",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "✅  Service State Unchanged"
+          },
+          "description": "This interactive message notifies the user that the selected service was already in the desired state.",
+          "displayName": "Message: Service State Unchanged",
+          "nextStep": "End Step - Success 1",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Interactive Message 3": {
+          "actionId": "sp:interactive-message",
+          "attributes": {
+            "category": "INFO",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "message": "<p>Display Name: {{ $.windowsServer2.result.data.DisplayName }}</p>\n<p>Name: {{ $.windowsServer2.result.data.Name }}</p>\n<p>State: {{ $.windowsServer2.result.data.State }}</p>",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "📋  Updated Service State"
+          },
+          "description": "This interactive message displays the updated state of the service to the user.",
+          "displayName": "Message: Show Updated State",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Interactive Message 4": {
+          "actionId": "sp:interactive-message",
+          "attributes": {
+            "category": "ERROR",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "message": "<p>Failed to {{ $.interactiveForm.formData.operation }} the '{{ $.interactiveForm.formData.service }}' service!</p>\n<p>&nbsp;</p>\n<p>{{ $.windowsServer1.error.detailCode }}</p>\n<p>{{ $.windowsServer1.error.message.text }}</p>",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "Failure: Update Service State"
+          },
+          "description": "This interactive message notifies the user that an error has occurred, and the service update failed.",
+          "displayName": "Message: Service Update Failed",
+          "nextStep": "End Step - Failure",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Interactive Message 5": {
+          "actionId": "sp:interactive-message",
+          "attributes": {
+            "category": "INFO",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "message": "<p>{{ $.windowsServer1.result.data }}</p>\n<p>Getting updated service details...</p>",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "✅  Operation Complete"
+          },
+          "description": "This interactive message displays the command output from the target server to the user.",
+          "displayName": "Message: Show Command Output",
+          "nextStep": "Windows Server 2",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Interactive Message 6": {
+          "actionId": "sp:interactive-message",
+          "attributes": {
+            "category": "ERROR",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "message": "<p>Failed to get services from the server!</p>\n<p>&nbsp;</p>\n<p>{{ $.windowsServer.error.detailCode }}</p>\n<p>{{ $.windowsServer.error.message.text }}</p>",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "Failure: Get Services"
+          },
+          "description": "This interactive message notifies the user that the workflow failed to retrieve services from the target server.",
+          "displayName": "Message: Getting Services Failed",
+          "nextStep": "End Step - Failure 1",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Verify Data Type": {
+          "choiceList": [
+            {
+              "comparator": "IsNull",
+              "nextStep": "Compare Strings",
+              "variableA.$": "$.windowsServer1.error"
+            }
+          ],
+          "defaultStep": "Interactive Message 4",
+          "description": "The service update is verified to determine if the output contains zero errors. If the output contains no errors, it evaluates to True, otherwise False.",
+          "displayName": "Did Update Succeed?",
+          "type": "choice"
+        },
+        "Verify Data Type 1": {
+          "choiceList": [
+            {
+              "comparator": "IsNull",
+              "nextStep": "Interactive Form",
+              "variableA.$": "$.windowsServer.error"
+            }
+          ],
+          "defaultStep": "Interactive Message 6",
+          "description": "The retrieval process is verified to determine if the services were successfully retrieved. If they were retrieved it evaluates to True, otherwise False.",
+          "displayName": "Services Fetched Successfully?",
+          "type": "choice"
+        },
+        "Windows Server": {
+          "actionId": "sp:pag-windows-server",
+          "attributes": {},
+          "description": "The Privileged Action Gateway retrieves all services from the target server.",
+          "displayName": "PAG: Get All Services",
+          "nextStep": "Verify Data Type 1",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Windows Server 1": {
+          "actionId": "sp:pag-windows-server",
+          "attributes": {},
+          "description": "The Privileged Action Gateway stops, starts, or restarts the selected service on the target server based on the user’s selections in the interactive form.",
+          "displayName": "PAG: Update Service",
+          "nextStep": "Verify Data Type",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Windows Server 2": {
+          "actionId": "sp:pag-windows-server",
+          "attributes": {},
+          "description": "The Privileged Action Gateway retrieves the updated state of the selected service.",
+          "displayName": "PAG: Get Updated State",
+          "nextStep": "Interactive Message 3",
+          "type": "action",
+          "versionNumber": 1
+        }
+      }
+    },
+    "description": "This privileged interactive workflow allows you to stop, start, or restart a Windows service.\n\nYou will be asked to choose the service and operation using an interactive form.",
+    "enabled": false,
+    "id": "240c4597-36a2-4b7c-ab78-b65efe8e41b4",
+    "modified": "2025-12-04T08:00:24.975970003Z",
+    "modifiedBy": {
+      "id": "7f72802008e24e379398675c7cb0e7d5",
+      "name": "slpt.support",
+      "type": "IDENTITY"
+    },
+    "name": "Update the State of a Windows Service",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "filter.$": "$[?(@.workflowId == '240c4597-36a2-4b7c-ab78-b65efe8e41b4')]",
+        "id": "idn:interactive-process-launched",
+        "integrationId": null
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "240c4597-36a2-4b7c-ab78-b65efe8e41b4",
+    "name": "Update the State of a Windows Service",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

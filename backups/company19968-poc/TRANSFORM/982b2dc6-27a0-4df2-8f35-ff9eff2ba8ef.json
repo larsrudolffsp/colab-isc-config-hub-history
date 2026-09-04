@@ -1,0 +1,119 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "ignoreErrors": true,
+      "values": [
+        "-",
+        {
+          "attributes": {
+            "firstDate": {
+              "attributes": {
+                "ignoreErrors": true,
+                "values": [
+                  {
+                    "attributes": {
+                      "expression": "now+10d"
+                    },
+                    "type": "dateMath"
+                  },
+                  {
+                    "attributes": {
+                      "input": {
+                        "attributes": {
+                          "name": "endDate"
+                        },
+                        "type": "identityAttribute"
+                      },
+                      "inputFormat": "yyyy-MM-dd'T'HH:mm",
+                      "outputFormat": "ISO8601"
+                    },
+                    "type": "dateFormat"
+                  }
+                ]
+              },
+              "type": "firstValid"
+            },
+            "negativeCondition": {
+              "attributes": {
+                "firstDate": {
+                  "attributes": {
+                    "input": {
+                      "attributes": {
+                        "name": "endDate"
+                      },
+                      "type": "identityAttribute"
+                    },
+                    "inputFormat": "yyyy-MM-dd'T'HH:mm",
+                    "outputFormat": "ISO8601"
+                  },
+                  "type": "dateFormat"
+                },
+                "negativeCondition": "archived",
+                "operator": "gt",
+                "positiveCondition": "inactive",
+                "secondDate": {
+                  "attributes": {
+                    "expression": "now-90d"
+                  },
+                  "type": "dateMath"
+                }
+              },
+              "type": "dateCompare"
+            },
+            "operator": "gt",
+            "positiveCondition": {
+              "attributes": {
+                "firstDate": {
+                  "attributes": {
+                    "ignoreErrors": true,
+                    "values": [
+                      {
+                        "attributes": {
+                          "expression": "now-10d"
+                        },
+                        "type": "dateMath"
+                      },
+                      {
+                        "attributes": {
+                          "input": {
+                            "attributes": {
+                              "name": "startDate"
+                            },
+                            "type": "identityAttribute"
+                          },
+                          "inputFormat": "yyyy-MM-dd'T'HH:mm",
+                          "outputFormat": "ISO8601"
+                        },
+                        "type": "dateFormat"
+                      }
+                    ]
+                  },
+                  "type": "firstValid"
+                },
+                "negativeCondition": "prehire",
+                "operator": "lt",
+                "positiveCondition": "active",
+                "secondDate": "now"
+              },
+              "type": "dateCompare"
+            },
+            "secondDate": "now"
+          },
+          "type": "dateCompare"
+        }
+      ]
+    },
+    "id": "982b2dc6-27a0-4df2-8f35-ff9eff2ba8ef",
+    "internal": false,
+    "name": "HR LCS",
+    "type": "firstValid"
+  },
+  "self": {
+    "id": "982b2dc6-27a0-4df2-8f35-ff9eff2ba8ef",
+    "name": "HR LCS",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

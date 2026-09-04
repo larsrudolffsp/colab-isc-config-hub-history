@@ -1,0 +1,42 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "processed": {
+        "attributes": {
+          "ignoreErrors": true,
+          "values": [
+            "false",
+            {
+              "attributes": {
+                "attributeName": "email",
+                "sourceName": "External Users"
+              },
+              "type": "accountAttribute"
+            },
+            {
+              "attributes": {
+                "attributeName": "empid",
+                "sourceName": "HR"
+              },
+              "type": "accountAttribute"
+            }
+          ]
+        },
+        "type": "firstValid"
+      },
+      "value": "#if($processed == 'false')staging#{else}active#end"
+    },
+    "id": "5f0ff57b-d11a-4205-8303-09e4964730f7",
+    "internal": false,
+    "name": "Fusion Transform (Identity Fusion)",
+    "type": "static"
+  },
+  "self": {
+    "id": "5f0ff57b-d11a-4205-8303-09e4964730f7",
+    "name": "Fusion Transform (Identity Fusion)",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

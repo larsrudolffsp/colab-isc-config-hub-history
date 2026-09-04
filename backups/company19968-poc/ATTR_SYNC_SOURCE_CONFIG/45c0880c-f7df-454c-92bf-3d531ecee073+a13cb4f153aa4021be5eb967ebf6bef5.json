@@ -1,0 +1,49 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": [
+      {
+        "displayName": "Personal Phone",
+        "enabled": false,
+        "name": "phone",
+        "target": "telephoneNumber"
+      },
+      {
+        "displayName": "att_display_name",
+        "enabled": false,
+        "name": "displayName",
+        "target": "displayName"
+      },
+      {
+        "displayName": "att_email",
+        "enabled": false,
+        "name": "email",
+        "target": "mail"
+      },
+      {
+        "displayName": "att_first_name",
+        "enabled": true,
+        "name": "firstname",
+        "target": "givenName"
+      },
+      {
+        "displayName": "att_last_name",
+        "enabled": true,
+        "name": "lastname",
+        "target": "sn"
+      }
+    ],
+    "source": {
+      "id": "a13cb4f153aa4021be5eb967ebf6bef5",
+      "name": "Active Directory",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "45c0880c-f7df-454c-92bf-3d531ecee073:a13cb4f153aa4021be5eb967ebf6bef5",
+    "name": "Active Directory",
+    "type": "ATTR_SYNC_SOURCE_CONFIG"
+  },
+  "version": 1
+}

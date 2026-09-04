@@ -1,0 +1,92 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-08T15:09:12.961609834Z",
+    "creator": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Approval Policy",
+      "steps": {
+        "Approval Policy": {
+          "actionId": "sp:access-request-approval",
+          "attributes": {
+            "accessRequestId.$": "$.trigger.accessRequestId",
+            "accountActivityId.$": "$.trigger.accountActivityId",
+            "approvalActionAtTimeout": "EXPIRED",
+            "approvalReminder": "false",
+            "approvalTimeout": 1,
+            "approvalType": "QUORUM",
+            "autoApprovalEnabled.$": "$.trigger.autoApprovalEnabled",
+            "fallbackApprover.$": "$.trigger.fallbackApprover",
+            "multiApproverReviewersConfig_approvalScheme": "SERIAL",
+            "parentWorkflowExecutionId.$": "$.trigger.parentWorkflowExecutionId",
+            "priority": "MEDIUM",
+            "quorumApprovalPercentage": 60,
+            "quorumApproverReviewersConfig_approvalScheme": "PARALLEL",
+            "quorumApproverReviewersConfig_reviewers": [
+              {
+                "approverCategory": "ACCESS_ITEM_OWNER",
+                "approverNumber": 2
+              },
+              {
+                "approverCategory": "MANAGER_OF",
+                "approverNumber": 1
+              }
+            ],
+            "reminderFrequency_timeZone": "Europe/Madrid",
+            "requestId.$": "$.trigger.requestId",
+            "requestedAt.$": "$.trigger.createdAt",
+            "requestedBy.$": "$.trigger.requestedBy",
+            "requestedFor.$": "$.trigger.requestedFor",
+            "requestedItem.$": "$.trigger.requestedItem",
+            "singleApproverCategory": "MANAGER_OF",
+            "sodViolationContext.$": "$.trigger.sodViolationContext",
+            "staticAttributes.$": "$.trigger.staticAttributes",
+            "workflowExecutionId.$": "$.trigger.workflowExecutionId"
+          },
+          "displayName": "",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "End Step - Success": {
+          "actionId": "sp:operator-success",
+          "displayName": "",
+          "type": "success"
+        }
+      }
+    },
+    "description": "",
+    "enabled": false,
+    "id": "c718c517-2ef5-467f-b15c-4fe920f522fe",
+    "modified": "2025-12-09T09:15:58.597891166Z",
+    "modifiedBy": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "name": "Check Request",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "id": "idn:access-request-trigger",
+        "integrationId": null
+      },
+      "type": "AccessRequestTrigger"
+    }
+  },
+  "self": {
+    "id": "c718c517-2ef5-467f-b15c-4fe920f522fe",
+    "name": "Check Request",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

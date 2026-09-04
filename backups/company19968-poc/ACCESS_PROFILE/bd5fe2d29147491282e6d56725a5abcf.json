@@ -1,0 +1,51 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-04T08:16:27.035362Z",
+    "description": "Basic access to the Airgap system. This will require a ServiceNow ticket for manual fulfillment. The application has no network connectivity.",
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "d3cb21f87cfa330c9e3217c1a69a1d38",
+        "name": "Basic Access",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "bd5fe2d29147491282e6d56725a5abcf",
+    "modified": "2025-12-04T08:16:27.035362Z",
+    "name": "Airgap - Basic Access",
+    "owner": {
+      "id": "5928c04c91f048b4846aa1b3336fb45b",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "provisioningCriteria": null,
+    "requestable": false,
+    "revocationRequestConfig": null,
+    "segmentRefs": [],
+    "segments": [],
+    "source": {
+      "id": "db434c97d04748dfa507875253601ddd",
+      "name": "Airgap",
+      "type": "SOURCE"
+    }
+  },
+  "self": {
+    "id": "bd5fe2d29147491282e6d56725a5abcf",
+    "name": "Airgap - Basic Access",
+    "type": "ACCESS_PROFILE"
+  },
+  "version": 1
+}

@@ -1,0 +1,78 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-12-08T15:08:33.609268235Z",
+    "creator": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Interactive Form",
+      "steps": {
+        "End Step - Success": {
+          "actionId": "sp:operator-success",
+          "displayName": "",
+          "type": "success"
+        },
+        "Interactive Form": {
+          "actionId": "sp:interactive-form",
+          "attributes": {
+            "formDefinitionId": "22c9fb4c-cb91-4b14-b95b-205553940259",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "Role Promotion "
+          },
+          "displayName": "",
+          "nextStep": "Interactive Message",
+          "type": "action",
+          "versionNumber": 1
+        },
+        "Interactive Message": {
+          "actionId": "sp:interactive-message",
+          "attributes": {
+            "category": "INFO",
+            "interactiveProcessId.$": "$.trigger.interactiveProcessId",
+            "message": "<p>Your Promotion application was sent to the approver for the review.</p>\n<p>You'll be notified of the decision taken.</p>\n<p>This process is now concluded, have a nice day.</p>",
+            "ownerId.$": "$.trigger.launchedBy.id",
+            "title": "Promotion Request sent!"
+          },
+          "displayName": "",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 1
+        }
+      }
+    },
+    "description": "",
+    "enabled": true,
+    "id": "d794c124-4333-45b5-a059-5c3877e6c818",
+    "modified": "2025-12-11T09:15:37.84352881Z",
+    "modifiedBy": {
+      "id": "6b022753f41b405d92df9243f8ff2094",
+      "name": "fernando.delosrios",
+      "type": "IDENTITY"
+    },
+    "name": "Role Promotion",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "filter.$": "$[?(@.workflowId == 'd794c124-4333-45b5-a059-5c3877e6c818')]",
+        "id": "idn:interactive-process-launched",
+        "integrationId": null
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "d794c124-4333-45b5-a059-5c3877e6c818",
+    "name": "Role Promotion",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

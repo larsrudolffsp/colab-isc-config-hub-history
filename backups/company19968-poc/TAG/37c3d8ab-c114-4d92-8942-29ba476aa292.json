@@ -1,0 +1,38 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": null,
+    "id": "37c3d8ab-c114-4d92-8942-29ba476aa292",
+    "modified": null,
+    "name": "SOX",
+    "taggedObjects": [
+      {
+        "id": "5dc1c354-fcec-447e-9c0a-74845c57dad5",
+        "name": "Admin Accountants",
+        "type": "SOD_POLICY"
+      },
+      {
+        "id": "83ee13cd-af65-491f-bf31-1eb40ff3c222",
+        "name": "Invoice Creation and Approval Control",
+        "type": "SOD_POLICY"
+      },
+      {
+        "id": "86db9c15-0add-4f4d-a745-80a851f3e393",
+        "name": "Non-IT Users with Privileged System Access",
+        "type": "SOD_POLICY"
+      },
+      {
+        "id": "bd4dfda3-3b00-4293-bfc6-d39aa48b2a8d",
+        "name": "Money In & Money Out",
+        "type": "SOD_POLICY"
+      }
+    ]
+  },
+  "self": {
+    "id": "37c3d8ab-c114-4d92-8942-29ba476aa292",
+    "name": "SOX",
+    "type": "TAG"
+  },
+  "version": 1
+}

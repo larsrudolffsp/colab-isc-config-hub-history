@@ -1,0 +1,35 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "values": [
+        {
+          "attributes": {
+            "attributeName": "Position Entry Date",
+            "inputFormat": "yyyy-MM-dd",
+            "outputFormat": "ISO8601",
+            "sourceName": "SuccessFactors"
+          },
+          "type": "dateFormat"
+        },
+        {
+          "attributes": {
+            "value": "2023-12-01T00:00:00.000Z"
+          },
+          "type": "static"
+        }
+      ]
+    },
+    "id": "416413ba-9aa8-481d-8bd7-518470b3f1e1",
+    "internal": false,
+    "name": "ConvertStartDateISO8601_SF",
+    "type": "firstValid"
+  },
+  "self": {
+    "id": "416413ba-9aa8-481d-8bd7-518470b3f1e1",
+    "name": "ConvertStartDateISO8601_SF",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

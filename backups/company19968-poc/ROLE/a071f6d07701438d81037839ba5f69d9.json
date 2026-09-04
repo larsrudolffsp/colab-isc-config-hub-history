@@ -1,0 +1,90 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2025-12-09T11:10:19.648525Z",
+    "description": "Basic Access",
+    "dimensionRefs": null,
+    "dimensional": false,
+    "dimensions": [],
+    "enabled": true,
+    "entitlements": [
+      {
+        "id": "0fd7ce34-0489-374d-a488-d59f443588be",
+        "name": "Employees",
+        "sourceId": "a13cb4f1-53aa-4021-be5e-b967ebf6bef5",
+        "sourceName": "Active Directory",
+        "type": "ENTITLEMENT"
+      },
+      {
+        "id": "8c2f5d64-21af-3c4e-b19e-162290bdb2ce",
+        "name": "All_Users",
+        "sourceId": "a13cb4f1-53aa-4021-be5e-b967ebf6bef5",
+        "sourceName": "Active Directory",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "a071f6d07701438d81037839ba5f69d9",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": null,
+            "key": {
+              "property": "attribute.cloudLifecycleState",
+              "sourceId": null,
+              "type": "IDENTITY"
+            },
+            "operation": "EQUALS",
+            "stringValue": null,
+            "values": [
+              "active",
+              "prehire"
+            ]
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": null,
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2026-09-02T11:35:25.580701Z",
+    "name": "Basic Access",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "a071f6d07701438d81037839ba5f69d9",
+    "name": "Basic Access",
+    "type": "ROLE"
+  },
+  "version": 1
+}

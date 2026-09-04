@@ -1,0 +1,69 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "connectionCount": 0,
+    "connections": null,
+    "created": null,
+    "description": "Group for reviewing policy violations and exceptions",
+    "id": "1fbb3bd7-cfb1-4e99-8b92-6c21ba9123a5",
+    "memberCount": 0,
+    "members": [
+      {
+        "id": "4e66ef089395450e9ba7599d47619d3e",
+        "name": "galaad.tassel",
+        "type": "IDENTITY"
+      },
+      {
+        "id": "6b022753f41b405d92df9243f8ff2094",
+        "name": "fernando.delosrios",
+        "type": "IDENTITY"
+      },
+      {
+        "id": "70ed300aa84249cc99643a92979e977b",
+        "name": "Thomas.Martinez",
+        "type": "IDENTITY"
+      },
+      {
+        "id": "99388865cfc64f2f9b5d3ef9970da8aa",
+        "name": "erdem.erdogan",
+        "type": "IDENTITY"
+      },
+      {
+        "id": "b2b982f217a04d6fb18d3ae9a37c3d2a",
+        "name": "Amanda.Ross",
+        "type": "IDENTITY"
+      },
+      {
+        "id": "bd04981e863b4ccd9b751081eb220ddd",
+        "name": "andre.hostombe",
+        "type": "IDENTITY"
+      },
+      {
+        "id": "bdc2db8ef5c547c7a1e57b9b361b4553",
+        "name": "Diane.Hayes",
+        "type": "IDENTITY"
+      },
+      {
+        "id": "f3d792713df84c6b9ebd097046d447e0",
+        "name": "volker.juergensen",
+        "type": "IDENTITY"
+      }
+    ],
+    "modified": null,
+    "name": "IT Security",
+    "owner": {
+      "displayName": null,
+      "emailAddress": null,
+      "id": "5928c04c91f048b4846aa1b3336fb45b",
+      "name": "Jerry.Bennett",
+      "type": "IDENTITY"
+    }
+  },
+  "self": {
+    "id": "1fbb3bd7-cfb1-4e99-8b92-6c21ba9123a5",
+    "name": "IT Security",
+    "type": "GOVERNANCE_GROUP"
+  },
+  "version": 1
+}

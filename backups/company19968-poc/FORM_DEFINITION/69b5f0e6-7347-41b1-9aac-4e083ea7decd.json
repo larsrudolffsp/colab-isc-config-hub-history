@@ -1,0 +1,104 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2025-07-11T09:24:23.034892079Z",
+    "description": "",
+    "formConditions": [],
+    "formElements": [
+      {
+        "config": {
+          "alignment": "CENTER",
+          "description": "",
+          "formElements": [
+            {
+              "config": {
+                "default": "",
+                "description": "",
+                "helpText": "",
+                "label": "Email",
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "EMAIL",
+              "id": "1413604825046",
+              "key": "email",
+              "validations": [
+                {
+                  "validationType": "EMAIL"
+                },
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "config": {
+                "default": "",
+                "description": "",
+                "helpText": "",
+                "label": "Firstname",
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "TEXT",
+              "id": "76140433386",
+              "key": "firstname",
+              "validations": [
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            },
+            {
+              "config": {
+                "default": "",
+                "description": "",
+                "helpText": "",
+                "label": "Lastname",
+                "placeholder": "",
+                "required": true
+              },
+              "elementType": "TEXT",
+              "id": "473832349046",
+              "key": "lastname",
+              "validations": [
+                {
+                  "validationType": "REQUIRED"
+                }
+              ]
+            }
+          ],
+          "label": "External User Details",
+          "labelStyle": "h2",
+          "showLabel": true
+        },
+        "elementType": "SECTION",
+        "id": "73559596851",
+        "validations": []
+      }
+    ],
+    "formInput": [],
+    "id": "69b5f0e6-7347-41b1-9aac-4e083ea7decd",
+    "modified": "2026-01-13T13:44:23.332369686Z",
+    "name": "External User Details",
+    "owner": {
+      "id": "ae26cda44f4d4fd487e812edf7449515",
+      "name": "SailPoint Services",
+      "type": "IDENTITY"
+    },
+    "usedBy": [
+      {
+        "id": "f6143417-d4d6-4719-ad39-1af0a5cbcd17",
+        "name": "Add External User",
+        "type": "WORKFLOW"
+      }
+    ]
+  },
+  "self": {
+    "id": "69b5f0e6-7347-41b1-9aac-4e083ea7decd",
+    "name": "External User Details",
+    "type": "FORM_DEFINITION"
+  },
+  "version": 1
+}

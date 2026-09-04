@@ -1,0 +1,20 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "id": "0e9e1940-c89c-4c03-807a-abe007b2968f",
+    "name": "System Admin Accounts",
+    "passwordPolicy": {
+      "id": "82f74fa934c241d8b1f91e566bf4367c",
+      "name": "System Administrator",
+      "type": "PASSWORD_POLICY"
+    },
+    "sources": []
+  },
+  "self": {
+    "id": "0e9e1940-c89c-4c03-807a-abe007b2968f",
+    "name": "System Admin Accounts",
+    "type": "PASSWORD_SYNC_GROUP"
+  },
+  "version": 1
+}

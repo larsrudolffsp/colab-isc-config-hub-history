@@ -1,0 +1,62 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": true
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "ENABLE",
+        "allSources": false,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": [
+          {
+            "id": "a13cb4f153aa4021be5eb967ebf6bef5",
+            "name": "Active Directory",
+            "type": "SOURCE"
+          }
+        ]
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "ENABLE",
+        "allSources": false,
+        "excludeSourceIds": null,
+        "sourceIds": [
+          "a13cb4f153aa4021be5eb967ebf6bef5"
+        ]
+      }
+    ],
+    "created": "2026-09-02T11:38:34.184Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": true,
+    "id": "293178f13ae2449fb20c364de99a07ba",
+    "identityCount": 0,
+    "identityProfileRef": {
+      "id": "1817975e2d4e4ca0ad54ca622816cea4",
+      "name": "HR",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "ACTIVE",
+    "modified": "2026-09-02T11:38:49.638Z",
+    "name": "prehire",
+    "priority": 90,
+    "technicalName": "prehire"
+  },
+  "self": {
+    "id": "293178f13ae2449fb20c364de99a07ba",
+    "name": "prehire",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

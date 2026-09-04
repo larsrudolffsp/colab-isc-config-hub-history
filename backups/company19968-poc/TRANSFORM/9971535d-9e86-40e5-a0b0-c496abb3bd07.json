@@ -1,0 +1,32 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "values": [
+        "@se-gcp.sailpointtechnologies.com",
+        {
+          "attributes": {
+            "input": {
+              "attributes": {
+                "name": "uid"
+              },
+              "type": "identityAttribute"
+            }
+          },
+          "type": "lower"
+        }
+      ]
+    },
+    "id": "9971535d-9e86-40e5-a0b0-c496abb3bd07",
+    "internal": false,
+    "name": "Format GCP Email",
+    "type": "concat"
+  },
+  "self": {
+    "id": "9971535d-9e86-40e5-a0b0-c496abb3bd07",
+    "name": "Format GCP Email",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}
