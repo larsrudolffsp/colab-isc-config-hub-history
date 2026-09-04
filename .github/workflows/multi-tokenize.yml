@@ -1,4 +1,4 @@
-name: Refresh Vars / Push Mappings
+name: Refresh Vars / Push Mappings (multiple tenants)
 
 on:
   workflow_dispatch:
