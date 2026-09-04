@@ -28,7 +28,7 @@ jobs:
         env:
           TENANT_URL: ${{ secrets.POC_19968_TENANT_URL }}
           CLIENT_ID: ${{ secrets.POC_19968_CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.POC_19968_CLIENT_ID }}
+          CLIENT_SECRET: ${{ secrets.POC_19968_CLIENT_SECRET }}
         run: node scripts/backup.mjs
       # --- Gemeinsamer Commit & Push ---
       - name: Commit and Push All Backups
