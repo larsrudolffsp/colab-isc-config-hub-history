@@ -1,5 +1,4 @@
-name: Refresh Vars / Push Mappings (multiple tenants)
-
+name: Refresh Vars / Push Mappings
 on:
   workflow_dispatch:
     inputs:
@@ -9,54 +8,57 @@ on:
         default: 'seed-vars'
         type: choice
         options:
-          - seed-vars      # Reseed vars/<tenant>.vars.yaml from the current backup
-          - find-tokens    # Extract vars for a target tenant by matching a source tenant's backup
-          - push-mappings  # Push source→target value substitutions to Config Hub Object Mappings API
+          - seed-vars
+          - find-tokens
+          - push-mappings
+      tenant:
+        description: 'Which tenant credentials to authenticate as (must match the tenant being operated on)'
+        required: true
+        default: 'lars_demo'
+        type: choice
+        options:
+          - lars_demo
+          - poc_19968
       source_tenant:
         description: 'Source tenant — required for find-tokens and push-mappings'
         required: false
         default: ''
       target_tenant:
-        description: 'Target tenant — leave blank to use the TENANT_URL tenant (find-tokens / push-mappings)'
+        description: 'Target tenant — leave blank to use the selected tenant (find-tokens / push-mappings)'
         required: false
         default: ''
       source_org:
         description: 'Config Hub sourceOrg for push-mappings (default: source_tenant value; use "default" for org-independent mappings)'
         required: false
         default: ''
-
 permissions:
   contents: write
-
 jobs:
   tokenize:
     runs-on: ubuntu-latest
-
+    env:
+      TENANT_URL: ${{ inputs.tenant == 'poc_19968' && secrets.POC_19968_TENANT_URL || secrets.TENANT_URL }}
+      CLIENT_ID: ${{ inputs.tenant == 'poc_19968' && secrets.POC_19968_CLIENT_ID || secrets.CLIENT_ID }}
+      CLIENT_SECRET: ${{ inputs.tenant == 'poc_19968' && secrets.POC_19968_CLIENT_SECRET || secrets.CLIENT_SECRET }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - name: Resolve current tenant name from TENANT_URL
-        id: tenant
-        env:
-          TENANT_URL: ${{ secrets.TENANT_URL }}
+        id: resolve_tenant
         run: |
           NAME=$(node -e "console.log(new URL(process.env.TENANT_URL).hostname.split('.')[0])")
           echo "name=$NAME" >> "$GITHUB_OUTPUT"
-
       - name: Run seed-vars
         if: ${{ inputs.command == 'seed-vars' }}
         run: |
-          echo "Seeding vars for tenant: ${{ steps.tenant.outputs.name }}"
-          node scripts/tokenize.mjs seed-vars "${{ steps.tenant.outputs.name }}"
-
+          echo "Seeding vars for tenant: ${{ steps.resolve_tenant.outputs.name }}"
+          node scripts/tokenize.mjs seed-vars "${{ steps.resolve_tenant.outputs.name }}"
       - name: Run find-tokens
         if: ${{ inputs.command == 'find-tokens' }}
         run: |
@@ -67,17 +69,12 @@ jobs:
           fi
           TARGET="${{ inputs.target_tenant }}"
           if [ -z "$TARGET" ]; then
-            TARGET="${{ steps.tenant.outputs.name }}"
+            TARGET="${{ steps.resolve_tenant.outputs.name }}"
           fi
           echo "Running find-tokens: backups/$SOURCE/ → vars/$TARGET.vars.yaml"
           node scripts/tokenize.mjs find-tokens "$TARGET" --source "$SOURCE"
-
       - name: Run push-mappings
         if: ${{ inputs.command == 'push-mappings' }}
-        env:
-          TENANT_URL: ${{ secrets.TENANT_URL }}
-          CLIENT_ID: ${{ secrets.CLIENT_ID }}
-          CLIENT_SECRET: ${{ secrets.CLIENT_SECRET }}
         run: |
           SOURCE="${{ inputs.source_tenant }}"
           if [ -z "$SOURCE" ]; then
@@ -91,9 +88,7 @@ jobs:
             --source "$SOURCE" \
             ${TARGET:+--target "$TARGET"} \
             ${SOURCE_ORG:+--source-org "$SOURCE_ORG"}
-
       - name: Commit and push changes
-        # push-mappings writes nothing to disk — only seed-vars and find-tokens produce file changes
         if: ${{ inputs.command != 'push-mappings' }}
         run: |
           git config user.name "github-actions[bot]"
