@@ -1,0 +1,75 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-09-07T09:32:58.974054202Z",
+    "creator": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "start": "Get Identity",
+      "steps": {
+        "End Step - Success": {
+          "displayName": "",
+          "type": "success"
+        },
+        "Get Identity": {
+          "actionId": "sp:get-identity",
+          "attributes": {
+            "id.$": "$.trigger.identity.id"
+          },
+          "displayName": "Get New Employee Details",
+          "nextStep": "Send Email to Manager",
+          "type": "action",
+          "versionNumber": 2
+        },
+        "Send Email to Manager": {
+          "actionId": "sp:send-email",
+          "attributes": {
+            "body": "A new employee has been created in the system.\n\nEmployee Name: ${employeeName}\nEmployee Email: ${employeeEmail}\n\nPlease ensure appropriate access and onboarding steps are completed.",
+            "context": {
+              "employeeEmail.$": "$.getIdentity.emailAddress",
+              "employeeName.$": "$.getIdentity.name"
+            },
+            "recipientEmailList.$": "$.getIdentity.managerRef.name",
+            "subject": "New Employee Created - Action Required"
+          },
+          "displayName": "Notify Manager",
+          "nextStep": "End Step - Success",
+          "type": "action",
+          "versionNumber": 2
+        }
+      }
+    },
+    "description": "Workflow to send an email notification to the manager when a new employee is created",
+    "enabled": false,
+    "id": "8281d257-0531-47a1-9cea-da60bebd83f5",
+    "modified": "2026-09-07T09:32:58.974054202Z",
+    "modifiedBy": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "name": "Send Email to Manager for New Employee",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "id": "idn:identity-created",
+        "integrationId": null
+      },
+      "type": "EVENT"
+    }
+  },
+  "self": {
+    "id": "8281d257-0531-47a1-9cea-da60bebd83f5",
+    "name": "Send Email to Manager for New Employee",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}

@@ -49,6 +49,48 @@
         "parentId": "2e67d76cc89247cebe45c7459ab6587f"
       },
       {
+        "accessProfiles": [],
+        "created": "2026-09-07T10:36:24.423656Z",
+        "description": null,
+        "entitlements": [],
+        "id": "9fe2e10b665e4277b6a1bae52e3b4a23",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": null,
+                    "key": {
+                      "property": "attribute.jobTitle",
+                      "sourceId": null,
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "ABC",
+                    "values": null
+                  }
+                ],
+                "key": null,
+                "operation": "AND",
+                "stringValue": "",
+                "values": null
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          },
+          "identities": null,
+          "type": "STANDARD"
+        },
+        "modified": "2026-09-07T10:36:35.57157Z",
+        "name": "Demo",
+        "owner": null,
+        "parentId": "2e67d76cc89247cebe45c7459ab6587f"
+      },
+      {
         "accessProfiles": [
           {
             "id": "4347517a0eae4667a7d08a3540738ed2",
@@ -265,7 +307,7 @@
       "identities": null,
       "type": "STANDARD"
     },
-    "modified": "2026-09-02T12:49:58.817934Z",
+    "modified": "2026-09-07T10:36:24.442457Z",
     "name": "SalesGlobal",
     "owner": {
       "id": "bd04981e863b4ccd9b751081eb220ddd",
