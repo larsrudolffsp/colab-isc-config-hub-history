@@ -6,7 +6,7 @@
     "beforeProvisioningRule": null,
     "connectorAttributes": {
       "authenticationMethod": "BasicLogin",
-      "cloudCacheUpdate": "1788525262397",
+      "cloudCacheUpdate": 1788707235640,
       "cloudDisplayName": "sf",
       "connectionType": "direct",
       "connectorName": "Web Services",
@@ -28,8 +28,8 @@
         "exp": "15f"
       },
       "possibleHttpErrors": {},
-      "since": "2026-09-04T11:10:44.392Z",
-      "status": "SOURCE_STATE_UNCHECKED_SOURCE_NO_ACCOUNTS",
+      "since": "2026-09-06T15:07:15.619Z",
+      "status": "SOURCE_STATE_FAILURE_CLUSTER",
       "supportsDeltaAgg": "true",
       "templateApplication": "Web Services Template",
       "throwProvAfterRuleException": true,

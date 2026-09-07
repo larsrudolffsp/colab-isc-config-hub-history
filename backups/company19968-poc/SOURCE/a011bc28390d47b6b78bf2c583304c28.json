@@ -12,7 +12,7 @@
       "checkDeletedDisabled": false,
       "clientId": "2457077236c348e080f74e2da69ecc64",
       "cloudAuthoritativeSourcePrecedence": 30,
-      "cloudCacheUpdate": 1778105428049,
+      "cloudCacheUpdate": 1788719772932,
       "cloudDisplayName": "Identity Fusion",
       "cloudIdentityProfileName": "Identity Fusion",
       "connectionType": "direct",
@@ -78,7 +78,7 @@
       "recommendationStatus": "ERROR",
       "reset": false,
       "resetProcessingFlag": false,
-      "since": "2026-01-13T13:37:36.374Z",
+      "since": "2026-09-06T18:36:12.918Z",
       "sourceConnected": true,
       "sources": [
         "External Users",
