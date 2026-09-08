@@ -31,7 +31,7 @@
             },
             "method": "post",
             "oAuthClientId": "2457077236c348e080f74e2da69ecc64",
-            "oAuthClientSecret": "$.secrets.18e7a47a-1c06-4c1c-adf0-51ff7e49e0e6",
+            "oAuthClientSecret": "",
             "oAuthCredentialLocation": "oAuthInHeader",
             "oAuthTokenUrl": "https://company19968-poc.api.identitynow-demo.com/oauth/token",
             "requestContentType": "json",

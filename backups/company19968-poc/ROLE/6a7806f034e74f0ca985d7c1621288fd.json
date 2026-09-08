@@ -85,55 +85,6 @@
             "operation": "AND",
             "stringValue": null,
             "values": null
-          },
-          {
-            "children": [
-              {
-                "children": null,
-                "key": {
-                  "property": "attribute.Company",
-                  "sourceId": "a768e9d725434f668174b1205088259b",
-                  "type": "ACCOUNT"
-                },
-                "operation": "CONTAINS",
-                "stringValue": null,
-                "values": [
-                  "Bestrun"
-                ]
-              },
-              {
-                "children": null,
-                "key": {
-                  "property": "attribute.cloudLifecycleState",
-                  "sourceId": null,
-                  "type": "IDENTITY"
-                },
-                "operation": "EQUALS",
-                "stringValue": null,
-                "values": [
-                  "active"
-                ]
-              },
-              {
-                "children": null,
-                "key": {
-                  "property": "attribute.mitarbeiterleiheFiliale",
-                  "sourceId": null,
-                  "type": "IDENTITY"
-                },
-                "operation": "EQUALS",
-                "stringValue": null,
-                "values": [
-                  "Berlin",
-                  "Hamburg",
-                  "München"
-                ]
-              }
-            ],
-            "key": null,
-            "operation": "AND",
-            "stringValue": null,
-            "values": null
           }
         ],
         "key": null,
@@ -144,7 +95,7 @@
       "identities": null,
       "type": "STANDARD"
     },
-    "modified": "2026-09-02T10:56:11.149429Z",
+    "modified": "2026-09-07T12:17:40.88066Z",
     "name": "Kassensystem (nicht angebunden)",
     "owner": {
       "id": "4e66ef089395450e9ba7599d47619d3e",
