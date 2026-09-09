@@ -1,0 +1,42 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-09-08T14:26:50.832619456Z",
+    "creator": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "definition": {
+      "steps": {}
+    },
+    "description": "",
+    "enabled": false,
+    "id": "40b902f0-2731-4f97-8bc5-f6d09910ed01",
+    "modified": "2026-09-08T14:26:50.832619456Z",
+    "modifiedBy": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "name": "dsf",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "trigger": {
+      "attributes": {
+        "integrationId": null
+      },
+      "type": ""
+    }
+  },
+  "self": {
+    "id": "40b902f0-2731-4f97-8bc5-f6d09910ed01",
+    "name": "dsf",
+    "type": "WORKFLOW"
+  },
+  "version": 1
+}
