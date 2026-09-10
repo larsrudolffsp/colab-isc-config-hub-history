@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "body": "Dear $__recipient.name,<br/><br/>\n<p>The Just-In-Time duration window ${requestedForIdentityName} initiated for ${entitlementName} will expire in <strong>15 minutes</strong>.</p>\n#if($applicationName)<p>Application: $applicationName</p>#end\n#if($activationUrl)<p>You may review this activation in $__global.productName <a href=\"$activationUrl\" target=\"_blank\">here</a>.</p>#end\n<br/>Thanks,<br/>The $__global.productName Team<br/>",
+    "created": null,
+    "description": "Notifies a manager, owner, or other interested party that a Just-In-Time activation initiated by another identity expires in 15 minutes.",
+    "details": null,
+    "footer": null,
+    "from": "$__global.emailFromAddress",
+    "header": null,
+    "id": "[Default] Just-In-Time Activation - 15 Minute Reminder for Requested-For Identity",
+    "inboxTemplate": null,
+    "key": "jit_activation_fifteen_min_for_requested-for_identity",
+    "locale": "en",
+    "medium": "EMAIL",
+    "modified": null,
+    "name": "Just-In-Time Activation - 15 Minute Reminder for Requested-For Identity",
+    "replyTo": "$__global.emailFromAddress",
+    "slackTemplate": null,
+    "subject": "Just-In-Time access for ${requestedForIdentityName} expires in 15 minutes",
+    "teamsTemplate": null
+  },
+  "self": {
+    "id": "[Default] Just-In-Time Activation - 15 Minute Reminder for Requested-For Identity",
+    "name": "Just-In-Time Activation - 15 Minute Reminder for Requested-For Identity",
+    "type": "NOTIFICATION_TEMPLATE"
+  },
+  "version": 1
+}

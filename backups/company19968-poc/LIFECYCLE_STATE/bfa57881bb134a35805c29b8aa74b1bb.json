@@ -41,7 +41,7 @@
     },
     "enabled": true,
     "id": "bfa57881bb134a35805c29b8aa74b1bb",
-    "identityCount": 1,
+    "identityCount": 0,
     "identityProfileRef": {
       "id": "0dea179fe2e14f7398516f515227e2f4",
       "name": "SuccessFactors",

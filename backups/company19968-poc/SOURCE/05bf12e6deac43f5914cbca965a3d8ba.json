@@ -1,0 +1,345 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "cloudCacheUpdate": 1789037322869,
+      "cloudDisplayName": "Internal Loop Back adapter",
+      "connectionTimeout": "1",
+      "connectionType": "direct",
+      "connectorName": "Identity Security Cloud Governance",
+      "deleteThresholdPercentage": 10,
+      "deltaAggregationEnabled": false,
+      "entitlementDeltaAggregationEnabled": false,
+      "grantType": "client_credentials",
+      "hasFullAggregationCompleted": true,
+      "healthCheckTimeout": 90,
+      "healthy": true,
+      "idnProxyType": "sp-connect",
+      "iscUrl": "https://company19968-poc.api.identitynow-demo.com",
+      "pageSize": 200,
+      "patId": "716f24a1ab314e60b0fd46731c08faf9",
+      "reassignAccessProfiles": true,
+      "reassignAccessRequests": true,
+      "reassignCertifications": true,
+      "reassignEntitlements": true,
+      "reassignGovGroups": true,
+      "reassignRoles": true,
+      "reassignSources": true,
+      "reassignWorkflows": true,
+      "since": "2026-09-10T10:48:42.850Z",
+      "sourceConnected": true,
+      "spConnectorSpecId": "05bde7b6-a1ad-4ac7-9dab-4e341ae4a7b7",
+      "spConnectorSupportsCustomSchemas": true,
+      "status": "SOURCE_STATE_HEALTHY",
+      "supportsDeltaAgg": true,
+      "templateApplication": "Identity Security Cloud Governance"
+    },
+    "connectorClass": "",
+    "connectorScriptName": "IdentitySecurityCloudGovernance-saas",
+    "correlationConfigDetails": {
+      "attributeAssignments": [
+        {
+          "complex": false,
+          "filterString": null,
+          "ignoreCase": true,
+          "matchMode": null,
+          "operation": "EQ",
+          "property": "email",
+          "sequence": 2,
+          "value": "email"
+        },
+        {
+          "complex": false,
+          "filterString": null,
+          "ignoreCase": true,
+          "matchMode": null,
+          "operation": "EQ",
+          "property": "uid",
+          "sequence": 1,
+          "value": "uid"
+        }
+      ],
+      "id": "ada69b2727dc4df2a7c77e33a90e0274",
+      "name": "05bf12e6deac43f5914cbca965a3d8ba Account Correlation Config"
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": 10,
+    "description": "Internal Loop Back adapter",
+    "features": [],
+    "id": "05bf12e6deac43f5914cbca965a3d8ba",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "Internal Loop Back adapter",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": null,
+    "provisionAsCsv": false,
+    "provisioningPolicies": [
+      {
+        "description": null,
+        "fields": [
+          {
+            "attributes": {},
+            "isMultiValued": false,
+            "isRequired": true,
+            "name": "id",
+            "transform": {
+              "attributes": {
+                "name": "uid"
+              },
+              "type": "identityAttribute"
+            },
+            "type": "string"
+          }
+        ],
+        "name": "Account",
+        "usageType": "CREATE"
+      }
+    ],
+    "schemas": [
+      {
+        "attributes": [
+          {
+            "description": "Capablites  Associated With Account ",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "UserLevels",
+            "nativeName": null,
+            "schema": {
+              "id": "93cd16867dc54cd9ad0d46ba6d0a4f88",
+              "name": "UserLevels",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Governance Group Assocaited With  Account ",
+            "isEntitlement": true,
+            "isGroup": true,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "Governance Groups",
+            "nativeName": null,
+            "schema": {
+              "id": "1d26cd6238d549f3a967c67c9d90b112",
+              "name": "Governance Groups",
+              "type": "CONNECTOR_SCHEMA"
+            },
+            "type": "STRING"
+          },
+          {
+            "description": "Identifies Whether Account Is Manager Or Not ",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "isManager",
+            "nativeName": null,
+            "schema": null,
+            "type": "BOOLEAN"
+          },
+          {
+            "description": "The Identity Security Cloud Display Name",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Identity Security Cloud User Display Name",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "displayName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Identity Security Cloud User First Name",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "firstName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Identity Security Cloud User ID",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Identity Security Cloud User Last Name",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Identity Security Cloud User Name",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "uid",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Identity Security Cloud User Work Email",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "email",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-09-10T09:38:13.029Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "253e761b3acf4da392b9504b0416e9df",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2026-09-10T09:38:13.029Z",
+        "name": "account",
+        "nativeObjectType": "User"
+      },
+      {
+        "attributes": [
+          {
+            "description": "Governance Group Description",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Governance Group Id",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Governance Group Name ",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-09-10T09:38:13.029Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "1d26cd6238d549f3a967c67c9d90b112",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2026-09-10T09:38:13.029Z",
+        "name": "Governance Groups",
+        "nativeObjectType": "Group"
+      },
+      {
+        "attributes": [
+          {
+            "description": "User Level Id",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "User Level Name ",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "User Levels Description",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-09-10T09:38:13.029Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "93cd16867dc54cd9ad0d46ba6d0a4f88",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2026-09-10T09:38:13.029Z",
+        "name": "UserLevels",
+        "nativeObjectType": "Group"
+      }
+    ],
+    "type": "05bde7b6-a1ad-4ac7-9dab-4e341ae4a7b7"
+  },
+  "self": {
+    "id": "05bf12e6deac43f5914cbca965a3d8ba",
+    "name": "Internal Loop Back adapter",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

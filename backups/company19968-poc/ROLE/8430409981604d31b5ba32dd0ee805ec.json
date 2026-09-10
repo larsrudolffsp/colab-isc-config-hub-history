@@ -15,7 +15,13 @@
       "reauthorizationRequired": false,
       "requireEndDate": false
     },
-    "additionalOwners": [],
+    "additionalOwners": [
+      {
+        "id": "53fdbd2e379b40cf9264e5c2a4cb768e",
+        "name": "Adele Schaefer",
+        "type": "IDENTITY"
+      }
+    ],
     "created": "2026-04-29T08:58:04.550264Z",
     "description": null,
     "dimensionRefs": null,
@@ -34,11 +40,11 @@
     "id": "8430409981604d31b5ba32dd0ee805ec",
     "legacyMembershipInfo": null,
     "membership": null,
-    "modified": "2026-04-29T09:06:50.737033Z",
+    "modified": "2026-09-10T10:58:28.19985Z",
     "name": "Multipath Role 2",
     "owner": {
-      "id": "f3d792713df84c6b9ebd097046d447e0",
-      "name": "volker.juergensen",
+      "id": "a58332d0abb64c559d870f0115c4f97b",
+      "name": "Andreas Müller",
       "type": "IDENTITY"
     },
     "privilegeLevel": null,

@@ -7,7 +7,7 @@
     "connectorAttributes": {
       "appTemplateData": "{\"whiteListedAttributes\":[\"enableProvisioningFeature\"]}",
       "clientID": "4a80b595-cef4-4fee-9cba-86995dcb0a6b",
-      "cloudCacheUpdate": 1788349139161,
+      "cloudCacheUpdate": 1789037517040,
       "cloudDisplayName": "EntraID",
       "connectionType": "direct",
       "connectorName": "Microsoft Entra",

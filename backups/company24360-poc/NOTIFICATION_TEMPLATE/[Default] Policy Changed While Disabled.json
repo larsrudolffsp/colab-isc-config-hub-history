@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "body": "#set($_actorName = \"#if($actorId == 'system')System#{else}$__util.getUser($actorId).name#end\")\n#set($policyUrl = \"${__global.productUrl}/ui/pc/$policyTypeUrlId?openViewDetails=true&amp;policyId=$policyId\")\n<p>Dear $__recipient.name,</p>\n<br/>\n<p>This is a notification that the $policyTypeVanityName policy <strong>$policyName</strong> was modified while disabled, and has since been re-enabled by $_actorName. You are receiving this email because you are an owner of this policy.</p>\n<p>We recommend reviewing the current configuration to confirm it still reflects your intended outcome.</p>\n<p>To review <strong>$policyName</strong>, please view the <a href=\"$policyUrl\">policy details page</a>.</p>\n<br/>\n<p>Thanks,<br/>The $__global.productName Team</p>",
+    "created": null,
+    "description": "Sent to the owner(s) of a policy when that policy was modified while disabled and has since been re-enabled.",
+    "details": null,
+    "footer": null,
+    "from": "$__global.emailFromAddress",
+    "header": null,
+    "id": "[Default] Policy Changed While Disabled",
+    "inboxTemplate": null,
+    "key": "policy_version_changed_while_disabled",
+    "locale": "en",
+    "medium": "EMAIL",
+    "modified": null,
+    "name": "Policy Changed While Disabled",
+    "replyTo": "$__global.emailFromAddress",
+    "slackTemplate": null,
+    "subject": "Review Required: $policyName was modified while disabled",
+    "teamsTemplate": null
+  },
+  "self": {
+    "id": "[Default] Policy Changed While Disabled",
+    "name": "Policy Changed While Disabled",
+    "type": "NOTIFICATION_TEMPLATE"
+  },
+  "version": 1
+}
