@@ -5,37 +5,25 @@
     "accountCorrelationRule": null,
     "beforeProvisioningRule": null,
     "connectorAttributes": {
-      "cloudCacheUpdate": "1789046847007",
-      "cloudDisplayName": "Internal Loop Back adapter",
-      "connectionTimeout": "1",
+      "cloudCacheUpdate": 1789117864531,
+      "cloudDisplayName": "Loopback",
+      "connectionTimeout": 1,
       "connectionType": "direct",
-      "connectorName": "Identity Security Cloud Governance",
+      "connectorName": "SailPoint Identity Security Cloud Governance",
       "deleteThresholdPercentage": 10,
       "deltaAggregationEnabled": false,
       "entitlementDeltaAggregationEnabled": false,
       "grantType": "client_credentials",
-      "hasFullAggregationCompleted": true,
       "healthCheckTimeout": 90,
-      "healthy": true,
+      "healthy": false,
       "idnProxyType": "sp-connect",
-      "iscUrl": "https://company19968-poc.api.identitynow-demo.com",
       "pageSize": 200,
-      "patId": "716f24a1ab314e60b0fd46731c08faf9",
-      "reassignAccessProfiles": true,
-      "reassignAccessRequests": true,
-      "reassignCertifications": true,
-      "reassignEntitlements": true,
-      "reassignGovGroups": true,
-      "reassignRoles": true,
-      "reassignSources": true,
-      "reassignWorkflows": true,
-      "since": "2026-09-10T10:48:42.850Z",
-      "sourceConnected": true,
+      "since": "2026-09-11T09:11:04.510Z",
       "spConnectorSpecId": "05bde7b6-a1ad-4ac7-9dab-4e341ae4a7b7",
       "spConnectorSupportsCustomSchemas": true,
-      "status": "SOURCE_STATE_HEALTHY",
+      "status": "SOURCE_STATE_FAILURE_SOURCE",
       "supportsDeltaAgg": true,
-      "templateApplication": "Identity Security Cloud Governance"
+      "templateApplication": "SailPoint Identity Security Cloud Governance"
     },
     "connectorClass": "",
     "connectorScriptName": "IdentitySecurityCloudGovernance-saas",
@@ -62,21 +50,21 @@
           "value": "uid"
         }
       ],
-      "id": "ada69b2727dc4df2a7c77e33a90e0274",
-      "name": "05bf12e6deac43f5914cbca965a3d8ba Account Correlation Config"
+      "id": "0eb46f6901ca423fa68478d08012ff6a",
+      "name": "8b7c82d07e524657945f2a9194159f1a Account Correlation Config"
     },
     "crossTenantConnectorAttributes": {},
     "deleteThreshold": 10,
-    "description": "Internal Loop Back adapter",
+    "description": "Loopback",
     "features": [],
-    "id": "05bf12e6deac43f5914cbca965a3d8ba",
+    "id": "8b7c82d07e524657945f2a9194159f1a",
     "managementWorkgroup": null,
     "managerCorrelationMapping": null,
     "managerCorrelationRule": null,
-    "name": "Internal Loop Back adapter",
+    "name": "Loopback",
     "owner": {
-      "id": "bd04981e863b4ccd9b751081eb220ddd",
-      "name": "andre.hostombe",
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
       "type": "IDENTITY"
     },
     "passwordPolicies": null,
@@ -115,7 +103,7 @@
             "name": "UserLevels",
             "nativeName": null,
             "schema": {
-              "id": "93cd16867dc54cd9ad0d46ba6d0a4f88",
+              "id": "b4d06dbf45384841b6b0acc559a2249b",
               "name": "UserLevels",
               "type": "CONNECTOR_SCHEMA"
             },
@@ -130,7 +118,7 @@
             "name": "Governance Groups",
             "nativeName": null,
             "schema": {
-              "id": "1d26cd6238d549f3a967c67c9d90b112",
+              "id": "e4e5d49b2bc44ef4bf3cec4bd19fa5b8",
               "name": "Governance Groups",
               "type": "CONNECTOR_SCHEMA"
             },
@@ -223,39 +211,17 @@
             "nativeName": null,
             "schema": null,
             "type": "STRING"
-          },
-          {
-            "description": "identityState",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "identityState",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "identityStatus",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "identityStatus",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
           }
         ],
         "configuration": {},
-        "created": "2026-09-10T09:38:13.029Z",
+        "created": "2026-09-11T08:49:49.674Z",
         "displayAttribute": "name",
         "features": [],
         "hierarchyAttribute": null,
-        "id": "253e761b3acf4da392b9504b0416e9df",
+        "id": "d73db0d286d948e6b6d35f58b1b09be1",
         "identityAttribute": "id",
         "includePermissions": false,
-        "modified": "2026-09-10T13:27:26.890Z",
+        "modified": "2026-09-11T08:49:49.674Z",
         "name": "account",
         "nativeObjectType": "User"
       },
@@ -296,14 +262,14 @@
           }
         ],
         "configuration": {},
-        "created": "2026-09-10T09:38:13.029Z",
+        "created": "2026-09-11T08:49:49.675Z",
         "displayAttribute": "name",
         "features": [],
         "hierarchyAttribute": null,
-        "id": "1d26cd6238d549f3a967c67c9d90b112",
+        "id": "e4e5d49b2bc44ef4bf3cec4bd19fa5b8",
         "identityAttribute": "id",
         "includePermissions": false,
-        "modified": "2026-09-10T09:38:13.029Z",
+        "modified": "2026-09-11T08:49:49.675Z",
         "name": "Governance Groups",
         "nativeObjectType": "Group"
       },
@@ -344,14 +310,14 @@
           }
         ],
         "configuration": {},
-        "created": "2026-09-10T09:38:13.029Z",
+        "created": "2026-09-11T08:49:49.675Z",
         "displayAttribute": "name",
         "features": [],
         "hierarchyAttribute": null,
-        "id": "93cd16867dc54cd9ad0d46ba6d0a4f88",
+        "id": "b4d06dbf45384841b6b0acc559a2249b",
         "identityAttribute": "id",
         "includePermissions": false,
-        "modified": "2026-09-10T09:38:13.029Z",
+        "modified": "2026-09-11T08:49:49.675Z",
         "name": "UserLevels",
         "nativeObjectType": "Group"
       }
@@ -359,8 +325,8 @@
     "type": "05bde7b6-a1ad-4ac7-9dab-4e341ae4a7b7"
   },
   "self": {
-    "id": "05bf12e6deac43f5914cbca965a3d8ba",
-    "name": "Internal Loop Back adapter",
+    "id": "8b7c82d07e524657945f2a9194159f1a",
+    "name": "Loopback",
     "type": "SOURCE"
   },
   "version": 1

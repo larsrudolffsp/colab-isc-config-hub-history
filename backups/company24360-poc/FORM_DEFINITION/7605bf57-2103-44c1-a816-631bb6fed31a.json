@@ -1,0 +1,26 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "created": "2026-09-11T09:29:48.696630123Z",
+    "description": "",
+    "formConditions": [],
+    "formElements": [],
+    "formInput": [],
+    "id": "7605bf57-2103-44c1-a816-631bb6fed31a",
+    "modified": "2026-09-11T09:29:48.696630123Z",
+    "name": "adq",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "usedBy": []
+  },
+  "self": {
+    "id": "7605bf57-2103-44c1-a816-631bb6fed31a",
+    "name": "adq",
+    "type": "FORM_DEFINITION"
+  },
+  "version": 1
+}
