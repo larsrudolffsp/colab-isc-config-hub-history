@@ -1,0 +1,365 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "authenticationMethod": "No Auth",
+      "cloudCacheUpdate": 1789555220629,
+      "cloudDisplayName": "Entro Security NHI",
+      "connectionParameters": [
+        {
+          "curlCommand": "curl --location --request GET '$application.baseUrl$/v1/identity-now/nhi?take=1&skip=0' --header 'Accept: application/json' --header 'Authorization: Basic $application.username$:$application.password$'",
+          "curlEnabled": true,
+          "operationType": "Test Connection",
+          "requestType": "curl",
+          "responseCode": [
+            "200"
+          ],
+          "uniqueNameForEndPoint": "Test Connection - Fetch Single NHI from Entro Security NHI"
+        },
+        {
+          "curlCommand": "curl --location --request GET '$application.baseUrl$/v1/identity-now/nhi?take=100&skip=0' --header 'Accept: application/json' --header 'Authorization: Basic $application.username$:$application.password$'",
+          "curlEnabled": true,
+          "operationType": "Account Aggregation",
+          "paginationSteps": "$take$ = 100\nTERMINATE_IF $NO_RECORDS$ || $RECORDS_COUNT$ < $take$\n$skip$ = $skip$ + $take$\n$endpoint.fullUrl$ = $application.baseUrl$ + \"/v1/identity-now/nhi?take=\" + $take$ + \"&skip=\" + $skip$",
+          "requestType": "curl",
+          "resMappingObj": {
+            "account": "$.attributes.account",
+            "accountNickname": "$.attributes.accountNickname",
+            "createdDate": "$.attributes.createdDate",
+            "entroTokenUrl": "$.attributes.entroTokenUrl",
+            "entroUniqueIdentifier": "$.attributes.entroUniqueIdentifier",
+            "environment": "$.attributes.environment",
+            "expirationDate": "$.attributes.expirationDate",
+            "isActive": "$.attributes.isActive",
+            "isAdmin": "$.attributes.isAdmin",
+            "lastActivityDate": "$.attributes.lastActivityDate",
+            "nhiName": "$.attributes.nhiName",
+            "nhiStatus": "$.attributes.nhiStatus",
+            "nhiType": "$.attributes.nhiType",
+            "owner": "$.attributes.owner",
+            "ownerEmail": "$.attributes.ownerEmail",
+            "policies_application": "$.attributes.policies.application[*]",
+            "policies_delegated": "$.attributes.policies.delegated[*]",
+            "sourceSystem": "$.attributes.sourceSystem",
+            "tags": "$.attributes.tags[*]",
+            "token": "$.attributes.token",
+            "url": "$.attributes.url"
+          },
+          "responseCode": [
+            "200"
+          ],
+          "rootPath": "$.items[*]",
+          "uniqueNameForEndPoint": "Fetch All NHI from Entro Security"
+        }
+      ],
+      "connectionTimeout": "60",
+      "connectionType": "direct",
+      "connectorName": "Web Services SaaS",
+      "deleteThresholdPercentage": 10,
+      "deltaAggregationEnabled": false,
+      "enableStatus": "isActive=true",
+      "encrypted": "customAuthenticationValue",
+      "entitlementDeltaAggregationEnabled": false,
+      "genericWebServiceBaseUrl": "https://api.entro.security",
+      "healthCheckTimeout": 90,
+      "healthy": false,
+      "idnProxyType": "sp-connect",
+      "possibleHttpErrorMessages": {},
+      "since": "2026-09-16T08:27:55.445Z",
+      "source-phase": "standard-setup",
+      "spConnectorSpecId": "7aa95c2a-6c38-4f39-9bb9-040f11641ee3",
+      "spConnectorSupportsCustomSchemas": true,
+      "status": "SOURCE_STATE_FAILURE_SOURCE",
+      "supportsDeltaAgg": true,
+      "target-system-name": "Entro Security NHI",
+      "templateApplication": "Web Services SaaS",
+      "username": "se-password-reset@sailpoint.com"
+    },
+    "connectorClass": "",
+    "connectorScriptName": "web-services-saas",
+    "correlationConfigDetails": {
+      "attributeAssignments": null,
+      "id": null,
+      "name": null
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": 10,
+    "description": "Entro Security NHI",
+    "features": [
+      "AUTHENTICATE",
+      "MACHINE_IDENTITY_AGGREGATION",
+      "UNLOCK"
+    ],
+    "id": "9b66b4aa36dd4281b34b95d954b01b24",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "Entro Security NHI",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": null,
+    "provisionAsCsv": false,
+    "provisioningPolicies": [],
+    "schemas": [
+      {
+        "attributes": [
+          {
+            "description": "Array of application-level policies associated with the NHI",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "policies_application",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Array of delegated policies associated with the NHI",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "policies_delegated",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Array of tags associated with the NHI for organization and filtering",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Authentication token or credential value for the NHI",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "token",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Boolean indicating whether the NHI has administrative privileges",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "isAdmin",
+            "nativeName": null,
+            "schema": null,
+            "type": "BOOLEAN"
+          },
+          {
+            "description": "Boolean indicating whether the NHI is currently active",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "isActive",
+            "nativeName": null,
+            "schema": null,
+            "type": "BOOLEAN"
+          },
+          {
+            "description": "Cloud provider account ID (e.g., AWS account number, Azure subscription ID)",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "account",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Cloud provider or source system (e.g., AWS, AZURE, GCP, OKTA, GITHUB)",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "sourceSystem",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Current status of the NHI (e.g., Active, Inactive, Expired)",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "nhiStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Direct URL link to the NHI in the cloud provider's console",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "url",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Email address of the NHI owner",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerEmail",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Environment classification for the NHI (e.g., DEVELOPMENT, PRODUCTION)",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "environment",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Human-readable name or nickname for the cloud account",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "accountNickname",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Name of the NHI owner",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "owner",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Name of the Non-Human Identity",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "nhiName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Timestamp of the most recent activity associated with the NHI",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastActivityDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Timestamp when the NHI was created",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createdDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Token or credential expiration date",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "expirationDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Type or category of the NHI (e.g., AWS IAM Access Key, GitHub Token)",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "nhiType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "URL link to the NHI in Entro Security's interface",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "entroTokenUrl",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Unique identifier for the NHI within Entro Security system (e.g., TKN-4242)",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "entroUniqueIdentifier",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {},
+        "created": "2026-09-16T08:21:59.310Z",
+        "displayAttribute": "nhiName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "1a683aec7681470180514d2e0c308ee9",
+        "identityAttribute": "entroUniqueIdentifier",
+        "includePermissions": false,
+        "modified": "2026-09-16T08:28:33.401Z",
+        "name": "account",
+        "nativeObjectType": "NHI"
+      }
+    ],
+    "type": "7aa95c2a-6c38-4f39-9bb9-040f11641ee3"
+  },
+  "self": {
+    "id": "9b66b4aa36dd4281b34b95d954b01b24",
+    "name": "Entro Security NHI",
+    "type": "SOURCE"
+  },
+  "version": 1
+}
