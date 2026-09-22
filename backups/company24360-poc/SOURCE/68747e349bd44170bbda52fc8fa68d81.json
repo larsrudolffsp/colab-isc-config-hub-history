@@ -776,6 +776,1036 @@
       {
         "attributes": [
           {
+            "description": "ARN of the IAM user that owns the SSH key.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS account ID that owns the SSH key.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS partition of the owning account (for example aws, aws-us-gov, or aws-cn).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsPartition",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Console URL for the IAM user that owns the SSH key.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "resourceUrl",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Credential family. Always AWS_CODECOMMIT_SSH_KEY for this resource.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "credentialType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "IAM user ID of the owner. Rename-stable context; not a machine classification.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerUserId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "IAM user name of the owner. Identity changes if this name is renamed.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerUserName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Observed IAM status from AWS (for example Active, Inactive, or Expired). Open string; future AWS values are allowed.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "status",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SSH public key ID. Public key body and fingerprint are omitted in v1.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "sshPublicKeyId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the credential. Always AWS IAM Credentials.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Stable credential identity. Format is {awsAccountId}:{credentialType}:{ownerUserName}:{sshPublicKeyId}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "credentialIdentity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Stable credential identity. Format is {awsAccountId}:{credentialType}:{ownerUserName}:{sshPublicKeyId}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Upload timestamp of the SSH public key.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "uploadDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:iam-credentials",
+          "resourceId": "aws:iam-codecommit-ssh-key",
+          "resourceType": "std:credential"
+        },
+        "created": "2026-09-22T07:29:02.693Z",
+        "displayAttribute": "sshPublicKeyId",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "45828f9494b94e2f8748247d4d68a918",
+        "identityAttribute": "credentialIdentity",
+        "includePermissions": false,
+        "modified": "2026-09-22T07:29:02.693Z",
+        "name": "AWS CodeCommit SSH Key",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "ARN of the IAM user that owns the access key.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS access key ID returned by ListAccessKeys. The secret access key is never collected.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "accessKeyId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS account ID that owns the access key.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS partition of the owning account (for example aws, aws-us-gov, or aws-cn).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsPartition",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Console URL for the IAM user that owns the access key.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "resourceUrl",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation timestamp of the access key.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Credential family. Always AWS_IAM_ACCESS_KEY for this resource.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "credentialType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "IAM user ID of the owner. Rename-stable context; not a machine classification.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerUserId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "IAM user name of the owner. Identity changes if this name is renamed.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerUserName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last-used timestamp from GetAccessKeyLastUsed. Absence is not proof the key was never used.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastUsedDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Observed IAM status from AWS (for example Active, Inactive, or Expired). Open string; future AWS values are allowed.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "status",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Region from GetAccessKeyLastUsed. Documented N/A sentinels are omitted.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastUsedRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the credential. Always AWS IAM Credentials.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Service name from GetAccessKeyLastUsed. Documented N/A sentinels are omitted.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastUsedService",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Stable credential identity. Format is {awsAccountId}:{credentialType}:{ownerUserName}:{accessKeyId}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "credentialIdentity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Stable credential identity. Format is {awsAccountId}:{credentialType}:{ownerUserName}:{accessKeyId}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:iam-credentials",
+          "resourceId": "aws:iam-user-access-key",
+          "resourceType": "std:credential"
+        },
+        "created": "2026-09-22T07:29:02.693Z",
+        "displayAttribute": "accessKeyId",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "17bab03ea8074771bf164cf46a2daee8",
+        "identityAttribute": "credentialIdentity",
+        "includePermissions": false,
+        "modified": "2026-09-22T07:29:02.693Z",
+        "name": "AWS IAM User Access Key",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "ARN of the IAM user that owns the credential.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS account ID that owns the credential.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS partition of the owning account (for example aws, aws-us-gov, or aws-cn).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsPartition",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Console URL for the IAM user that owns the credential.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "resourceUrl",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation timestamp of the service-specific credential.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Credential family. Always AWS_CODECOMMIT_HTTPS_CREDENTIAL for this resource.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "credentialType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Generated Git username for the CodeCommit HTTPS credential.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "serviceUserName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "IAM user ID of the owner. Rename-stable context; not a machine classification.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerUserId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "IAM user name of the owner. Identity changes if this name is renamed.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerUserName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Observed IAM status from AWS (for example Active, Inactive, or Expired). Open string; future AWS values are allowed.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "status",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the credential. Always AWS IAM Credentials.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Service scope. v1 is always codecommit.amazonaws.com.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "serviceName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Service-specific credential ID. The service password is never collected.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "serviceSpecificCredentialId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Stable credential identity. Format is {awsAccountId}:{credentialType}:{ownerUserName}:{serviceSpecificCredentialId}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "credentialIdentity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Stable credential identity. Format is {awsAccountId}:{credentialType}:{ownerUserName}:{serviceSpecificCredentialId}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:iam-credentials",
+          "resourceId": "aws:iam-codecommit-https-credential",
+          "resourceType": "std:credential"
+        },
+        "created": "2026-09-22T07:29:02.693Z",
+        "displayAttribute": "serviceUserName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "414c08fe2e7c49b498f6dd18a9620dcf",
+        "identityAttribute": "credentialIdentity",
+        "includePermissions": false,
+        "modified": "2026-09-22T07:29:02.693Z",
+        "name": "AWS CodeCommit HTTPS Credential",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "ARN of the IAM user that owns the signing certificate.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS account ID that owns the signing certificate.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS partition of the owning account (for example aws, aws-us-gov, or aws-cn).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsPartition",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Console URL for the IAM user that owns the signing certificate.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "resourceUrl",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Credential family. Always AWS_IAM_SIGNING_CERTIFICATE for this resource.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "credentialType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "IAM user ID of the owner. Rename-stable context; not a machine classification.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerUserId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "IAM user name of the owner. Identity changes if this name is renamed.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "ownerUserName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Observed IAM status from AWS (for example Active, Inactive, or Expired). Open string; future AWS values are allowed.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "status",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the credential. Always AWS IAM Credentials.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Signing certificate ID. Certificate body is omitted.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "certificateId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Stable credential identity. Format is {awsAccountId}:{credentialType}:{ownerUserName}:{certificateId}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "credentialIdentity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Stable credential identity. Format is {awsAccountId}:{credentialType}:{ownerUserName}:{certificateId}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Upload timestamp of the signing certificate.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "uploadDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:iam-credentials",
+          "resourceId": "aws:iam-signing-certificate",
+          "resourceType": "std:credential"
+        },
+        "created": "2026-09-22T07:29:02.693Z",
+        "displayAttribute": "certificateId",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "ea5d7133661b4ef08aedc47a46fd4eee",
+        "identityAttribute": "credentialIdentity",
+        "includePermissions": false,
+        "modified": "2026-09-22T07:29:02.693Z",
+        "name": "AWS IAM Signing Certificate",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "ARN of the Lambda function that rotates the secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "rotationLambdaARN",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "ARN of the role used for externally managed rotation.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "externalSecretRotationRoleArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS account ID where the secret resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the secret resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS service that created and manages the secret, if any.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "owningService",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Resource Name of the secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "arn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Amazon Resource Name of the secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Date deletion of the secret was requested.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "deletedDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Date the secret is next scheduled to rotate.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "nextRotationDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Date the secret value was last retrieved.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastAccessedDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Date the secret was created.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createdDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Date the secret was last modified.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastChangedDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Date the secret was last rotated.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastRotatedDate",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Description of the secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Friendly name of the secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "JSON resource policy returned by GetResourcePolicy.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "resourcePolicy",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Length of the rotation window for the secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "rotationDuration",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Metadata describing externally managed rotation of the secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "externalSecretRotationMetadata",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Number of days between automatic rotations of the secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "rotationAutomaticallyAfterDays",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Primary region of a replicated secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "primaryRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Replication state of the secret in each replica region.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "replicationStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "SailPoint business application of the secret. Always AWS Secrets Manager.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Schedule expression that defines when the secret rotates.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "rotationScheduleExpression",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The KMS key used to encrypt the secret value.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "kmsKeyId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The tags applied to the secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Type of the secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "type",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Version identifiers of the secret mapped to their staging labels.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "versionIdsToStages",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Whether automatic rotation is enabled for the secret.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "rotationEnabled",
+            "nativeName": null,
+            "schema": null,
+            "type": "BOOLEAN"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:secretsmanager",
+          "resourceId": "aws:secretsmanager-secret",
+          "resourceType": "std:credential"
+        },
+        "created": "2026-09-22T07:29:02.692Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "75a13784489a4cd6995ca959e4434d25",
+        "identityAttribute": "arn",
+        "includePermissions": false,
+        "modified": "2026-09-22T07:29:02.692Z",
+        "name": "AWS Secrets Manager Secret",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
             "description": "ARN of the S3 Vectors index (when storage type is S3_VECTORS).",
             "isEntitlement": false,
             "isGroup": false,
@@ -2143,6 +3173,363 @@
         "modified": "2026-08-16T03:57:37.317Z",
         "name": "Role",
         "nativeObjectType": "Role"
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID that owns the resource.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS action connector type (for example SLACK, JIRA_CLOUD).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "category",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Action connector description.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "description",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Business application name (Amazon Quick).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation time (ISO-8601).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createdAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Display name of the action connector.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "ISC subtype TOOL.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "type",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last update time (ISO-8601).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "updatedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Outbound integration actions enabled on the connector (least-privilege review).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "enabledActions",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Provisioning status of the action connector.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "status",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Short identifier of the action connector.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "actionConnectorId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The action connector ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "arn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The action connector ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "VPC connection ARN when outbound calls use private networking.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "vpcConnectionArn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:quick",
+          "resourceId": "aws:quick-action-connector",
+          "resourceType": "std:capability"
+        },
+        "created": "2026-09-22T07:29:02.693Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "3ee5e7fd28714826bd24fc8e166eb1e3",
+        "identityAttribute": "arn",
+        "includePermissions": false,
+        "modified": "2026-09-22T07:29:02.693Z",
+        "name": "Amazon Quick Action Connector",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "AWS account ID that owns the resource.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsAccountId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "AWS region where the resource resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "awsRegion",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Agent description.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Business application name (Amazon Quick).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creation time (ISO-8601).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createdAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Creator identifier from the API.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "creator",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Display name of the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "ISC subtype AGENT.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "type",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Last update time (ISO-8601).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "updatedAt",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Operational health of the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Publication lifecycle state.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentLifecycle",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Short identifier of the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The agent ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "arn",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The agent ARN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:quick",
+          "resourceId": "aws:quick-agent",
+          "resourceType": "std:agent"
+        },
+        "created": "2026-09-22T07:29:02.693Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "eaa614856f34416bb63612796e194b33",
+        "identityAttribute": "arn",
+        "includePermissions": false,
+        "modified": "2026-09-22T07:29:02.693Z",
+        "name": "Amazon Quick Agent",
+        "nativeObjectType": null
       },
       {
         "attributes": [
@@ -4671,6 +6058,88 @@
       {
         "attributes": [
           {
+            "description": "QuickSight permission actions granted to the principal.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "actions",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Unique identifier of the form aws:quick-action-connector-granted-to#{Action Connector ARN}#{Principal ARN}#{Actions Hash}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:quick",
+          "resourceId": "aws:quick-action-connector-granted-to",
+          "resourceType": "std:access"
+        },
+        "created": "2026-09-22T07:29:02.693Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "609a8c6865cb4bb3955dec2f625a2175",
+        "identityAttribute": null,
+        "includePermissions": false,
+        "modified": "2026-09-22T07:29:02.693Z",
+        "name": "Amazon Quick Action Connector Granted To",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "QuickSight permission actions granted to the principal.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "actions",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Unique identifier of the form aws:quick-agent-granted-to#{Agent ARN}#{Principal ARN}#{Actions Hash}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:quick",
+          "resourceId": "aws:quick-agent-granted-to",
+          "resourceType": "std:access"
+        },
+        "created": "2026-09-22T07:29:02.693Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "a557a53cd32045f1929899efb640da4b",
+        "identityAttribute": null,
+        "includePermissions": false,
+        "modified": "2026-09-22T07:29:02.693Z",
+        "name": "Amazon Quick Agent Granted To",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
             "description": "Relay conversation history setting.",
             "isEntitlement": false,
             "isGroup": false,
@@ -5177,6 +6646,36 @@
         "includePermissions": false,
         "modified": "2026-08-28T01:20:27.622Z",
         "name": "Amazon Connect Customer Domain Belongs To Instance",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Unique identifier of the form aws:quick-agent-uses-action-connector#{Agent ARN}#{Action Connector ARN}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "aws:quick",
+          "resourceId": "aws:quick-agent-uses-action-connector",
+          "resourceType": "std:access"
+        },
+        "created": "2026-09-22T07:29:02.693Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "37d0d3d87b4c436f99011d0c9fa29dd1",
+        "identityAttribute": null,
+        "includePermissions": false,
+        "modified": "2026-09-22T07:29:02.693Z",
+        "name": "Amazon Quick Agent Uses Action Connector",
         "nativeObjectType": null
       },
       {

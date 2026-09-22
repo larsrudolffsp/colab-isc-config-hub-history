@@ -2,7 +2,18 @@
   "jwsHeader": null,
   "jwsSignature": null,
   "object": {
-    "allowedControls": [],
+    "allowedControls": [
+      {
+        "id": "598251c05cfb41ccb5ff582d1a596152",
+        "name": "Weekly Review of SOD Violations",
+        "type": "COMPENSATING_CONTROL"
+      },
+      {
+        "id": "75ce61cef9b647148c52037880885597",
+        "name": "Board Approval",
+        "type": "COMPENSATING_CONTROL"
+      }
+    ],
     "approvalGuidance": null,
     "compensatingControls": "Manager daily review - check for unauthorized supplier creation and review of daily transactions.",
     "conflictingAccessCriteria": {
@@ -39,8 +50,8 @@
     "externalPolicyReference": "https://www.sec.gov/info/smallbus/404guide/intro.shtml",
     "id": "5741a672-2592-43b5-b47a-d66890ae9171",
     "level": "HIGH",
-    "modified": "2026-08-15T14:22:23Z",
-    "modifierId": null,
+    "modified": "2026-09-22T07:24:07Z",
+    "modifierId": "b7b1f5ba329d45179bf35babf0b3d1ba",
     "name": "Money In & Money Out",
     "ownerRef": {
       "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
@@ -59,8 +70,12 @@
     ],
     "type": "CONFLICTING_ACCESS_BASED",
     "violationOwnerAssignmentConfig": {
-      "assignmentRule": "MANAGER",
-      "ownerRef": null
+      "assignmentRule": "STATIC",
+      "ownerRef": {
+        "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+        "name": "lars.rudolff",
+        "type": "IDENTITY"
+      }
     }
   },
   "self": {

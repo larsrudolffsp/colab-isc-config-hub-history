@@ -13,9 +13,14 @@
       }
     ],
     "accessRequestConfig": {
-      "approvalSchemes": [],
-      "commentsRequired": null,
-      "denialCommentsRequired": null,
+      "approvalSchemes": [
+        {
+          "approverId": null,
+          "approverType": "OWNER"
+        }
+      ],
+      "commentsRequired": false,
+      "denialCommentsRequired": false,
       "formDefinitionId": null,
       "maxPermittedAccessDuration": null,
       "reauthorizationRequired": false,
@@ -73,7 +78,7 @@
       "identities": null,
       "type": "STANDARD"
     },
-    "modified": "2026-08-15T14:22:31.049929Z",
+    "modified": "2026-09-22T07:48:28.846481Z",
     "name": "Accounts Receivable Analyst",
     "owner": {
       "id": "b7b1f5ba329d45179bf35babf0b3d1ba",

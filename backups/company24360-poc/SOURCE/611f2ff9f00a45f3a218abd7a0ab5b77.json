@@ -6,7 +6,7 @@
     "beforeProvisioningRule": null,
     "connectorAttributes": {
       "authenticationMethod": "No Auth",
-      "cloudCacheUpdate": 1787310373223,
+      "cloudCacheUpdate": 1790064117354,
       "cloudDisplayName": "TRAKK-WS",
       "connectionParameters": [
         {
@@ -201,16 +201,16 @@
       "genericWebServiceBaseUrl": "http://10.0.0.245:8080",
       "hasFullAggregationCompleted": true,
       "healthCheckTimeout": 30,
-      "healthy": false,
+      "healthy": true,
       "httpCookieSpecsStandard": "true",
       "isGetObjectRequiredForPTA": true,
       "lastAggregationDate_account": "2026-08-15T14:02:12Z",
       "lastAggregationDate_group": "2026-08-15T14:02:20Z",
       "partitionAggregationEnabled": false,
       "possibleHttpErrors": {},
-      "since": "2026-08-21T11:06:13.201Z",
+      "since": "2026-09-22T08:01:57.345Z",
       "sourceConnected": true,
-      "status": "SOURCE_STATE_FAILURE_CLUSTER",
+      "status": "SOURCE_STATE_HEALTHY",
       "supportsDeltaAgg": "true",
       "templateApplication": "Web Services Template",
       "throwProvAfterRuleException": true,
