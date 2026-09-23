@@ -7,7 +7,7 @@
     "connectorAttributes": {
       "SQL": "select emp.employee_id as empid,  emp.emp_firstname as firstname,  emp.emp_lastname as lastname,  emp.emp_middle_name as middlename,  emp.custom2 as preferredname, emp.emp_work_email as email, emp.emp_oth_email as alternate_email, job.job_title as title,  loc.country_code as country,  loc.city as city,  mgr.employee_id as manager,  stat.name as status,  emp.emp_status as empstatus,  emp.emp_zipcode as zipcode,  emp.emp_mobile as mobile,  emp.emp_work_telephone as telephone,  contract.econ_extend_start_date as contractStartDate,  concat(emp.emp_firstname, '.', emp.emp_lastname) as userid,  dept.name as department,  SUBSTRING_INDEX(stat.name, ' ', 1) AS lc_state,  SUBSTRING_INDEX(SUBSTRING_INDEX(stat.name, ' ', 2), ' ', -1) AS emp_type,  CASE WHEN emp.termination_id IS NOT NULL or stat.name like 'Inactive%' THEN True ELSE False END as term,  ftostart,  ftoend,  contract.econ_extend_start_date as contractStartDate,  contract.econ_extend_end_date as contractEndDate from hs_hr_employee as emp  left outer join   (select    ohrm_leave.emp_number,    min(ohrm_leave.date) as ftostart,    max(ohrm_leave.date) as ftoend   from ohrm_leave group by ohrm_leave.emp_number)   as fto on fto.emp_number=emp.emp_number  left outer join hs_hr_emp_contract_extend as contract on contract.emp_number=emp.emp_number  left outer join ohrm_job_title as job on emp.job_title_code=job.id  left outer join hs_hr_emp_reportto as empmgr on emp.emp_number=empmgr.erep_sub_emp_number  left outer join hs_hr_employee as mgr on empmgr.erep_sup_emp_number=mgr.emp_number  left outer join hs_hr_emp_locations as emploc on emp.emp_number=emploc.emp_number  left outer join ohrm_location as loc on emploc.location_id=loc.id  left outer join ohrm_employment_status as stat on emp.emp_status=stat.id  left outer join ohrm_subunit as dept on emp.work_station=dept.id  left outer join ohrm_emp_termination as term on emp.emp_number=term.emp_number  order by userid;",
       "cloudAuthoritativeSourcePrecedence": 20,
-      "cloudCacheUpdate": 1790064111880,
+      "cloudCacheUpdate": 1790143905183,
       "cloudDisplayName": "HR",
       "cloudIdentityProfileName": "HR",
       "connectionType": "direct",
@@ -31,7 +31,7 @@
       "isPermissionEnabled": false,
       "jdbcExceptionBucketing": true,
       "mergeRows": false,
-      "since": "2026-09-22T08:01:51.880Z",
+      "since": "2026-09-23T06:11:45.183Z",
       "sourceConnected": true,
       "status": "SOURCE_STATE_HEALTHY",
       "supportsDeltaAgg": "true",

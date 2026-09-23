@@ -6,7 +6,7 @@
     "beforeProvisioningRule": null,
     "connectorAttributes": {
       "authenticationMethod": "No Auth",
-      "cloudCacheUpdate": 1790064117354,
+      "cloudCacheUpdate": 1790143906297,
       "cloudDisplayName": "TRAKK-WS",
       "connectionParameters": [
         {
@@ -208,7 +208,7 @@
       "lastAggregationDate_group": "2026-08-15T14:02:20Z",
       "partitionAggregationEnabled": false,
       "possibleHttpErrors": {},
-      "since": "2026-09-22T08:01:57.345Z",
+      "since": "2026-09-23T06:11:46.287Z",
       "sourceConnected": true,
       "status": "SOURCE_STATE_HEALTHY",
       "supportsDeltaAgg": "true",

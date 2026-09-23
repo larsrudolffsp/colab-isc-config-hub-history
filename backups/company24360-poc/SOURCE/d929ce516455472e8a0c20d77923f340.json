@@ -6,7 +6,7 @@
     "beforeProvisioningRule": null,
     "connectorAttributes": {
       "authenticationMethod": "BasicLogin",
-      "cloudCacheUpdate": 1790064135972,
+      "cloudCacheUpdate": 1790143938190,
       "cloudDisplayName": "sf",
       "connectionType": "direct",
       "connectorName": "Web Services",
