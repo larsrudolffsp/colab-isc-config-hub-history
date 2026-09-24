@@ -81,6 +81,23 @@
           }
         },
         {
+          "identityAttributeName": "endDate",
+          "transformDefinition": {
+            "attributes": {
+              "id": "ExtractEndDateISO",
+              "input": {
+                "attributes": {
+                  "attributeName": "assignments_status_population_start_end_dates",
+                  "sourceId": "5d9c87abd84a4f4096706316429a1841",
+                  "sourceName": "Non-Employee"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
           "identityAttributeName": "firstname",
           "transformDefinition": {
             "attributes": {
@@ -301,6 +318,23 @@
           }
         },
         {
+          "identityAttributeName": "startDate",
+          "transformDefinition": {
+            "attributes": {
+              "id": "ExtractStartDateISO",
+              "input": {
+                "attributes": {
+                  "attributeName": "assignments_status_population_start_end_dates",
+                  "sourceId": "5d9c87abd84a4f4096706316429a1841",
+                  "sourceName": "Non-Employee"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
           "identityAttributeName": "timezone",
           "transformDefinition": {
             "attributes": {
@@ -356,7 +390,7 @@
     "identityCount": 13,
     "identityExceptionReportReference": null,
     "identityRefreshRequired": false,
-    "modified": "2026-09-10T10:56:25.107Z",
+    "modified": "2026-09-23T11:50:41.263Z",
     "name": "Non-Employee",
     "owner": {
       "id": "bd04981e863b4ccd9b751081eb220ddd",

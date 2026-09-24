@@ -1,0 +1,34 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "input": {
+        "attributes": {
+          "delimiter": ",",
+          "index": 3,
+          "input": {
+            "attributes": {
+              "regex": "\\|",
+              "replacement": ""
+            },
+            "type": "replace"
+          }
+        },
+        "type": "split"
+      },
+      "inputFormat": "MM/dd/yyyy",
+      "outputFormat": "ISO8601"
+    },
+    "id": "ea883359-5cfe-4e31-97c8-e3bf96c835f2",
+    "internal": false,
+    "name": "ExtractEndDateISO",
+    "type": "dateFormat"
+  },
+  "self": {
+    "id": "ea883359-5cfe-4e31-97c8-e3bf96c835f2",
+    "name": "ExtractEndDateISO",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}
