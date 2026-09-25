@@ -2,7 +2,7 @@
   "jwsHeader": null,
   "jwsSignature": null,
   "object": {
-    "body": "Dear $data.userName,<br/><br/>\n<p>$data.adminName has assigned the $data.sourceName source to you to onboard within $__global.productName.</p>\n<p>Onboarding $data.sourceName allows your organization to configure and manage data from that source.</p>\n<p>When you have finished configuring $data.sourceName, submit it to complete setup.</p>\n<p>Go to your <a href=\"$data.deepLink\">assigned sources</a> to begin configuring the $data.sourceName source. Contact your administrator with any questions, or refer to the <a href=\"https://documentation.sailpoint.com/saas/help/\">$__global.productName documentation</a>.</p>\n<br/>Thanks,<br/> The $__global.productName Team<br/>",
+    "body": "Dear $data.userName,<br/><br/>\n<p>$data.adminName has assigned the $data.sourceName source to you to onboard within $__global.productName.</p>\n<p>Onboarding $data.sourceName allows your organization to configure and manage data from that source.</p>\n<p>When you have finished configuring $data.sourceName, submit it to complete setup.</p>\n#set($assignedSourcesUrl = \"${__global.productUrl}${data.deepLink}\")\n#if($data.deepLink && $data.deepLink.startsWith('http'))\n#set($assignedSourcesUrl = $data.deepLink)\n#end\n<p>Go to your <a href=\"$assignedSourcesUrl\">assigned sources</a> to begin configuring the $data.sourceName source. Contact your administrator with any questions, or refer to the <a href=\"https://documentation.sailpoint.com/saas/help/\">$__global.productName documentation</a>.</p>\n<br/>Thanks,<br/> The $__global.productName Team<br/>",
     "created": null,
     "description": "Sent to an assignee when an admin assigns them a source to onboard.",
     "details": null,
