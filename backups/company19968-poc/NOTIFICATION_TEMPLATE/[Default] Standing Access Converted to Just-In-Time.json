@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "body": "Dear ${__recipient.name},<br/><br/>\n<p>The ${requestedObjectName} entitlement has been assigned</p>\n<p><strong>This entitlement requires activation before each use. To activate this entitlement, visit MySailPoint &gt; Launchpad &gt; Just-In-Time Access</strong></p>\n#if ($removeDate)\n<p>Your access to ${requestedObjectName} is scheduled to end on ${removeDate}.</p>\n#end\n<br/>Thanks,<br/>The ${__global.productName} Team<br/>",
+    "created": null,
+    "description": "Sent to the identity when a standing entitlement assignment is converted to Just-In-Time access and must be activated before each use.",
+    "details": null,
+    "footer": null,
+    "from": "$__global.emailFromAddress",
+    "header": null,
+    "id": "[Default] Standing Access Converted to Just-In-Time",
+    "inboxTemplate": null,
+    "key": "jit_assignment_converted_to_jit",
+    "locale": "en",
+    "medium": "EMAIL",
+    "modified": null,
+    "name": "Standing Access Converted to Just-In-Time",
+    "replyTo": "$__global.emailFromAddress",
+    "slackTemplate": null,
+    "subject": "${requestedObjectName} has been assigned",
+    "teamsTemplate": null
+  },
+  "self": {
+    "id": "[Default] Standing Access Converted to Just-In-Time",
+    "name": "Standing Access Converted to Just-In-Time",
+    "type": "NOTIFICATION_TEMPLATE"
+  },
+  "version": 1
+}
