@@ -166,6 +166,31 @@
           }
         ],
         "attributeTargets": null,
+        "displayName": "Brand",
+        "editMode": "ReadOnly",
+        "extendedNumber": 0,
+        "groupFactory": false,
+        "multi": false,
+        "name": "brand",
+        "silent": false,
+        "standard": false,
+        "system": false,
+        "type": "string"
+      },
+      {
+        "attributeSources": [
+          {
+            "applicationRef": null,
+            "defaultValue": null,
+            "reference": null,
+            "ruleRef": {
+              "id": "8f4d20bdc6854f8d9a2837ae237e6de1",
+              "name": "Cloud Promote Identity Attribute",
+              "type": "RULE"
+            }
+          }
+        ],
+        "attributeTargets": null,
         "displayName": "City",
         "editMode": "ReadOnly",
         "extendedNumber": 0,
