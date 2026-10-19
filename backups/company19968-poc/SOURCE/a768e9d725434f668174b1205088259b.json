@@ -713,7 +713,7 @@
       "checkDeletedDisabled": false,
       "clientID": "M2RmZmM0M2ZkZDM0OWVmNjhhYmVkZWNkOWVmNQ",
       "cloudAuthoritativeSourcePrecedence": 45,
-      "cloudCacheUpdate": 1789965654170,
+      "cloudCacheUpdate": 1792388607592,
       "cloudDisplayName": "SuccessFactors",
       "cloudIdentityProfileName": "SuccessFactors",
       "companyId": "SFCPART002041",
@@ -744,7 +744,7 @@
         "employeeStatusPickList": "employee-status",
         "employeeTypePicklist": "employee-type"
       },
-      "since": "2026-09-21T04:40:54.146Z",
+      "since": "2026-10-19T05:43:27.569Z",
       "sourceConnected": true,
       "status": "SOURCE_STATE_HEALTHY",
       "supportsDeltaAgg": "true",
