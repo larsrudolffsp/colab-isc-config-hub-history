@@ -1,0 +1,30 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "body": "Dear $__recipient.name,<br/><br/>\n<p>Just-In-Time deprovisioning failed for entitlement <strong>${entitlementName}</strong> for identity <strong>${identityName}</strong>.</p>\n<p>The user's access may still be active. Please review to block or revoke the access in $__global.productName.</p>\n#if($activationUrl)<p>Manage Just-In-Time access <a href=\"$activationUrl\" target=\"_blank\">here</a>.</p>#end\n<p>Please contact ${ownerName} if you have any questions.</p>\n<br/>Thanks,<br/>The $__global.productName Team<br/>",
+    "created": null,
+    "description": "Notifies administrators when Just-In-Time deprovisioning fails and the user's privileged access may remain active.",
+    "details": null,
+    "footer": null,
+    "from": "$__global.emailFromAddress",
+    "header": null,
+    "id": "[Default] Just-In-Time Deprovisioning Failed",
+    "inboxTemplate": null,
+    "key": "jit_deprovision_failed",
+    "locale": "en",
+    "medium": "EMAIL",
+    "modified": null,
+    "name": "Just-In-Time Deprovisioning Failed",
+    "replyTo": "$__global.emailFromAddress",
+    "slackTemplate": null,
+    "subject": "Just-In-Time deprovisioning failed for ${entitlementName}",
+    "teamsTemplate": null
+  },
+  "self": {
+    "id": "[Default] Just-In-Time Deprovisioning Failed",
+    "name": "Just-In-Time Deprovisioning Failed",
+    "type": "NOTIFICATION_TEMPLATE"
+  },
+  "version": 1
+}
