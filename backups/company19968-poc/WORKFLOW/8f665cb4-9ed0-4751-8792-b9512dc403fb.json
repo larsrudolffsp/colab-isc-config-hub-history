@@ -115,14 +115,11 @@
     },
     "trigger": {
       "attributes": {
-        "attributeToFilter": "uid",
         "description": "A new employee was just added to the system.",
         "id": "idn:identity-created",
-        "integrationId": null,
-        "operatorToFilter": "operatorUid",
-        "operatorUid": "StringContains",
-        "operatorValue": "StringContains"
+        "integrationId": null
       },
+      "mode": "advanced",
       "type": "EVENT"
     }
   },

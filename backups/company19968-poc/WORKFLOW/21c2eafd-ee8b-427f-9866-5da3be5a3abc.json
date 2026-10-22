@@ -86,12 +86,23 @@
     },
     "trigger": {
       "attributes": {
-        "attributeToFilter": "department",
         "filter.$": "$.changes[?(@.attribute == \"department\")]",
+        "filterDefinition": {
+          "conditions": [
+            {
+              "operator": "==",
+              "path": "attribute",
+              "type": "string",
+              "value": "department"
+            }
+          ],
+          "logic": "and",
+          "path": "changes"
+        },
         "id": "idn:identity-attributes-changed",
         "integrationId": null
       },
-      "mode": "advanced",
+      "mode": "basic",
       "type": "EVENT"
     }
   },
