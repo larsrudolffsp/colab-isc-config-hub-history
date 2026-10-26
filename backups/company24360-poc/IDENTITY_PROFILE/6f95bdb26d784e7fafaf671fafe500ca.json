@@ -1,0 +1,114 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "authoritativeSource": {
+      "id": "74cd18883c0f4a3a86282294bbe861b0",
+      "name": "SailPoint IdentityIQ",
+      "type": "SOURCE"
+    },
+    "created": "2026-10-26T08:15:12.224Z",
+    "description": null,
+    "hasTimeBasedAttr": false,
+    "id": "6f95bdb26d784e7fafaf671fafe500ca",
+    "identityAttributeConfig": {
+      "attributeTransforms": [
+        {
+          "identityAttributeName": "cloudLifecycleState",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "status",
+              "sourceId": "74cd18883c0f4a3a86282294bbe861b0",
+              "sourceName": "SailPoint IdentityIQ"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "displayName",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "name",
+              "sourceId": "74cd18883c0f4a3a86282294bbe861b0",
+              "sourceName": "SailPoint IdentityIQ"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "email",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "email",
+              "sourceId": "74cd18883c0f4a3a86282294bbe861b0",
+              "sourceName": "SailPoint IdentityIQ"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "firstname",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "firstName",
+              "sourceId": "74cd18883c0f4a3a86282294bbe861b0",
+              "sourceName": "SailPoint IdentityIQ"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "lastname",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "lastName",
+              "sourceId": "74cd18883c0f4a3a86282294bbe861b0",
+              "sourceName": "SailPoint IdentityIQ"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "manager",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "managerId",
+              "sourceId": "74cd18883c0f4a3a86282294bbe861b0",
+              "sourceName": "SailPoint IdentityIQ"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "uid",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "id",
+              "sourceId": "74cd18883c0f4a3a86282294bbe861b0",
+              "sourceName": "SailPoint IdentityIQ"
+            },
+            "type": "accountAttribute"
+          }
+        }
+      ],
+      "enabled": true
+    },
+    "identityCount": 0,
+    "identityExceptionReportReference": null,
+    "identityRefreshRequired": false,
+    "modified": "2026-10-26T08:15:14.201Z",
+    "name": "SailPoint IdentityIQ Profile",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "priority": 30
+  },
+  "self": {
+    "id": "6f95bdb26d784e7fafaf671fafe500ca",
+    "name": "SailPoint IdentityIQ Profile",
+    "type": "IDENTITY_PROFILE"
+  },
+  "version": 1
+}

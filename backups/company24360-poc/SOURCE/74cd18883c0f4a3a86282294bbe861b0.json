@@ -1,0 +1,166 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accountCorrelationRule": null,
+    "beforeProvisioningRule": null,
+    "connectorAttributes": {
+      "cloudAuthoritativeSourcePrecedence": 30,
+      "cloudCacheUpdate": 1793008259475,
+      "cloudDisplayName": "SailPoint IdentityIQ",
+      "cloudIdentityProfileName": "SailPoint IdentityIQ Profile",
+      "connectionType": "direct",
+      "connectorName": "SailPoint IdentityIQ",
+      "deleteThresholdPercentage": 10,
+      "healthCheckTimeout": 30,
+      "healthy": false,
+      "idnProxyType": "sp-connect",
+      "managed": true,
+      "since": "2026-10-26T08:29:34.893Z",
+      "singleton": true,
+      "spConnectorScriptName": "sailpoint-identityiq",
+      "spConnectorSpecId": "ad6ab0a2-edc6-4f4d-8879-82853ab75861",
+      "status": "SOURCE_STATE_ERROR_SOURCE"
+    },
+    "connectorClass": "",
+    "connectorScriptName": "sailpoint-identityiq",
+    "correlationConfigDetails": {
+      "attributeAssignments": null,
+      "id": null,
+      "name": null
+    },
+    "crossTenantConnectorAttributes": {},
+    "deleteThreshold": 10,
+    "description": "Source for SAF IGA Integration Plugin",
+    "features": [],
+    "id": "74cd18883c0f4a3a86282294bbe861b0",
+    "managementWorkgroup": null,
+    "managerCorrelationMapping": null,
+    "managerCorrelationRule": null,
+    "name": "SailPoint IdentityIQ",
+    "owner": {
+      "id": "b7b1f5ba329d45179bf35babf0b3d1ba",
+      "name": "lars.rudolff",
+      "type": "IDENTITY"
+    },
+    "passwordPolicies": null,
+    "provisionAsCsv": false,
+    "provisioningPolicies": [],
+    "schemas": [
+      {
+        "attributes": [
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "IIQDisabled",
+            "nativeName": null,
+            "schema": null,
+            "type": "BOOLEAN"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "email",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "firstName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "managerId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "status",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "iiq:objects",
+          "resourceId": "iiq:identity",
+          "resourceType": "std:account"
+        },
+        "created": "2026-10-26T08:15:11.200Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "f5acab7726a04251a93f890ebc7dbe53",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2026-10-26T08:15:11.200Z",
+        "name": "IIQ Identities",
+        "nativeObjectType": null
+      }
+    ],
+    "type": "ad6ab0a2-edc6-4f4d-8879-82853ab75861"
+  },
+  "self": {
+    "id": "74cd18883c0f4a3a86282294bbe861b0",
+    "name": "SailPoint IdentityIQ",
+    "type": "SOURCE"
+  },
+  "version": 1
+}

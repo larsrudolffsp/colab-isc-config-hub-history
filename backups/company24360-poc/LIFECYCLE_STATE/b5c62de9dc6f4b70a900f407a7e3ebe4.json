@@ -1,0 +1,62 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": false
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "DISABLE",
+        "allSources": false,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": [
+          {
+            "id": "427443bfec7845dfbe3eb2f8d3a70142",
+            "name": "IdentityNow",
+            "type": "SOURCE"
+          }
+        ]
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "DISABLE",
+        "allSources": false,
+        "excludeSourceIds": null,
+        "sourceIds": [
+          "427443bfec7845dfbe3eb2f8d3a70142"
+        ]
+      }
+    ],
+    "created": "2026-10-26T08:15:13.310Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": true,
+    "id": "b5c62de9dc6f4b70a900f407a7e3ebe4",
+    "identityCount": 0,
+    "identityProfileRef": {
+      "id": "6f95bdb26d784e7fafaf671fafe500ca",
+      "name": "SailPoint IdentityIQ Profile",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "INACTIVE_SHORT_TERM",
+    "modified": "2026-10-26T08:15:13.310Z",
+    "name": "Inactive",
+    "priority": 60,
+    "technicalName": "inactive"
+  },
+  "self": {
+    "id": "b5c62de9dc6f4b70a900f407a7e3ebe4",
+    "name": "Inactive",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}
