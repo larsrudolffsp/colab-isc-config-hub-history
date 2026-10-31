@@ -16,7 +16,7 @@
       "EnableSSHKeys": true,
       "assumeRoleSessionName": "SPServiceUserAccountAccess",
       "changePasswordPolicyARN": "arn:aws:iam::aws:policy/IAMUserChangePassword",
-      "cloudCacheUpdate": 1786854208582,
+      "cloudCacheUpdate": 1793236143742,
       "cloudDisplayName": "AWS IAM - spciem",
       "cloudScope": [
         "469778724586",
@@ -32,7 +32,7 @@
       "enableProvisioningFeature": true,
       "externalId": "2252060a724d3d54a5d06f4d93614f2b2da81c606ae6f63c5ae8710c55f2f591",
       "healthCheckTimeout": 60,
-      "healthy": true,
+      "healthy": false,
       "idnProxyType": "sp-connect",
       "machineIdentityDeletionEnabled": true,
       "machineIdentityDeletionThresholdIsNumber": false,
@@ -41,12 +41,12 @@
       "recommendationStatus": "ERROR",
       "region": "us-east-1",
       "roleName": "SailPointAWSReadOnlyRole",
-      "since": "2026-08-16T04:23:28.549Z",
+      "since": "2026-10-29T01:09:03.729Z",
       "sourceConnected": true,
       "spConnDebugLoggingEnabled": false,
       "spConnectorSpecId": "6e47875b-73f1-481d-a613-59d4deca0c6a",
       "spConnectorSupportsCustomSchemas": true,
-      "status": "SOURCE_STATE_HEALTHY",
+      "status": "SOURCE_STATE_FAILURE_SOURCE",
       "templateApplication": "AWS SaaS"
     },
     "connectorClass": "",
@@ -3270,7 +3270,8 @@
           "datasetId": "aws:bedrock",
           "resourceFeatures": [
             "ACTIVATE",
-            "DEACTIVATE"
+            "DEACTIVATE",
+            "LINEAGE"
           ],
           "resourceId": "aws:bedrock-agent-alias-version",
           "resourceType": "std:agent"
@@ -3282,7 +3283,7 @@
         "id": "9b373ef64e9e49b480475ebdc4f6712f",
         "identityAttribute": "agentAliasArn",
         "includePermissions": false,
-        "modified": "2026-08-16T03:57:50.209Z",
+        "modified": "2026-10-30T16:41:46.595Z",
         "name": "AWS Bedrock Agent Alias Version",
         "nativeObjectType": null
       },
@@ -6012,6 +6013,9 @@
         ],
         "configuration": {
           "datasetId": "aws:iam",
+          "resourceFeatures": [
+            "LINEAGE"
+          ],
           "resourceId": "aws:iam-role",
           "resourceType": "std:account"
         },
@@ -6022,7 +6026,7 @@
         "id": "cc8aff2f8fa947189d3a2410c0d4bb22",
         "identityAttribute": "arn",
         "includePermissions": false,
-        "modified": "2026-08-16T03:57:48.054Z",
+        "modified": "2026-10-30T16:41:46.595Z",
         "name": "AWS IAM Role",
         "nativeObjectType": null
       },

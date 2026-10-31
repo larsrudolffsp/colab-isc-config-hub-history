@@ -127,10 +127,13 @@
       ],
       "enabled": true
     },
-    "identityCount": 7,
-    "identityExceptionReportReference": null,
-    "identityRefreshRequired": true,
-    "modified": "2026-10-08T14:23:50.852Z",
+    "identityCount": 8,
+    "identityExceptionReportReference": {
+      "reportName": "ISC Admins Identity Exceptions",
+      "taskResultId": "5c2e1983d80b4f998313fd673013717a"
+    },
+    "identityRefreshRequired": false,
+    "modified": "2026-10-27T17:29:49.967Z",
     "name": "ISC Admins",
     "owner": {
       "id": "03d16262e1234807956c1e431478f6ba",

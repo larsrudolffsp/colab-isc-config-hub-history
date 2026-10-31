@@ -6,7 +6,7 @@
     "beforeProvisioningRule": null,
     "connectorAttributes": {
       "cloudAuthoritativeSourcePrecedence": 30,
-      "cloudCacheUpdate": 1793008259475,
+      "cloudCacheUpdate": 1793063402692,
       "cloudDisplayName": "SailPoint IdentityIQ",
       "cloudIdentityProfileName": "SailPoint IdentityIQ Profile",
       "connectionType": "direct",
@@ -20,7 +20,7 @@
       "singleton": true,
       "spConnectorScriptName": "sailpoint-identityiq",
       "spConnectorSpecId": "ad6ab0a2-edc6-4f4d-8879-82853ab75861",
-      "status": "SOURCE_STATE_ERROR_SOURCE"
+      "status": "SOURCE_STATE_FAILURE_SOURCE"
     },
     "connectorClass": "",
     "connectorScriptName": "sailpoint-identityiq",

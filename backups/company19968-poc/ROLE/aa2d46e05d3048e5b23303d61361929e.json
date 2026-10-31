@@ -1,0 +1,155 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessModelMetadata": {
+      "attributes": []
+    },
+    "accessProfiles": [],
+    "accessRequestConfig": {
+      "approvalSchemes": [],
+      "commentsRequired": null,
+      "denialCommentsRequired": null,
+      "dimensionSchema": {
+        "dimensionAttributes": [
+          {
+            "derived": true,
+            "displayName": "City",
+            "name": "city"
+          }
+        ]
+      },
+      "formDefinitionId": null,
+      "maxPermittedAccessDuration": null,
+      "reauthorizationRequired": false,
+      "requireEndDate": false
+    },
+    "additionalOwners": [],
+    "created": "2026-10-27T13:21:59.579459Z",
+    "description": null,
+    "dimensionRefs": null,
+    "dimensional": true,
+    "dimensions": [
+      {
+        "accessProfiles": [],
+        "created": "2026-10-27T13:25:45.667898Z",
+        "description": "asdfasd",
+        "entitlements": [],
+        "id": "d2531b551175407c9ef25fbb3e3283c3",
+        "membership": {
+          "criteria": {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": null,
+                    "key": {
+                      "property": "attribute.city",
+                      "sourceId": null,
+                      "type": "IDENTITY"
+                    },
+                    "operation": "EQUALS",
+                    "stringValue": "Nürnberg",
+                    "values": null
+                  }
+                ],
+                "key": null,
+                "operation": "AND",
+                "stringValue": "",
+                "values": null
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": "",
+            "values": null
+          },
+          "identities": null,
+          "type": "STANDARD"
+        },
+        "modified": "2026-10-27T13:25:58.808638Z",
+        "name": "Nürnberg",
+        "owner": null,
+        "parentId": "aa2d46e05d3048e5b23303d61361929e"
+      }
+    ],
+    "enabled": false,
+    "entitlements": [
+      {
+        "id": "0090aa8b-ec79-32ab-ac30-48925bb948fb",
+        "name": "ServerRoomToken",
+        "sourceId": "a13cb4f1-53aa-4021-be5e-b967ebf6bef5",
+        "sourceName": "Active Directory",
+        "type": "ENTITLEMENT"
+      }
+    ],
+    "id": "aa2d46e05d3048e5b23303d61361929e",
+    "legacyMembershipInfo": null,
+    "membership": {
+      "criteria": {
+        "children": [
+          {
+            "children": [
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.cloudLifecycleState",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "EQUALS",
+                "stringValue": null,
+                "values": [
+                  "active"
+                ]
+              },
+              {
+                "children": null,
+                "key": {
+                  "property": "attribute.jobTitle",
+                  "sourceId": null,
+                  "type": "IDENTITY"
+                },
+                "operation": "CONTAINS",
+                "stringValue": null,
+                "values": [
+                  "Prüfer"
+                ]
+              }
+            ],
+            "key": null,
+            "operation": "AND",
+            "stringValue": null,
+            "values": null
+          }
+        ],
+        "key": null,
+        "operation": "OR",
+        "stringValue": null,
+        "values": null
+      },
+      "identities": null,
+      "type": "STANDARD"
+    },
+    "modified": "2026-10-27T13:25:45.699795Z",
+    "name": "Prüfer",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "privilegeLevel": null,
+    "requestable": false,
+    "revocationRequestConfig": {
+      "approvalSchemes": []
+    },
+    "segmentRefs": [],
+    "segments": []
+  },
+  "self": {
+    "id": "aa2d46e05d3048e5b23303d61361929e",
+    "name": "Prüfer",
+    "type": "ROLE"
+  },
+  "version": 1
+}

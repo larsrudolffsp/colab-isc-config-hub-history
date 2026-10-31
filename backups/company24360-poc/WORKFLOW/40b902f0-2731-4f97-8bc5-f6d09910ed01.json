@@ -26,12 +26,7 @@
       "name": "lars.rudolff",
       "type": "IDENTITY"
     },
-    "trigger": {
-      "attributes": {
-        "integrationId": null
-      },
-      "type": ""
-    }
+    "trigger": {}
   },
   "self": {
     "id": "40b902f0-2731-4f97-8bc5-f6d09910ed01",

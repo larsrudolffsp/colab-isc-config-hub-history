@@ -12,7 +12,7 @@
       "assumeRoleDurationInSeconds": "3600",
       "assumeRoleSessionName": "SPServiceUserAccountAccess",
       "changePasswordPolicyARN": "arn:aws:iam::aws:policy/IAMUserChangePassword",
-      "cloudCacheUpdate": 1786854224590,
+      "cloudCacheUpdate": 1793236110481,
       "cloudDisplayName": "AWS IAM - CAM SE",
       "cloudScope": [
         "699264236613"
@@ -27,17 +27,17 @@
       "enableProvisioningFeature": true,
       "externalId": "enterprise194-cam",
       "healthCheckTimeout": 60,
-      "healthy": true,
+      "healthy": false,
       "idnProxyType": "sp-connect",
       "managementAccountId": "699264236613",
       "pageSize": "10",
       "region": "us-east-1",
       "roleName": "SailPointCAMAuditRole",
-      "since": "2026-08-16T04:23:44.567Z",
+      "since": "2026-10-29T01:08:30.467Z",
       "sourceConnected": true,
       "spConnectorSpecId": "6e47875b-73f1-481d-a613-59d4deca0c6a",
       "spConnectorSupportsCustomSchemas": true,
-      "status": "SOURCE_STATE_HEALTHY",
+      "status": "SOURCE_STATE_FAILURE_SOURCE",
       "templateApplication": "AWS SaaS"
     },
     "connectorClass": "",
@@ -3280,7 +3280,8 @@
           "datasetId": "aws:bedrock",
           "resourceFeatures": [
             "ACTIVATE",
-            "DEACTIVATE"
+            "DEACTIVATE",
+            "LINEAGE"
           ],
           "resourceId": "aws:bedrock-agent-alias-version",
           "resourceType": "std:agent"
@@ -3292,7 +3293,7 @@
         "id": "c022d1a4860c4056a019182bfc0c43fc",
         "identityAttribute": "agentAliasArn",
         "includePermissions": false,
-        "modified": "2026-08-16T03:57:40.321Z",
+        "modified": "2026-10-30T16:41:45.650Z",
         "name": "AWS Bedrock Agent Alias Version",
         "nativeObjectType": null
       },
@@ -6024,6 +6025,9 @@
         ],
         "configuration": {
           "datasetId": "aws:iam",
+          "resourceFeatures": [
+            "LINEAGE"
+          ],
           "resourceId": "aws:iam-role",
           "resourceType": "std:account"
         },
@@ -6034,7 +6038,7 @@
         "id": "8c3d8787a0c8466abfb4f9240c931301",
         "identityAttribute": "arn",
         "includePermissions": false,
-        "modified": "2026-08-16T03:57:38.119Z",
+        "modified": "2026-10-30T16:41:45.650Z",
         "name": "AWS IAM Role",
         "nativeObjectType": null
       },

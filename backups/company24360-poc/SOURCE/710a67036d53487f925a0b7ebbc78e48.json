@@ -5208,451 +5208,6 @@
       {
         "attributes": [
           {
-            "description": "Account display name (falls back to account/tenant id when unset).",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "sourceAccount",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Application URL in the source (e.g. Azure portal app URL).",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "appUrl",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Constant discriminator supplied by Entro (e.g. 'SaaS Application').",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "agentType",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Deep link to the source (e.g. Azure portal URL).",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "sourceUrl",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Detection method used by Entro (e.g. 'Azure Service Principal App').",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "detectionMethod",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Environment name from the source account.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "environment",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Flattened owner.email used for correlation. Mirrors owner.email from the nested owner block.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "ownerEmail",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Human-readable insight descriptions from Entro policies.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": true,
-            "name": "insights",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "ISO-8601 timestamp for the most recent usage or update signal.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "lastSeen",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Integration type reported by Entro (e.g. 'AZURE').",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "integrationType",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Normalized AI client name (e.g. 'm365-mcp-server-for-claude').",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "name",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Original name from the source system (e.g. 'M365 MCP Server for Claude').",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "rawName",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Prettified classification enum (e.g. 'Third-party', 'Homegrown').",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "classification",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Severity band from Entro (BENIGN, LOW, MEDIUM, HIGH, CRITICAL, UNKNOWN).",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "riskBand",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Stable identity for the agent (Azure Service Principal ID).",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "id",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Tags from the source account.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": true,
-            "name": "tags",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Verified publisher display name, when present.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "verifiedPublisherName",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Whether Microsoft has verified the publisher; null when no verifiedPublisher data is present.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "isVerifiedPublisher",
-            "nativeName": null,
-            "schema": null,
-            "type": "BOOLEAN"
-          }
-        ],
-        "configuration": {
-          "datasetId": "azure:ai-agent",
-          "resourceId": "azure:ai-agent",
-          "resourceType": "std:agent"
-        },
-        "created": "2026-08-16T03:58:14.058Z",
-        "displayAttribute": "name",
-        "features": [],
-        "hierarchyAttribute": null,
-        "id": "523738dd892441e28a3723697192739c",
-        "identityAttribute": "id",
-        "includePermissions": false,
-        "modified": "2026-08-16T03:58:22.241Z",
-        "name": "Microsoft Entra AI Agent",
-        "nativeObjectType": null
-      },
-      {
-        "attributes": [
-          {
-            "description": "Account display name (falls back to account/tenant id when unset).",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "sourceAccount",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Connected Microsoft 365 services (e.g. SharePoint, Office, Outlook).",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": true,
-            "name": "connectedServices",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Count of sessions Entro marked as suspicious.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "suspiciousSessionCount",
-            "nativeName": null,
-            "schema": null,
-            "type": "INT"
-          },
-          {
-            "description": "Deep link to the source; null when Entro has no URL.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "sourceUrl",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Detection method used by Entro (e.g. 'Microsoft 365 Copilot License Assignment').",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "detectionMethod",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Discriminator from Entro (e.g. 'Microsoft Copilot License').",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "agentType",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Environment name from the source account (e.g. 'Production').",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "environment",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Flattened owner.email used for correlation. May be null when Entro only has userPrincipalName.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "ownerEmail",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Human-readable insight descriptions from Entro policies.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": true,
-            "name": "insights",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "ISO-8601 timestamp for the most recent usage or update signal.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "lastSeen",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Integration type reported by Entro (e.g. 'AZURE').",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "integrationType",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Normalized name (e.g. 'microsoft 365 copilot').",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "name",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Original name from the source system (e.g. 'M365 BizChat').",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "rawName",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Prettified classification enum (e.g. 'Third-party', 'Homegrown').",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "classification",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Severity band from Entro (BENIGN, LOW, MEDIUM, HIGH, CRITICAL, UNKNOWN).",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "riskBand",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Stable identity for the Copilot chat / license assignment (GUID from Entro).",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "id",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Tags from the source account.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": true,
-            "name": "tags",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Total Copilot session count reported by Entro.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "sessionCount",
-            "nativeName": null,
-            "schema": null,
-            "type": "INT"
-          },
-          {
-            "description": "UPN of the licensed / chat user (primary correlation key when owner.email is null).",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "userPrincipalName",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          }
-        ],
-        "configuration": {
-          "datasetId": "azure:copilot-enterprise-chat",
-          "resourceId": "azure:copilot-enterprise-chat",
-          "resourceType": "std:agent"
-        },
-        "created": "2026-08-16T03:58:14.058Z",
-        "displayAttribute": "name",
-        "features": [],
-        "hierarchyAttribute": null,
-        "id": "4af6d429255b4a5f8f593f6368d5183d",
-        "identityAttribute": "id",
-        "includePermissions": false,
-        "modified": "2026-08-16T03:58:23.318Z",
-        "name": "Microsoft 365 Copilot License",
-        "nativeObjectType": null
-      },
-      {
-        "attributes": [
-          {
             "description": "Active AD Role Display Name",
             "isEntitlement": false,
             "isGroup": false,
@@ -6809,113 +6364,6 @@
       {
         "attributes": [
           {
-            "description": "Compliance control IDs the account is flagged against (e.g. PCI_DSS_8_6_3, ISO_27001_A_5_17, OWASP_NHI_NHI7_2025).",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": true,
-            "name": "complianceBreach",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Downstream service most recently touched by this account.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "lastUsedService",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Flattened owners[0].email used for correlation. Mirrors the primary owner email from the nested owners array.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "ownerEmail",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Severity band from Entro (LOW, MEDIUM, HIGH, CRITICAL, UNKNOWN).",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "riskSeverity",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Stable Entro token identifier (TKN-xxxx). Same value as token.entroId.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "id",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Tags carried through from the source account.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": true,
-            "name": "tags",
-            "nativeName": null,
-            "schema": null,
-            "type": "STRING"
-          },
-          {
-            "description": "Whether Entro has flagged suspicious activity for the account.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "suspiciousActivity",
-            "nativeName": null,
-            "schema": null,
-            "type": "BOOLEAN"
-          },
-          {
-            "description": "Whether the account is externally exposed.",
-            "isEntitlement": false,
-            "isGroup": false,
-            "isManaged": false,
-            "isMulti": false,
-            "name": "exposed",
-            "nativeName": null,
-            "schema": null,
-            "type": "BOOLEAN"
-          }
-        ],
-        "configuration": {
-          "datasetId": "azure:hybrid-service-account",
-          "resourceId": "azure:hybrid-service-account",
-          "resourceType": "std:account"
-        },
-        "created": "2026-08-16T03:58:14.058Z",
-        "displayAttribute": "id",
-        "features": [],
-        "hierarchyAttribute": null,
-        "id": "ab54be4f92f343b7876eea2e64ea69e5",
-        "identityAttribute": "id",
-        "includePermissions": false,
-        "modified": "2026-08-16T03:58:22.535Z",
-        "name": "Microsoft Entra Hybrid Service Account",
-        "nativeObjectType": null
-      },
-      {
-        "attributes": [
-          {
             "description": "Compliance control IDs the certificate is flagged against.",
             "isEntitlement": false,
             "isGroup": false,
@@ -7125,6 +6573,437 @@
         "includePermissions": false,
         "modified": "2026-08-16T03:58:22.798Z",
         "name": "Microsoft Entra App Token",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Connected Microsoft 365 services (e.g. SharePoint, Office, Outlook).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "connectedServices",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Count of sessions Entro marked as suspicious.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "suspiciousSessionCount",
+            "nativeName": null,
+            "schema": null,
+            "type": "INT"
+          },
+          {
+            "description": "Discriminator from Entro (e.g. 'Microsoft Copilot License').",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Environment name from the source account (e.g. 'Production').",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spEnvironment",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Human-readable insight descriptions from Entro policies.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "insights",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "ISO-8601 timestamp for the most recent Copilot usage or update signal.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastSeen",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Integration type reported by Entro (e.g. 'AZURE').",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "integrationType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Normalized name (e.g. 'microsoft 365 copilot').",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Prettified classification enum (e.g. 'Third-party', 'Homegrown').",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "classification",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Stable identity for the Copilot chat / license assignment (GUID from Entro).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Structured owner records correlated to human identities via std:owns. email maps to ownerEmail; name maps to ownerName.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "owners",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Tags from the source account.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Total Copilot session count reported by Entro.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "sessionCount",
+            "nativeName": null,
+            "schema": null,
+            "type": "INT"
+          },
+          {
+            "description": "UPN of the licensed / chat user (primary correlation key when owner.email is null).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "userPrincipalName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "entroId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "schemaVersion",
+            "nativeName": null,
+            "schema": null,
+            "type": "INT"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "azure:copilot-enterprise-chat",
+          "resourceFeatures": [
+            "ENTRO",
+            "LINEAGE"
+          ],
+          "resourceId": "azure:copilot-enterprise-chat",
+          "resourceType": "std:agent"
+        },
+        "created": "2026-08-16T03:58:14.058Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "4af6d429255b4a5f8f593f6368d5183d",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2026-10-30T16:41:47.013Z",
+        "name": "Microsoft 365 Copilot License",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Connected services reported by Entro for this agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "connectedServices",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Constant discriminator supplied by Entro (e.g. 'SaaS Application').",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Deep link to the source (e.g. Azure portal URL).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "sourceUrl",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Human-readable insight descriptions from Entro policies.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "insights",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "ISO-8601 timestamp for the most recent usage or update signal.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastSeen",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Integration type reported by Entro (e.g. 'AZURE').",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "integrationType",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Normalized AI client name (e.g. 'm365-mcp-server-for-claude').",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Original name from the source system (e.g. 'M365 MCP Server for Claude').",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "rawName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Prettified classification enum (e.g. 'Third-party', 'Homegrown').",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "classification",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Stable identity for the agent (Azure Service Principal ID).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Structured owner records correlated to human identities via std:owns. email maps to ownerEmail; name maps to ownerName.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "owners",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Tags from the source account.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Whether Microsoft has verified the publisher; null when no verifiedPublisher data is present.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "isVerifiedPublisher",
+            "nativeName": null,
+            "schema": null,
+            "type": "BOOLEAN"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "entroId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spEnvironment",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "azure:ai-agent",
+          "resourceFeatures": [
+            "ENTRO",
+            "LINEAGE"
+          ],
+          "resourceId": "azure:ai-agent",
+          "resourceType": "std:agent"
+        },
+        "created": "2026-08-16T03:58:14.058Z",
+        "displayAttribute": "rawName",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "523738dd892441e28a3723697192739c",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2026-10-30T16:41:47.013Z",
+        "name": "Microsoft Entra AI Agent",
         "nativeObjectType": null
       },
       {
@@ -8002,6 +7881,205 @@
         "modified": "2026-08-16T03:58:16.246Z",
         "name": "servicePlan",
         "nativeObjectType": "servicePlan"
+      },
+      {
+        "attributes": [
+          {
+            "description": "Downstream service most recently touched by this account.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lastUsedService",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Entra-side token / cloud identity details.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "token",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "On-prem / directory identity backing the hybrid service account.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Owners reported by Entro. May be empty. First entry (owners[0]) is mirrored to ownerEmail for correlation.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "owners",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Permissions granted to the account (typically Entra group memberships).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "permissions",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Severity band from Entro (LOW, MEDIUM, HIGH, CRITICAL, UNKNOWN).",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "riskSeverity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Stable Entro token identifier (TKN-xxxx). Same value as token.entroId.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "id",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Tags carried through from the source account.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The Entro source integration that discovered the account.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "source",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Time-based signals about the account/token lifecycle.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "lifecycle",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Whether Entro has flagged suspicious activity for the account.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "suspiciousActivity",
+            "nativeName": null,
+            "schema": null,
+            "type": "BOOLEAN"
+          },
+          {
+            "description": "Whether the account is externally exposed.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "exposed",
+            "nativeName": null,
+            "schema": null,
+            "type": "BOOLEAN"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "correlatedVault",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "entroId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "riskSummary",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": null,
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spStatus",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "azure:hybrid-service-account",
+          "resourceFeatures": [
+            "ENTRO",
+            "LINEAGE"
+          ],
+          "resourceId": "azure:hybrid-service-account",
+          "resourceType": "std:account"
+        },
+        "created": "2026-08-16T03:58:14.058Z",
+        "displayAttribute": "id",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "ab54be4f92f343b7876eea2e64ea69e5",
+        "identityAttribute": "id",
+        "includePermissions": false,
+        "modified": "2026-10-30T16:41:47.013Z",
+        "name": "Microsoft Entra Hybrid Service Account",
+        "nativeObjectType": null
       },
       {
         "attributes": [

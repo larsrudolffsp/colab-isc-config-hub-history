@@ -94,7 +94,10 @@
       "enabled": true
     },
     "identityCount": 0,
-    "identityExceptionReportReference": null,
+    "identityExceptionReportReference": {
+      "reportName": "SailPoint IdentityIQ Profile Identity Exceptions",
+      "taskResultId": "5c16142164fd4eea87dcd379b4ab50a9"
+    },
     "identityRefreshRequired": false,
     "modified": "2026-10-26T08:15:14.201Z",
     "name": "SailPoint IdentityIQ Profile",
