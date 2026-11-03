@@ -1,0 +1,54 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "accessActionConfiguration": {
+      "removeAllAccessEnabled": false
+    },
+    "accessProfileIds": [],
+    "accessProfileRefs": null,
+    "accountActionRefs": [
+      {
+        "action": "DISABLE",
+        "allSources": true,
+        "excludeSourceIdsRefs": [],
+        "sourceIdsRefs": []
+      }
+    ],
+    "accountActions": [
+      {
+        "action": "DISABLE",
+        "allSources": true,
+        "excludeSourceIds": null,
+        "sourceIds": null
+      }
+    ],
+    "created": "2026-11-03T10:18:52.823Z",
+    "description": null,
+    "emailNotificationOption": {
+      "emailAddressList": [],
+      "notifyAllAdmins": false,
+      "notifyManagers": false,
+      "notifySpecificUsers": false
+    },
+    "enabled": false,
+    "id": "f5d8cb0dd536416f9ae396b73e7ba1c7",
+    "identityCount": 0,
+    "identityProfileRef": {
+      "id": "a945c0d4168b40e091dd30570835df83",
+      "name": "Entra Guest Accounts",
+      "type": "IDENTITY_PROFILE"
+    },
+    "identityState": "ACTIVE",
+    "modified": "2026-11-03T10:18:52.823Z",
+    "name": "Pre Hire",
+    "priority": 10,
+    "technicalName": "preHire"
+  },
+  "self": {
+    "id": "f5d8cb0dd536416f9ae396b73e7ba1c7",
+    "name": "Pre Hire",
+    "type": "LIFECYCLE_STATE"
+  },
+  "version": 1
+}

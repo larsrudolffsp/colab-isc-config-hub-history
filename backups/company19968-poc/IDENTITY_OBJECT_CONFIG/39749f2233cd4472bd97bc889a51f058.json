@@ -1356,6 +1356,20 @@
         "attributeSources": [
           {
             "applicationRef": {
+              "id": "273a768e120f4f4f81d4db17fe7e3537",
+              "name": "EntraID",
+              "type": "SOURCE"
+            },
+            "defaultValue": null,
+            "reference": null,
+            "ruleRef": {
+              "id": "e2c564cff01941d88e325ab92734fc41",
+              "name": "Cloud Promote Identity Attribute",
+              "type": "RULE"
+            }
+          },
+          {
+            "applicationRef": {
               "id": "29e3933cbf0c4abc8169f3b386df1b79",
               "name": "ISC Admins",
               "type": "SOURCE"

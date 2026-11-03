@@ -7,8 +7,10 @@
     "connectorAttributes": {
       "appTemplateData": "{\"whiteListedAttributes\":[\"enableProvisioningFeature\"]}",
       "clientID": "4a80b595-cef4-4fee-9cba-86995dcb0a6b",
-      "cloudCacheUpdate": 1789048749797,
+      "cloudAuthoritativeSourcePrecedence": 60,
+      "cloudCacheUpdate": 1793701132694,
       "cloudDisplayName": "EntraID",
+      "cloudIdentityProfileName": "Entra Guest Accounts",
       "connectionType": "direct",
       "connectorName": "Microsoft Entra",
       "deleteThresholdPercentage": 10,
@@ -76,6 +78,59 @@
           "skuPartNumber": "SPZA_IW",
           "subscriptionIds": [
             "9536b82c-9f26-4c0a-8541-abd3e6bd23c1"
+          ],
+          "trialUnits": {
+            "enabled": 0,
+            "lockedOut": 0,
+            "suspended": 0,
+            "warning": 0
+          }
+        },
+        {
+          "accountId": "73412e03-bf2f-4f05-892b-9364395decc7",
+          "accountName": "tessailpoint",
+          "appliesTo": "User",
+          "capabilityStatus": "Enabled",
+          "consumedUnits": 2,
+          "id": "73412e03-bf2f-4f05-892b-9364395decc7_6a4a1628-9b9a-424d-bed5-4118f0ede3fd",
+          "overageUnits": {
+            "enabled": 0,
+            "lockedOut": 0,
+            "suspended": 0,
+            "warning": 0
+          },
+          "prepaidUnits": {
+            "enabled": 10000,
+            "lockedOut": 0,
+            "suspended": 0,
+            "warning": 0
+          },
+          "selfServiceSignupUnits": {
+            "enabled": 10000,
+            "lockedOut": 0,
+            "suspended": 0,
+            "warning": 0
+          },
+          "servicePlans": [
+            {
+              "appliesTo": "Company",
+              "provisioningStatus": "Success",
+              "servicePlanId": "113feb6c-3fe4-4440-bddc-54d774bf0318",
+              "servicePlanName": "EXCHANGE_S_FOUNDATION",
+              "servicePlanType": "Exchange"
+            },
+            {
+              "appliesTo": "User",
+              "provisioningStatus": "Success",
+              "servicePlanId": "3f2afeed-6fb5-4bf9-998f-f2912133aead",
+              "servicePlanName": "PROJECT_MADEIRA_PREVIEW_IW",
+              "servicePlanType": "DynamicsNAV"
+            }
+          ],
+          "skuId": "6a4a1628-9b9a-424d-bed5-4118f0ede3fd",
+          "skuPartNumber": "PROJECT_MADEIRA_PREVIEW_IW_SKU",
+          "subscriptionIds": [
+            "133f5925-7207-4669-a5ae-cf88c92adfb6"
           ],
           "trialUnits": {
             "enabled": 0,
@@ -409,7 +464,7 @@
           "accountName": "tessailpoint",
           "appliesTo": "User",
           "capabilityStatus": "Enabled",
-          "consumedUnits": 20,
+          "consumedUnits": 21,
           "id": "73412e03-bf2f-4f05-892b-9364395decc7_f30db892-07e9-47e9-837c-80727f46fd3d",
           "overageUnits": {
             "enabled": 0,
@@ -456,59 +511,6 @@
           "skuPartNumber": "FLOW_FREE",
           "subscriptionIds": [
             "6b212ff2-01ab-4255-91e9-2b144707cb9f"
-          ],
-          "trialUnits": {
-            "enabled": 0,
-            "lockedOut": 0,
-            "suspended": 0,
-            "warning": 0
-          }
-        },
-        {
-          "accountId": "73412e03-bf2f-4f05-892b-9364395decc7",
-          "accountName": "tessailpoint",
-          "appliesTo": "User",
-          "capabilityStatus": "Enabled",
-          "consumedUnits": 3,
-          "id": "73412e03-bf2f-4f05-892b-9364395decc7_6a4a1628-9b9a-424d-bed5-4118f0ede3fd",
-          "overageUnits": {
-            "enabled": 0,
-            "lockedOut": 0,
-            "suspended": 0,
-            "warning": 0
-          },
-          "prepaidUnits": {
-            "enabled": 10000,
-            "lockedOut": 0,
-            "suspended": 0,
-            "warning": 0
-          },
-          "selfServiceSignupUnits": {
-            "enabled": 10000,
-            "lockedOut": 0,
-            "suspended": 0,
-            "warning": 0
-          },
-          "servicePlans": [
-            {
-              "appliesTo": "Company",
-              "provisioningStatus": "Success",
-              "servicePlanId": "113feb6c-3fe4-4440-bddc-54d774bf0318",
-              "servicePlanName": "EXCHANGE_S_FOUNDATION",
-              "servicePlanType": "Exchange"
-            },
-            {
-              "appliesTo": "User",
-              "provisioningStatus": "Success",
-              "servicePlanId": "3f2afeed-6fb5-4bf9-998f-f2912133aead",
-              "servicePlanName": "PROJECT_MADEIRA_PREVIEW_IW",
-              "servicePlanType": "DynamicsNAV"
-            }
-          ],
-          "skuId": "6a4a1628-9b9a-424d-bed5-4118f0ede3fd",
-          "skuPartNumber": "PROJECT_MADEIRA_PREVIEW_IW_SKU",
-          "subscriptionIds": [
-            "133f5925-7207-4669-a5ae-cf88c92adfb6"
           ],
           "trialUnits": {
             "enabled": 0,

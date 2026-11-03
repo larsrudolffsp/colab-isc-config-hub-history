@@ -1,0 +1,59 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "authoritativeSource": {
+      "id": "273a768e120f4f4f81d4db17fe7e3537",
+      "name": "EntraID",
+      "type": "SOURCE"
+    },
+    "created": "2026-11-03T10:18:52.653Z",
+    "description": null,
+    "hasTimeBasedAttr": false,
+    "id": "a945c0d4168b40e091dd30570835df83",
+    "identityAttributeConfig": {
+      "attributeTransforms": [
+        {
+          "identityAttributeName": "displayName",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "userPrincipalName",
+              "sourceId": "273a768e120f4f4f81d4db17fe7e3537",
+              "sourceName": "EntraID"
+            },
+            "type": "accountAttribute"
+          }
+        },
+        {
+          "identityAttributeName": "uid",
+          "transformDefinition": {
+            "attributes": {
+              "attributeName": "userPrincipalName",
+              "sourceId": "273a768e120f4f4f81d4db17fe7e3537",
+              "sourceName": "EntraID"
+            },
+            "type": "accountAttribute"
+          }
+        }
+      ],
+      "enabled": true
+    },
+    "identityCount": 0,
+    "identityExceptionReportReference": null,
+    "identityRefreshRequired": true,
+    "modified": "2026-11-03T10:18:53.070Z",
+    "name": "Entra Guest Accounts",
+    "owner": {
+      "id": "bd04981e863b4ccd9b751081eb220ddd",
+      "name": "andre.hostombe",
+      "type": "IDENTITY"
+    },
+    "priority": 60
+  },
+  "self": {
+    "id": "a945c0d4168b40e091dd30570835df83",
+    "name": "Entra Guest Accounts",
+    "type": "IDENTITY_PROFILE"
+  },
+  "version": 1
+}
