@@ -7,7 +7,7 @@
     "connectorAttributes": {
       "appTemplateData": "{\"whiteListedAttributes\":[\"enableProvisioningFeature\"]}",
       "authenticationMethod": "No Auth",
-      "cloudCacheUpdate": 1787639933093,
+      "cloudCacheUpdate": 1793720213500,
       "cloudDisplayName": "TRAKK-WS",
       "connectionParameters": [
         {
@@ -209,7 +209,7 @@
       "lastAggregationDate_group": "2025-12-04T08:03:36Z",
       "partitionAggregationEnabled": false,
       "possibleHttpErrors": {},
-      "since": "2026-08-25T06:38:53.084Z",
+      "since": "2026-11-03T15:36:53.493Z",
       "sourceConnected": true,
       "status": "SOURCE_STATE_HEALTHY",
       "supportsDeltaAgg": "true",
