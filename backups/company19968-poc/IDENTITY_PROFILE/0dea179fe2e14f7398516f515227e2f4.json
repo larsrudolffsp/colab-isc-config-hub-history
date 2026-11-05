@@ -64,6 +64,23 @@
           }
         },
         {
+          "identityAttributeName": "costCenter",
+          "transformDefinition": {
+            "attributes": {
+              "id": "SF Cost Center Lookup",
+              "input": {
+                "attributes": {
+                  "attributeName": "CostCenterID",
+                  "sourceId": "a768e9d725434f668174b1205088259b",
+                  "sourceName": "SuccessFactors"
+                },
+                "type": "accountAttribute"
+              }
+            },
+            "type": "reference"
+          }
+        },
+        {
           "identityAttributeName": "country",
           "transformDefinition": {
             "attributes": {
@@ -275,7 +292,7 @@
     "identityCount": 99,
     "identityExceptionReportReference": null,
     "identityRefreshRequired": false,
-    "modified": "2026-09-04T06:34:34.106Z",
+    "modified": "2026-11-04T15:01:32.769Z",
     "name": "SuccessFactors",
     "owner": {
       "id": "4e66ef089395450e9ba7599d47619d3e",

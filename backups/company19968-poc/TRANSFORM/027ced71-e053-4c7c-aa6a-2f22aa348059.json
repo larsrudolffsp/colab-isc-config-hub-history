@@ -1,0 +1,42 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "attributes": {
+      "table": {
+        "1000-2200": "Germany HR",
+        "1000-4200": "Germany Production",
+        "1710-2100": "BRH Finance",
+        "1710-2200": "BRH HR",
+        "1710-4200": "BRH Production",
+        "2000-4200": "UK Production",
+        "2200-4200": "France Production",
+        "4000-4200": "India Production",
+        "4500-4200": "Canada Production",
+        "5100-4200": "Production",
+        "6000-4200": "MEXICO Production",
+        "8500-4200": "Australia Production",
+        "9000-4200": "Russia Production",
+        "B200FN01": "Finance",
+        "B200HR01": "Human Resources",
+        "DE10_HR2": "Human Resources (DE)",
+        "DE10_PLC": "Production Line C",
+        "DE10_RDGEN": "Product Development",
+        "US10_HR2": "Human Resources",
+        "US10_M1": "USA Corp Services",
+        "US10_M2": "USA Executive Board",
+        "default": "Unknown cost center"
+      }
+    },
+    "id": "027ced71-e053-4c7c-aa6a-2f22aa348059",
+    "internal": false,
+    "name": "SF Cost Center Lookup",
+    "type": "lookup"
+  },
+  "self": {
+    "id": "027ced71-e053-4c7c-aa6a-2f22aa348059",
+    "name": "SF Cost Center Lookup",
+    "type": "TRANSFORM"
+  },
+  "version": 1
+}

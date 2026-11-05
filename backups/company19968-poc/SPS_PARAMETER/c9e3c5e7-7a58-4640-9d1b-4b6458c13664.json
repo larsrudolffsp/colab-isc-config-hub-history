@@ -1,0 +1,38 @@
+{
+  "jwsHeader": null,
+  "jwsSignature": null,
+  "object": {
+    "description": "",
+    "id": "c9e3c5e7-7a58-4640-9d1b-4b6458c13664",
+    "lastModifiedAt": "2026-11-04T14:53:20.190188Z",
+    "lastModifiedBy": {
+      "id": "6b022753f41b405d92df9243f8ff2094",
+      "name": "fernando.delosrios",
+      "type": "IDENTITY"
+    },
+    "name": "PAT - Fernando",
+    "owner": {
+      "id": "6b022753f41b405d92df9243f8ff2094",
+      "name": "fernando.delosrios",
+      "type": "IDENTITY"
+    },
+    "privateFieldsLastModifiedAt": "2026-11-04T14:53:20.190188Z",
+    "privateFieldsLastModifiedBy": {
+      "id": "6b022753f41b405d92df9243f8ff2094",
+      "name": "fernando.delosrios",
+      "type": "IDENTITY"
+    },
+    "publicFields": {
+      "clientId": "48f0f420c3d746cbbbf7fa8b238270d9",
+      "credentialLocation": "HEADER",
+      "tokenURL": "https://company19968-poc.api.identitynow-demo.com/oauth/token"
+    },
+    "type": "1.4"
+  },
+  "self": {
+    "id": "c9e3c5e7-7a58-4640-9d1b-4b6458c13664",
+    "name": "PAT - Fernando",
+    "type": "SPS_PARAMETER"
+  },
+  "version": 1
+}
