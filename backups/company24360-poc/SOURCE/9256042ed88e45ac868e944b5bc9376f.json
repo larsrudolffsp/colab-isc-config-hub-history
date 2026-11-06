@@ -2479,6 +2479,124 @@
       {
         "attributes": [
           {
+            "description": "Capability type: SKILL.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "type",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Example requests the skill handles.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "examples",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The ID of the project under which the agent resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "projectId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The ID of the skill on the agent card.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "skillId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The description of the skill.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The location where the agent is registered.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "location",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The name of the skill.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The tags of the skill.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "tags",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique identifier of the skill, in the format {agent identity}#{skill ID}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "gcp:agent-registry",
+          "resourceId": "gcp:agent-registry-skill",
+          "resourceType": "std:capability"
+        },
+        "created": "2026-11-06T11:47:10.441Z",
+        "displayAttribute": "name",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "a7b6ec22a9dd49aa8fa43dd0ed365155",
+        "identityAttribute": "identity",
+        "includePermissions": false,
+        "modified": "2026-11-06T11:47:10.441Z",
+        "name": "GCP Agent Registry Skill",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
             "description": "Compliance control IDs that have been breached.",
             "isEntitlement": false,
             "isGroup": false,
@@ -2899,6 +3017,275 @@
         "modified": "2026-08-16T03:58:25.784Z",
         "name": "iamResourcePermission",
         "nativeObjectType": "iamResourcePermission"
+      },
+      {
+        "attributes": [
+          {
+            "description": "Details of the business application linked to the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spBusinessApplication",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The ID of the project under which the agent resides.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "projectId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The application the agent comes from. For example, Google Vertex AI, Gemini Enterprise, or UNKNOWN.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentSource",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The description of the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "spDescription",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The framework used to build the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "framework",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The identities of the skills of the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": true,
+            "name": "skills",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The identity the agent runs as.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "runtimeIdentity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The location where the agent is registered.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "location",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The name assigned to the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "name",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The name shown for the agent. For Gemini Enterprise agents, the name also includes the region and application ID. For other agents, it is the agent name.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentKey",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The permanent identifier of the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "agentId",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The protocols used to call the agent, with their versions and addresses, as a JSON string.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "protocols",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The resolved runtime identity that the agent executes as.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "effectiveIdentity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The resource where the agent runs.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "runtimeReference",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The timestamp when the agent was created.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "createTime",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The timestamp when the agent was last updated.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "updateTime",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique ID of the agent in Agent Registry.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "uid",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The unique identifier of the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "The version of the agent.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "version",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "gcp:agent-registry",
+          "resourceId": "gcp:agent-registry-agent",
+          "resourceType": "std:agent"
+        },
+        "created": "2026-11-06T11:47:10.441Z",
+        "displayAttribute": "agentKey",
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "71b03f3e0f4241f2b6a9f516821c72ea",
+        "identityAttribute": "identity",
+        "includePermissions": false,
+        "modified": "2026-11-06T11:47:10.441Z",
+        "name": "GCP Agent Registry Agent",
+        "nativeObjectType": null
+      },
+      {
+        "attributes": [
+          {
+            "description": "Link identity: gcp:agent-registry-agent-uses-skill#{agent identity}#{skill identity}.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "identity",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
+            "description": "Service that resolved this link.",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "linkResolvedBy",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          }
+        ],
+        "configuration": {
+          "datasetId": "gcp:agent-registry",
+          "resourceId": "gcp:agent-registry-agent-uses-skill",
+          "resourceType": "std:access"
+        },
+        "created": "2026-11-06T11:47:10.441Z",
+        "displayAttribute": null,
+        "features": [],
+        "hierarchyAttribute": null,
+        "id": "1826530692724295ad43fa52e5966956",
+        "identityAttribute": null,
+        "includePermissions": false,
+        "modified": "2026-11-06T11:47:10.441Z",
+        "name": "GCP Agent Registry Agent Uses Skill",
+        "nativeObjectType": null
       }
     ],
     "type": "606ce9dc-5262-4ee0-ae82-85a837a1e617"

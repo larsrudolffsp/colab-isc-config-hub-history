@@ -7019,6 +7019,17 @@
             "type": "STRING"
           },
           {
+            "description": "Original name from the source system (e.g. 'Microsoft 365 Copilot').",
+            "isEntitlement": false,
+            "isGroup": false,
+            "isManaged": false,
+            "isMulti": false,
+            "name": "rawName",
+            "nativeName": null,
+            "schema": null,
+            "type": "STRING"
+          },
+          {
             "description": "Prettified classification enum (e.g. 'Third-party', 'Homegrown').",
             "isEntitlement": false,
             "isGroup": false,
@@ -7139,13 +7150,13 @@
           "resourceType": "std:agent"
         },
         "created": "2026-08-16T03:58:03.489Z",
-        "displayAttribute": "name",
+        "displayAttribute": "rawName",
         "features": [],
         "hierarchyAttribute": null,
         "id": "46d02ea97b964c33bdcdee3b61cde2fe",
         "identityAttribute": "id",
         "includePermissions": false,
-        "modified": "2026-10-30T16:41:45.854Z",
+        "modified": "2026-11-06T11:47:10.715Z",
         "name": "Microsoft 365 Copilot License",
         "nativeObjectType": null
       },
